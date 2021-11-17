@@ -1,10 +1,10 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:knechtsteden_klosterguide_v1/detail_page.dart';
 import 'package:knechtsteden_klosterguide_v1/data.dart';
-import 'package:knechtsteden_klosterguide_v1/navigation.dart';
+import 'package:knechtsteden_klosterguide_v1/navigator.dart';
+import 'navigator.dart';
 
 class guideactivity extends StatelessWidget {
   @override
@@ -15,14 +15,15 @@ class guideactivity extends StatelessWidget {
         primarySwatch: Colors.orange,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text("Klosterführung"),),
+        appBar: AppBar(
+          title: Text("Klosterführung"),
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-
               RaisedButton(
                   child: Text("Tour starten"),
                   color: Colors.blue,
@@ -35,16 +36,19 @@ class guideactivity extends StatelessWidget {
                         ),
                       ),
                     );
-                  }
-              ),
+                  }),
               SizedBox(height: 50),
               RaisedButton(
                   child: Text("Karte"),
                   color: Colors.blue,
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => navigation()));
-                  }
-              ),
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => navigator(),
+                      ),
+                    );
+                  }),
               SizedBox(height: 50),
               RaisedButton(
                   child: Text("Startseite"),
@@ -52,7 +56,6 @@ class guideactivity extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   })
-
             ],
           ),
         ),

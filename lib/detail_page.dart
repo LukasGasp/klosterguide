@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'data.dart';
 import 'constants.dart';
-import 'package:flutter_tts/flutter_tts.dart';
-import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:video_player/video_player.dart';
 import 'package:path/path.dart';
 
 class DetailPage extends StatelessWidget {
@@ -10,24 +9,17 @@ class DetailPage extends StatelessWidget {
 
   DetailPage({Key? key, required this.stationInfo}) : super(key: key);
 
-  final FlutterTts flutterTts = FlutterTts(); // text zu Sprache
-
-  AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer(); // Vorlesestimme
+  late VideoPlayerController _controller =
+      VideoPlayerController.asset(stationInfo.video);
+  late Future<void> _initializeVideoPlayerfuture = _controller.initialize();
 
   @override
   void dispose() {
-    assetsAudioPlayer.dispose();
+    _controller.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // Load audio
-
-    assetsAudioPlayer.open(
-      Audio("assets/guideaudios/allstar.mp3"),
-      autoStart: false,
-    );
-
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -104,9 +96,13 @@ class DetailPage extends StatelessWidget {
                         },
                       ),
                       ElevatedButton(
-                        child: Text('Vorlesen'),
+                        child: Text('Play'),
                         onPressed: () {
-                          playaudio();
+                          if (_controller.value.isPlaying) {
+                            _controller.pause();
+                          } else {
+                            _controller.play();
+                          }
                         },
                       ),
                       ElevatedButton(
@@ -125,53 +121,29 @@ class DetailPage extends StatelessWidget {
                     ],
                   ),
 
+                  SizedBox(height: 32),
                   Divider(color: Colors.black38),
                   SizedBox(height: 32),
 
-                  // Überschrift Gallerie
+                  // Video
 
-                  const Padding(
-                    padding: EdgeInsets.only(left: 32.0),
-                    child: Text(
-                      'Gallerie',
-                      style: TextStyle(
-                        fontFamily: 'Avenir',
-                        fontSize: 25,
-                        color: Color(0xff47455f),
-                        fontWeight: FontWeight.w300,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
+                  FutureBuilder(
+                      future: _initializeVideoPlayerfuture,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          return AspectRatio(
+                            aspectRatio: _controller.value.aspectRatio,
+                            child: VideoPlayer(_controller),
+                          );
+                        } else {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                      }),
 
                   SizedBox(height: 32),
-
-                  // Stationsbilder
-
-                  Container(
-                    height: 250,
-                    padding: const EdgeInsets.only(left: 32.0),
-                    child: ListView.builder(
-                        itemCount: stationInfo.images.length,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return Card(
-                            clipBehavior: Clip.antiAlias,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: AspectRatio(
-                                aspectRatio: 1,
-                                child: Image.asset(
-                                  stationInfo.images[index],
-                                  fit: BoxFit.cover,
-                                )),
-                          );
-                        }),
-                  ),
-
-                  const SizedBox(height: 32),
-                  const Divider(color: Colors.black38),
+                  Divider(color: Colors.black38),
 
                   // Überschrift "Details"
 
@@ -179,7 +151,7 @@ class DetailPage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(left: 32.0),
                     child: Text(
-                      'Details',
+                      'Videotext',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 25,
@@ -237,11 +209,5 @@ class DetailPage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void playaudio() async {
-    assetsAudioPlayer.playOrPause();
-    print(assetsAudioPlayer.getCurrentAudioextra);
-    print(assetsAudioPlayer.currentPosition.toString());
   }
 }

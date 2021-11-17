@@ -4,18 +4,18 @@ class StationInfo {
   final String iconImage;
   final String description;
   final String fulltext;
-  final List<String> images;
+  final String video;
   final int next;
 
   StationInfo(
-      this.position, {
-        this.name = "",
-        this.iconImage = "",
-        this.description = "",
-        this.fulltext = "",
-        this.images = const [],
-        this.next = 0,
-      });
+    this.position, {
+    this.name = "",
+    this.iconImage = "",
+    this.description = "",
+    this.fulltext = "",
+    this.video = "",
+    this.next = 0,
+  });
 }
 
 List<StationInfo> stationen = [
@@ -23,7 +23,7 @@ List<StationInfo> stationen = [
       name: 'Torhaus',
       iconImage: 'assets/guideicons/torhaus.jpg',
       description:
-      "Brudi! Das ist voll Krass und so. Vor allen dingen ist das mega alt und so. Kann man mega geil schauen premium Statue!",
+          "Brudi! Das ist voll Krass und so. Vor allen dingen ist das mega alt und so. Kann man mega geil schauen premium Statue!",
       fulltext:
           '''Welch ein Anblick sich dem Besucher Knechtstedens bei seiner Ankunft offenbart! Das imposante Portal begrüßt ihn und weist ihm den Weg zum Gotteshaus, das schon aus der Ferne sichtbar ist und sich ihm in seiner vollen Pracht präsentiert. Dabei besuchten
           Pilgernde Knechtsteden bereits weit vor Errichtung dieses Torbogens, wie Sie ihn hier sehen.
@@ -35,22 +35,15 @@ List<StationInfo> stationen = [
           ehemaligen Abtei der Prämonstratenser 1802 den Garaus gemacht hatten. Mit der rechten Figur des Torbogens besinnen sich die Knechtstedener also auf den zweiten Orden, der in Knechtsteden ansässig wurde. Abgebildet ist er mit einem Kreuz in seiner Hand. Dies ist ein Verweis auf die Kongregation, die Libermann gegründet hat. Zur Erklärung: Eine Kongregation ist eine religiöse Vereinigung, die sich im Unterschied zu den älteren Ordensgemeinschaften, die hauptsächlich auf das innerklösterliche Leben ausgerichtet waren, vor allem Aufgaben außerhalb des Klosters widmet. Libermann verschrieb sich dabei der Missionierung in Afrika, auf die das Kreuz in seiner Hand hindeuten soll.
           An den nächsten Stationen erfahren Sie über die beiden Epochen Knechtstedens mehr. Beginnen Sie hierfür die Navigation zur nächsten Station.
           ''',
-      images: [
-        'assets/guideimages/torhaus/011.jpg',
-        'assets/guideimages/torhaus/012.jpg',
-        'assets/guideimages/torhaus/013.jpg',
-        'assets/guideimages/torhaus/014.jpg',
-        'assets/guideimages/torhaus/015.jpg',
-        'assets/guideimages/torhaus/016.jpg',
-      ],
+      video: "assets/guidevideos/yee.mp4",
       next: 1),
-
   StationInfo(2,
       name: 'Norbertpark',
       iconImage: 'assets/guideicons/norbertpark.png',
       description:
-      "Brudi das ist viel krasser. Hier hat man Natur und so! Das ist mega geil für Luft weil weniger CO2.",
-      fulltext: '''Wenden Sie Ihren Blick zunächst dem Norbertpark zu. Wurde die große weitläufige Grünfläche früher zur Viehhaltung genutzt, hat der Norbertpark heutzutage eine andere Funktion. Nicht selten findet gerade an warmen Sommertagen Unterricht des in Sichtweite befindlichen Norbert-Gymnasiums, zu dem wir später noch kommen, im Freien statt. Auch Veranstaltungen an der frischen Luft, etwa Gottesdienste oder zuletzt die Vergabe der Zeugnisse an die Abiturienten, erfreuen sich im Norbertpark besonderer Beliebtheit. Der Norbertpark fungiert als ein Ort, der zusammenführt. Seine Anziehungskraft bezieht er nicht zuletzt aufgrund des wunderschönen Ausblicks, den die Basilika offeriert.
+          "Brudi das ist viel krasser. Hier hat man Natur und so! Das ist mega geil für Luft weil weniger CO2.",
+      fulltext:
+          '''Wenden Sie Ihren Blick zunächst dem Norbertpark zu. Wurde die große weitläufige Grünfläche früher zur Viehhaltung genutzt, hat der Norbertpark heutzutage eine andere Funktion. Nicht selten findet gerade an warmen Sommertagen Unterricht des in Sichtweite befindlichen Norbert-Gymnasiums, zu dem wir später noch kommen, im Freien statt. Auch Veranstaltungen an der frischen Luft, etwa Gottesdienste oder zuletzt die Vergabe der Zeugnisse an die Abiturienten, erfreuen sich im Norbertpark besonderer Beliebtheit. Der Norbertpark fungiert als ein Ort, der zusammenführt. Seine Anziehungskraft bezieht er nicht zuletzt aufgrund des wunderschönen Ausblicks, den die Basilika offeriert.
       Bitte wenden Sie sich nun der Klosterbasilika zu und lassen Sie die Hecken hinter sich, sodass Sie einen freien Blick auf das Gotteshaus werfen können. Sie sehen das Monument einer bewegten Zeit des 12. Jahrhunderts. Die Klostergründung in Knechtsteden von 1130 geht nämlich zurück  auf die Schenkung des ererbten Herrensitzes des Domdekans zu Köln, Hugos von Sponheim, an die Prämonstratenser. Dieser wurde zu seiner Schenkung durch den Kölner Erzbischof Friedrich I. angeregt. 
       Der Prämonstratenser-Orden ist ursprünglich vom Heiligen Norbert von Xanten, einem Priester des Erzbistums Köln, 1121 im namensgebenden Prémontré in Nordfrankreich gegründet worden und aus einer Reformbewegung heraus entstanden, die sich dem Ideal des gemeinsamen Lebens im Stile der Urkirche verpflichtete.  Wenn Sie nach Abschluss dieses Abschnitts auf Ihrem Gerät herunterscrollen, haben Sie die Möglichkeit, mehr über das aufregende Leben des Heiligen Norbert und seine bewegte Zeit zu erfahren. Sie können die aktuelle Wiedergabe aber auch pausieren und bereits jetzt den Heiligen Norbert kennenlernen.
       Dass dem Kölner Erzbischof eine Klostergründung in Knechtsteden attraktiv erschien, ist vor dem Hintergrund der Organisation des Ordens zu erklären: Für das klösterliche Leben galten die Augustinusregeln. Die Prämonstratenser verschrieben sich jedoch nicht nur dem kontemplativen monastischen Leben im Kloster, sondern übernahmen auch außerklösterliche Funktionen. Als „halbe Mönche und halbe Pastöre“ ermöglichten sie besonders in abgelegenen Gegenden die Seelsorge, für die sich adelige Priester kaum interessierten.
@@ -74,13 +67,6 @@ List<StationInfo> stationen = [
       Während seines Pontifikats nahm sich Norbert von Xanten unterschiedlicher Aufgaben an. Er trieb die Missionierung der Slawen im Osten an, als Erzkanzler begleitete er 1132 sogar König Lothar nach Italien auf dessen Romzug. 1134 kehrte er, vermutlich an Malaria erkrankt, zurück und verstarb am 6. Juni. 1582 sprach ihn Gregor XIII. heilig. 
       Der Heilige Norbert von Xanten war Zeuge einer bewegten Zeit. So wie auch sein Zeitgenosse, Bernhard von Clairvaux, Gründer des Reformordens der Zisterzienser. Beide Ordensgemeinschaften – Prämonstratenser und Zisterzienser – fanden von Frankreich aus eine erstaunlich schnelle Verbreitung. Ohne den Lebenswandel Norberts, seinen Entschluss der inneren und äußeren Reform, aber auch ohne sein Verantwortungsbewusstsein, doch das Bistum Magdeburg zu übernehmen, wäre dies wohl nicht möglich gewesen.
       ''',
-      images: [
-        'assets/guideimages/norbertpark/021.jpg',
-        'assets/guideimages/norbertpark/022.jpg',
-        'assets/guideimages/norbertpark/023.jpg',
-        'assets/guideimages/norbertpark/024.jpg',
-        'assets/guideimages/norbertpark/025.jpg',
-        'assets/guideimages/norbertpark/026.jpg',
-      ],
+      video: "assets/guidevideos/yeewars.mp4",
       next: 0),
 ];
