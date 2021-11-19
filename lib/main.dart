@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:knechtsteden_klosterguide_v1/guideactivity.dart';
+import 'guideactivity.dart';
+import 'navigator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,7 +41,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -60,17 +60,19 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           // Test: Eventuell ist center besser
           children: <Widget>[
-
-            // Tour Guide
-            buildguidecard(),
+            // Tour
+            buildunifinishedcard("assets/home/002.jpg", "Führung",
+                'Lassen sie sich durch Knechtsteden führen', "tour"),
             const SizedBox(height: 50),
 
             // Discover
-            buildunifinishedcard("assets/home/083.jpg", "Entdecken", "Entdecken sie die vielen Wunder"),
+            buildunifinishedcard("assets/home/083.jpg", "Entdecken",
+                "Entdecken sie die vielen Wunder", "discover"),
             const SizedBox(height: 50),
 
             // Längenschnitt
-            buildunifinishedcard("assets/home/039.jpg", "Längenschnitt", "Ich weiß es doch selbst nicht...")
+            buildunifinishedcard("assets/home/039.jpg", "Karte",
+                "Eine detaillierte Karte Knechtstedens", "map")
           ],
         ),
       ),
@@ -85,97 +87,69 @@ class _MyHomePageState extends State<MyHomePage> {
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
-  Widget buildunifinishedcard(String imagepath, String title, String description) {
-
-    return
-      GestureDetector(
-          onTap: () {
-            makesnackbar("Diese Funktion ist noch nicht fertig");
-          },
-          child: new Container(
-            padding: EdgeInsets.all(24),
-            width: MediaQuery
-                .of(context)
-                .size
-                .width - 12,
-            height: 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              image: DecorationImage(
-                  image: new AssetImage(imagepath),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.25),
-                    BlendMode.darken,
-                  )
-              ),
+  void menueclick(String onclick) {
+    switch (onclick) {
+      case "tour":
+        {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => guideactivity()));
+        }
+        break;
+      case "discover":
+        {
+          //Body of value2
+          makesnackbar("Diese Funktion ist noch in Arbeit");
+        }
+        break;
+      case "map":
+        {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => navigator(),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    )
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  description,
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                )
-              ],
-            ),
-          )
-      );
+          );
+        }
+        break;
+    }
   }
 
-  Widget buildguidecard() {
-
-    return
-      GestureDetector(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => guideactivity()));
-          },
-          child: new Container(
-            padding: EdgeInsets.all(24),
-            width: MediaQuery
-                .of(context)
-                .size
-                .width - 12,
-            height: 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              image: DecorationImage(
-                  image: new AssetImage("assets/home/002.jpg"),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.25),
-                    BlendMode.darken,
-                  )
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                    'Führung',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    )
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Lassen sie sich durch Knechtsteden führen',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                )
-              ],
-            ),
-          )
-      );
+  Widget buildunifinishedcard(
+      String imagepath, String title, String description, String option) {
+    return GestureDetector(
+        onTap: () {
+          menueclick(option);
+        },
+        child: new Container(
+          padding: EdgeInsets.all(24),
+          width: MediaQuery.of(context).size.width - 12,
+          height: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            image: DecorationImage(
+                image: new AssetImage(imagepath),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.25),
+                  BlendMode.darken,
+                )),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  )),
+              const SizedBox(height: 8),
+              Text(
+                description,
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              )
+            ],
+          ),
+        ));
   }
 }

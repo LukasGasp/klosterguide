@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:knechtsteden_klosterguide_v1/detail_page.dart';
-import 'package:knechtsteden_klosterguide_v1/data.dart';
-import 'package:knechtsteden_klosterguide_v1/navigator.dart';
+import 'detail_page.dart';
+import 'data.dart';
 import 'navigator.dart';
 
 class guideactivity extends StatelessWidget {
