@@ -28,8 +28,7 @@ class _HomePageState extends State<Discoverpage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                // Titel:
-
+                // Menü Titel:
                 padding: const EdgeInsets.all(32.0),
                 child: Column(
                   children: <Widget>[
@@ -48,7 +47,6 @@ class _HomePageState extends State<Discoverpage> {
               ),
 
               // Swiper:
-
               Container(
                 height: 500,
                 padding: const EdgeInsets.only(left: 32),
@@ -77,8 +75,10 @@ class _HomePageState extends State<Discoverpage> {
                           Column(
                             children: <Widget>[
                               SizedBox(height: 100),
+
+                              // Grundkarte
                               Card(
-                                elevation: 8,
+                                elevation: 11,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(32),
                                 ),
@@ -90,16 +90,22 @@ class _HomePageState extends State<Discoverpage> {
                                         CrossAxisAlignment.start,
                                     children: <Widget>[
                                       SizedBox(height: 100),
-                                      Text(
-                                        stationen[index].name,
-                                        style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 35,
-                                          color: const Color(0xff47455f),
-                                          fontWeight: FontWeight.w900,
+
+                                      // StationsName
+                                      FittedBox(
+                                        fit: BoxFit.contain,
+                                        child: Text(
+                                          stationen[index].name,
+                                          style: TextStyle(
+                                            fontFamily: 'Avenir',
+                                            fontSize: 40,
+                                            color: const Color(0xff47455f),
+                                            fontWeight: FontWeight.w900,
+                                          ),
+                                          textAlign: TextAlign.left,
                                         ),
-                                        textAlign: TextAlign.left,
                                       ),
+                                      // Untertitel
                                       Text(
                                         'Knechtsteden',
                                         style: TextStyle(
@@ -111,6 +117,8 @@ class _HomePageState extends State<Discoverpage> {
                                         textAlign: TextAlign.left,
                                       ),
                                       SizedBox(height: 32),
+
+                                      // Mehr erfahren Link
                                       Row(
                                         children: <Widget>[
                                           Text(
@@ -136,8 +144,7 @@ class _HomePageState extends State<Discoverpage> {
                             ],
                           ),
 
-                          // Bild
-
+                          // Bild / Icon
                           Align(
                             alignment: Alignment.topCenter,
                             child: Hero(
@@ -145,7 +152,12 @@ class _HomePageState extends State<Discoverpage> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(110),
                                   child: Image.asset(stationen[index].iconImage,
-                                      width: 220, height: 220),
+                                      width: MediaQuery.of(context).size.width *
+                                          0.55,
+                                      height:
+                                          MediaQuery.of(context).size.width *
+                                              0.55,
+                                      fit: BoxFit.fitWidth),
                                 )),
                           ),
 
