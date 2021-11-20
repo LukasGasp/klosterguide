@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'guideactivity.dart';
 import 'navigator.dart';
 import 'discover.dart';
+import 'map.dart';
 
 void main() {
   runApp(const MyApp());
@@ -106,11 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case "map":
         {
           Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (BuildContext context) => navigator(),
-            ),
-          );
+              context, MaterialPageRoute(builder: (context) => Karte()));
         }
         break;
     }
