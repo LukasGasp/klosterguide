@@ -34,8 +34,10 @@ class DetailPage extends StatelessWidget {
                   SizedBox(height: 50),
                   Align(
                       alignment: Alignment(0.75, 0),
-                      child: Image.asset(stationInfo.iconImage,
-                          width: 150, height: 150)),
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(72.5),
+                          child: Image.asset(stationInfo.iconImage,
+                              width: 150, height: 150))),
 
                   // Stationsname, "Knechtsteden", description
 

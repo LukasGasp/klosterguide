@@ -1,3 +1,4 @@
+import 'package:KLosterguide/discover.dart';
 import 'package:flutter/material.dart';
 import 'guideactivity.dart';
 import 'navigator.dart';
@@ -98,7 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
       case "discover":
         {
           //Body of value2
-          makesnackbar("Diese Funktion ist noch in Arbeit");
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Discoverpage()));
         }
         break;
       case "map":
