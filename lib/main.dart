@@ -1,7 +1,7 @@
-import 'package:KLosterguide/discover.dart';
 import 'package:flutter/material.dart';
 import 'guideactivity.dart';
 import 'navigator.dart';
+import 'discover.dart';
 
 void main() {
   runApp(const MyApp());

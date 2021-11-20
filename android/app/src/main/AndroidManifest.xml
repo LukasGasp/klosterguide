@@ -2,7 +2,7 @@
     package="de.lukasgasp.klosterguide.knechtsteden_klosterguide_v1">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="knechtsteden_klosterguide_v1"
+        android:label="Klosterguide Knechtsteden"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
