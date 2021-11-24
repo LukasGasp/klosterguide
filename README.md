@@ -1,16 +1,20 @@
-# knechtsteden_klosterguide_v1
+# Klosterguide-App für Knechtsteden
 
-Klosterguider for Knechtsteden
+This project is in early progress. Check back in january
 
-## Getting Started
+## Contact
 
-This project is a starting point for a Flutter application.
+#### Luan
+[![Mail Luan][gmail_logo]][luan-mail]
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+#### Lukas
+[![Mail][gmail_logo]][lukas-mail]
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![Website][web_logo]][lukas-web]
+
+[gmail_logo]: https://user-images.githubusercontent.com/6497827/62424751-c1b85480-b6f0-11e9-97de-096c0a980829.png
+[web_logo]: https://img.icons8.com/external-icongeek26-flat-icongeek26/64/000000/external-url-essentials-icongeek26-flat-icongeek26.png
+[luan-mail]: mailto:lukas.fernandesgasp@norbert-gymnasium.de?subject=Regarding%20KlosterApp&body=Hi
+[lukas-mail]: mailto:luan.zerulla@norbert-gymnasium.de?subject=Regarding%20KlosterApp&body=Hi
+[lukas-web]: www.lukasgasp.tk
