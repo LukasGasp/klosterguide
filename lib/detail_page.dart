@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'navigation.dart';
 import 'data.dart';
 import 'constants.dart';
 import 'package:video_player/video_player.dart';
@@ -110,14 +111,18 @@ class DetailPage extends StatelessWidget {
                       ElevatedButton(
                         child: Text('Weiter'),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            PageRouteBuilder(
-                              pageBuilder: (context, a, b) => DetailPage(
-                                stationInfo: stationen[stationInfo.next],
+                          if (stationInfo.next != 0) {
+                            Navigator.pushReplacement(
+                              context,
+                              PageRouteBuilder(
+                                pageBuilder: (context, a, b) => Navigation(
+                                  stationInfo: stationen[stationInfo.next],
+                                ),
                               ),
-                            ),
-                          );
+                            );
+                          } else {
+                            Navigator.pop(context);
+                          }
                         },
                       )
                     ],

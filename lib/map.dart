@@ -10,32 +10,30 @@ class Karte extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Column(children: [
-        Flexible(
-            child: FlutterMap(
+        body: Stack(
+      children: [
+        FlutterMap(
           options: MapOptions(
             center: LatLng(51.07761902538088, 6.752730047496091),
             zoom: 15.7,
             maxZoom: 19,
           ),
           layers: [
-            MarkerLayerOptions(), // TODO: Relativ Objekte hinzufügen
+            MarkerLayerOptions(
+                markers: []) // TODO: Alle Stationen auf Karte hinzufügen
           ],
           children: [
-            Flexible(
-              child: TileLayerWidget(
-                options: TileLayerOptions(
-                  urlTemplate:
-                      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  subdomains: ['a', 'b', 'c'],
-                  maxZoom: 19,
-                ),
+            TileLayerWidget(
+              options: TileLayerOptions(
+                urlTemplate:
+                    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                subdomains: ['a', 'b', 'c'],
+                maxZoom: 19,
               ),
             ),
-            LocationMarkerLayerWidget(),
+            LocationMarkerLayerWidget(), // Position auf Karte
           ],
-        )),
+        ),
         Align(
             alignment: Alignment.bottomLeft,
             child: ElevatedButton(
@@ -43,8 +41,8 @@ class Karte extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-            ))
-      ])),
-    );
+            )),
+      ],
+    ));
   }
 }

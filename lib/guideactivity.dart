@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'detail_page.dart';
 import 'data.dart';
-import 'navigator.dart';
+import 'navigation.dart';
 
 class guideactivity extends StatelessWidget {
   @override
@@ -27,24 +27,12 @@ class guideactivity extends StatelessWidget {
                   child: Text("Tour starten"),
                   color: Colors.blue,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       PageRouteBuilder(
-                        pageBuilder: (context, a, b) => DetailPage(
+                        pageBuilder: (context, a, b) => Navigation(
                           stationInfo: stationen[0],
                         ),
-                      ),
-                    );
-                  }),
-              SizedBox(height: 50),
-              RaisedButton(
-                  child: Text("Karte"),
-                  color: Colors.blue,
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => navigator(),
                       ),
                     );
                   }),

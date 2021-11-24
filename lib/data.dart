@@ -1,5 +1,7 @@
 class StationInfo {
   final int position;
+  final double xcoord;
+  final double ycoord;
   final String name;
   final String iconImage;
   final String description;
@@ -9,6 +11,8 @@ class StationInfo {
 
   StationInfo(
     this.position, {
+    this.xcoord = 0,
+    this.ycoord = 0,
     this.name = "",
     this.iconImage = "",
     this.description = "",
@@ -20,6 +24,8 @@ class StationInfo {
 
 List<StationInfo> stationen = [
   StationInfo(1,
+      xcoord: 51.076410,
+      ycoord: 6.754703,
       name: 'Torhaus',
       iconImage: 'assets/guideicons/torhaus.jpg',
       description:
@@ -39,6 +45,8 @@ List<StationInfo> stationen = [
       next: 1),
   StationInfo(2,
       name: 'Norbertpark',
+      xcoord: 51.076585,
+      ycoord: 6.753799,
       iconImage: 'assets/guideicons/norbertpark.png',
       description:
           "Brudi das ist viel krasser. Hier hat man Natur und so! Das ist mega geil für Luft weil weniger CO2.",

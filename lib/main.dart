@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'guideactivity.dart';
-import 'navigator.dart';
+import 'navigation.dart';
 import 'discover.dart';
 import 'map.dart';
 
