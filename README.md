@@ -17,4 +17,4 @@ This project is in early progress. Check back in january
 [web_logo]: https://img.icons8.com/external-icongeek26-flat-icongeek26/64/000000/external-url-essentials-icongeek26-flat-icongeek26.png
 [luan-mail]: mailto:lukas.fernandesgasp@norbert-gymnasium.de?subject=Regarding%20KlosterApp&body=Hi
 [lukas-mail]: mailto:luan.zerulla@norbert-gymnasium.de?subject=Regarding%20KlosterApp&body=Hi
-[lukas-web]: www.lukasgasp.tk
+[lukas-web]: https://www.lukasgasp.tk
