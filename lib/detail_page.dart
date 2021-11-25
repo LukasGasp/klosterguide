@@ -14,9 +14,9 @@ class DetailPage extends StatelessWidget {
       VideoPlayerController.asset(stationInfo.video);
   late Future<void> _initializeVideoPlayerfuture = _controller.initialize();
 
-  @override
   void dispose() {
     _controller.dispose();
+    dispose();
   }
 
   @override
@@ -32,9 +32,9 @@ class DetailPage extends StatelessWidget {
                 children: <Widget>[
                   // Icon Image der Station
 
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
                   Align(
-                      alignment: Alignment(0.75, 0),
+                      alignment: const Alignment(0.75, 0),
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(72.5),
                           child: Image.asset(stationInfo.iconImage,
@@ -47,7 +47,7 @@ class DetailPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        SizedBox(height: 100),
+                        const SizedBox(height: 100),
                         Text(
                           stationInfo.name,
                           style: TextStyle(
@@ -68,8 +68,8 @@ class DetailPage extends StatelessWidget {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        Divider(color: Colors.black38),
-                        SizedBox(height: 32),
+                        const Divider(color: Colors.black38),
+                        const SizedBox(height: 32),
                         Text(
                           stationInfo.description,
                           maxLines: 5,
@@ -81,8 +81,8 @@ class DetailPage extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        SizedBox(height: 32),
-                        Divider(color: Colors.black38),
+                        const SizedBox(height: 32),
+                        const Divider(color: Colors.black38),
                       ],
                     ),
                   ),
@@ -93,13 +93,13 @@ class DetailPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       ElevatedButton(
-                        child: Text('Home'),
+                        child: const Text('Home'),
                         onPressed: () {
                           Navigator.pop(context);
                         },
                       ),
                       ElevatedButton(
-                        child: Text('Play'),
+                        child: const Text('Play'),
                         onPressed: () {
                           if (_controller.value.isPlaying) {
                             _controller.pause();
@@ -109,7 +109,7 @@ class DetailPage extends StatelessWidget {
                         },
                       ),
                       ElevatedButton(
-                        child: Text('Weiter'),
+                        child: const Text('Weiter'),
                         onPressed: () {
                           if (stationInfo.next != 0) {
                             Navigator.pushReplacement(
@@ -128,29 +128,48 @@ class DetailPage extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: 32),
-                  Divider(color: Colors.black38),
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
+                  const Divider(color: Colors.black38),
+                  const SizedBox(height: 32),
+
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: AspectRatio(
+                      aspectRatio: _controller.value.aspectRatio,
+                      child: Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: <Widget>[
+                          AspectRatio(
+                            aspectRatio: _controller.value.aspectRatio,
+                            child: VideoPlayer(_controller),
+                          ),
+                          ClosedCaption(text: _controller.value.caption.text),
+                          _ControlsOverlay(controller: _controller),
+                          VideoProgressIndicator(_controller,
+                              allowScrubbing: true),
+                        ],
+                      ),
+                    ),
+                  ),
 
                   // Video
-
                   FutureBuilder(
                       future: _initializeVideoPlayerfuture,
                       builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.done) {
+                        if (_controller.value.isInitialized) {
                           return AspectRatio(
                             aspectRatio: _controller.value.aspectRatio,
                             child: VideoPlayer(_controller),
                           );
                         } else {
-                          return Center(
+                          return const Center(
                             child: CircularProgressIndicator(),
                           );
                         }
                       }),
 
-                  SizedBox(height: 32),
-                  Divider(color: Colors.black38),
+                  const SizedBox(height: 32),
+                  const Divider(color: Colors.black38),
 
                   // Überschrift "Details"
 
@@ -207,7 +226,7 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             IconButton(
-              icon: Icon(Icons.arrow_back_ios),
+              icon: const Icon(Icons.arrow_back_ios),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -215,6 +234,83 @@ class DetailPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _ControlsOverlay extends StatelessWidget {
+  const _ControlsOverlay({Key? key, required this.controller})
+      : super(key: key);
+
+  static const _examplePlaybackRates = [
+    0.25,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    5.0,
+    10.0,
+  ];
+
+  final VideoPlayerController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        AnimatedSwitcher(
+          duration: Duration(milliseconds: 50),
+          reverseDuration: Duration(milliseconds: 200),
+          child: controller.value.isPlaying
+              ? SizedBox.shrink()
+              : Container(
+                  color: Colors.black26,
+                  child: Center(
+                    child: Icon(
+                      Icons.play_arrow,
+                      color: Colors.white,
+                      size: 100.0,
+                      semanticLabel: 'Play',
+                    ),
+                  ),
+                ),
+        ),
+        GestureDetector(
+          onTap: () {
+            controller.value.isPlaying ? controller.pause() : controller.play();
+          },
+        ),
+        Align(
+          alignment: Alignment.topRight,
+          child: PopupMenuButton<double>(
+            initialValue: controller.value.playbackSpeed,
+            tooltip: 'Playback speed',
+            onSelected: (speed) {
+              controller.setPlaybackSpeed(speed);
+            },
+            itemBuilder: (context) {
+              return [
+                for (final speed in _examplePlaybackRates)
+                  PopupMenuItem(
+                    value: speed,
+                    child: Text('${speed}x'),
+                  )
+              ];
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                // Using less vertical padding as the text is also longer
+                // horizontally, so it feels like it would need more spacing
+                // horizontally (matching the aspect ratio of the video).
+                vertical: 12,
+                horizontal: 16,
+              ),
+              child: Text('${controller.value.playbackSpeed}x'),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
