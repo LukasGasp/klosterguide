@@ -12,7 +12,6 @@ class Karte extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     for (var i = 0; i < stationen.length; i++) {
-      print(i);
       markierungen.add(Marker(
           width: 50.0,
           height: 50.0,
