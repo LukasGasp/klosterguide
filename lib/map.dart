@@ -7,45 +7,71 @@ import 'data.dart';
 import 'detail_page.dart';
 
 class Karte extends StatelessWidget {
+  List<Marker> markierungen = [];
+
   @override
   Widget build(BuildContext context) {
+    for (var i = 0; i < stationen.length; i++) {
+      print(i);
+      markierungen.add(Marker(
+          width: 50.0,
+          height: 50.0,
+          point: LatLng(stationen[i].xcoord, stationen[i].ycoord),
+          builder: (ctx) => InkWell(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, a, b) => DetailPage(
+                        stationInfo: stationen[i],
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                    child: ClipRRect(
+                  borderRadius: BorderRadius.circular(72.5),
+                  child: Image.asset(stationen[i].iconImage,
+                      width: 200, height: 200),
+                )),
+              )));
+    }
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Karte'),
-        ),
         body: Stack(
+      children: [
+        FlutterMap(
+          options: MapOptions(
+            center: LatLng(51.07761902538088, 6.752730047496091),
+            zoom: 15.7,
+            maxZoom: 19,
+          ),
+          layers: [
+            MarkerLayerOptions(
+                markers:
+                    markierungen) // TODO: Alle Stationen auf Karte hinzufügen
+          ],
           children: [
-            FlutterMap(
-              options: MapOptions(
-                center: LatLng(51.07761902538088, 6.752730047496091),
-                zoom: 15.7,
+            TileLayerWidget(
+              options: TileLayerOptions(
+                urlTemplate:
+                    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                subdomains: ['a', 'b', 'c'],
                 maxZoom: 19,
               ),
-              layers: [
-                MarkerLayerOptions(
-                    markers: []) // TODO: Alle Stationen auf Karte hinzufügen
-              ],
-              children: [
-                TileLayerWidget(
-                  options: TileLayerOptions(
-                    urlTemplate:
-                        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    subdomains: ['a', 'b', 'c'],
-                    maxZoom: 19,
-                  ),
-                ),
-                LocationMarkerLayerWidget(), // Position auf Karte
-              ],
             ),
-            Align(
-                alignment: Alignment.bottomLeft,
-                child: ElevatedButton(
-                  child: Text("Zurück"),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                )),
+            LocationMarkerLayerWidget(), // Position auf Karte
           ],
-        ));
+        ),
+        Align(
+            alignment: Alignment.bottomLeft,
+            child: ElevatedButton(
+              child: Text("Zurück"),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )),
+      ],
+    ));
   }
 }
