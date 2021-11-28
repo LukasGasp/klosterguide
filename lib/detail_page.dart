@@ -25,6 +25,28 @@ class DetailPage extends StatelessWidget {
         bottom: false,
         child: Stack(
           children: <Widget>[
+            // Graue Stationsnummer im Hinergrund
+
+            Positioned(
+              top: 60,
+              left: 32,
+              child: Text(
+                stationInfo.position.toString(),
+                style: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontSize: 247,
+                  color: primaryTextColor.withOpacity(0.08),
+                  fontWeight: FontWeight.w900,
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            IconButton(
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
             SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,29 +188,6 @@ class DetailPage extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-
-            // Graue Stationsnummer im Hinergrund
-
-            Positioned(
-              top: 60,
-              left: 32,
-              child: Text(
-                stationInfo.position.toString(),
-                style: TextStyle(
-                  fontFamily: 'Avenir',
-                  fontSize: 247,
-                  color: primaryTextColor.withOpacity(0.08),
-                  fontWeight: FontWeight.w900,
-                ),
-                textAlign: TextAlign.left,
-              ),
-            ),
-            IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
-              onPressed: () {
-                Navigator.pop(context);
-              },
             ),
           ],
         ),
