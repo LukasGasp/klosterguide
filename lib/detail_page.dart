@@ -148,10 +148,8 @@ class DetailPage extends StatelessWidget {
                   _StationAssetVideo(
                     videopath: stationInfo.video,
                   ),
-
-                  const SizedBox(height: 32),
-
                   // Detaillierte Beschreibung
+
                   ExpansionTile(
                     title: const Text(
                       'Videotext',
@@ -180,6 +178,69 @@ class DetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
+
+                  // Zusatzinfos
+                  (stationInfo.zusatzvideo != "")
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Divider(color: Colors.black38),
+                            const SizedBox(height: 32),
+                            const Padding(
+                              // Überschrift Zusatzinfos:
+
+                              padding: EdgeInsets.only(left: 15.0),
+                              child: Text(
+                                'Zusatzinfos',
+                                style: TextStyle(
+                                  fontFamily: 'Avenir',
+                                  fontSize: 25,
+                                  color: Color(0xff47455f),
+                                  fontWeight: FontWeight.w300,
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+
+                            // Video mit Zusatzinfos:
+
+                            _StationAssetVideo(
+                              videopath: stationInfo.zusatzvideo,
+                            ),
+
+                            // Ausklappbarer Text mit Zusatzinfos:
+                            ExpansionTile(
+                              title: const Text(
+                                'Videotext',
+                                style: TextStyle(
+                                  fontFamily: 'Avenir',
+                                  fontSize: 25,
+                                  color: Color(0xff47455f),
+                                  fontWeight: FontWeight.w300,
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                              children: <Widget>[
+                                const SizedBox(height: 32),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 32.0, right: 32.0),
+                                  child: Text(
+                                    stationInfo.zusatztext,
+                                    style: TextStyle(
+                                      fontFamily: 'Avenir',
+                                      fontSize: 20,
+                                      color: contentTextColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    textAlign: TextAlign.justify,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        )
+                      : Container()
                 ],
               ),
             ),
