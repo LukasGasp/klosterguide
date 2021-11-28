@@ -150,14 +150,10 @@ class DetailPage extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 32),
-                  const Divider(color: Colors.black38),
 
-                  // Überschrift "Details"
-
-                  const SizedBox(height: 32),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 32.0),
-                    child: Text(
+                  // Detaillierte Beschreibung
+                  ExpansionTile(
+                    title: const Text(
                       'Videotext',
                       style: TextStyle(
                         fontFamily: 'Avenir',
@@ -167,24 +163,22 @@ class DetailPage extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),
-
-                  const SizedBox(height: 32),
-
-                  // Detaillierte Beschreibung
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 32.0, right: 32.0),
-                    child: Text(
-                      stationInfo.fulltext,
-                      style: TextStyle(
-                        fontFamily: 'Avenir',
-                        fontSize: 20,
-                        color: contentTextColor,
-                        fontWeight: FontWeight.w500,
+                    children: <Widget>[
+                      const SizedBox(height: 32),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                        child: Text(
+                          stationInfo.fulltext,
+                          style: TextStyle(
+                            fontFamily: 'Avenir',
+                            fontSize: 20,
+                            color: contentTextColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
                       ),
-                      textAlign: TextAlign.justify,
-                    ),
+                    ],
                   ),
                 ],
               ),
