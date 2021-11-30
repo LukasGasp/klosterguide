@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'guideactivity.dart';
 import 'navigation.dart';
+import 'nav.dart';
 import 'discover.dart';
 import 'map.dart';
 
@@ -16,10 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Klosterführer',
-      theme: ThemeData(
-        primarySwatch: Colors.brown,
-      ),
-      home: const MyHomePage(title: 'Klosterführer Knechtsteden'),
+      home: Nav(),
     );
   }
 }
