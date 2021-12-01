@@ -36,7 +36,9 @@ class DetailPage extends StatelessWidget {
             Navigator.pop(context);
           }
         },
-        child: Icon(Icons.navigate_next),
+        child: (stationInfo.next != 0)
+            ? Icon(Icons.navigate_next)
+            : Icon(Icons.home),
         backgroundColor: primarymapbuttoncolor,
       ),
       body: SafeArea(
