@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
+import 'package:klosterguide/constants.dart';
 import 'package:latlong2/latlong.dart';
 
 import 'data.dart';
@@ -14,8 +15,37 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+        // APP-Bar
+
         appBar: AppBar(
+          automaticallyImplyLeading:
+              false, // Kein Automatischer Home Knopf in App Bar
           title: const Text('Navigation'),
+          backgroundColor: AppBarColor,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.home),
+          ),
+        ),
+
+        // Weiter Knopf
+
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (context, a, b) => DetailPage(
+                  stationInfo: stationen[stationInfo.position - 1],
+                ),
+              ),
+            );
+          },
+          child: Icon(Icons.navigate_next),
+          backgroundColor: primarymapbuttoncolor,
         ),
         body: Stack(
           children: [
@@ -54,35 +84,6 @@ class Navigation extends StatelessWidget {
                 LocationMarkerLayerWidget(),
               ],
             ),
-
-            // Knopf: Nächste Station
-
-            Align(
-                alignment: Alignment.bottomRight,
-                child: ElevatedButton(
-                  child: Text("Erreicht"),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      PageRouteBuilder(
-                        pageBuilder: (context, a, b) => DetailPage(
-                          stationInfo: stationen[stationInfo.position - 1],
-                        ),
-                      ),
-                    );
-                  },
-                )),
-
-            // Knopf: Home
-
-            Align(
-                alignment: Alignment.bottomLeft,
-                child: ElevatedButton(
-                  child: Text("Home"),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                )),
           ],
         ));
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:klosterguide/constants.dart';
 import 'detail_page.dart';
 import 'data.dart';
 import 'navigation.dart';
@@ -11,11 +12,13 @@ class guideactivity extends StatelessWidget {
     return MaterialApp(
       title: "Klosterführer",
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.brown,
       ),
       home: Scaffold(
         appBar: AppBar(
           title: Text("Klosterführung"),
+          backgroundColor: AppBarColor,
+          foregroundColor: Colors.white,
         ),
         body: Center(
           child: Column(

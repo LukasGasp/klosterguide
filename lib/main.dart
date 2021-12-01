@@ -3,6 +3,7 @@ import 'guideactivity.dart';
 import 'navigation.dart';
 import 'discover.dart';
 import 'map.dart';
+import 'constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,37 +49,38 @@ class _MyHomePageState extends State<MyHomePage> {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          // Test: Eventuell ist center besser
-          children: <Widget>[
-            // Tour
-            buildunifinishedcard("assets/home/002.jpg", "Führung",
-                'Lassen sie sich durch Knechtsteden führen', "tour"),
-            const SizedBox(height: 50),
-
-            // Discover
-            buildunifinishedcard("assets/home/083.jpg", "Entdecken",
-                "Entdecken sie die vielen Wunder", "discover"),
-            const SizedBox(height: 50),
-
-            // Längenschnitt
-            buildunifinishedcard("assets/home/039.jpg", "Karte",
-                "Eine detaillierte Karte Knechtstedens", "map")
-          ],
+        appBar: AppBar(
+          backgroundColor: AppBarColor,
+          title: Text(widget.title),
         ),
-      ),
-    );
+        body: Container(
+          color: primarybackgroundcolor,
+          child: Center(
+            // Center is a layout widget. It takes a single child and positions it
+            // in the middle of the parent.
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              // Test: Eventuell ist center besser
+              children: <Widget>[
+                // Tour
+                buildunifinishedcard("assets/home/002.jpg", "Führung",
+                    'Lassen sie sich durch Knechtsteden führen', "tour"),
+                const SizedBox(height: 50),
+
+                // Discover
+                buildunifinishedcard("assets/home/083.jpg", "Entdecken",
+                    "Entdecken sie die vielen Wunder", "discover"),
+                const SizedBox(height: 50),
+
+                // Längenschnitt
+                buildunifinishedcard("assets/home/039.jpg", "Karte",
+                    "Eine detaillierte Karte Knechtstedens", "map")
+              ],
+            ),
+          ),
+        ));
   }
 
   void makesnackbar(String text) {

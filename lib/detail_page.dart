@@ -21,6 +21,24 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (stationInfo.next != 0) {
+            Navigator.pushReplacement(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (context, a, b) => Navigation(
+                  stationInfo: stationen[stationInfo.next],
+                ),
+              ),
+            );
+          } else {
+            Navigator.pop(context);
+          }
+        },
+        child: Icon(Icons.navigate_next),
+        backgroundColor: primarymapbuttoncolor,
+      ),
       body: SafeArea(
         bottom: false,
         child: Stack(
@@ -40,12 +58,6 @@ class DetailPage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.left,
               ),
-            ),
-            IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
-              onPressed: () {
-                Navigator.pop(context);
-              },
             ),
             SingleChildScrollView(
               child: Column(
@@ -108,41 +120,6 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
 
-                  // Info Knöpfe
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      ElevatedButton(
-                        child: const Text('Home'),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ElevatedButton(
-                        child: const Text('Weiter'),
-                        onPressed: () {
-                          if (stationInfo.next != 0) {
-                            Navigator.pushReplacement(
-                              context,
-                              PageRouteBuilder(
-                                pageBuilder: (context, a, b) => Navigation(
-                                  stationInfo: stationen[stationInfo.next],
-                                ),
-                              ),
-                            );
-                          } else {
-                            Navigator.pop(context);
-                          }
-                        },
-                      )
-                    ],
-                  ),
-
-                  const SizedBox(height: 32),
-                  const Divider(color: Colors.black38),
-                  const SizedBox(height: 32),
-
                   // Video: Klassen unten
 
                   _StationAssetVideo(
@@ -152,7 +129,7 @@ class DetailPage extends StatelessWidget {
 
                   ExpansionTile(
                     title: const Text(
-                      'Videotext',
+                      'Textfassung',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 25,
@@ -202,6 +179,8 @@ class DetailPage extends StatelessWidget {
                               ),
                             ),
 
+                            // ========================================= Zusatzinfos
+
                             // Video mit Zusatzinfos:
 
                             _StationAssetVideo(
@@ -211,7 +190,7 @@ class DetailPage extends StatelessWidget {
                             // Ausklappbarer Text mit Zusatzinfos:
                             ExpansionTile(
                               title: const Text(
-                                'Videotext',
+                                'Textfassung',
                                 style: TextStyle(
                                   fontFamily: 'Avenir',
                                   fontSize: 25,

@@ -15,11 +15,11 @@ class _HomePageState extends State<Discoverpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: gradientEndColor,
+      backgroundColor: discovergradientEndColor,
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [gradientStartColor, gradientEndColor],
+                colors: [discovergradientStartColor, discovergradientEndColor],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 stops: [0.3, 0.7])),
