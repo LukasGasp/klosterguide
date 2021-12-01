@@ -7,8 +7,9 @@ flutter_icons:
   image_path: "assets/icons/app.png"
 # flutter pub run flutter_launcher_icons:main für neues icon
 flutter_native_splash:
-  color: "#0x86ac41"
+  color: "86ac41"
   image: assets/icons/app.png
+  android_disable_fullscreen: true
 #flutter pub run flutter_native_splash:create Für neues SplashDing
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
