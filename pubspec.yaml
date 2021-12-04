@@ -7,7 +7,7 @@ flutter_icons:
   image_path: "assets/icons/app.png"
 # flutter pub run flutter_launcher_icons:main für neues icon
 flutter_native_splash:
-  color: "86ac41"
+  color: "FFFFFF"
   image: assets/icons/app.png
   android_disable_fullscreen: true
 #flutter pub run flutter_native_splash:create Für neues SplashDing
