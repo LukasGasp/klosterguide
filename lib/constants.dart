@@ -17,5 +17,5 @@ Color zusatzinfotitel = Color(0xff47455f);
 // Discover
 
 Color titleTextColor = Colors.white;
-Color discovergradientStartColor = Color(0xFF0050AC); // Hintergrund
-Color discovergradientEndColor = Color(0xFF9354B9);   // Hintergrund
+Color discovergradientStartColor = Color(0xFFBBC7CC); // Hintergrund
+Color discovergradientEndColor = Color(0xFF0050AC);   // Hintergrund

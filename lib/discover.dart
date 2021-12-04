@@ -56,7 +56,7 @@ class _HomePageState extends State<Discoverpage> {
                   layout: SwiperLayout.STACK,
                   pagination: SwiperPagination(
                     builder:
-                        DotSwiperPaginationBuilder(activeSize: 20, space: 8),
+                        DotSwiperPaginationBuilder(color:Colors.white, activeColor: Colors.white, activeSize: 20, space: 8),
                   ),
                   itemBuilder: (context, index) {
                     return InkWell(
