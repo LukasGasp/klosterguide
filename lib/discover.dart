@@ -17,6 +17,13 @@ class _HomePageState extends State<Discoverpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: discovergradientEndColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: const Icon(Icons.home),
+        backgroundColor: primarymapbuttoncolor,
+      ),
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
