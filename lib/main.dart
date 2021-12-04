@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Klosterführer',
       theme: ThemeData(
-        primarySwatch: Colors.brown,
+        primaryColor: Colors.white,
       ),
       home: const MyHomePage(title: 'Klosterführer Knechtsteden'),
     );

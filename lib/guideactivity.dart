@@ -13,7 +13,7 @@ class Guideactivity extends StatelessWidget {
     return MaterialApp(
       title: "Klosterführer",
       theme: ThemeData(
-        primarySwatch: Colors.brown,
+        primaryColor: Colors.white,
       ),
       home: Scaffold(
         appBar: AppBar(

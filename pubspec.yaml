@@ -4,7 +4,7 @@ description: Klosterguider for Knechtsteden
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icons/app.png"
+  image_path: "assets/icons/app2.png"
 # flutter pub run flutter_launcher_icons:main für neues icon
 flutter_native_splash:
   color: "FFFFFF"
