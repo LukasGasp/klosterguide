@@ -10,6 +10,8 @@ import 'detail_page.dart';
 class Karte extends StatelessWidget {
   List<Marker> markierungen = [];
 
+  Karte({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     for (var i = 0; i < stationen.length; i++) {
@@ -28,12 +30,11 @@ class Karte extends StatelessWidget {
                     ),
                   );
                 },
-                child: Container(
-                    child: ClipRRect(
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(72.5),
                   child: Image.asset(stationen[i].iconImage,
                       width: 200, height: 200),
-                )),
+                ),
               )));
     }
 
@@ -42,7 +43,7 @@ class Karte extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Icon(Icons.home),
+          child: const Icon(Icons.home),
           backgroundColor: primarymapbuttoncolor,
         ),
         body: Stack(

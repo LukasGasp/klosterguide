@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'guideactivity.dart';
-import 'navigation.dart';
 import 'discover.dart';
 import 'map.dart';
 import 'constants.dart';
@@ -50,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // by the _incrementCounter method above.
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: AppBarColor,
+          backgroundColor: appbarcolor,
           title: Text(widget.title),
         ),
         body: Container(
@@ -96,14 +95,14 @@ class _MyHomePageState extends State<MyHomePage> {
       case "tour":
         {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => guideactivity()));
+              MaterialPageRoute(builder: (context) => const Guideactivity()));
         }
         break;
       case "discover":
         {
           //Body of value2
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Discoverpage()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Discoverpage()));
         }
         break;
       case "map":
@@ -121,14 +120,14 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: () {
           menueclick(option);
         },
-        child: new Container(
-          padding: EdgeInsets.all(24),
+        child: Container(
+          padding: const EdgeInsets.all(24),
           width: MediaQuery.of(context).size.width - 12,
           height: 150,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
-                image: new AssetImage(imagepath),
+                image: AssetImage(imagepath),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.25),
@@ -139,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -147,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(height: 8),
               Text(
                 description,
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: const TextStyle(fontSize: 20, color: Colors.white),
               )
             ],
           ),

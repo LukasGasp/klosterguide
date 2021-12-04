@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:latlong/latlong.dart';
 import 'detail_page.dart';
 import 'constants.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -7,6 +6,8 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'data.dart';
 
 class Discoverpage extends StatefulWidget {
+  const Discoverpage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -22,7 +23,7 @@ class _HomePageState extends State<Discoverpage> {
                 colors: [discovergradientStartColor, discovergradientEndColor],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                stops: [0.3, 0.7])),
+                stops: const [0.3, 0.7])),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,13 +32,13 @@ class _HomePageState extends State<Discoverpage> {
                 // Menü Titel:
                 padding: const EdgeInsets.all(32.0),
                 child: Column(
-                  children: <Widget>[
+                  children: const <Widget>[
                     Text(
                       'Entdecken',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 44,
-                        color: const Color(0xffffffff),
+                        color: Color(0xffffffff),
                         fontWeight: FontWeight.w900,
                       ),
                       textAlign: TextAlign.left,
@@ -54,9 +55,12 @@ class _HomePageState extends State<Discoverpage> {
                   itemCount: stationen.length,
                   itemWidth: MediaQuery.of(context).size.width - 2 * 64,
                   layout: SwiperLayout.STACK,
-                  pagination: SwiperPagination(
-                    builder:
-                        DotSwiperPaginationBuilder(color:Colors.white, activeColor: Colors.white, activeSize: 20, space: 8),
+                  pagination: const SwiperPagination(
+                    builder: DotSwiperPaginationBuilder(
+                        color: Colors.white,
+                        activeColor: Colors.white,
+                        activeSize: 20,
+                        space: 8),
                   ),
                   itemBuilder: (context, index) {
                     return InkWell(
@@ -74,7 +78,7 @@ class _HomePageState extends State<Discoverpage> {
                         children: <Widget>[
                           Column(
                             children: <Widget>[
-                              SizedBox(height: 100),
+                              const SizedBox(height: 100),
 
                               // Grundkarte
                               Card(
@@ -89,17 +93,17 @@ class _HomePageState extends State<Discoverpage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: <Widget>[
-                                      SizedBox(height: 100),
+                                      const SizedBox(height: 100),
 
                                       // StationsName
                                       FittedBox(
                                         fit: BoxFit.contain,
                                         child: Text(
                                           stationen[index].name,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontFamily: 'Avenir',
                                             fontSize: 40,
-                                            color: const Color(0xff47455f),
+                                            color: Color(0xff47455f),
                                             fontWeight: FontWeight.w900,
                                           ),
                                           textAlign: TextAlign.left,
@@ -116,7 +120,7 @@ class _HomePageState extends State<Discoverpage> {
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
-                                      SizedBox(height: 32),
+                                      const SizedBox(height: 32),
 
                                       // Mehr erfahren Link
                                       Row(
