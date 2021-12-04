@@ -38,7 +38,8 @@ class _HomePageState extends State<Discoverpage> {
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 44,
-                        color: Color(0xffffffff),
+
+                        color: primaryTextColor,
                         fontWeight: FontWeight.w900,
                       ),
                       textAlign: TextAlign.left,
