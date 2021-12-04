@@ -39,13 +39,12 @@ class _HomePageState extends State<Discoverpage> {
                 // Menü Titel:
                 padding: const EdgeInsets.all(32.0),
                 child: Column(
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
                       'Entdecken',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 44,
-
                         color: primaryTextColor,
                         fontWeight: FontWeight.w900,
                       ),
