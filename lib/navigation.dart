@@ -10,7 +10,7 @@ import 'detail_page.dart';
 class Navigation extends StatelessWidget {
   final StationInfo stationInfo;
 
-  Navigation({Key? key, required this.stationInfo}) : super(key: key);
+  const Navigation({Key? key, required this.stationInfo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,12 @@ class Navigation extends StatelessWidget {
           automaticallyImplyLeading:
               false, // Kein Automatischer Home Knopf in App Bar
           title: const Text('Navigation'),
-          backgroundColor: AppBarColor,
+          backgroundColor: appbarcolor,
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
           ),
         ),
 
@@ -44,7 +44,7 @@ class Navigation extends StatelessWidget {
               ),
             );
           },
-          child: Icon(Icons.navigate_next),
+          child: const Icon(Icons.navigate_next),
           backgroundColor: primarymapbuttoncolor,
         ),
         body: Stack(
@@ -62,12 +62,11 @@ class Navigation extends StatelessWidget {
                       width: 50.0,
                       height: 50.0,
                       point: LatLng(stationInfo.xcoord, stationInfo.ycoord),
-                      builder: (ctx) => Container(
-                          child: ClipRRect(
+                      builder: (ctx) => ClipRRect(
                         borderRadius: BorderRadius.circular(72.5),
                         child: Image.asset(stationInfo.iconImage,
                             width: 200, height: 200),
-                      )),
+                      ),
                     ),
                   ],
                 ),

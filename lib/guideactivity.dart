@@ -2,11 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:klosterguide/constants.dart';
-import 'detail_page.dart';
 import 'data.dart';
 import 'navigation.dart';
 
-class guideactivity extends StatelessWidget {
+class Guideactivity extends StatelessWidget {
+  const Guideactivity({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,8 +17,8 @@ class guideactivity extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Klosterführung"),
-          backgroundColor: AppBarColor,
+          title: const Text("Klosterführung"),
+          backgroundColor: appbarcolor,
           foregroundColor: Colors.white,
         ),
         body: Center(
@@ -26,9 +27,8 @@ class guideactivity extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              RaisedButton(
-                  child: Text("Tour starten"),
-                  color: Colors.blue,
+              ElevatedButton(
+                  child: const Text("Tour starten"),
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
@@ -39,10 +39,9 @@ class guideactivity extends StatelessWidget {
                       ),
                     );
                   }),
-              SizedBox(height: 50),
-              RaisedButton(
-                  child: Text("Startseite"),
-                  color: Colors.blue,
+              const SizedBox(height: 50),
+              ElevatedButton(
+                  child: const Text("Startseite"),
                   onPressed: () {
                     Navigator.pop(context);
                   })

@@ -9,9 +9,8 @@ class DetailPage extends StatelessWidget {
 
   DetailPage({Key? key, required this.stationInfo}) : super(key: key);
 
-  late VideoPlayerController _controller =
+  late final VideoPlayerController _controller =
       VideoPlayerController.asset(stationInfo.video);
-  late Future<void> _initializeVideoPlayerfuture = _controller.initialize();
 
   void dispose() {
     _controller.dispose();
@@ -37,8 +36,8 @@ class DetailPage extends StatelessWidget {
           }
         },
         child: (stationInfo.next != 0)
-            ? Icon(Icons.navigate_next)
-            : Icon(Icons.home),
+            ? const Icon(Icons.navigate_next)
+            : const Icon(Icons.home),
         backgroundColor: primarymapbuttoncolor,
       ),
       body: SafeArea(
@@ -236,10 +235,13 @@ class DetailPage extends StatelessWidget {
 class _StationAssetVideo extends StatefulWidget {
   final String videopath;
 
-  _StationAssetVideo({Key? key, required this.videopath}) : super(key: key);
+  const _StationAssetVideo({Key? key, required this.videopath})
+      : super(key: key);
 
   @override
   _StationAssetVideoState createState() =>
+      // Falsche interpretation der IDE
+      // ignore: no_logic_in_create_state
       _StationAssetVideoState(videopath: videopath);
 }
 
@@ -247,7 +249,7 @@ class _StationAssetVideoState extends State<_StationAssetVideo> {
   late VideoPlayerController _controller;
   final String videopath;
 
-  _StationAssetVideoState({Key? key, required this.videopath});
+  _StationAssetVideoState({required this.videopath});
 
   @override
   void initState() {
@@ -318,13 +320,13 @@ class _ControlsOverlay extends StatelessWidget {
     return Stack(
       children: <Widget>[
         AnimatedSwitcher(
-          duration: Duration(milliseconds: 50),
-          reverseDuration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 50),
+          reverseDuration: const Duration(milliseconds: 200),
           child: controller.value.isPlaying
-              ? SizedBox.shrink()
+              ? const SizedBox.shrink()
               : Container(
                   color: Colors.black26,
-                  child: Center(
+                  child: const Center(
                     child: Icon(
                       Icons.play_arrow,
                       color: Colors.white,
