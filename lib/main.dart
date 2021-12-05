@@ -1,3 +1,11 @@
+//Sprache
+import 'dart:convert'; //Die String/language files brauchen jede Menge imports
+import 'dart:core';
+
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+//Sprache ende
 import 'package:flutter/material.dart';
 import 'guideactivity.dart';
 import 'discover.dart';
@@ -15,6 +23,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: Locale("de"), //Hier Sprache angeben
+      localizationsDelegates: [
+        const DemoLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate, //Flutter sagt man braucht das, Stackoverflow typ hat das nicht gesagt
+        GlobalWidgetsLocalizations.delegate, // "
+        GlobalCupertinoLocalizations.delegate,], // "
+      supportedLocales: [const Locale('en', ''), const Locale('de', '')],
       title: 'Klosterführer',
       theme: ThemeData(
         primaryColor: Colors.white,
@@ -23,6 +38,44 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//Sprachzeug
+
+//Habe alles kommentiert, was ich von der Stackoverflow-Version geändert habe
+
+class DemoLocalizations {
+  static DemoLocalizations? of(BuildContext context) { //Fragezeichen musste hinzugefügt werden
+    return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
+  }
+
+  String getText(String key) => language![key]; //! eingefügt
+}
+
+
+Map<String, dynamic>? language; //? eingefügt
+
+
+class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
+  const DemoLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) => ['en', 'de'].contains(locale.languageCode); //Hier können neue Sprachen hinzugefügt werden
+
+  @override
+  Future<DemoLocalizations> load(Locale locale) async {
+    String string = await rootBundle.loadString("assets/strings/${locale.languageCode}.json");
+    language = jsonDecode(string);
+    return SynchronousFuture<DemoLocalizations>(DemoLocalizations());
+  }
+
+  @override
+  bool shouldReload(DemoLocalizationsDelegate old) => false;
+}
+
+
+
+//Sprachzeug Ende
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -64,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // Test: Eventuell ist center besser
               children: <Widget>[
                 // Tour
-                buildunifinishedcard("assets/home/002.jpg", "Führung",
+                buildunifinishedcard("assets/home/002.jpg", DemoLocalizations.of(context)!.getText("text2"), //"?? "Error"" entfernt
                     'Lassen sie sich durch Knechtsteden führen', "tour"),
                 const SizedBox(height: 50),
 
