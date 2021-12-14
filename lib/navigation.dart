@@ -53,9 +53,20 @@ class Navigation extends StatelessWidget {
               options: MapOptions(
                 center: LatLng(51.07761902538088, 6.752730047496091),
                 zoom: 15.7,
-                maxZoom: 19,
+                minZoom: 14,
+                maxZoom: 18,
+                swPanBoundary: LatLng(
+                  51.0727696061025,
+                  6.74033047115352,
+                ),
+                nePanBoundary: LatLng(51.0834444361947, 6.76094581023449),
               ),
               layers: [
+                TileLayerOptions(
+                  tileProvider: AssetTileProvider(),
+                  maxZoom: 18.0,
+                  urlTemplate: 'assets/map/{z}/{x}/{y}.png',
+                ),
                 MarkerLayerOptions(
                   markers: [
                     Marker(
@@ -72,14 +83,6 @@ class Navigation extends StatelessWidget {
                 ),
               ],
               children: [
-                TileLayerWidget(
-                  options: TileLayerOptions(
-                    urlTemplate:
-                        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    subdomains: ['a', 'b', 'c'],
-                    maxZoom: 19,
-                  ),
-                ),
                 LocationMarkerLayerWidget(),
               ],
             ),

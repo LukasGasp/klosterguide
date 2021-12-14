@@ -63,6 +63,41 @@ flutter:
     - assets/guidevideos/
     - assets/strings/en.json #String system
     - assets/strings/de.json
+    - assets/map/14/8498/
+    - assets/map/14/8499/
+
+    - assets/map/15/16997/
+    - assets/map/15/16998/
+    - assets/map/15/16999/
+    
+    - assets/map/16/33995/
+    - assets/map/16/33996/
+    - assets/map/16/33997/
+    - assets/map/16/33998/
+
+    - assets/map/17/67990/
+    - assets/map/17/67991/
+    - assets/map/17/67992/
+    - assets/map/17/67993/
+    - assets/map/17/67994/
+    - assets/map/17/67995/
+    - assets/map/17/67996/
+    - assets/map/17/67997/
+
+    - assets/map/18/135980/
+    - assets/map/18/135981/
+    - assets/map/18/135982/
+    - assets/map/18/135983/
+    - assets/map/18/135984/
+    - assets/map/18/135985/
+    - assets/map/18/135986/
+    - assets/map/18/135987/
+    - assets/map/18/135988/
+    - assets/map/18/135989/
+    - assets/map/18/135990/
+    - assets/map/18/135991/
+    - assets/map/18/135992/
+
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
