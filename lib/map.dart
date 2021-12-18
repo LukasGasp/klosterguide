@@ -50,26 +50,27 @@ class Karte extends StatelessWidget {
           children: [
             FlutterMap(
               options: MapOptions(
-                center: LatLng(51.07761902538088, 6.752730047496091),
-                zoom: 15.7,
-                minZoom: 14,
-                maxZoom: 18,
-                swPanBoundary: LatLng(
-                  51.0727696061025,
-                  6.74033047115352,
-                ),
-                nePanBoundary: LatLng(51.0834444361947, 6.76094581023449),
-              ),
+                  center: LatLng(51.07761902538088, 6.752730047496091),
+                  zoom: 15.7,
+                  minZoom: 14,
+                  maxZoom: 18,
+                  swPanBoundary: LatLng(
+                    51.0727696061025,
+                    6.74033047115352,
+                  ),
+                  nePanBoundary: LatLng(51.0834444361947, 6.76094581023449),
+                  plugins: [LocationMarkerPlugin()]),
               layers: [
                 TileLayerOptions(
                   tileProvider: const AssetTileProvider(),
                   maxZoom: 18.0,
                   urlTemplate: 'assets/map/{z}/{x}/{y}.png',
+                  // For example purposes. It is recommended to use
+                  // TileProvider with a caching and retry strategy, like
+                  // NetworkTileProvider or CachedNetworkTileProvider
                 ),
+                LocationMarkerLayerOptions(),
                 MarkerLayerOptions(markers: markierungen),
-              ],
-              children: [
-                LocationMarkerLayerWidget(), // Position auf Karte
               ],
             ),
           ],
