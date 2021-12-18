@@ -62,7 +62,7 @@ class Karte extends StatelessWidget {
               ),
               layers: [
                 TileLayerOptions(
-                  tileProvider: AssetTileProvider(),
+                  tileProvider: const AssetTileProvider(),
                   maxZoom: 18.0,
                   urlTemplate: 'assets/map/{z}/{x}/{y}.png',
                 ),
