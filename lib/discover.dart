@@ -67,7 +67,7 @@ class _HomePageState extends State<Discoverpage> {
                         color: Colors.white,
                         activeColor: Colors.white,
                         activeSize: 20,
-                        space: 8),
+                        space: 5),
                   ),
                   itemBuilder: (context, index) {
                     return InkWell(

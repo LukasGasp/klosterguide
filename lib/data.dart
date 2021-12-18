@@ -182,7 +182,7 @@ Schauen Sie sich das prächtige Portal genauer an. Es ist geprägt von einem gro
 diesem Portal widerspiegelt, sollte bald vergehen. Die letzte Weihe in Knechtsteden fand 1780 statt, bevor die Prämonstratenser unter Abt Hendel vor den Franzosen flohen.
 Die Spiritaner nutzten dann die Prälatur zu Schulzwecken. Zwar hat der Vorsteher der Spiritaner in Knechtsteden, der Superior, seine Räume in der Prälatur bezogen, um seinen klosterleitenden Aufgaben nachzugehen, Ausbildungsunterricht fand in den übrigen Räumen jedoch ebenfalls statt. Als in Knechtsteden dann nach dem II. Weltkrieg das Heilig-Geist-Gymnasium gegründet wurde, hatte der erste Schulleiter, Pater Baumjohann, in den heutigen Räumen 401 und 407 sein Direktorenzimmer. Heute werden die Räume der Alten Prälatur zu Unterrichtszwecken gänzlich vom Norbert-Gymnasium genutzt – hierzu später mehr.''',
     video: "assets/guidevideos/yee.mp4",
-    next: 0,
+    next: 6,
   ),
   StationInfo(7,
       xcoord: 51.07753653918695,
@@ -249,5 +249,89 @@ gemeldet worden. Am 25.11.1944 wurde er dann durch Granatensplitter schwerverwun
 Seine letzte überlieferte Feldpost schrieb Harnisch an seine Nichte „Trautchen“ am 30.10.1944, also gut drei Wochen vor seinem Tod. In voller Erwartung an das Kriegsende schreibt er: „Wie Du schreibst willst Du mit dem Heiraten noch warten bis 
 ich zu Hause bin, [das] [f]reu[t] mich aber. Denn wir wollen doch das Tanzbein tüchtig schwingen bei Deiner Hochzeit. […] [W]ir sollten erst zum 20. Oktober hier wegkommen, nun hat es sich aber noch verschoben, wann es nun wird[,] wissen wir auch nicht […]. Wann nun der Krieg zu Ende sein wird[,] ist noch nicht raus, ich denke aber es wird nun bald enden […].“ Seinen „Goldsohn Günter“, den Trautchen von ihm grüßen soll, konnte Gustav Harnisch nicht mehr wiedersehen.''',
       zusatzvideo: "assets/guidevideos/yee.mp4",
-      next: 0)
+      next: 9),
+  StationInfo(
+    10,
+    xcoord: 51.07861234748353,
+    ycoord: 6.750253239539649,
+    name: 'Kräutergarten',
+    iconImage: 'assets/guideicons/kraeutergarten.png',
+    description: "Geiles Zeug.",
+    fulltext:
+        '''Auch am Beispiel des vor Ihnen befindlichen Kräutergartens ist es erkennbar, dass die Spiritaner Knechtsteden im wahrsten Sinne des Wortes wiederbelebten. Seit die Spiritaner Knechtsteden wieder aufbauten, wurde es ein autarkes Dorf, das sich selbst versorgen konnte. Dafür sorgte auch die vorbildliche Landwirtschaft, die bis heute fortgeführt wird. Der heutige Kräutergarten wurde früher als Hühnerhof genutzt, um ihn herum waren Felder, Äcker, Obstwiesen. Bis zu 450 Personen konnte der landwirtschaftliche Betrieb damals mit seinen Erzeugnissen versorgen. Auch heute ist direkt nebenan eine große Streuobstwiese, um welche sich das Haus der Natur in Knechtsteden kümmert. Der Kräutergarten wird von einem ehrenamtlichen, engagierten Team von 12 Personen gepflegt und erhalten. Das Ziel des Kräutergartens ist der Erhalt aussterbender und seltener Kräuter, die Schaffung biologischer Vielfalt sowie die Kräuterkunde selbst. Nicht zuletzt soll der Kräutergarten seine Besucher einladen, in der stillen Natur zu verweilen.
+Sehen Sie sich mal um. Angelegt sind zehn Beete, die allesamt über die Holzspan-Wege begehbar sind. Auf den Bänken hier und dort können Sie sich auch hinsetzen und eine Weile die Ruhe genießen. Die Beete tragen unter anderem Küchenkräuter, Gemüse oder in Vergessenheit geratene Kräuter. Zwei Beete fallen jedoch besonders auf: Eines ist der Heiligen Maria, der Mutter Gottes, und eines den Symbolen des Christentums geweiht. In ersterem finden sich Kräuter, die sinnbildlich für die Eigenschaften der Gottesmutter Maria stehen. Kräuter der christlichen Symbolik wie beispielsweise Silbertaler sind entsprechend in letzterem Beet zu finden.
+In der Mitte des Kräutergartens ist ein kleines Gebäude aus Backstein zu sehen. Geht man die hölzerne Treppe hinauf, bietet sich ein großartiger Ausblick auf den Kräutergarten sowie auf das Gelände, das ihn umgibt. In diesem Gebäude, welches früher der Hühnerstall war, werden Kräuter gelagert, getrocknet und vorbereitet. Anschließend werden sie in der Klosterküche zubereitet, um im Klosterladen in Form von Tinkturen, Tees, Salzen und anderen Produkten angeboten zu werden. Knechtsteden ist ein Ort der Kooperationen – 
+das wird ein weiteres Mal deutlich. Auch die Kooperation mit dem Naturschutzbund ist hier zu nennen. Der Baumstumpf, der Ihnen sicherlich aufgefallen ist, erinnert an den gefällten, kranken Baum, der hier einst stand. Dafür hat man den Vögeln in Absprache mit dem Naturschutzbund bunt bemalte Vogelhäuschen geschenkt, die ihnen weiterhin Unterschlupf gewähren.
+Was den Kräutergarten besonders auszeichnet, ist seine Form. Die Form, in der die Hecken geschnitten und angelegt sind, die die Beete umranden, lassen den Kräutergarten wie zwei Kirchenschiffe in Kreuzform erscheinen, die sich spiegeln. In der Mitte der beiden 
+Schiffe ist jeweils ein hoher, hellgrauer Stein, welcher den zentralen Mittelpunkt der Schiffe darstellt und als Kreuz oder Altar interpretiert werden kann.
+''',
+    video: "assets/guidevideos/yee.mp4",
+    next: 10,
+  ),
+  StationInfo(
+    11,
+    xcoord: 51.07852443117225,
+    ycoord: 6.751014940273164,
+    name: 'Kulturhof Knechtsteden und ehemaliger Bullenstall',
+    iconImage: 'assets/guideicons/kulturhof.png',
+    description: "Kultur für die ganze Familie. ",
+    fulltext:
+        '''Haben wir uns bisher eher den handwerklichen Berufen gewidmet, steht nun die Landwirtschaft Knechtstedens im Vordergrund, die hier, im ehemaligen Bullenstall, noch wiederzuerkennen ist, sowie Sie sich einmal umschauen. Der Landwirtschaftsbetrieb des Klosters wurde vor dem Ersten Weltkrieg von den Spiritanern für die Versorgung von etwa 500 Menschen errichtet. Die Zucht Knechtstedener Zuchtbullen war zu ihrer Zeit bekannt und wurde mehrfach prämiert. Als die Nationalsozialisten 1941 Knechtsteden beschlagnahmten, sollte der Hof zu einem landwirtschaftlichen Mustergut umgebaut werden. Einige Brüder wurden zur Zwangsarbeit verpflichtet, wodurch ihnen jedoch der Dienst an der Front erspart blieb. Andere Patres und Brüder wurden aus Knechtsteden ausgewiesen. Zu seinen Hochzeiten konnte sich das Kloster dank seiner Landwirtschaft vollkommen autark halten und sich selbst versorgen. Bis in die 1960er Jahre wurde der landwirtschaftliche Betrieb im Kloster durch die Brüder aufrechterhalten.
+Heute ist der Kulturhof, der ehemalige Bullenstall und die Theaterscheune, als Veranstaltungsort an den Klosterhof, unsere letzte Station, verpachtet. Dort finden Hochzeiten, Konzerte und auch Firmenfeiern statt. Die Felder rings um Knechtsteden werden von umliegenden Bauern bestellt. So bleibt Knechtsteden bis heute ein landwirtschaftlich geprägter Ort in der Region.''',
+    video: "assets/guidevideos/yee.mp4",
+    next: 11,
+  ),
+  StationInfo(
+    12,
+    xcoord: 51.07806413957527,
+    ycoord: 6.751501836755097,
+    name: 'Alte Feuerwehr',
+    iconImage: 'assets/guideicons/feuerwehr.png',
+    description:
+        "Wenn es brennt, ist es doof. Deswegen waren die früher so: Lass mal Feuerwehr bauen. So also, begann der jetzige Kindergarten Stein auf Stein zu setzten.",
+    fulltext:
+        '''An dieser Stelle möchten wir noch einmal an den verheerenden Brand von 1869 erinnern, der die gesamte Klosteranlage zerstörte. Sie erinnern sich: Als die Armenverwaltung von Köln die Klosteranlage übernommen hatte, sollte Knechtsteden als psychiatrische Klinik 
+für etwa 400 Patienten genutzt werden. Einer großen Beliebtheit erfreute sich dieser Plan jedoch nicht. Insbesondere die Bauern der umliegenden Dörfer wollten die Heilanstalt verhindern. Zu therapeutischen Zwecken hätten die Patienten auf den umliegenden Feldern gearbeitet, sodass den Bauern die Pachtverträge gekündigt worden wären. Aus diesem Grund sagt man den Straberger Bauern nach, sie hätten den Brand von 1869 gelegt. Als Außenstehende den Brand zu löschen versuchten, sollen die Straberger jene daran gehindert haben. Einige Jahre nach dem Brand wurde jedoch die wahre Ursache bekannt. Ein alter Knecht hatte in der Scheune beim Anzünden einer Pfeife leichtsinnigerweise den Brand verschuldet. Sein Geheimnis trug der Mann bis an sein Lebensende mit sich. Erst auf dem Sterbebett hat er seine fahrlässige Tat reumütig gestanden. 
+So oder so – als die Spiritaner 1895 Knechtsteden übernahmen, wollten sie einer vergleichbaren Brandkatastrophe vorbeugen. Dies zeigt eindrücklich, wie prägend jener Brand von 1869 gewesen sein muss. Pater Acker und die Spiritaner gründeten eine eigene Feuerwehr. Die Erfahrung hatte gelehrt, dass aufgrund der singulären Lage Knechtstedens eine Feuerwehr innerhalb der Klosteranlage nötig war. Bis die Einsatzkräfte von außerhalb in Knechtsteden ankämen, wäre es für das Klosterdorf zu spät. 
+Mehrfach konnte die Knechtstedener Feuerwehr Abhilfe schaffen – etwa 1928 in den Räumlichkeiten der alten Schmiede. Das Feuer brach aus, weil sich beim Kochen aufgrund einer Unachtsamkeit ein Feuer entzündete. Gegen Ende des Zweiten Weltkrieges kam die Feuerwehr ebenfalls zum Einsatz, nachdem das Kloster von einer Brandbombe getroffen worden war. Als mit der Zeit die Feuerwehren mobiler und der Transport von Brandbekämpfungsmitteln einfacher wurde, gab man die eigene Feuerwehr in Knechtsteden auf und nutzte das Gebäude zuerst als kleine Autowerkstatt. In den Räumlichkeiten befindet sich heute die Fundgrube bzw. der Trödel- und Kleidermarkt, wo man noch alte Feuerwehrschläuche bestaunen kann. Vielleicht werden Sie ja auch fündig.
+Schauen Sie aber erst einmal auf das kleine metallische Plättchen rechts der Fensterfront. Abgebildet ist der Schutzpatron der Feuerwehr, der Heilige Florian von Lorch. Dort, wo heute die Fensterfront Einblick gewährt, waren früher die Holztore verbaut, hinter 
+denen die Feuerwehrwagen und -geräte bereitstanden.''',
+    video: "assets/guidevideos/yee.mp4",
+    next: 12,
+  ),
+  StationInfo(
+    13,
+    xcoord: 51.07758543614188,
+    ycoord: 6.753780118854125,
+    name: 'Norbert-Gymnasium',
+    iconImage: 'assets/guideicons/gymnasium.jpg',
+    description:
+        "Ähm. Ja. Ich liebe das Biotop und das FMT. Besuchen sie das Kabuff, da hängt auch ein Fernseher",
+    fulltext:
+        '''Knechtsteden erfüllen heute neben den Ordensmännern Optiker, Künstler, Biologen, Naturpädagogen, Landwirte, Musiker und Eventmanager und viele mehr mit Leben. Knechtsteden ist ein kulturelles Zentrum, etwa für Musikfestivals geworden, so auch für das überregional bekannte Festival der Alten Musik Knechtsteden. Viele Einrichtungen werden Sie während dieser Führung bemerkt oder kennengelernt haben.
+Die größte und bekannteste Einrichtung auf dem Gelände des Klosters Knechtsteden ist das Norbert-Gymnasium. Die Namensherkunft muss an dieser Stelle wohl nicht weiter erläutert werden. Nach dem Zweiten Weltkrieg, 1947, eröffneten die Spiritaner unter Pater Baumjohann die Missionsschule neu. Die Ordensschule füllte sich wieder und nahm den Unterricht erneut auf. Jedoch hielt diese letzte Blüte nicht lange: In den späten 1950er Jahren erlebte das kirchliche Leben in Deutschland eine Krise, die sich auch auf die Klöster auswirkte. Die Religion verlor langsam ihre gesellschaftliche Relevanz, Knechtsteden wurde leerer. Die Ordensberufe sind ausgeblieben, viele Arbeiten mussten eingestellt werden, manche Einrichtungen wurden aufgegeben. Eine Neuerfindung Knechtstedens musste her und sollte kommen. Das Internat wurde 1967 geschlossen, die Schule vom Norbert-Verein als gemeinnütziger katholischer Schulträger übernommen. Seitdem prägen die Schülerinnen und Schüler des Norbert-Gymnasiums das Klosterleben, gegenüber den verbliebenen zwei Dutzend Ordensleuten sind sie heute mit etwa 1300 Kindern und Heranwachsenden eindeutig in der Überzahl. Die Schülerinnen kamen jedoch erst zum Schuljahr 1990/91 Jahre hinzu, als das Norbert-Gymnasium sich auch für Mädchen öffnete. Wieder retteten die Spiritaner also Knechtsteden, das erneut lebendig wurde. Bis heute hat der Norbert-Verein einen ständigen Vertreter der Spiritaner in seinem Vorstand.
+Spazieren wir einmal an den Schulgebäuden gegenüber der Alten Feuerwehr vorbei. Viele zu Unterrichtszwecken genutzte Räume des Klosters haben Sie ja bereits gesehen, so etwa die Alte Prälatur oder das Libermannhaus, das das Musikzentrum des Norbert-Gymnasiums ist. Folgen Sie also dem Weg zwischen Gebäudereihe rechts und der Alten Feuerwehr links. Hinter den Holztoren, die heute zu Lagerzwecken genutzt werden, parkten dereinst Feuerwehrautos, wie Sie ja bereits vorhin erfuhren. In den Gebäuden rechts findet Unterricht statt. In der alten Scheune links, am Ende der Häuserreihe neben der alten Feuerwehr, tagt die Schülervertretung. Sie laufen nun auf einen Unterstand zu, der den Neubau links mit dem Altbau rechts, den Klostereinrichtungen, verbindet. Gehen Sie hindurch auf den Schulhof.
+Beachten Sie die Marienstatue aus Sandstein im Grün des Vorgartens links an der Ecke zum Neubau. Die gekrönte Muttergottes trägt das Jesuskind auf dem linken Arm, mit der rechten Hand segnet sie. Jesus hält den Kreuzesstab, der die Schlange zu Füßen Mariens ersticht. Auf dem backsteinernen Sockel steht eingemeißelt: „Siegerin in allen Schlachten Gottes“. Die 3 Meter hohe Statue wurde 1950, also fünf Jahre nach Beendigung des Zweiten Weltkrieges, von dem Künstler Toni Stockheim entworfen. Vor diesem Hintergrund macht 
+auch die Inschrift Sinn. Hier wollte man wohl auf die dunklen Zeiten der beiden Weltkriege anspielen. Als in den großen Kriegen besiegte Nation bedrückte die deutsche Öffentlichkeit das Stigma des Nationalsozialismus und seiner Verbrechen. Die Statue verweist darauf, dass die „wahre“ Siegerin aller Schlachten Gottes in der Heiligen Jungfrau Maria zu sehen sei. Am Fuße des Sockels trafen sich die Ordensschüler früher gern, um zu beten oder gemeinsam Zeit zu verbringen. Heute erinnert wenig daran, dass die Muttergottes ein beliebter Treffpunkt gewesen ist.
+Gehen Sie einige Schritte weiter, sodass Sie mitten auf dem Schulhof stehen, und drehen Sie sich um. Links sehen Sie nun wieder das Kloster, in weiterer Ferne die Basilika. Rechts zu sehen ist die Frontansicht des Norbert-Gymnasiums mit seinem Haupteingang. Gegenüber dem Haupteingang, hinter den Tischtennisplatten, befindet sich das Sportzentrum des Gymnasiums.
+Mit der Anerkennung als Sportschule 2014 und der Errichtung des Sportinternats gehört das Norbert-Gymnasium zur sportlichen Elite Deutschlands. Es vereint Schule, Lernen, Training und Freizeit. Die Internatsschüler vertreten Deutschland international auf Wettkämpfen und absolvieren parallel ihr Abitur. Dabei versteht sich das Norbert-Gymnasium aber nach wie vor in der Tradition seines Standortes als christliche Schule, die ihre Schülerinnen und Schüler befähigen möchte, die Gesellschaft im Geist der Frohen Botschaft 
+mitzugestalten. So bleibt die Knechtstedener Schule auf eine eigene Weise mit dem Kloster und seiner Geschichte verbunden. Dieses Schulprojekt des Klosterführers ist nicht zuletzt ein Indikator für jene Verbundenheit. Wir begleiten Sie nun zur letzten Station unserer Führung.''',
+    video: "assets/guidevideos/yee.mp4",
+    next: 13,
+  ),
+  StationInfo(
+    14,
+    xcoord: 51.07660176969927,
+    ycoord: 6.757339425377802,
+    name: 'Klosterhof',
+    iconImage: 'assets/guideicons/klosterhof.png',
+    description: "Gutes Schnitzel und so",
+    fulltext:
+        '''1898, also kurz nach der Übernahme des Klosters durch den Spiritaner-Orden, wurde der Klosterhof erbaut. Dieses Projekt leitete Bruder Aristobul. Damals sind die Förderer und Mitglieder des „Vereins für das Missionshaus Knechtsteden“ regelmäßig gekommen, um den Fortschritt des Wiederaufbaus Knechtstedens unter der Leitung des Baumeisters und Bruders Ansberi zu begutachten, den sie finanzierten. Weil jene Förderer gern Zeit dort vorbrachten, wo sie den Wiederaufbau unterstützten, und sich nach Feierabend gesellig austauschten, schien ein Gasthaus notwendig, wo auch die Vereinssitzungen stattfinden konnten. Die Knechtstedener Spiritaner wollten sich für die großzügige Unterstützung der Vereinsmitglieder erkenntlich zeigen und begannen deshalb den Bau eines Restaurants mit Herberge. Auch diente der Klosterhof als Unterkunft für die Verwandten der Patres und Brüder, insbesondere die weiblichen, die ihre Familienmitglieder nur einmal im Jahr in Knechtsteden besuchen durften. Übernachtungen und Besuche innerhalb des Klosters waren dabei untersagt, weshalb der Klosterhof als Gasthaus nötig war.
+Weil Bruder Ansbert bereits aufgrund der anderen Restaurationen in Knechtsteden viel zu tun hatte, fragten die Spiritaner Bruder Aristobul Lülsdorf, der als Maurer gelernt hatte. Dieser stammte zwar aus Köln Langel, war aber in den Orden in Frankreich eingetreten und wirkte zu dieser Zeit in Paris und Portugal. Diese Rekrutierung aus dem Ausland war nicht unüblich, denn die Ordensleitung in Paris entsandte in der Anfangszeit Knechtstedens einige Brüder, um den Wiederaufbau zu unterstützen. Als der Bruder dann aus Portugal nach Knechtsteden gekommen war, konnte mit dem Bau begonnen werden. Geplant wurde der Klosterhof von dem Architekten Bruder Raffael. Dass der Bruder Aristobul Lülsdorf in Paris gelebt hat, wird durch den französischen Baustil deutlich, den man auch heute 
+noch am Klosterhof bewundern kann.
+1976 wurde die Gaststätte renoviert, da sich das Kloster an überregionaler Beliebtheit erfreute. Der Klosterhof dient bis heute als Herberge und beliebter Gasthof. Hier kehrten und kehren Touristen, Pilgernde, aber auch Patres und Schülerinnen und Schüler des Norbert-Gymnasiums gerne ein. Wir können Ihnen den Besuch des Klosterhofs nur wärmstens ans Herz legen. Treten Sie ein und bestellen Sie doch schon einmal, bevor wir uns verabschieden. Allen Bierliebhabern können wir das Knechtstedener Kellerbier empfehlen. Über den untenstehenden Button gelangen Sie zur Getränke- und Speisekarte, die auch Saisonales bietet. Kehren Sie aber zum Abschluss unbedingt zurück zur Klosterführer-App, sowie Sie bestellt haben!''',
+    video: "assets/guidevideos/yee.mp4",
+    next: 0,
+  ),
 ];

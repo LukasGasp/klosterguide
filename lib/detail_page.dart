@@ -51,12 +51,22 @@ class DetailPage extends StatelessWidget {
               left: 32,
               child: Text(
                 stationInfo.position.toString(),
-                style: TextStyle(
-                  fontFamily: 'Avenir',
-                  fontSize: 247,
-                  color: primaryTextColor.withOpacity(0.08),
-                  fontWeight: FontWeight.w900,
-                ),
+                style: (stationInfo.position >
+                        9) // Falls Nummer größer als 9 ist die Zahl zweistellig
+                    ? TextStyle(
+                        letterSpacing:
+                            -25, // Daher, sollen die Zahlen dann näher an einander
+                        fontFamily: 'Avenir',
+                        fontSize: 247,
+                        color: primaryTextColor.withOpacity(0.08),
+                        fontWeight: FontWeight.w900,
+                      )
+                    : TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 247,
+                        color: primaryTextColor.withOpacity(0.08),
+                        fontWeight: FontWeight.w900,
+                      ),
                 textAlign: TextAlign.left,
               ),
             ),
