@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:klosterguide/constants.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:geolocator/geolocator.dart';
 
 import 'data.dart';
 import 'detail_page.dart';
@@ -10,7 +13,20 @@ import 'detail_page.dart';
 class Navigation extends StatelessWidget {
   final StationInfo stationInfo;
 
-  const Navigation({Key? key, required this.stationInfo}) : super(key: key);
+  Navigation({Key? key, required this.stationInfo}) : super(key: key);
+
+  Position? _currentPosition;
+  late StreamSubscription<Position> _positionStreamSubscription; // Position
+
+  StreamSubscription<Position> positionStream =
+      Geolocator.getPositionStream().listen((Position position) {
+    print(position == null
+        ? 'Unknown'
+        : 'Lat: ' +
+            position.latitude.toString() +
+            ', Long: ' +
+            position.longitude.toString());
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +51,14 @@ class Navigation extends StatelessWidget {
 
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, a, b) => DetailPage(
-                  stationInfo: stationen[stationInfo.position - 1],
-                ),
-              ),
-            );
+            // Navigator.pushReplacement(
+            //   context,
+            //   PageRouteBuilder(
+            //     pageBuilder: (context, a, b) => DetailPage(
+            //       stationInfo: stationen[stationInfo.position - 1],
+            //     ),
+            //   ),
+            // );
           },
           child: const Icon(Icons.navigate_next),
           backgroundColor: primarymapbuttoncolor,
