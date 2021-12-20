@@ -15,21 +15,16 @@ class Navigation extends StatelessWidget {
 
   Navigation({Key? key, required this.stationInfo}) : super(key: key);
 
-  Position? _currentPosition;
-  late StreamSubscription<Position> _positionStreamSubscription; // Position
-
-  StreamSubscription<Position> positionStream =
-      Geolocator.getPositionStream().listen((Position position) {
-    print(position == null
-        ? 'Unknown'
-        : 'Lat: ' +
-            position.latitude.toString() +
-            ', Long: ' +
-            position.longitude.toString());
-  });
-
   @override
   Widget build(BuildContext context) {
+    StreamSubscription<Position> positionStream =
+        Geolocator.getPositionStream(desiredAccuracy: LocationAccuracy.high)
+            .listen((Position position) {
+      if (position != null) {
+        //TODO: Check if position in range... // Das isses. Das Skript, dass die Position gibt: position.latitude.toString() + position.longitude.toString()
+      }
+    });
+
     return Scaffold(
 
         // APP-Bar
@@ -51,14 +46,14 @@ class Navigation extends StatelessWidget {
 
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // Navigator.pushReplacement(
-            //   context,
-            //   PageRouteBuilder(
-            //     pageBuilder: (context, a, b) => DetailPage(
-            //       stationInfo: stationen[stationInfo.position - 1],
-            //     ),
-            //   ),
-            // );
+            Navigator.pushReplacement(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (context, a, b) => DetailPage(
+                  stationInfo: stationen[stationInfo.position - 1],
+                ),
+              ),
+            );
           },
           child: const Icon(Icons.navigate_next),
           backgroundColor: primarymapbuttoncolor,
