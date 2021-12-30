@@ -113,20 +113,6 @@ class DetailPage extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         const Divider(color: Colors.black38),
-                        const SizedBox(height: 32),
-                        Text(
-                          stationInfo.description,
-                          maxLines: 5,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 20,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        const SizedBox(height: 32),
-                        const Divider(color: Colors.black38),
                       ],
                     ),
                   ),
@@ -284,9 +270,6 @@ class _StationAssetVideoState extends State<_StationAssetVideo> {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 20.0),
-          ),
           Container(
             padding: const EdgeInsets.all(0),
             child: AspectRatio(

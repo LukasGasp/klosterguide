@@ -13,7 +13,7 @@ import 'detail_page.dart';
 class Navigation extends StatelessWidget {
   final StationInfo stationInfo;
 
-  Navigation({Key? key, required this.stationInfo}) : super(key: key);
+  const Navigation({Key? key, required this.stationInfo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class Navigation extends StatelessWidget {
                     6.74033047115352,
                   ),
                   nePanBoundary: LatLng(51.0834444361947, 6.76094581023449),
-                  plugins: [LocationMarkerPlugin()]),
+                  plugins: [const LocationMarkerPlugin()]),
               layers: [
                 TileLayerOptions(
                   tileProvider: const AssetTileProvider(),

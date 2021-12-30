@@ -4,7 +4,6 @@ class StationInfo {
   final double ycoord;
   final String name;
   final String iconImage;
-  final String description;
   final String fulltext;
   final String video;
   final int next;
@@ -18,7 +17,6 @@ class StationInfo {
     this.ycoord = 0,
     this.name = "",
     this.iconImage = "",
-    this.description = "",
     this.fulltext = "",
     this.video = "",
     this.next = 0,
@@ -33,8 +31,6 @@ List<StationInfo> stationen = [
       ycoord: 6.754703,
       name: 'Torhaus',
       iconImage: 'assets/guideicons/torhaus.jpg',
-      description:
-          "Brudi! Das ist voll Krass und so. Vor allen dingen ist das mega alt und so. Kann man mega geil schauen premium Statue!",
       fulltext:
           '''Welch ein Anblick sich dem Besucher Knechtstedens bei seiner Ankunft offenbart! Das imposante Portal begrüßt ihn und weist ihm den Weg zum Gotteshaus, das schon aus der Ferne sichtbar ist und sich ihm in seiner vollen Pracht präsentiert. Dabei besuchten Pilgernde Knechtsteden bereits weit vor Errichtung dieses Torbogens, wie Sie ihn hier sehen.
 Einer alten Legende nach soll ein unbekannter Knecht aus dem nahegelegenen Dieplinghoven, dem heutigen Delhoven, noch vor der Klostergründung im Wald ein aus Holz geschnitztes Muttergottesbild gefunden und mit nach Hause genommen haben. Am folgenden Tag stand das Bild jedoch wieder an derselben Stelle im Wald. Als ihm dies noch einmal geschah und das Bild auch ein drittes Mal verschwand, soll er am Fundort zu Ehren der Mutter Gottes eine Kapelle errichtet haben. Deshalb soll der Ort „Knechtstein“, heute „Knechtsteden“, genannt worden sein. Diese Geschichte bleibt allerdings nur eine Legende, denn Historiker leiten die Herkunft des Namens „Knechtsteden“ von dem Wort „Knightstadium“ oder „Ritterknechtstätte“ ab. Das Abbild der Muttergottes wurde außerdem nie gefunden. So oder so blickt Knechtsteden auf eine sehr lange Wallfahrtsgeschichte zurück. Der Ort gilt zwar nicht als der größte Marienwallfahrtsort des Rheinlandes, zählt aber wohl zu den ältesten. Pilgernde kamen seit jeher vor allem aus Köln, aber auch aus dem Jülicher Land, aus Neuss und Düsseldorf und sogar vom fernen Niederrhein.
@@ -52,8 +48,6 @@ An den nächsten Stationen erfahren Sie über die beiden Epochen und Ordensgemei
       xcoord: 51.076585,
       ycoord: 6.753799,
       iconImage: 'assets/guideicons/norbertpark.png',
-      description:
-          "Brudi das ist viel krasser. Hier hat man Natur und so! Das ist mega geil für Luft weil weniger CO2.",
       fulltext:
           '''Wenden Sie Ihren Blick zunächst dem Norbertpark zu. Wurde die große weitläufige Grünfläche früher landwirtschaftlich genutzt, hat der Norbertpark heutzutage eine andere Funktion. Nicht selten findet gerade an warmen Sommertagen Unterricht des in Sichtweite befindlichen Norbert-Gymnasiums, zu dem wir später noch kommen, im Freien statt. Auch Veranstaltungen an der frischen Luft, etwa Gottesdienste oder zuletzt die Vergabe der Zeugnisse an die Abiturienten, erfreuen sich im Norbertpark besonderer Beliebtheit. Der Norbertpark fungiert als ein Ort, der zusammenführt. Seine Anziehungskraft bezieht er nicht zuletzt aufgrund des wunderschönen Ausblicks, den die Basilika offeriert.
 Bitte wenden Sie sich nun der Klosterbasilika zu und lassen Sie die Hecken hinter sich, sodass Sie einen freien Blick auf das Gotteshaus werfen können. Sie sehen das Monument einer bewegten Zeit des 12. Jahrhunderts. Die Klostergründung in Knechtsteden von 1130 geht nämlich zurück auf die Schenkung des ererbten Fronhofs des Domdekans zu Köln, Hugos von Sponheim, an die Prämonstratenser. Dieser wurde zu seiner Schenkung durch den Kölner Erzbischof Friedrich I. angeregt.
@@ -90,8 +84,6 @@ Der Heilige Norbert von Xanten war Zeuge einer bewegten Zeit. So wie auch sein Z
       ycoord: 6.752454033913944,
       name: 'Basilika',
       iconImage: 'assets/guideicons/basilika.png',
-      description:
-          "Alter! Das ist einfach Endgame. Vor allem ist die so groß. Deswegen haben die voll viel Weihrauch. Ich sag dir. Weihrauch bestes.",
       fulltext:
           '''Sie haben die Kirche nun von ihrer Westseite betreten. Halten Sie sich gleich beim Eintritt links, sodass Sie an der Westapsis stehend Halt machen. Lassen Sie das Innere der Klosterbasilika gern eine Weile auf sich wirken, bevor Sie sich dem großen Wandgemälde 
 an der Westapsis widmen.
@@ -139,7 +131,6 @@ Auch heute wirken die Spiritaner und verkünden die Frohbotschaft. In mehr als 6
     ycoord: 6.752528216135492,
     name: 'Kloster und Kreuzgang',
     iconImage: 'assets/guideicons/kloster.png',
-    description: "Kreuzgang einfach nur geil!",
     fulltext:
         '''Treten Sie nun durch die Tür in den Kreuzgang. Sollte die Tür verschlossen sein, dürfen wir Sie mit Bildern auf Ihrem Endgerät vertrösten. Setzen Sie sich in diesem Fall gern auf eine der Bänke in der Basilika. Lassen Sie den Gang auf sich wirken.
 Seit der ersten Klostergründung 529 durch den Heiligen Benedikt in Montecassino bestimmte die Gemeinschaftsregel den architektonischen Aufbau eines Klosters. Die Gemeinschaft der im Kloster lebenden Mönche oder Nonnen brauchte eine Kirche, die 
@@ -158,7 +149,6 @@ Sind wir bisher eher auf der Stelle getreten, möchten wir mit Ihnen nun etwas m
     ycoord: 6.752250162141913,
     name: 'Missionshaus und ehemaliges Pilgerhaus',
     iconImage: 'assets/guideicons/klosterladen.png',
-    description: "Brudi. Wenn ich Pilgern würde. Also auf Ernst. Dann hier!",
     fulltext:
         '''Mit Übernahme Knechtstedens durch die Spiritaner 1895 wurde im Jahr darauf auch eine Missionsschule eingerichtet, in der künftige Missionare ihre gymnasiale Ausbildung erhielten, die auf die schwierige Missionsarbeit vorbereiten sollte. Über 700 Missionare sind bis heute aus Knechtsteden in alle Welt geschickt worden, um die Frohbotschaft zu verkünden. Auf diese Weise nutzten die Spiritaner Knechtsteden bis 1947. Dies belebte den damals langsam aussterbenden Ort Knechtsteden erneut – die Spiritaner waren ein Segen. Die Klostergebäude, so auch das rosafarbene Missionshaus, lagen in Schutt und Asche. Die Spiritaner bauten sie in ihrem ursprünglichen spätbarocken Stil wieder auf. Heute zeigt die Fassade das Wappen der Spiritaner über der Pforte. Schauen Sie sich dieses einmal genauer an. Vor dem Dreieck, das symbolisch in der Ikonographie für die Dreifaltigkeit Gottes steht, ist eine Taube abgebildet. Die Taube symbolisiert den Heiligen Geist und verweist somit auf die „Gesellschaft vom Heiligen Geist“, den 1703 in Paris gegründeten Männerorden, der sich 1845 mit der „Missionsgesellschaft vom unbefleckten Herzen Mariens“, deren Gründer Libermann war, vereinigte. Die Kongregation findet sich im unbefleckten Herzen Mariens auf dem Wappen wieder.
 Drehen Sie sich nun zum Pilgerhaus auf der anderen Seite um. Es ist gewissermaßen der Beweis für die Wiederbelebung Knechtstedens. Seit die Spiritaner Knechtsteden wieder aufbauten, wurde es ein autarkes Dorf, das sich also selbst versorgen konnte. Dafür sorgte nicht nur die vorbildliche Landwirtschaft und die handwerkliche Ausbildung und Arbeit, sondern auch die Wiederaufnahme geistlichen Lebens in Knechtsteden. Der alte Pilgerort zur „Schmerzhaften Mutter Gottes“ erfuhr eine wahre 
@@ -174,7 +164,6 @@ An dieser Stelle möchten wir Sie ganz herzlich einladen, eine kurze Pause zu ma
     ycoord: 6.752786484128415,
     name: 'Alte Prälatur',
     iconImage: "assets/guideicons/praelatur.png",
-    description: "Sheesh digga. Was ist überhaupt Prälatur?",
     fulltext:
         '''Wir reisen an dieser Stelle noch einmal zurück in die Zeit der Prämonstratenser: Eine Prälatur, wie Sie sie vor sich sehen, bezeichnet das Amts- und Wohngebäude des Prälaten, eines Geistlichen in Vorrangstellung. Die alte Prälatur in Knechtsteden ist das ehemalige Abtshaus. Petrus Gillrath, den wir zum Ausgang aus der Basilika bereits erwähnten, ließ diese damals neue Prälatur im barocken Stil um 1670 errichten. Dies weist auf das veränderte klösterliche Leben im 17. und 18. Jahrhundert hin. Das meist reich ausgeschmückte und architektonisch besondere Abtshaus diente repräsentativen Zwecken. Der Bau der Prälatur unterstreicht das Selbstverständnis der Knechtstedener Äbte als fürstenähnliche Geistliche. Ab dem 18. Jahrhundert sind sogar Pontifikalhandlungen, Handlungen, die eigentlich Bischöfen vorbehalten sind, durch Knechtstedener Äbte nachgewiesen. So weihen jene etwa andere Äbte ihnen unterstellter Abteien, Kapellen, Altäre und vieles mehr. 
 Der Bau der Prälatur beweist aber auch, dass sich Knechtsteden von den Wirren der vergangenen Jahrhunderte des Glaubenskampfes erholt hatte. Offensichtlich stand das Kloster nicht nur wirtschaftlich stabil da, sondern konnte auch ein geordnetes Klosterleben nachweisen. Wer damals in den Orden eintrat, erhielt das weiße Ordensgewand der Prämonstratenser. Nach absolviertem Einführungsjahr, dem Noviziat, folgte das Theologie- und Philosophiestudium. Die Vorlesungen hielten die Knechtstedener bis 1615 selbst ab, dann nahmen sie am „Seminarum Norbertinum“ im Steinfelder Hof in Köln teil. Ein Dokument von 1639, also nicht einmal 30 Jahre vor der Weihe Gillraths, beziffert den Mitgliederstand in Knechtsteden auf 50 – 20 in der Abtei, 30 auswärts in 10 Pfarreien und 7 anderen Stiften. Der Abt hatte über seine Mitglieder des Konvents, die Konventualen, zu wachen, von denen er gewählt wurde. Er vergab Ämter, etwa das des Priors, der den Abt vertrat. Zum Erhalt und zur Pflege der Kirche brauchte es einen Sakristan. Den Chorgesang leitete der Cantor, dessen auf Pergament geschriebenes Missale noch heute in der historischen Bibliothek im Kreuzgang aufbewahrt wird. Die Verwaltung der umfassenden Besitztümer, Ländereien, Weinberge in Remagen, Getreide- und Ölmühlen, oblag dem Procurator. Handwerkliche oder landwirtschaftliche Arbeiten wurden von Laienbrüdern verrichtet. Die Abtei Knechtsteden konnte wirtschaftlich also nur florieren, wenn jeder seine Aufgaben angemessen und pflichtgemäß erfüllte.
@@ -189,8 +178,6 @@ Die Spiritaner nutzten dann die Prälatur zu Schulzwecken. Zwar hat der Vorstehe
       ycoord: 6.751702995818423,
       name: 'Brüderhof und Brüderhaus',
       iconImage: 'assets/guideicons/klosterhaus.png',
-      description:
-          "Geil hier zu wohnen! Gibt sogar Glasfaser. Das is das schnelle. Nur WLAN hab ich nicht.",
       fulltext:
           '''Abgebildet ist Josef mit dem Jesuskind auf dem Arm. Als Patron der Arbeiter steht er dort wohl genau richtig, da die Ordensbrüder in ihren meist handwerklichen Ausbildungsberufen auf die Mission vorbereitet wurden. Die Statue ziert bereits lange den Platz, auf dem Sie sich gerade befinden. Vermutlich ist sie ein Kunstwerk aus Paris, das das Kloster unmittelbar nach Einzug der Spiritaner in Knechtsteden erwarb. Der Brüderhof diente als Versammlungs- und Freizeitort. Hier wurden Andachten oder Feste, etwa das Joseffest, abgehalten. Auch als Ort des gemeinsamen Gebets wurde der Brüderhof genutzt.
 Durch die linke Baumreihe hindurch erkennen Sie das ehemalige Brüderhaus, seit es zum Bildungshaus umfunktioniert wurde auch Libermannhaus genannt, das auf Veranlassung des Superiors Pater Emil Clauss 1916 erbaut worden ist und heute von der Pension „Augenblick“ genutzt wird. Ganz offensichtlich brauchte es eine Unterkunft für die Ordensschüler und Brüder. Die Knechtstedener Ordensschule florierte. 1908 beherbergte Knechtsteden 16 Patres, 38 Brüder, 21 Seminaristen, 34 Brüderpostulanten und Novizen sowie 85 Schüler, die alle einen Platz zum Schlafen brauchten. Das Brüderhaus verweist daher auf den stark angewachsenen Orden in Knechtsteden. Zu Hochzeiten lebten 450 Seelen im Klosterdorf Knechtsteden. Anfangs schliefen die etwa 70 Brüder noch auf Strohsäcken, während die Patres immer schon im Haupthaus, dem Missionshaus, nächtigten. Mit der Zeit kamen Betten dazu, später hatten die Brüder jeweils eigene Zimmer.
@@ -204,7 +191,6 @@ Gehen Sie nun zum linken Gebäudeabschluss des ehemaligen Brüderhauses. Auffäl
       ycoord: 6.7514651485320645,
       name: 'Werkstätten',
       iconImage: 'assets/guideicons/werkstatt.png',
-      description: "Hast du kaputten Stuhl machen sie heile. Sogar for free",
       fulltext:
           '''Einen Handwerkertrakt gab es im Kloster Knechtsteden schon zu Zeiten der Prämonstratenser. Er war für die Selbstversorgung des Klosters essentiell und umschloss daher alle Gewerke. Diese Tradition wurde dann im Jahre 1895 fortgesetzt, als sich 
 die Spiritaner in Knechtsteden ansiedelten. Neben Landwirtschaft und Imkerei führten sie, oft als Meister ihres Fachs, Handwerkerbetriebe aller Art. Die Tage der Brüder waren somit immer geprägt von Gebet und Arbeit. Sie begannen schon um fünf 
@@ -226,7 +212,6 @@ Gehen Sie einmal weiter hinunter in die entgegengesetzte Richtung des Klosterlad
       ycoord: 6.75265162077709,
       name: 'Klosterfriedhof',
       iconImage: 'assets/guideicons/friedhof.jpg',
-      description: "Ruhe in frieden...",
       fulltext:
           '''Der sich vor Ihnen erstreckende Klosterfriedhof besteht aus zwei Teilen. Den vorderen Teil bildet der sogenannte Brüderfriedhof der Spiritaner, auf dem die verstorbenen Spiritanerbrüder und Patres ruhen. Die Patres sind Ordensleute mit Priesterweihe, die Spiritanerbrüder hingegen leben ihre Berufung als Handwerker, Landwirte, Ärzte, Künstler usw. Schauen Sie sich die Grabsteine in den Reihen links und rechts einmal genauer an. Auf ihnen sind unterschiedliche Kürzel zu erkennen. "F.C.S." - Das steht für Fervor (Eifer), Caritas (Liebe) und Sacrificium (Opfersinn) und bezieht sich auf die letzten Worte am Sterbebett des Ordensgründers der Spiritaner, Franz Maria Paul Libermanns. Die wenigen Grabsteine der Ruhenden, die dem Orden der Spiritaner nicht angehörten, zeigen das Kürzel „J.M.J.“. Jenes verweist auf Jesus, Maria und Josef. Alle Steine zeigen die Namen, die die Brüder bei Ordenseintritt bekamen. Neben dem Geburts- und Todesdatum ist außerdem das Datum der Priesterweihe verzeichnet, bei den Brüdern das des Ordenseintritts.
 Zu Ihrer Linken befindet sich eine Gedenkstätte für die in fremder Erde ruhenden Ordensleute der Spiritaner. Als Missionare sind diese weit in der Welt herumgekommen. Schauen Sie sich mal ihre verzeichneten Wirkungsorte an, wo sie schlussendlich ihren Frieden gefunden haben und verstorben sind. Es wird deutlich: Die Spiritaner agierten insbesondere in Afrika und Südamerika. Die Gedenktafel erinnert an alle Spiritaner, die nicht in Knechtsteden ihre letzte Ruhe fanden – so auch an jene, die in den Weltkriegen in fremder Erde gefallen waren.
@@ -256,7 +241,6 @@ ich zu Hause bin, [das] [f]reu[t] mich aber. Denn wir wollen doch das Tanzbein t
     ycoord: 6.750253239539649,
     name: 'Kräutergarten',
     iconImage: 'assets/guideicons/kraeutergarten.png',
-    description: "Geiles Zeug.",
     fulltext:
         '''Auch am Beispiel des vor Ihnen befindlichen Kräutergartens ist es erkennbar, dass die Spiritaner Knechtsteden im wahrsten Sinne des Wortes wiederbelebten. Seit die Spiritaner Knechtsteden wieder aufbauten, wurde es ein autarkes Dorf, das sich selbst versorgen konnte. Dafür sorgte auch die vorbildliche Landwirtschaft, die bis heute fortgeführt wird. Der heutige Kräutergarten wurde früher als Hühnerhof genutzt, um ihn herum waren Felder, Äcker, Obstwiesen. Bis zu 450 Personen konnte der landwirtschaftliche Betrieb damals mit seinen Erzeugnissen versorgen. Auch heute ist direkt nebenan eine große Streuobstwiese, um welche sich das Haus der Natur in Knechtsteden kümmert. Der Kräutergarten wird von einem ehrenamtlichen, engagierten Team von 12 Personen gepflegt und erhalten. Das Ziel des Kräutergartens ist der Erhalt aussterbender und seltener Kräuter, die Schaffung biologischer Vielfalt sowie die Kräuterkunde selbst. Nicht zuletzt soll der Kräutergarten seine Besucher einladen, in der stillen Natur zu verweilen.
 Sehen Sie sich mal um. Angelegt sind zehn Beete, die allesamt über die Holzspan-Wege begehbar sind. Auf den Bänken hier und dort können Sie sich auch hinsetzen und eine Weile die Ruhe genießen. Die Beete tragen unter anderem Küchenkräuter, Gemüse oder in Vergessenheit geratene Kräuter. Zwei Beete fallen jedoch besonders auf: Eines ist der Heiligen Maria, der Mutter Gottes, und eines den Symbolen des Christentums geweiht. In ersterem finden sich Kräuter, die sinnbildlich für die Eigenschaften der Gottesmutter Maria stehen. Kräuter der christlichen Symbolik wie beispielsweise Silbertaler sind entsprechend in letzterem Beet zu finden.
@@ -274,7 +258,6 @@ Schiffe ist jeweils ein hoher, hellgrauer Stein, welcher den zentralen Mittelpun
     ycoord: 6.751014940273164,
     name: 'Kulturhof Knechtsteden und ehemaliger Bullenstall',
     iconImage: 'assets/guideicons/kulturhof.png',
-    description: "Kultur für die ganze Familie. ",
     fulltext:
         '''Haben wir uns bisher eher den handwerklichen Berufen gewidmet, steht nun die Landwirtschaft Knechtstedens im Vordergrund, die hier, im ehemaligen Bullenstall, noch wiederzuerkennen ist, sowie Sie sich einmal umschauen. Der Landwirtschaftsbetrieb des Klosters wurde vor dem Ersten Weltkrieg von den Spiritanern für die Versorgung von etwa 500 Menschen errichtet. Die Zucht Knechtstedener Zuchtbullen war zu ihrer Zeit bekannt und wurde mehrfach prämiert. Als die Nationalsozialisten 1941 Knechtsteden beschlagnahmten, sollte der Hof zu einem landwirtschaftlichen Mustergut umgebaut werden. Einige Brüder wurden zur Zwangsarbeit verpflichtet, wodurch ihnen jedoch der Dienst an der Front erspart blieb. Andere Patres und Brüder wurden aus Knechtsteden ausgewiesen. Zu seinen Hochzeiten konnte sich das Kloster dank seiner Landwirtschaft vollkommen autark halten und sich selbst versorgen. Bis in die 1960er Jahre wurde der landwirtschaftliche Betrieb im Kloster durch die Brüder aufrechterhalten.
 Heute ist der Kulturhof, der ehemalige Bullenstall und die Theaterscheune, als Veranstaltungsort an den Klosterhof, unsere letzte Station, verpachtet. Dort finden Hochzeiten, Konzerte und auch Firmenfeiern statt. Die Felder rings um Knechtsteden werden von umliegenden Bauern bestellt. So bleibt Knechtsteden bis heute ein landwirtschaftlich geprägter Ort in der Region.''',
@@ -287,8 +270,6 @@ Heute ist der Kulturhof, der ehemalige Bullenstall und die Theaterscheune, als V
     ycoord: 6.751501836755097,
     name: 'Alte Feuerwehr',
     iconImage: 'assets/guideicons/feuerwehr.png',
-    description:
-        "Wenn es brennt, ist es doof. Deswegen waren die früher so: Lass mal Feuerwehr bauen. So also, begann der jetzige Kindergarten Stein auf Stein zu setzten.",
     fulltext:
         '''An dieser Stelle möchten wir noch einmal an den verheerenden Brand von 1869 erinnern, der die gesamte Klosteranlage zerstörte. Sie erinnern sich: Als die Armenverwaltung von Köln die Klosteranlage übernommen hatte, sollte Knechtsteden als psychiatrische Klinik 
 für etwa 400 Patienten genutzt werden. Einer großen Beliebtheit erfreute sich dieser Plan jedoch nicht. Insbesondere die Bauern der umliegenden Dörfer wollten die Heilanstalt verhindern. Zu therapeutischen Zwecken hätten die Patienten auf den umliegenden Feldern gearbeitet, sodass den Bauern die Pachtverträge gekündigt worden wären. Aus diesem Grund sagt man den Straberger Bauern nach, sie hätten den Brand von 1869 gelegt. Als Außenstehende den Brand zu löschen versuchten, sollen die Straberger jene daran gehindert haben. Einige Jahre nach dem Brand wurde jedoch die wahre Ursache bekannt. Ein alter Knecht hatte in der Scheune beim Anzünden einer Pfeife leichtsinnigerweise den Brand verschuldet. Sein Geheimnis trug der Mann bis an sein Lebensende mit sich. Erst auf dem Sterbebett hat er seine fahrlässige Tat reumütig gestanden. 
@@ -305,8 +286,6 @@ denen die Feuerwehrwagen und -geräte bereitstanden.''',
     ycoord: 6.753780118854125,
     name: 'Norbert-Gymnasium',
     iconImage: 'assets/guideicons/gymnasium.jpg',
-    description:
-        "Ähm. Ja. Ich liebe das Biotop und das FMT. Besuchen sie das Kabuff, da hängt auch ein Fernseher",
     fulltext:
         '''Knechtsteden erfüllen heute neben den Ordensmännern Optiker, Künstler, Biologen, Naturpädagogen, Landwirte, Musiker und Eventmanager und viele mehr mit Leben. Knechtsteden ist ein kulturelles Zentrum, etwa für Musikfestivals geworden, so auch für das überregional bekannte Festival der Alten Musik Knechtsteden. Viele Einrichtungen werden Sie während dieser Führung bemerkt oder kennengelernt haben.
 Die größte und bekannteste Einrichtung auf dem Gelände des Klosters Knechtsteden ist das Norbert-Gymnasium. Die Namensherkunft muss an dieser Stelle wohl nicht weiter erläutert werden. Nach dem Zweiten Weltkrieg, 1947, eröffneten die Spiritaner unter Pater Baumjohann die Missionsschule neu. Die Ordensschule füllte sich wieder und nahm den Unterricht erneut auf. Jedoch hielt diese letzte Blüte nicht lange: In den späten 1950er Jahren erlebte das kirchliche Leben in Deutschland eine Krise, die sich auch auf die Klöster auswirkte. Die Religion verlor langsam ihre gesellschaftliche Relevanz, Knechtsteden wurde leerer. Die Ordensberufe sind ausgeblieben, viele Arbeiten mussten eingestellt werden, manche Einrichtungen wurden aufgegeben. Eine Neuerfindung Knechtstedens musste her und sollte kommen. Das Internat wurde 1967 geschlossen, die Schule vom Norbert-Verein als gemeinnütziger katholischer Schulträger übernommen. Seitdem prägen die Schülerinnen und Schüler des Norbert-Gymnasiums das Klosterleben, gegenüber den verbliebenen zwei Dutzend Ordensleuten sind sie heute mit etwa 1300 Kindern und Heranwachsenden eindeutig in der Überzahl. Die Schülerinnen kamen jedoch erst zum Schuljahr 1990/91 Jahre hinzu, als das Norbert-Gymnasium sich auch für Mädchen öffnete. Wieder retteten die Spiritaner also Knechtsteden, das erneut lebendig wurde. Bis heute hat der Norbert-Verein einen ständigen Vertreter der Spiritaner in seinem Vorstand.
@@ -325,7 +304,6 @@ mitzugestalten. So bleibt die Knechtstedener Schule auf eine eigene Weise mit de
     ycoord: 6.757339425377802,
     name: 'Klosterhof',
     iconImage: 'assets/guideicons/klosterhof.png',
-    description: "Gutes Schnitzel und so",
     fulltext:
         '''1898, also kurz nach der Übernahme des Klosters durch den Spiritaner-Orden, wurde der Klosterhof erbaut. Dieses Projekt leitete Bruder Aristobul. Damals sind die Förderer und Mitglieder des „Vereins für das Missionshaus Knechtsteden“ regelmäßig gekommen, um den Fortschritt des Wiederaufbaus Knechtstedens unter der Leitung des Baumeisters und Bruders Ansberi zu begutachten, den sie finanzierten. Weil jene Förderer gern Zeit dort vorbrachten, wo sie den Wiederaufbau unterstützten, und sich nach Feierabend gesellig austauschten, schien ein Gasthaus notwendig, wo auch die Vereinssitzungen stattfinden konnten. Die Knechtstedener Spiritaner wollten sich für die großzügige Unterstützung der Vereinsmitglieder erkenntlich zeigen und begannen deshalb den Bau eines Restaurants mit Herberge. Auch diente der Klosterhof als Unterkunft für die Verwandten der Patres und Brüder, insbesondere die weiblichen, die ihre Familienmitglieder nur einmal im Jahr in Knechtsteden besuchen durften. Übernachtungen und Besuche innerhalb des Klosters waren dabei untersagt, weshalb der Klosterhof als Gasthaus nötig war.
 Weil Bruder Ansbert bereits aufgrund der anderen Restaurationen in Knechtsteden viel zu tun hatte, fragten die Spiritaner Bruder Aristobul Lülsdorf, der als Maurer gelernt hatte. Dieser stammte zwar aus Köln Langel, war aber in den Orden in Frankreich eingetreten und wirkte zu dieser Zeit in Paris und Portugal. Diese Rekrutierung aus dem Ausland war nicht unüblich, denn die Ordensleitung in Paris entsandte in der Anfangszeit Knechtstedens einige Brüder, um den Wiederaufbau zu unterstützen. Als der Bruder dann aus Portugal nach Knechtsteden gekommen war, konnte mit dem Bau begonnen werden. Geplant wurde der Klosterhof von dem Architekten Bruder Raffael. Dass der Bruder Aristobul Lülsdorf in Paris gelebt hat, wird durch den französischen Baustil deutlich, den man auch heute 
