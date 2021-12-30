@@ -1,77 +1,30 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:klosterguide/endcard.dart';
 import 'navigation.dart';
 import 'data.dart';
 import 'constants.dart';
 import 'package:video_player/video_player.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class DetailPage extends StatelessWidget {
-  final StationInfo stationInfo;
-
-  DetailPage({Key? key, required this.stationInfo}) : super(key: key);
-
-  late final VideoPlayerController _controller =
-      VideoPlayerController.asset(stationInfo.video);
-
-  void dispose() {
-    _controller.dispose();
-    dispose();
-  }
+class Endcard extends StatelessWidget {
+  Endcard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          if (stationInfo.next != 0) {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, a, b) => Navigation(
-                  stationInfo: stationen[stationInfo.next],
-                ),
-              ),
-            );
-          } else {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),
-            );
-          }
+          Navigator.pop(context);
         },
-        child: const Icon(Icons.navigate_next),
+        child: const Icon(Icons.home),
         backgroundColor: primarymapbuttoncolor,
       ),
+      backgroundColor: secondarybackgroundColor,
       body: SafeArea(
         bottom: false,
         child: Stack(
           children: <Widget>[
-            // Graue Stationsnummer im Hinergrund
-
-            Positioned(
-              top: 60,
-              left: 32,
-              child: Text(
-                stationInfo.position.toString(),
-                style: (stationInfo.position >
-                        9) // Falls Nummer größer als 9 ist die Zahl zweistellig
-                    ? TextStyle(
-                        letterSpacing:
-                            -25, // Daher, sollen die Zahlen dann näher an einander
-                        fontFamily: 'Avenir',
-                        fontSize: 247,
-                        color: primaryTextColor.withOpacity(0.08),
-                        fontWeight: FontWeight.w900,
-                      )
-                    : TextStyle(
-                        fontFamily: 'Avenir',
-                        fontSize: 247,
-                        color: primaryTextColor.withOpacity(0.08),
-                        fontWeight: FontWeight.w900,
-                      ),
-                textAlign: TextAlign.left,
-              ),
-            ),
             SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,12 +33,14 @@ class DetailPage extends StatelessWidget {
 
                   const SizedBox(height: 50),
                   Align(
-                      alignment: const Alignment(0.75, 0),
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.circular(72.5),
-                          child: Image.asset(stationInfo.iconImage,
-                              width: 150, height: 150))),
-
+                    alignment: Alignment.center,
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(72.5),
+                        child: Image.asset("assets/icons/app2.png",
+                            width: 250,
+                            height: 250,
+                            alignment: Alignment.center)),
+                  ),
                   // Stationsname, "Knechtsteden"
 
                   Padding(
@@ -93,9 +48,8 @@ class DetailPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        const SizedBox(height: 100),
                         Text(
-                          stationInfo.name,
+                          "Ende",
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 50,
@@ -105,7 +59,7 @@ class DetailPage extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         Text(
-                          'Knechtsteden',
+                          'Vielen Dank!',
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 31,
@@ -122,7 +76,7 @@ class DetailPage extends StatelessWidget {
                   // Video: Klassen unten
 
                   _StationAssetVideo(
-                    videopath: stationInfo.video,
+                    videopath: "assets/guidevideos/yee.mp4",
                   ),
                   // Detaillierte Beschreibung
 
@@ -142,7 +96,7 @@ class DetailPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                         child: Text(
-                          stationInfo.fulltext,
+                          "Comming soon", //TODO: Michael mach mal bitte, dass der String hier aus DE geladen wird.
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 20,
@@ -154,72 +108,65 @@ class DetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 35),
 
-                  // Zusatzinfos
-                  (stationInfo.zusatzvideo != "")
-                      ? Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Divider(color: Colors.black38),
-                            const SizedBox(height: 32),
-                            const Padding(
-                              // Überschrift Zusatzinfos:
+                  // Knöpfe
 
-                              padding: EdgeInsets.only(left: 15.0),
-                              child: Text(
-                                'Zusatzinfos',
-                                style: TextStyle(
-                                  fontFamily: 'Avenir',
-                                  fontSize: 25,
-                                  color: Color(0xff47455f),
-                                  fontWeight: FontWeight.w300,
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
+                  Text(
+                    'Links',
+                    style: TextStyle(
+                      fontFamily: 'Avenir',
+                      fontSize: 31,
+                      color: primaryTextColor,
+                      fontWeight: FontWeight.w300,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  const Divider(color: Colors.black38),
+                  const SizedBox(height: 25),
 
-                            // ========================================= Zusatzinfos
+                  Align(
+                    alignment: Alignment.center,
+                    child: ElevatedButton(
+                      child: const Text('Feedback und Kontakt'),
+                      onPressed: () {
+                        launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 35),
 
-                            // Video mit Zusatzinfos:
+                  Text(
+                    'Spenden',
+                    style: TextStyle(
+                      fontFamily: 'Avenir',
+                      fontSize: 31,
+                      color: primaryTextColor,
+                      fontWeight: FontWeight.w300,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  const Divider(color: Colors.black38),
+                  const SizedBox(height: 25),
 
-                            _StationAssetVideo(
-                              videopath: stationInfo.zusatzvideo,
-                            ),
-
-                            // Ausklappbarer Text mit Zusatzinfos:
-                            ExpansionTile(
-                              title: const Text(
-                                'Textfassung',
-                                style: TextStyle(
-                                  fontFamily: 'Avenir',
-                                  fontSize: 25,
-                                  color: Color(0xff47455f),
-                                  fontWeight: FontWeight.w300,
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                              children: <Widget>[
-                                const SizedBox(height: 32),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 32.0, right: 32.0),
-                                  child: Text(
-                                    stationInfo.zusatztext,
-                                    style: TextStyle(
-                                      fontFamily: 'Avenir',
-                                      fontSize: 20,
-                                      color: contentTextColor,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    textAlign: TextAlign.justify,
-                                  ),
-                                ),
-                                const SizedBox(height: 70),
-                              ],
-                            ),
-                          ],
-                        )
-                      : const SizedBox(height: 70),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      ElevatedButton(
+                        child: const Text('Missionshaus'),
+                        onPressed: () {
+                          launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text('Norbert-Gymnasium'),
+                        onPressed: () {
+                          launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                        },
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 75),
                 ],
               ),
             ),

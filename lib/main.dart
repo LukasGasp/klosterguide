@@ -31,7 +31,10 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate, // "
         GlobalCupertinoLocalizations.delegate,
       ], // "
-      supportedLocales: const [Locale('en', ''), Locale('de', '')],
+      supportedLocales: const [
+        Locale('de', ''),
+        //Locale('en', '')
+      ], // Erstmal nur Deutsch hinzufügen. Sonst Kommentar entfernen. (UNTEN AUCH!)
       title: 'Klosterführer',
       theme: ThemeData(
         primaryColor: Colors.white,
@@ -61,8 +64,11 @@ class DemoLocalizationsDelegate
   const DemoLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => ['en', 'de'].contains(
-      locale.languageCode); //Hier können neue Sprachen hinzugefügt werden
+  bool isSupported(Locale locale) => [
+        'de',
+        //'en',                           FÜR EN entfernen
+      ].contains(
+          locale.languageCode); //Hier können neue Sprachen hinzugefügt werden
 
   @override
   Future<DemoLocalizations> load(Locale locale) async {

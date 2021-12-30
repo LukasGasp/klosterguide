@@ -8,6 +8,7 @@ Color primarybuttoncolor = const Color(0xFF34675c);
 Color primarymapbuttoncolor = const Color(0xFF324851); // Kontrast zu Grün
 Color primaryTextColor = const Color(0xFF414C6B);
 Color secondaryTextColor = const Color(0xFFE4979E);
+Color secondarybackgroundColor = const Color(0xFFa4bbc4);
 
 // Detail Page
 
