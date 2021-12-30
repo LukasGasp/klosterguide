@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 // General
 
-Color appbarcolor = const Color(0xFF34675c);
-Color primarybackgroundcolor = const Color(0xFFacbbc1);
+Color appbarcolor = const Color(0xff518d80);
+Color primarybackgroundcolor = const Color(0xffbfcfd2);
 Color primarybuttoncolor = const Color(0xFF34675c);
 Color primarymapbuttoncolor = const Color(0xFF324851); // Kontrast zu Grün
 Color primaryTextColor = const Color(0xFF414C6B);
 Color secondaryTextColor = const Color(0xFFE4979E);
-Color secondarybackgroundColor = const Color(0xFFa4bbc4);
+Color secondarybackgroundColor = const Color(0xffffffff);
 
 // Detail Page
 

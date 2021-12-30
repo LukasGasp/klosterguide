@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'main.dart';
 import 'navigation.dart';
 import 'data.dart';
 import 'constants.dart';
@@ -96,7 +97,7 @@ class Endcard extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                         child: Text(
-                          "Comming soon", //TODO: Michael mach mal bitte, dass der String hier aus DE geladen wird.
+                          DemoLocalizations.of(context)!.getText("endcard"), //Es wird sogar ein womöglicher englischer Text geladen
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 20,
