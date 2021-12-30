@@ -212,11 +212,12 @@ class DetailPage extends StatelessWidget {
                                     textAlign: TextAlign.justify,
                                   ),
                                 ),
+                                const SizedBox(height: 70),
                               ],
                             ),
                           ],
                         )
-                      : Container()
+                      : const SizedBox(height: 70),
                 ],
               ),
             ),
