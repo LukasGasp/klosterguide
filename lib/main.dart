@@ -127,19 +127,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 buildunifinishedcard(
                     "assets/home/002.jpg",
                     DemoLocalizations.of(context)!
-                        .getText("text2"), //"?? "Error"" entfernt
-                    'Lassen sie sich durch Knechtsteden führen',
+                        .getText("mainscreentext1"), //"?? "Error"" entfernt
+                    DemoLocalizations.of(context)!
+                        .getText("mainscreentext1info"),
                     "tour"),
                 const SizedBox(height: 50),
 
                 // Discover
-                buildunifinishedcard("assets/home/083.jpg", "Entdecken",
-                    "Entdecken sie die vielen Wunder", "discover"),
+                buildunifinishedcard("assets/home/083.jpg", DemoLocalizations.of(context)!
+                    .getText("mainscreentext2"),
+                    DemoLocalizations.of(context)!
+                        .getText("mainscreentext2info"), "discover"),
                 const SizedBox(height: 50),
 
                 // Längenschnitt
-                buildunifinishedcard("assets/home/039.jpg", "Karte",
-                    "Eine detaillierte Karte Knechtstedens", "map")
+                buildunifinishedcard("assets/home/039.jpg", DemoLocalizations.of(context)!
+                    .getText("mainscreentext3"),
+                    DemoLocalizations.of(context)!
+                        .getText("mainscreentext3info"), "map")
               ],
             ),
           ),
