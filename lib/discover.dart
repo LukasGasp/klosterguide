@@ -116,17 +116,6 @@ class _HomePageState extends State<Discoverpage> {
                                           textAlign: TextAlign.left,
                                         ),
                                       ),
-                                      // Untertitel
-                                      Text(
-                                        'Knechtsteden',
-                                        style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 23,
-                                          color: primaryTextColor,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
                                       const SizedBox(height: 32),
 
                                       // Mehr erfahren Link

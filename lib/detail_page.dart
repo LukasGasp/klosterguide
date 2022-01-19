@@ -98,19 +98,9 @@ class DetailPage extends StatelessWidget {
                           stationInfo.name,
                           style: TextStyle(
                             fontFamily: 'Avenir',
-                            fontSize: 50,
+                            fontSize: 43,
                             color: primaryTextColor,
                             fontWeight: FontWeight.w900,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                        Text(
-                          'Knechtsteden',
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 31,
-                            color: primaryTextColor,
-                            fontWeight: FontWeight.w300,
                           ),
                           textAlign: TextAlign.left,
                         ),

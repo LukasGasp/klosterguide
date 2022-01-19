@@ -129,7 +129,7 @@ Auch heute wirken die Spiritaner und verkünden die Frohbotschaft. In mehr als 6
     4,
     xcoord: 51.07686539713518,
     ycoord: 6.752528216135492,
-    name: 'Kloster und Kreuzgang',
+    name: 'Kloster\nund Kreuzgang',
     iconImage: 'assets/guideicons/kloster.png',
     fulltext:
         '''Treten Sie nun durch die Tür in den Kreuzgang. Sollte die Tür verschlossen sein, dürfen wir Sie mit Bildern auf Ihrem Endgerät vertrösten. Setzen Sie sich in diesem Fall gern auf eine der Bänke in der Basilika. Lassen Sie den Gang auf sich wirken.
@@ -147,7 +147,7 @@ Sind wir bisher eher auf der Stelle getreten, möchten wir mit Ihnen nun etwas m
     5,
     xcoord: 51.07721720328484,
     ycoord: 6.752250162141913,
-    name: 'Missionshaus und ehemaliges Pilgerhaus',
+    name: 'Missionshaus\nund Pilgerhaus',
     iconImage: 'assets/guideicons/klosterladen.png',
     fulltext:
         '''Mit Übernahme Knechtstedens durch die Spiritaner 1895 wurde im Jahr darauf auch eine Missionsschule eingerichtet, in der künftige Missionare ihre gymnasiale Ausbildung erhielten, die auf die schwierige Missionsarbeit vorbereiten sollte. Über 700 Missionare sind bis heute aus Knechtsteden in alle Welt geschickt worden, um die Frohbotschaft zu verkünden. Auf diese Weise nutzten die Spiritaner Knechtsteden bis 1947. Dies belebte den damals langsam aussterbenden Ort Knechtsteden erneut – die Spiritaner waren ein Segen. Die Klostergebäude, so auch das rosafarbene Missionshaus, lagen in Schutt und Asche. Die Spiritaner bauten sie in ihrem ursprünglichen spätbarocken Stil wieder auf. Heute zeigt die Fassade das Wappen der Spiritaner über der Pforte. Schauen Sie sich dieses einmal genauer an. Vor dem Dreieck, das symbolisch in der Ikonographie für die Dreifaltigkeit Gottes steht, ist eine Taube abgebildet. Die Taube symbolisiert den Heiligen Geist und verweist somit auf die „Gesellschaft vom Heiligen Geist“, den 1703 in Paris gegründeten Männerorden, der sich 1845 mit der „Missionsgesellschaft vom unbefleckten Herzen Mariens“, deren Gründer Libermann war, vereinigte. Die Kongregation findet sich im unbefleckten Herzen Mariens auf dem Wappen wieder.
@@ -176,7 +176,7 @@ Die Spiritaner nutzten dann die Prälatur zu Schulzwecken. Zwar hat der Vorstehe
   StationInfo(7,
       xcoord: 51.07753653918695,
       ycoord: 6.751702995818423,
-      name: 'Brüderhof und Brüderhaus',
+      name: 'Brüderhof\nund Brüderhaus',
       iconImage: 'assets/guideicons/klosterhaus.png',
       fulltext:
           '''Abgebildet ist Josef mit dem Jesuskind auf dem Arm. Als Patron der Arbeiter steht er dort wohl genau richtig, da die Ordensbrüder in ihren meist handwerklichen Ausbildungsberufen auf die Mission vorbereitet wurden. Die Statue ziert bereits lange den Platz, auf dem Sie sich gerade befinden. Vermutlich ist sie ein Kunstwerk aus Paris, das das Kloster unmittelbar nach Einzug der Spiritaner in Knechtsteden erwarb. Der Brüderhof diente als Versammlungs- und Freizeitort. Hier wurden Andachten oder Feste, etwa das Joseffest, abgehalten. Auch als Ort des gemeinsamen Gebets wurde der Brüderhof genutzt.
@@ -256,7 +256,7 @@ Schiffe ist jeweils ein hoher, hellgrauer Stein, welcher den zentralen Mittelpun
     11,
     xcoord: 51.07852443117225,
     ycoord: 6.751014940273164,
-    name: 'Kulturhof Knechtsteden und ehemaliger Bullenstall',
+    name: 'Kulturhof\nund Bullenstall',
     iconImage: 'assets/guideicons/kulturhof.png',
     fulltext:
         '''Haben wir uns bisher eher den handwerklichen Berufen gewidmet, steht nun die Landwirtschaft Knechtstedens im Vordergrund, die hier, im ehemaligen Bullenstall, noch wiederzuerkennen ist, sowie Sie sich einmal umschauen. Der Landwirtschaftsbetrieb des Klosters wurde vor dem Ersten Weltkrieg von den Spiritanern für die Versorgung von etwa 500 Menschen errichtet. Die Zucht Knechtstedener Zuchtbullen war zu ihrer Zeit bekannt und wurde mehrfach prämiert. Als die Nationalsozialisten 1941 Knechtsteden beschlagnahmten, sollte der Hof zu einem landwirtschaftlichen Mustergut umgebaut werden. Einige Brüder wurden zur Zwangsarbeit verpflichtet, wodurch ihnen jedoch der Dienst an der Front erspart blieb. Andere Patres und Brüder wurden aus Knechtsteden ausgewiesen. Zu seinen Hochzeiten konnte sich das Kloster dank seiner Landwirtschaft vollkommen autark halten und sich selbst versorgen. Bis in die 1960er Jahre wurde der landwirtschaftliche Betrieb im Kloster durch die Brüder aufrechterhalten.
