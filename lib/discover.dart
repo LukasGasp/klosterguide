@@ -4,6 +4,7 @@ import 'constants.dart';
 import 'package:card_swiper/card_swiper.dart';
 
 import 'data.dart';
+import 'main.dart';
 
 class Discoverpage extends StatefulWidget {
   const Discoverpage({Key? key}) : super(key: key);
@@ -41,7 +42,8 @@ class _HomePageState extends State<Discoverpage> {
                 child: Column(
                   children: <Widget>[
                     Text(
-                      'Entdecken',
+                      DemoLocalizations.of(context)!
+                          .getText("mainscreentext2"),
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 44,
@@ -122,7 +124,8 @@ class _HomePageState extends State<Discoverpage> {
                                       Row(
                                         children: <Widget>[
                                           Text(
-                                            'Mehr erfahren',
+                                            DemoLocalizations.of(context)!
+                                                .getText("mehrerfahren"),
                                             style: TextStyle(
                                               fontFamily: 'Avenir',
                                               fontSize: 18,
