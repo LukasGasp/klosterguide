@@ -4,7 +4,7 @@ This project is in early progress. First official release around March.
 
 ## Info:
 
-Sollten sie den Release runter laden: Die bisherigen Videos/Texte sind nur zu Test zwecken...
+Sollten sie den Release herunterladen: Die bisherigen Videos/Texte sind nur zu Testzwecken...
 
 ## Contact
 
