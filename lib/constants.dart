@@ -20,3 +20,8 @@ Color zusatzinfotitel = const Color(0xff47455f);
 Color titleTextColor = Colors.white;
 Color discovergradientStartColor = const Color(0xFFBBC7CC); // Hintergrund
 Color discovergradientEndColor = const Color(0xFF0050AC);   // Hintergrund
+
+
+//Endcard
+Color endcardTextfassungColor = const Color(0xff47455f);
+Color endcardTextColor = Colors.black38;

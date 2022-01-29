@@ -69,7 +69,7 @@ class Endcard extends StatelessWidget {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        const Divider(color: Colors.black38),
+                        Divider(color: endcardTextColor),
                       ],
                     ),
                   ),
@@ -82,12 +82,12 @@ class Endcard extends StatelessWidget {
                   // Detaillierte Beschreibung
 
                   ExpansionTile(
-                    title: const Text(
+                    title: Text(
                       'Textfassung',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 25,
-                        color: Color(0xff47455f),
+                        color: endcardTextfassungColor,
                         fontWeight: FontWeight.w300,
                       ),
                       textAlign: TextAlign.left,
@@ -123,7 +123,7 @@ class Endcard extends StatelessWidget {
                     ),
                     textAlign: TextAlign.left,
                   ),
-                  const Divider(color: Colors.black38),
+                  Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
 
                   Align(
@@ -147,7 +147,7 @@ class Endcard extends StatelessWidget {
                     ),
                     textAlign: TextAlign.left,
                   ),
-                  const Divider(color: Colors.black38),
+                  Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
 
                   Row(
