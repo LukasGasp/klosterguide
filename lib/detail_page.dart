@@ -21,27 +21,63 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          if (stationInfo.next != 0) {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, a, b) => Navigation(
-                  stationInfo: stationen[stationInfo.next],
-                ),
-              ),
-            );
-          } else {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),
-            );
-          }
-        },
-        child: const Icon(Icons.navigate_next),
-        backgroundColor: primarymapbuttoncolor,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //Position wird von der Mitte des Bildschirms berechnet
+      floatingActionButton:
+      Padding(
+        padding: const EdgeInsets.all(16.0), //Padding Größe
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+            children: <Widget>[
+
+            FloatingActionButton(
+              onPressed: () {
+                if (stationInfo.next != 0) {
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, a, b) => Navigation(
+                        stationInfo: stationen[stationInfo.next],
+                      ),
+                    ),
+                  );
+                } else {
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),
+                  );
+                }
+              },
+              child: const Icon(Icons.navigate_before),
+              backgroundColor: primarymapbuttoncolor,
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                if (stationInfo.next != 0) {
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, a, b) => Navigation(
+                        stationInfo: stationen[stationInfo.next],
+                      ),
+                    ),
+                  );
+                } else {
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),
+                  );
+                }
+              },
+              child: const Icon(Icons.navigate_next),
+              backgroundColor: primarymapbuttoncolor,
+            ),
+
+          ],
+        ),
       ),
+
+
+
       body: SafeArea(
         bottom: false,
         child: Stack(

@@ -43,21 +43,45 @@ class Navigation extends StatelessWidget {
         ),
 
         // Weiter Knopf
-
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, a, b) => DetailPage(
-                  stationInfo: stationen[stationInfo.position - 1],
-                ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //Position wird von der Mitte des Bildschirms berechnet
+        floatingActionButton: Padding(
+        padding: const EdgeInsets.all(16.0), //Padding Größe
+          child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+              children: <Widget>[
+              FloatingActionButton( //Button links
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, a, b) => DetailPage(
+                        stationInfo: stationen[stationInfo.position - 3], //Nummerrierung muss überarbeitet werden
+                      ),
+                    ),
+                  );
+                },
+                child: const Icon(Icons.navigate_before),
+                backgroundColor: primarymapbuttoncolor,
               ),
-            );
-          },
-          child: const Icon(Icons.navigate_next),
-          backgroundColor: primarymapbuttoncolor,
+              FloatingActionButton( //Buttons rechts
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, a, b) => DetailPage(
+                        stationInfo: stationen[stationInfo.position - 1],
+                      ),
+                    ),
+                  );
+                },
+                child: const Icon(Icons.navigate_next),
+                backgroundColor: primarymapbuttoncolor,
+              ),
+            ],
+          ),
         ),
+
+
         body: Stack(
           children: [
             FlutterMap(
