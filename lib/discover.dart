@@ -128,14 +128,15 @@ class _HomePageState extends State<Discoverpage> {
                                                 .getText("mehrerfahren"),
                                             style: TextStyle(
                                               fontFamily: 'Avenir',
-                                              fontSize: 18,
+                                              fontSize: 21,
                                               color: secondaryTextColor,
                                               fontWeight: FontWeight.w500,
                                             ),
-                                            textAlign: TextAlign.left,
+                                            textAlign: TextAlign.left, //Ist immer links, egal was man schreibt
                                           ),
                                           Icon(
                                             Icons.arrow_forward,
+                                            size: 32,
                                             color: secondaryTextColor,
                                           ),
                                         ],
