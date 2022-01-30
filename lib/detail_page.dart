@@ -31,7 +31,8 @@ class DetailPage extends StatelessWidget {
 
             FloatingActionButton(
               onPressed: () {
-                if (stationInfo.next != 0) {
+
+                if (stationInfo.next != 0 && stationInfo.next != 1) {
                   Navigator.pushReplacement(
                     context,
                     PageRouteBuilder(
@@ -40,7 +41,17 @@ class DetailPage extends StatelessWidget {
                       ),
                     ),
                   );
-                } else {
+                } else if (stationInfo.next == 1){     //HIER KÖNNTE MAN AUCH INS MENÜ ZURÜCKKOMMEN
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, a, b) => Navigation(
+                        stationInfo: stationen[2],
+                      ),
+                    ),
+                  );
+                }
+                else {
                   Navigator.pushReplacement(
                     context,
                     PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),

@@ -43,7 +43,7 @@ class Navigation extends StatelessWidget {
         ),
 
         // Weiter Knopf
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //Position wird von der Mitte des Bildschirms berechnet
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //ButtonPosition wird von der Mitte des Bildschirms berechnet
         floatingActionButton: Padding(
         padding: const EdgeInsets.all(16.0), //Padding Größe
           child: Row(
