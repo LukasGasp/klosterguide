@@ -46,7 +46,7 @@ class DetailPage extends StatelessWidget {
                     context,
                     PageRouteBuilder(
                       pageBuilder: (context, a, b) => Navigation(
-                        stationInfo: stationen[2],
+                        stationInfo: stationen[2],   //Wieso ist Station 1 hier Nummer 2?
                       ),
                     ),
                   );
