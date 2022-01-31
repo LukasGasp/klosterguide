@@ -42,8 +42,7 @@ class _HomePageState extends State<Discoverpage> {
                 child: Column(
                   children: <Widget>[
                     Text(
-                      DemoLocalizations.of(context)!
-                          .getText("mainscreentext2"),
+                      DemoLocalizations.of(context)!.getText("mainscreentext2"),
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 44,
@@ -66,11 +65,13 @@ class _HomePageState extends State<Discoverpage> {
                   layout: SwiperLayout.STACK,
                   pagination: const SwiperPagination(
                     builder: DotSwiperPaginationBuilder(
-                        color: Colors.white,
-                        activeColor: Colors.white,
-                        activeSize: 20,
-                        space: 5),
+                      color: Colors.white,
+                      activeColor: Colors.white,
+                      activeSize: 20,
+                      space: 5,
+                    ),
                   ),
+                  duration: 200,
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
@@ -80,8 +81,10 @@ class _HomePageState extends State<Discoverpage> {
                             pageBuilder: (context, a, b) => DetailPage(
                               stationInfo: stationen[index],
                             ),
-                            transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
-                            transitionDuration: Duration(milliseconds: animationlength),
+                            transitionsBuilder: (context, anim, b, child) =>
+                                FadeTransition(opacity: anim, child: child),
+                            transitionDuration:
+                                Duration(milliseconds: animationlength),
                           ),
                         );
                       },
@@ -134,7 +137,8 @@ class _HomePageState extends State<Discoverpage> {
                                               color: secondaryTextColor,
                                               fontWeight: FontWeight.w500,
                                             ),
-                                            textAlign: TextAlign.left, //Ist immer links, egal was man schreibt
+                                            textAlign: TextAlign
+                                                .left, //Ist immer links, egal was man schreibt
                                           ),
                                           Icon(
                                             Icons.arrow_forward,
