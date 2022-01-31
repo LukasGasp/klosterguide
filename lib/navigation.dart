@@ -16,30 +16,35 @@ class Navigation extends StatelessWidget {
   const Navigation({Key? key, required this.stationInfo}) : super(key: key);
 
   Widget _getZurueckButton(BuildContext context) {
-    if (stationInfo.position==1) {   //Bei Station 1 verschwindet der Button
-      return FloatingActionButton(onPressed: () {  },backgroundColor: primarymapbuttoncolor.withOpacity(1),); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
-    } else {
-      return FloatingActionButton( //Button links
+    if (stationInfo.position == 1) {
+      //Bei Station 1 verschwindet der Button
+      return FloatingActionButton(
         onPressed: () {
-          if(stationInfo.position!=1) {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, a, b) =>
-                    DetailPage(
-                      stationInfo: stationen[stationInfo.position - 2], //Nummerrierung muss überarbeitet werden
-                    ),
-                transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
-                transitionDuration: Duration(milliseconds: animationlength),
+          Navigator.pop(context);
+        },
+        child: const Icon(Icons.home),
+        backgroundColor: primarymapbuttoncolor,
+      ); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
+    } else {
+      return FloatingActionButton(
+        //Button links
+        onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, a, b) => DetailPage(
+                stationInfo: stationen[stationInfo.position -
+                    2], //Nummerrierung muss überarbeitet werden
               ),
-            );
-          }
-
+              transitionsBuilder: (context, anim, b, child) =>
+                  FadeTransition(opacity: anim, child: child),
+              transitionDuration: Duration(milliseconds: animationlength),
+            ),
+          );
         },
         child: const Icon(Icons.navigate_before),
         backgroundColor: primarymapbuttoncolor,
       );
-
     }
   }
 
@@ -72,14 +77,17 @@ class Navigation extends StatelessWidget {
 
         // Weiter Knopf
 
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //ButtonPosition wird von der Mitte des Bildschirms berechnet
+        floatingActionButtonLocation: FloatingActionButtonLocation
+            .centerDocked, //ButtonPosition wird von der Mitte des Bildschirms berechnet
         floatingActionButton: Padding(
-        padding: const EdgeInsets.all(16.0), //Padding Größe
+          padding: const EdgeInsets.all(16.0), //Padding Größe
           child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
-              children: <Widget>[
+            mainAxisAlignment:
+                MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+            children: <Widget>[
               _getZurueckButton(context),
-              FloatingActionButton( //Buttons rechts
+              FloatingActionButton(
+                //Buttons rechts
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
@@ -87,8 +95,10 @@ class Navigation extends StatelessWidget {
                       pageBuilder: (context, a, b) => DetailPage(
                         stationInfo: stationen[stationInfo.position - 1],
                       ),
-                      transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
-                      transitionDuration: Duration(milliseconds: animationlength),
+                      transitionsBuilder: (context, anim, b, child) =>
+                          FadeTransition(opacity: anim, child: child),
+                      transitionDuration:
+                          Duration(milliseconds: animationlength),
                     ),
                   );
                 },
@@ -98,8 +108,6 @@ class Navigation extends StatelessWidget {
             ],
           ),
         ),
-
-
         body: Stack(
           children: [
             FlutterMap(

@@ -19,62 +19,48 @@ class DetailPage extends StatelessWidget {
   }
 
   Widget _getZurueckButton(BuildContext context) {
-    if (stationInfo.position==1) {   //Bei Station 1 verschwindet der Button
-      return FloatingActionButton(onPressed: () {  },backgroundColor: primarymapbuttoncolor.withOpacity(1),); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
-    } else {
-      return FloatingActionButton(
-        onPressed: () {
-
-          if (stationInfo.next != 0 && stationInfo.next != 1) {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, a, b) => Navigation(
-                  stationInfo: stationen[stationInfo.next-1],
-                ),
-                transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
-                transitionDuration: Duration(milliseconds: animationlength),
+    return FloatingActionButton(
+      onPressed: () {
+        if (stationInfo.next != 0) {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, a, b) => Navigation(
+                stationInfo: stationen[stationInfo.next - 1],
               ),
-            );
-          } else if (stationInfo.next == 1){     //HIER KÖNNTE MAN AUCH INS MENÜ ZURÜCKKOMMEN
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, a, b) => Navigation(
-                  stationInfo: stationen[2],   ///Wieso ist Station 1 hier Nummer 2?
-                ),
-                transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
-                transitionDuration: Duration(milliseconds: animationlength),
-              ),
-            );
-          }
-          else {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(pageBuilder: (context, a, b) => Endcard(),
-                transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
-                transitionDuration: Duration(milliseconds: animationlength),),
-            );
-          }
-        },
-        child: const Icon(Icons.navigate_before),
-        backgroundColor: primarymapbuttoncolor,
-      );
-
-    }
+              transitionsBuilder: (context, anim, b, child) =>
+                  FadeTransition(opacity: anim, child: child),
+              transitionDuration: Duration(milliseconds: animationlength),
+            ),
+          );
+        } else {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, a, b) => Endcard(),
+              transitionsBuilder: (context, anim, b, child) =>
+                  FadeTransition(opacity: anim, child: child),
+              transitionDuration: Duration(milliseconds: animationlength),
+            ),
+          );
+        }
+      },
+      child: const Icon(Icons.navigate_before),
+      backgroundColor: primarymapbuttoncolor,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //Position wird von der Mitte des Bildschirms berechnet
-      floatingActionButton:
-      Padding(
+      floatingActionButtonLocation: FloatingActionButtonLocation
+          .centerDocked, //Position wird von der Mitte des Bildschirms berechnet
+      floatingActionButton: Padding(
         padding: const EdgeInsets.all(16.0), //Padding Größe
         child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
-            children: <Widget>[
-
+          mainAxisAlignment:
+              MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+          children: <Widget>[
             _getZurueckButton(context),
             FloatingActionButton(
               onPressed: () {
@@ -85,16 +71,21 @@ class DetailPage extends StatelessWidget {
                       pageBuilder: (context, a, b) => Navigation(
                         stationInfo: stationen[stationInfo.next],
                       ),
-                      transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
-                      transitionDuration: Duration(milliseconds: animationlength),
+                      transitionsBuilder: (context, anim, b, child) =>
+                          FadeTransition(opacity: anim, child: child),
+                      transitionDuration:
+                          Duration(milliseconds: animationlength),
                     ),
                   );
                 } else {
                   Navigator.pushReplacement(
                     context,
-                    PageRouteBuilder(pageBuilder: (context, a, b) => Endcard(),
-                      transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
-                      transitionDuration: Duration(milliseconds: animationlength),
+                    PageRouteBuilder(
+                      pageBuilder: (context, a, b) => Endcard(),
+                      transitionsBuilder: (context, anim, b, child) =>
+                          FadeTransition(opacity: anim, child: child),
+                      transitionDuration:
+                          Duration(milliseconds: animationlength),
                     ),
                   );
                 }
@@ -102,12 +93,9 @@ class DetailPage extends StatelessWidget {
               child: const Icon(Icons.navigate_next),
               backgroundColor: primarymapbuttoncolor,
             ),
-
           ],
         ),
       ),
-
-
 
       body: SafeArea(
         bottom: false,
