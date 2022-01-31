@@ -80,6 +80,8 @@ class _HomePageState extends State<Discoverpage> {
                             pageBuilder: (context, a, b) => DetailPage(
                               stationInfo: stationen[index],
                             ),
+                            transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
+                            transitionDuration: Duration(milliseconds: animationlength),
                           ),
                         );
                       },

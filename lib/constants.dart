@@ -9,6 +9,7 @@ Color primarymapbuttoncolor = const Color(0xFF324851); // Kontrast zu Grün
 Color primaryTextColor = const Color(0xFF414C6B);
 Color secondaryTextColor = const Color(0xFFE4979E);
 Color secondarybackgroundColor = const Color(0xffffffff);
+int animationlength = 200;
 
 // Detail Page
 

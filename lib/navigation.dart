@@ -16,12 +16,12 @@ class Navigation extends StatelessWidget {
   const Navigation({Key? key, required this.stationInfo}) : super(key: key);
 
   Widget _getZurueckButton(BuildContext context) {
-    if (stationInfo.position==2) {   //Bei Station 1 verschwindet der Button
+    if (stationInfo.position==1) {   //Bei Station 1 verschwindet der Button
       return FloatingActionButton(onPressed: () {  },backgroundColor: primarymapbuttoncolor.withOpacity(1),); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
     } else {
       return FloatingActionButton( //Button links
         onPressed: () {
-          if(stationInfo.position!=2) { ///Station 1 ist mal wieder als Position 2 bezeichnet
+          if(stationInfo.position!=1) {
             Navigator.pushReplacement(
               context,
               PageRouteBuilder(
@@ -29,6 +29,8 @@ class Navigation extends StatelessWidget {
                     DetailPage(
                       stationInfo: stationen[stationInfo.position - 2], //Nummerrierung muss überarbeitet werden
                     ),
+                transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
+                transitionDuration: Duration(milliseconds: animationlength),
               ),
             );
           }
@@ -85,6 +87,8 @@ class Navigation extends StatelessWidget {
                       pageBuilder: (context, a, b) => DetailPage(
                         stationInfo: stationen[stationInfo.position - 1],
                       ),
+                      transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
+                      transitionDuration: Duration(milliseconds: animationlength),
                     ),
                   );
                 },

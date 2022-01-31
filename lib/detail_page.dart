@@ -32,6 +32,8 @@ class DetailPage extends StatelessWidget {
                 pageBuilder: (context, a, b) => Navigation(
                   stationInfo: stationen[stationInfo.next-1],
                 ),
+                transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
+                transitionDuration: Duration(milliseconds: animationlength),
               ),
             );
           } else if (stationInfo.next == 1){     //HIER KÖNNTE MAN AUCH INS MENÜ ZURÜCKKOMMEN
@@ -41,13 +43,17 @@ class DetailPage extends StatelessWidget {
                 pageBuilder: (context, a, b) => Navigation(
                   stationInfo: stationen[2],   ///Wieso ist Station 1 hier Nummer 2?
                 ),
+                transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
+                transitionDuration: Duration(milliseconds: animationlength),
               ),
             );
           }
           else {
             Navigator.pushReplacement(
               context,
-              PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),
+              PageRouteBuilder(pageBuilder: (context, a, b) => Endcard(),
+                transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
+                transitionDuration: Duration(milliseconds: animationlength),),
             );
           }
         },
@@ -79,12 +85,17 @@ class DetailPage extends StatelessWidget {
                       pageBuilder: (context, a, b) => Navigation(
                         stationInfo: stationen[stationInfo.next],
                       ),
+                      transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
+                      transitionDuration: Duration(milliseconds: animationlength),
                     ),
                   );
                 } else {
                   Navigator.pushReplacement(
                     context,
-                    PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),
+                    PageRouteBuilder(pageBuilder: (context, a, b) => Endcard(),
+                      transitionsBuilder: (context, anim, b, child) => FadeTransition(opacity: anim, child: child),
+                      transitionDuration: Duration(milliseconds: animationlength),
+                    ),
                   );
                 }
               },
