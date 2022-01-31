@@ -103,51 +103,69 @@ class _HomePageState extends State<Discoverpage> {
                                 color: Colors.white,
                                 child: Padding(
                                   padding: const EdgeInsets.all(32.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      const SizedBox(height: 100),
+                                  child: IntrinsicHeight(
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.stretch,
+                                      children: [
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              const SizedBox(height: 75),
 
-                                      // StationsName
-                                      FittedBox(
-                                        fit: BoxFit.contain,
-                                        child: Text(
-                                          stationen[index].name,
-                                          style: const TextStyle(
-                                            fontFamily: 'Avenir',
-                                            fontSize: 40,
-                                            color: Color(0xff47455f),
-                                            fontWeight: FontWeight.w900,
+                                              // StationsName
+                                              Container(
+                                                height:
+                                                    70, // Größendefinition der einzelnen Karten
+                                                child: FittedBox(
+                                                  fit: BoxFit.contain,
+                                                  child: Text(
+                                                    stationen[index].name,
+                                                    style: const TextStyle(
+                                                      fontFamily: 'Avenir',
+                                                      fontSize: 40,
+                                                      color: Color(0xff47455f),
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(height: 16),
+
+                                              // Mehr erfahren Link
+                                              Row(
+                                                children: <Widget>[
+                                                  Text(
+                                                    DemoLocalizations.of(
+                                                            context)!
+                                                        .getText(
+                                                            "mehrerfahren"),
+                                                    style: TextStyle(
+                                                      fontFamily: 'Avenir',
+                                                      fontSize: 21,
+                                                      color: secondaryTextColor,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                    textAlign: TextAlign
+                                                        .left, //Ist immer links, egal was man schreibt
+                                                  ),
+                                                  Icon(
+                                                    Icons.arrow_forward,
+                                                    size: 32,
+                                                    color: secondaryTextColor,
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
                                           ),
-                                          textAlign: TextAlign.left,
                                         ),
-                                      ),
-                                      const SizedBox(height: 32),
-
-                                      // Mehr erfahren Link
-                                      Row(
-                                        children: <Widget>[
-                                          Text(
-                                            DemoLocalizations.of(context)!
-                                                .getText("mehrerfahren"),
-                                            style: TextStyle(
-                                              fontFamily: 'Avenir',
-                                              fontSize: 21,
-                                              color: secondaryTextColor,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            textAlign: TextAlign
-                                                .left, //Ist immer links, egal was man schreibt
-                                          ),
-                                          Icon(
-                                            Icons.arrow_forward,
-                                            size: 32,
-                                            color: secondaryTextColor,
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
