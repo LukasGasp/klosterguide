@@ -27,7 +27,7 @@ class Navigation extends StatelessWidget {
               PageRouteBuilder(
                 pageBuilder: (context, a, b) =>
                     DetailPage(
-                      stationInfo: stationen[stationInfo.position - 3], //Nummerrierung muss überarbeitet werden
+                      stationInfo: stationen[stationInfo.position - 2], //Nummerrierung muss überarbeitet werden
                     ),
               ),
             );

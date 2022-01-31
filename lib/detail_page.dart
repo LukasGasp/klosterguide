@@ -30,7 +30,7 @@ class DetailPage extends StatelessWidget {
               context,
               PageRouteBuilder(
                 pageBuilder: (context, a, b) => Navigation(
-                  stationInfo: stationen[stationInfo.next],
+                  stationInfo: stationen[stationInfo.next-1],
                 ),
               ),
             );
