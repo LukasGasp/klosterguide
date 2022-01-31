@@ -15,6 +15,32 @@ class Navigation extends StatelessWidget {
 
   const Navigation({Key? key, required this.stationInfo}) : super(key: key);
 
+  Widget _getZurueckButton(BuildContext context) {
+    if (stationInfo.position==2) {   //Bei Station 1 verschwindet der Button
+      return FloatingActionButton(onPressed: () {  },backgroundColor: primarymapbuttoncolor.withOpacity(1),); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
+    } else {
+      return FloatingActionButton( //Button links
+        onPressed: () {
+          if(stationInfo.position!=2) { ///Station 1 ist mal wieder als Position 2 bezeichnet
+            Navigator.pushReplacement(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (context, a, b) =>
+                    DetailPage(
+                      stationInfo: stationen[stationInfo.position - 3], //Nummerrierung muss überarbeitet werden
+                    ),
+              ),
+            );
+          }
+
+        },
+        child: const Icon(Icons.navigate_before),
+        backgroundColor: primarymapbuttoncolor,
+      );
+
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     StreamSubscription<Position> positionStream =
@@ -43,26 +69,14 @@ class Navigation extends StatelessWidget {
         ),
 
         // Weiter Knopf
+
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //ButtonPosition wird von der Mitte des Bildschirms berechnet
         floatingActionButton: Padding(
         padding: const EdgeInsets.all(16.0), //Padding Größe
           child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
               children: <Widget>[
-              FloatingActionButton( //Button links
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, a, b) => DetailPage(
-                        stationInfo: stationen[stationInfo.position - 3], //Nummerrierung muss überarbeitet werden
-                      ),
-                    ),
-                  );
-                },
-                child: const Icon(Icons.navigate_before),
-                backgroundColor: primarymapbuttoncolor,
-              ),
+              _getZurueckButton(context),
               FloatingActionButton( //Buttons rechts
                 onPressed: () {
                   Navigator.pushReplacement(

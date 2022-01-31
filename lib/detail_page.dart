@@ -18,6 +18,46 @@ class DetailPage extends StatelessWidget {
     dispose();
   }
 
+  Widget _getZurueckButton(BuildContext context) {
+    if (stationInfo.position==1) {   //Bei Station 1 verschwindet der Button
+      return FloatingActionButton(onPressed: () {  },backgroundColor: primarymapbuttoncolor.withOpacity(1),); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
+    } else {
+      return FloatingActionButton(
+        onPressed: () {
+
+          if (stationInfo.next != 0 && stationInfo.next != 1) {
+            Navigator.pushReplacement(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (context, a, b) => Navigation(
+                  stationInfo: stationen[stationInfo.next],
+                ),
+              ),
+            );
+          } else if (stationInfo.next == 1){     //HIER KÖNNTE MAN AUCH INS MENÜ ZURÜCKKOMMEN
+            Navigator.pushReplacement(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (context, a, b) => Navigation(
+                  stationInfo: stationen[2],   ///Wieso ist Station 1 hier Nummer 2?
+                ),
+              ),
+            );
+          }
+          else {
+            Navigator.pushReplacement(
+              context,
+              PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),
+            );
+          }
+        },
+        child: const Icon(Icons.navigate_before),
+        backgroundColor: primarymapbuttoncolor,
+      );
+
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,38 +69,7 @@ class DetailPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
             children: <Widget>[
 
-            FloatingActionButton(
-              onPressed: () {
-
-                if (stationInfo.next != 0 && stationInfo.next != 1) {
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, a, b) => Navigation(
-                        stationInfo: stationen[stationInfo.next],
-                      ),
-                    ),
-                  );
-                } else if (stationInfo.next == 1){     //HIER KÖNNTE MAN AUCH INS MENÜ ZURÜCKKOMMEN
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, a, b) => Navigation(
-                        stationInfo: stationen[2],   //Wieso ist Station 1 hier Nummer 2?
-                      ),
-                    ),
-                  );
-                }
-                else {
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(pageBuilder: (context, a, b) => Endcard()),
-                  );
-                }
-              },
-              child: const Icon(Icons.navigate_before),
-              backgroundColor: primarymapbuttoncolor,
-            ),
+            _getZurueckButton(context),
             FloatingActionButton(
               onPressed: () {
                 if (stationInfo.next != 0) {
