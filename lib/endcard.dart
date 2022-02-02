@@ -121,13 +121,14 @@ class Endcard extends StatelessWidget {
                         fontFamily: 'Avenir',
                         fontSize: 31,
                         color: primaryTextColor,
-                        fontWeight: FontWeight.w300,
+                        fontWeight: FontWeight.w400,
                       ),
                       textAlign: TextAlign.left,
                     ),
-                    const Icon
+                    Icon
                       (
                       Icons.insert_link,
+                      color: primaryTextColor,
                     ),
                   ]
                 ),
@@ -167,11 +168,11 @@ class Endcard extends StatelessWidget {
                         fontFamily: 'Avenir',
                         fontSize: 31,
                         color: primaryTextColor,
-                        fontWeight: FontWeight.w300,
+                        fontWeight: FontWeight.w400,
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      const Icon(Icons.sentiment_satisfied_rounded),
+                    Icon(Icons.sentiment_satisfied_rounded,color: primaryTextColor,),
                     ]
                   ),
                   Divider(color: endcardTextColor),
