@@ -21,11 +21,13 @@ class Karte extends StatelessWidget {
           point: LatLng(stationen[i].xcoord, stationen[i].ycoord),
           builder: (ctx) => InkWell(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     PageRouteBuilder(
                       pageBuilder: (context, a, b) => DetailPage(
-                        stationInfo: stationen[i],
+                        //stationInfo: stationen[i],
+                        tourlist: [i],
+                        index: 0,
                       ),
                     ),
                   );

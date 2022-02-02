@@ -2,31 +2,67 @@ import 'package:flutter/material.dart';
 import 'package:klosterguide/endcard.dart';
 import 'navigation.dart';
 import 'data.dart';
+import 'touren.dart';
 import 'constants.dart';
 import 'package:video_player/video_player.dart';
 
 class DetailPage extends StatelessWidget {
-  final StationInfo stationInfo;
+  final List tourlist;
+  final int index;
 
-  DetailPage({Key? key, required this.stationInfo}) : super(key: key);
+  DetailPage({Key? key, required this.tourlist, required this.index})
+      : super(key: key);
 
-  late final VideoPlayerController _controller =
-      VideoPlayerController.asset(stationInfo.video);
-
-  void dispose() {
-    _controller.dispose();
-    dispose();
+  Widget _getWeiterButton(BuildContext context, StationInfo stationInfo) {
+    return Visibility(
+        child: FloatingActionButton(
+          onPressed: () {
+            if (tourlist[index + 1] != 0) {
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, a, b) => Navigation(
+                    tourlist: tourlist,
+                    index: index + 1,
+                  ),
+                  transitionsBuilder: (context, anim, b, child) =>
+                      FadeTransition(opacity: anim, child: child),
+                  transitionDuration: Duration(milliseconds: animationlength),
+                ),
+              );
+            } else {
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, a, b) => Endcard(),
+                  transitionsBuilder: (context, anim, b, child) =>
+                      FadeTransition(opacity: anim, child: child),
+                  transitionDuration: Duration(milliseconds: animationlength),
+                ),
+              );
+            }
+          },
+          child: const Icon(Icons.navigate_next),
+          backgroundColor: primarymapbuttoncolor,
+        ),
+        visible: tourlist.length >= 2 ? true : false);
   }
 
-  Widget _getZurueckButton(BuildContext context) {
+  Widget _getZurueckButton(BuildContext context, StationInfo stationInfo) {
     return FloatingActionButton(
       onPressed: () {
-        if (stationInfo.next != 0) {
+        if (tourlist.length <= 2) {
+          // Falls die Liste kürzer ist, handelt es sich um keine Tour. Daher, gibt es keine Vorherige Station
+          Navigator.pop(context);
+          return;
+        }
+        if (tourlist[index + 1] != 0) {
           Navigator.pushReplacement(
             context,
             PageRouteBuilder(
               pageBuilder: (context, a, b) => Navigation(
-                stationInfo: stationen[stationInfo.next - 1],
+                tourlist: tourlist,
+                index: index,
               ),
               transitionsBuilder: (context, anim, b, child) =>
                   FadeTransition(opacity: anim, child: child),
@@ -52,6 +88,10 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final StationInfo stationInfo = stationen[tourlist[index]];
+
+    late final VideoPlayerController _controller =
+        VideoPlayerController.asset(stationInfo.video);
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation
           .centerDocked, //Position wird von der Mitte des Bildschirms berechnet
@@ -61,38 +101,8 @@ class DetailPage extends StatelessWidget {
           mainAxisAlignment:
               MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
           children: <Widget>[
-            _getZurueckButton(context),
-            FloatingActionButton(
-              onPressed: () {
-                if (stationInfo.next != 0) {
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, a, b) => Navigation(
-                        stationInfo: stationen[stationInfo.next],
-                      ),
-                      transitionsBuilder: (context, anim, b, child) =>
-                          FadeTransition(opacity: anim, child: child),
-                      transitionDuration:
-                          Duration(milliseconds: animationlength),
-                    ),
-                  );
-                } else {
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, a, b) => Endcard(),
-                      transitionsBuilder: (context, anim, b, child) =>
-                          FadeTransition(opacity: anim, child: child),
-                      transitionDuration:
-                          Duration(milliseconds: animationlength),
-                    ),
-                  );
-                }
-              },
-              child: const Icon(Icons.navigate_next),
-              backgroundColor: primarymapbuttoncolor,
-            ),
+            _getZurueckButton(context, stationInfo),
+            _getWeiterButton(context, stationInfo),
           ],
         ),
       ),

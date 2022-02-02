@@ -134,17 +134,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(height: 50),
 
                 // Discover
-                buildunifinishedcard("assets/home/083.jpg", DemoLocalizations.of(context)!
-                    .getText("mainscreentext2"),
+                buildunifinishedcard(
+                    "assets/home/083.jpg",
+                    DemoLocalizations.of(context)!.getText("mainscreentext2"),
                     DemoLocalizations.of(context)!
-                        .getText("mainscreentext2info"), "discover"),
+                        .getText("mainscreentext2info"),
+                    "discover"),
                 const SizedBox(height: 50),
 
                 // Längenschnitt
-                buildunifinishedcard("assets/home/039.jpg", DemoLocalizations.of(context)!
-                    .getText("mainscreentext3"),
+                buildunifinishedcard(
+                    "assets/home/039.jpg",
+                    DemoLocalizations.of(context)!.getText("mainscreentext3"),
                     DemoLocalizations.of(context)!
-                        .getText("mainscreentext3info"), "map")
+                        .getText("mainscreentext3info"),
+                    "map")
               ],
             ),
           ),

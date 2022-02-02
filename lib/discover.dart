@@ -79,7 +79,9 @@ class _HomePageState extends State<Discoverpage> {
                           context,
                           PageRouteBuilder(
                             pageBuilder: (context, a, b) => DetailPage(
-                              stationInfo: stationen[index],
+                              //stationInfo: stationen[index],
+                              tourlist: [index],
+                              index: 0,
                             ),
                             transitionsBuilder: (context, anim, b, child) =>
                                 FadeTransition(opacity: anim, child: child),

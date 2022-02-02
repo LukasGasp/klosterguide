@@ -11,12 +11,14 @@ import 'data.dart';
 import 'detail_page.dart';
 
 class Navigation extends StatelessWidget {
-  final StationInfo stationInfo;
+  final List tourlist;
+  final int index;
 
-  const Navigation({Key? key, required this.stationInfo}) : super(key: key);
+  Navigation({Key? key, required this.tourlist, required this.index})
+      : super(key: key);
 
-  Widget _getZurueckButton(BuildContext context) {
-    if (stationInfo.position == 1) {
+  Widget _getZurueckButton(BuildContext context, StationInfo stationInfo) {
+    if (index == 0) {
       //Bei Station 1 verschwindet der Button
       return FloatingActionButton(
         onPressed: () {
@@ -33,8 +35,9 @@ class Navigation extends StatelessWidget {
             context,
             PageRouteBuilder(
               pageBuilder: (context, a, b) => DetailPage(
-                stationInfo: stationen[stationInfo.position -
-                    2], //Nummerrierung muss überarbeitet werden
+                //stationInfo: stationen[stationInfo.position -2], //Nummerrierung muss überarbeitet werden
+                tourlist: tourlist,
+                index: index - 1,
               ),
               transitionsBuilder: (context, anim, b, child) =>
                   FadeTransition(opacity: anim, child: child),
@@ -50,6 +53,7 @@ class Navigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final StationInfo stationInfo = stationen[tourlist[index]];
     StreamSubscription<Position> positionStream =
         Geolocator.getPositionStream(desiredAccuracy: LocationAccuracy.high)
             .listen((Position position) {
@@ -85,7 +89,7 @@ class Navigation extends StatelessWidget {
             mainAxisAlignment:
                 MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
             children: <Widget>[
-              _getZurueckButton(context),
+              _getZurueckButton(context, stationInfo),
               FloatingActionButton(
                 //Buttons rechts
                 onPressed: () {
@@ -93,7 +97,9 @@ class Navigation extends StatelessWidget {
                     context,
                     PageRouteBuilder(
                       pageBuilder: (context, a, b) => DetailPage(
-                        stationInfo: stationen[stationInfo.position - 1],
+                        //stationInfo: stationen[stationInfo.position - 1],
+                        tourlist: tourlist,
+                        index: index,
                       ),
                       transitionsBuilder: (context, anim, b, child) =>
                           FadeTransition(opacity: anim, child: child),
