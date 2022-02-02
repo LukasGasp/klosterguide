@@ -66,6 +66,9 @@ flutter:
     - assets/strings/de.json
     - assets/icons/
 
+      #https://www.norbert-gymnasium.de/ 2.2.2022
+    #https://www.spiritaner.de/niederlassungen/missionshaus-knechtsteden.php 2.2.2022
+
     - assets/map/14/8498/
     - assets/map/14/8499/
 
