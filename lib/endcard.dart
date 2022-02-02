@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'navigation.dart';
@@ -128,12 +129,26 @@ class Endcard extends StatelessWidget {
 
                   Align(
                     alignment: Alignment.center,
-                    child: ElevatedButton(
-                      child: Text(DemoLocalizations.of(context)!.getText("endcard1stbutton"),),
-                      onPressed: () {
-                        launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-                      },
-                    ),
+                    child: SizedBox( //Feedback und Kontakt
+                      height: 60,
+                      width: 100,
+                      child: FloatingActionButton(
+                        backgroundColor: primarybuttoncolor,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),)),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(DemoLocalizations.of(context)!.getText("endcard1stbutton"),textAlign: TextAlign.center,)
+                        ),
+                        onPressed: () {
+                          launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                        },
+                      ),
+                    )
                   ),
                   const SizedBox(height: 35),
 
@@ -150,21 +165,50 @@ class Endcard extends StatelessWidget {
                   Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
 
-                  Row(
+                  Row( //Spenden
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      ElevatedButton(
-                        child: Text(DemoLocalizations.of(context)!.getText("endcard2ndbutton"),),
-                        onPressed: () {
-                          launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-                        },
+                      SizedBox(
+                        height: 50,
+                        width: 130,
+                        child: FloatingActionButton(
+                          backgroundColor: primarybuttoncolor,
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),)),
+                          child: Container(
+                              alignment: Alignment.center,
+                              child: Text(DemoLocalizations.of(context)!.getText("endcard2ndbutton"),textAlign: TextAlign.center,)
+                          ),
+                          onPressed: () {
+                            launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                          },
+                        ),
                       ),
-                      ElevatedButton(
-                        child: Text(DemoLocalizations.of(context)!.getText("endcard3rdbutton"),),
-                        onPressed: () {
-                          launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-                        },
-                      )
+                      SizedBox(
+                        height: 50,
+                        width: 170,
+                        child: FloatingActionButton(
+                          backgroundColor: primarybuttoncolor,
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),)),
+                          child: Container(
+                              alignment: Alignment.center,
+                              child: Text(DemoLocalizations.of(context)!.getText("endcard3rdbutton"),textAlign: TextAlign.center,)
+                          ),
+                          onPressed: () {
+                            launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                          },
+                        ),
+                      ),
+
                     ],
                   ),
                   const SizedBox(height: 75),
