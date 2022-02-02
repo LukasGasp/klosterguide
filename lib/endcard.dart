@@ -114,7 +114,7 @@ class Endcard extends StatelessWidget {
                   // Knöpfe
 
                   Text(
-                    'Links',
+                    "  " + DemoLocalizations.of(context)!.getText("links"),
                     style: TextStyle(
                       fontFamily: 'Avenir',
                       fontSize: 31,
@@ -129,7 +129,7 @@ class Endcard extends StatelessWidget {
                   Align(
                     alignment: Alignment.center,
                     child: ElevatedButton(
-                      child: const Text('Feedback und Kontakt'),
+                      child: Text(DemoLocalizations.of(context)!.getText("endcard1stbutton"),),
                       onPressed: () {
                         launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
                       },
@@ -138,7 +138,7 @@ class Endcard extends StatelessWidget {
                   const SizedBox(height: 35),
 
                   Text(
-                    'Spenden',
+                    "  " + DemoLocalizations.of(context)!.getText("endcard2ndtitle"),
                     style: TextStyle(
                       fontFamily: 'Avenir',
                       fontSize: 31,
@@ -154,13 +154,13 @@ class Endcard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       ElevatedButton(
-                        child: const Text('Missionshaus'),
+                        child: Text(DemoLocalizations.of(context)!.getText("endcard2ndbutton"),),
                         onPressed: () {
                           launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
                         },
                       ),
                       ElevatedButton(
-                        child: const Text('Norbert-Gymnasium'),
+                        child: Text(DemoLocalizations.of(context)!.getText("endcard3rdbutton"),),
                         onPressed: () {
                           launch("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
                         },
