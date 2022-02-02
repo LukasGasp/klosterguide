@@ -113,17 +113,25 @@ class Endcard extends StatelessWidget {
                   const SizedBox(height: 35),
 
                   // Knöpfe
-
-                  Text(
-                    "  " + DemoLocalizations.of(context)!.getText("links"),
-                    style: TextStyle(
-                      fontFamily: 'Avenir',
-                      fontSize: 31,
-                      color: primaryTextColor,
-                      fontWeight: FontWeight.w300,
+              Row(
+                  children:<Widget>[
+                    Text(
+                      "  " + DemoLocalizations.of(context)!.getText("links") + " ",
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 31,
+                        color: primaryTextColor,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
-                  ),
+                    const Icon
+                      (
+                      Icons.insert_link,
+                    ),
+                  ]
+                ),
+
                   Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
 
@@ -151,16 +159,20 @@ class Endcard extends StatelessWidget {
                     )
                   ),
                   const SizedBox(height: 35),
-
-                  Text(
-                    "  " + DemoLocalizations.of(context)!.getText("endcard2ndtitle"),
-                    style: TextStyle(
-                      fontFamily: 'Avenir',
-                      fontSize: 31,
-                      color: primaryTextColor,
-                      fontWeight: FontWeight.w300,
-                    ),
-                    textAlign: TextAlign.left,
+                Row(
+                  children:<Widget>[
+                    Text(
+                      "  " + DemoLocalizations.of(context)!.getText("endcard2ndtitle") + " ",
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 31,
+                        color: primaryTextColor,
+                        fontWeight: FontWeight.w300,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      const Icon(Icons.sentiment_satisfied_rounded),
+                    ]
                   ),
                   Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
@@ -209,6 +221,25 @@ class Endcard extends StatelessWidget {
                         ),
                       ),
 
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+
+                    children: <Widget>[
+                      Container(
+
+                        child: Image.asset('assets/icons/logo-missionshaus.png'),
+                        height: 100,
+                        width: 200,
+                      ),
+                      Container(
+
+                        child: Image.asset('assets/icons/logo-ngk-campus.png'),
+                        height: 100,
+                        width: 100,
+                      ),
                     ],
                   ),
                   const SizedBox(height: 75),
