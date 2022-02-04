@@ -115,28 +115,28 @@ class _HomePageState extends State<Discoverpage> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: <Widget>[
-                                              const SizedBox(height: 75),
+                                              const SizedBox(height: 100),
 
                                               // StationsName
-                                              Container(
+                                              SizedBox(
                                                 height:
                                                     70, // Größendefinition der einzelnen Karten
-                                                child: FittedBox(
-                                                  fit: BoxFit.contain,
+                                                //child: FittedBox(
+                                                  //fit: BoxFit.contain,
                                                   child: Text(
                                                     stationen[index].name,
-                                                    style: const TextStyle(
+                                                    style: TextStyle(
                                                       fontFamily: 'Avenir',
-                                                      fontSize: 40,
-                                                      color: Color(0xff47455f),
+                                                      fontSize: 30,
+                                                      color: primaryTextColor,
                                                       fontWeight:
                                                           FontWeight.w900,
                                                     ),
                                                     textAlign: TextAlign.left,
                                                   ),
-                                                ),
+                                                //),
                                               ),
-                                              const SizedBox(height: 16),
+                                              const SizedBox(height: 6),
 
                                               // Mehr erfahren Link
                                               Row(
