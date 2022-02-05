@@ -6,11 +6,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 //Sprache ende
+
 import 'package:flutter/material.dart';
 import 'guideactivity.dart';
 import 'discover.dart';
 import 'map.dart';
 import 'constants.dart';
+import 'videoplayer_fullscreen.dart';
+import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Native...
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +25,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // Rotation festlegen
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+
     return MaterialApp(
       locale: const Locale("de"), //Hier Sprache angeben
       localizationsDelegates: const [
@@ -173,7 +183,6 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case "discover":
         {
-          //Body of value2
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const Discoverpage()));
         }
