@@ -483,7 +483,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
           child: Container(
             color: Colors.white38,
             padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-            child: Text('${controller.value.playbackSpeed}x'),
+            child: Text("Tempo"),
           ),
         ),
       );
