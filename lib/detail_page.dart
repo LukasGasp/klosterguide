@@ -153,7 +153,7 @@ class DetailPage extends StatelessWidget {
                           child: Image.asset(stationInfo.iconImage,
                               width: 150, height: 150))),
 
-                  // Stationsname, "Knechtsteden"
+                  // Stationsname
 
                   Padding(
                     padding: const EdgeInsets.all(32.0),
@@ -274,6 +274,7 @@ class DetailPage extends StatelessWidget {
                                 const SizedBox(height: 70),
                               ],
                             ),
+                            const SizedBox(height: 70),
                           ],
                         )
                       : const SizedBox(height: 70),
