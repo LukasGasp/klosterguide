@@ -121,20 +121,19 @@ class _HomePageState extends State<Discoverpage> {
                                               SizedBox(
                                                 height:
                                                     70, // Größendefinition der einzelnen Karten
-                                                //child: FittedBox(
-                                                  //fit: BoxFit.contain,
-                                                  child: Text(
-                                                    stationen[index].name,
-                                                    style: TextStyle(
-                                                      fontFamily: 'Avenir',
-                                                      fontSize: 30,
-                                                      color: primaryTextColor,
-                                                      fontWeight:
-                                                          FontWeight.w900,
-                                                    ),
-                                                    textAlign: TextAlign.left,
-                                                  ),
-                                                //),
+                                                child: FittedBox(
+                                                    fit: BoxFit.fitWidth,
+                                                    child: Text(
+                                                      stationen[index].name,
+                                                      style: TextStyle(
+                                                        fontFamily: 'Avenir',
+                                                        fontSize: 30,
+                                                        color: primaryTextColor,
+                                                        fontWeight:
+                                                            FontWeight.w900,
+                                                      ),
+                                                      textAlign: TextAlign.left,
+                                                    )),
                                               ),
                                               const SizedBox(height: 6),
 
