@@ -10,7 +10,7 @@ import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Nati
 import 'videoplayer_fullscreen.dart';
 
 class Endcard extends StatelessWidget {
-  Endcard({Key? key}) : super(key: key);
+  const Endcard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class Endcard extends StatelessWidget {
 
                   // Video: Klassen unten
 
-                  _StationAssetVideo(
+                  const _StationAssetVideo(
                     videopath: "assets/guidevideos/yee.mp4",
                   ),
                   // Detaillierte Beschreibung

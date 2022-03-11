@@ -41,7 +41,7 @@ Die zwei Figuren an den Seiten stehen in gewisser Weise für zwei Epochen Knecht
 Rechts zu sehen ist Franz Maria Paul Libermann, einer der beiden Gründer der Missionsgesellschaft vom Heiligen Geist und vom Unbefleckten Herzen Mariens, kurz und umgangssprachlich: des Spiritaner-Ordens. Das ausgehende 18. und das 19. Jahrhundert brachten Knechtsteden schwere Zeiten. Mit der Übernahme der Klosteranlage durch die Spiritaner 1895 beherbergte Knechtsteden endlich wieder Ordensmänner, nachdem die Französische Revolution und napoleonische Säkularisation der ehemaligen Abtei der Prämonstratenser 1802 den 
 Garaus gemacht hatten. Mit der rechten Figur des Torbogens besinnen sich die Knechtstedener also auf den zweiten Orden, der in Knechtsteden ansässig wurde. Abgebildet ist Libermann mit einem Kreuz in seiner Hand. Dies ist ein Verweis auf seine besondere Spiritualität und die Kongregation, die er gegründet hat. Zur Erklärung: Eine Kongregation ist eine religiöse Vereinigung, die sich im Unterschied zu den älteren Ordensgemeinschaften, die hauptsächlich auf das innerklösterliche Leben ausgerichtet waren, vor allem Aufgaben außerhalb des Klosters widmet. Libermann verschrieb sich dabei der Missionierung in Afrika, auf die das Kreuz in seiner Hand hindeuten soll.
 An den nächsten Stationen erfahren Sie über die beiden Epochen und Ordensgemeinschaften Knechtstedens mehr. Beginnen Sie hierfür die Navigation zur nächsten Station.''',
-      video: "assets/guidevideos/yee.mp4",
+      video: "assets/guidevideos/1_Torbogen.mp4",
       next: 1),
   StationInfo(2,
       name: 'Norbertpark',

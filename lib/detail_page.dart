@@ -460,7 +460,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
       );
 
   Widget buildIndicator() => Container(
-        margin: EdgeInsets.all(8).copyWith(right: 0),
+        margin: const EdgeInsets.all(8).copyWith(right: 0),
         height: 16,
         child: VideoProgressIndicator(
           controller,
@@ -482,8 +482,8 @@ class AdvancedOverlayWidget extends StatelessWidget {
               .toList(),
           child: Container(
             color: Colors.white38,
-            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-            child: Text("Tempo"),
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            child: const Text("Tempo"),
           ),
         ),
       );
@@ -492,7 +492,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
       ? Container()
       : Container(
           color: Colors.black26,
-          child: Center(
+          child: const Center(
             child: Icon(
               Icons.play_arrow,
               color: Colors.white,
