@@ -100,7 +100,7 @@ class Guideactivity extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => DetailPage(
+                  builder: (context) => const DetailPage(
                         tourlist: tour_kurz,
                         index: 0,
                       )));

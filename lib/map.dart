@@ -61,7 +61,7 @@ class Karte extends StatelessWidget {
                     6.74033047115352,
                   ),
                   nePanBoundary: LatLng(51.0834444361947, 6.76094581023449),
-                  plugins: [LocationMarkerPlugin()]),
+                  plugins: [const LocationMarkerPlugin()]),
               layers: [
                 TileLayerOptions(
                   tileProvider: const AssetTileProvider(),

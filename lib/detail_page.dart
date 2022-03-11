@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
   final List tourlist;
   final int index;
 
-  DetailPage({Key? key, required this.tourlist, required this.index})
+  const DetailPage({Key? key, required this.tourlist, required this.index})
       : super(key: key);
 
   Widget _getWeiterButton(BuildContext context, StationInfo stationInfo) {
@@ -36,7 +36,7 @@ class DetailPage extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 PageRouteBuilder(
-                  pageBuilder: (context, a, b) => Endcard(),
+                  pageBuilder: (context, a, b) => const Endcard(),
                   transitionsBuilder: (context, anim, b, child) =>
                       FadeTransition(opacity: anim, child: child),
                   transitionDuration: Duration(milliseconds: animationlength),
@@ -75,7 +75,7 @@ class DetailPage extends StatelessWidget {
           Navigator.pushReplacement(
             context,
             PageRouteBuilder(
-              pageBuilder: (context, a, b) => Endcard(),
+              pageBuilder: (context, a, b) => const Endcard(),
               transitionsBuilder: (context, anim, b, child) =>
                   FadeTransition(opacity: anim, child: child),
               transitionDuration: Duration(milliseconds: animationlength),
@@ -92,8 +92,6 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final StationInfo stationInfo = stationen[tourlist[index]];
 
-    late final VideoPlayerController _controller =
-        VideoPlayerController.asset(stationInfo.video);
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation
           .centerDocked, //Position wird von der Mitte des Bildschirms berechnet
@@ -355,10 +353,9 @@ class VideoPlayerFullscreenWidget extends StatelessWidget {
   bool isPortrait = true;
 
   @override
-  Widget build(BuildContext context) =>
-      controller != null && controller.value.isInitialized
-          ? Container(alignment: Alignment.topCenter, child: buildVideo())
-          : const Center(child: CircularProgressIndicator());
+  Widget build(BuildContext context) => controller.value.isInitialized
+      ? Container(alignment: Alignment.topCenter, child: buildVideo())
+      : const Center(child: CircularProgressIndicator());
 
   Widget buildVideo() => OrientationBuilder(
         builder: (context, orientation) {

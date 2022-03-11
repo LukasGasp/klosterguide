@@ -1,11 +1,11 @@
-import 'dart:async';
+//import 'dart:async'; Ist für regelmäßige Positionsabfrage nötig. Zurzeit unnötig. NICHT LÖSCHEN! ~ Lukas
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:klosterguide/constants.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:geolocator/geolocator.dart';
+//import 'package:geolocator/geolocator.dart'; Ist für regelmäßige Positionsabfrage nötig. Zurzeit unnötig. NICHT LÖSCHEN! ~ Lukas
 
 import 'data.dart';
 import 'detail_page.dart';
@@ -54,13 +54,13 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final StationInfo stationInfo = stationen[tourlist[index]];
-    StreamSubscription<Position> positionStream =
-        Geolocator.getPositionStream(desiredAccuracy: LocationAccuracy.high)
-            .listen((Position position) {
-      if (position != null) {
-        //TODO: Check if position in range... // Das isses. Das Skript, dass die Position gibt: position.latitude.toString() + position.longitude.toString()
-      }
-    });
+    // StreamSubscription<Position> positionStream =
+    //     Geolocator.getPositionStream(desiredAccuracy: LocationAccuracy.high)
+    //         .listen((Position position) {
+    //   if (position != null) {
+    //     //TODO: Check if position in range... // Das isses. Das Skript, dass die Position gibt: position.latitude.toString() + position.longitude.toString()
+    //   }
+    //});
 
     return Scaffold(
 

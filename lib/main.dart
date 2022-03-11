@@ -4,7 +4,7 @@ import 'dart:core';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Native... + Sprache
 //Sprache ende
 
 import 'package:flutter/material.dart';
@@ -12,8 +12,6 @@ import 'guideactivity.dart';
 import 'discover.dart';
 import 'map.dart';
 import 'constants.dart';
-import 'videoplayer_fullscreen.dart';
-import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Native...
 
 void main() {
   runApp(const MyApp());

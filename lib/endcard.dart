@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'constants.dart';
@@ -247,13 +246,13 @@ class Endcard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Container(
+                      SizedBox(
                         child:
                             Image.asset('assets/icons/logo-missionshaus.png'),
                         height: 100,
                         width: 200,
                       ),
-                      Container(
+                      SizedBox(
                         child: Image.asset('assets/icons/logo-ngk-campus.png'),
                         height: 100,
                         width: 100,
@@ -338,10 +337,9 @@ class VideoPlayerFullscreenWidget extends StatelessWidget {
   bool isPortrait = true;
 
   @override
-  Widget build(BuildContext context) =>
-      controller != null && controller.value.isInitialized
-          ? Container(alignment: Alignment.topCenter, child: buildVideo())
-          : const Center(child: CircularProgressIndicator());
+  Widget build(BuildContext context) => controller.value.isInitialized
+      ? Container(alignment: Alignment.topCenter, child: buildVideo())
+      : const Center(child: CircularProgressIndicator());
 
   Widget buildVideo() => OrientationBuilder(
         builder: (context, orientation) {
@@ -428,7 +426,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
                     Expanded(child: buildIndicator()),
                     const SizedBox(width: 12),
                     GestureDetector(
-                      child: Icon(
+                      child: const Icon(
                         Icons.fullscreen,
                         color: Colors.white,
                         size: 28,
@@ -443,7 +441,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
       );
 
   Widget buildIndicator() => Container(
-        margin: EdgeInsets.all(8).copyWith(right: 0),
+        margin: const EdgeInsets.all(8).copyWith(right: 0),
         height: 16,
         child: VideoProgressIndicator(
           controller,
@@ -465,7 +463,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
               .toList(),
           child: Container(
             color: Colors.white38,
-            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             child: Text('${controller.value.playbackSpeed}x'),
           ),
         ),
@@ -475,7 +473,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
       ? Container()
       : Container(
           color: Colors.black26,
-          child: Center(
+          child: const Center(
             child: Icon(
               Icons.play_arrow,
               color: Colors.white,
