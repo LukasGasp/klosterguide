@@ -408,7 +408,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
   final VideoPlayerController controller;
   final VoidCallback onClickedFullScreen;
 
-  static const allSpeeds = <double>[0.25, 0.5, 1, 1.5, 2, 3, 5, 10];
+  static const allSpeeds = <double>[0.25, 0.5, 1, 1.25, 1.5, 2];
 
   const AdvancedOverlayWidget(
       {Key? key, required this.controller, required this.onClickedFullScreen})
