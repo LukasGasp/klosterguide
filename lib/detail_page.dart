@@ -445,7 +445,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
                     Expanded(child: buildIndicator()),
                     const SizedBox(width: 12),
                     GestureDetector(
-                      child: Icon(
+                      child: const Icon(
                         Icons.fullscreen,
                         color: Colors.white,
                         size: 28,
