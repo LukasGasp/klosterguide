@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
@@ -29,7 +31,7 @@ class Guideactivity extends StatelessWidget {
               children: <Widget>[
                 // Tour
                 buildunifinishedcard(context, "assets/guideactivity/glocke.png",
-                    "Kurzer Einblick", "ca. 3 Minuten", "kurz"),
+                    "Kurzer Einblick", "ca. 3 Minuten", "kurz", false),
                 const SizedBox(height: 50),
 
                 // Discover
@@ -38,7 +40,8 @@ class Guideactivity extends StatelessWidget {
                     "assets/guideactivity/klosterhof.png",
                     "Schöne Tour",
                     "ca. 42 Minuten",
-                    "mittel"),
+                    "mittel",
+                    false),
                 const SizedBox(height: 50),
 
                 // Längenschnitt
@@ -47,7 +50,8 @@ class Guideactivity extends StatelessWidget {
                     "assets/guideactivity/spiritaner.jpg",
                     "Alles",
                     "ca. 300h",
-                    "lang")
+                    "lang",
+                    true)
               ],
             ),
           ),
@@ -55,66 +59,84 @@ class Guideactivity extends StatelessWidget {
   }
 
   Widget buildunifinishedcard(BuildContext context, String imagepath,
-      String title, String description, String option) {
+      String title, String description, String option, bool selectable) {
     return GestureDetector(
-        onTap: () {
-          menueclick(option, context);
-        },
-        child: Container(
-          padding: const EdgeInsets.all(24),
-          width: MediaQuery.of(context).size.width - 12,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(
-                image: AssetImage(imagepath),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.25),
-                  BlendMode.darken,
-                )),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+      onTap: () {
+        menueclick(option, context);
+      },
+      child: Container(
+        padding: const EdgeInsets.all(24),
+        width: MediaQuery.of(context).size.width - 12,
+        height: 150,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          image: selectable
+              ? DecorationImage(
+                  image: AssetImage(imagepath),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.25),
+                    BlendMode.darken,
+                  ))
+              : DecorationImage(
+                  image: AssetImage(imagepath),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.7),
+                    BlendMode.darken,
                   )),
-              const SizedBox(height: 8),
-              Text(
-                description,
-                style: const TextStyle(fontSize: 20, color: Colors.white),
-              )
-            ],
-          ),
-        ));
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                )),
+            const SizedBox(height: 8),
+            Text(
+              description,
+              style: const TextStyle(fontSize: 20, color: Colors.white),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  void snackbar(context, String text, Color color) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(text),
+      backgroundColor: color,
+    ));
   }
 
   void menueclick(String onclick, BuildContext context) {
     switch (onclick) {
       case "kurz":
         {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const DetailPage(
-                        tourlist: tour_kurz,
-                        index: 0,
-                      )));
+          // Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //         builder: (context) => const DetailPage(
+          //               tourlist: tour_kurz,
+          //               index: 0,
+          //             )));
+          snackbar(context, "Coming soon", Colors.black);
         }
         break;
       case "mittel":
         {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Navigation(
-                        tourlist: tour_mittel,
-                        index: 0,
-                      )));
+          // Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //         builder: (context) => Navigation(
+          //               tourlist: tour_mittel,
+          //               index: 0,
+          //             )));
+          snackbar(context, "Coming soon", Colors.black);
         }
         break;
       case "lang":
