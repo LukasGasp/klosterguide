@@ -43,11 +43,11 @@ class MyApp extends StatelessWidget {
         Locale('de', ''),
         //Locale('en', '')
       ], // Erstmal nur Deutsch hinzufügen. Sonst Kommentar entfernen. (UNTEN AUCH!)
-      title: 'Klosterführer',
+      title: 'Klosterguide',
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: const MyHomePage(title: 'Klosterführer Knechtsteden'),
+      home: const MyHomePage(title: 'Klosterguide Knechtsteden'),
     );
   }
 }
@@ -111,6 +111,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  void AppBarSelect(item) {
+    switch (item) {
+      case 'Spenden':
+        break;
+      case 'Info':
+        break;
+      case 'Impressum':
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -120,18 +131,23 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: appbarcolor,
           title: Text(widget.title),
           actions: <Widget>[
-            Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () {
-                    
-                  },
-                  child: Icon(
-                      Icons.more_vert
-                  ),
-                )
-            ),
+            PopupMenuButton<String>(
+                color: Colors.white,
+                onSelected: AppBarSelect,
+                itemBuilder: (BuildContext context) {
+                  return [
+                    'Spenden',
+                    'Info',
+                    'Impressum',
+                  ].map((String choice) {
+                    return PopupMenuItem<String>(
+                      child: Text(choice),
+                      value: choice,
+                    );
+                  }).toList();
+                }),
           ],
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         body: Container(
           color: primarybackgroundcolor,
