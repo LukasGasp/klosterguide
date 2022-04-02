@@ -119,6 +119,19 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           backgroundColor: appbarcolor,
           title: Text(widget.title),
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () {
+                    
+                  },
+                  child: Icon(
+                      Icons.more_vert
+                  ),
+                )
+            ),
+          ],
         ),
         body: Container(
           color: primarybackgroundcolor,
