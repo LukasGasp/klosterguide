@@ -8,6 +8,8 @@ import 'detail_page.dart';
 
 import 'touren.dart';
 
+import 'navstart.dart';
+
 class Guideactivity extends StatelessWidget {
   const Guideactivity({Key? key}) : super(key: key);
 
@@ -141,12 +143,11 @@ class Guideactivity extends StatelessWidget {
         break;
       case "lang":
         {
-          Navigator.push(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                  builder: (context) => Navigation(
+                  builder: (context) => const NavStart(
                         tourlist: tour_lang,
-                        index: 0,
                       )));
         }
         break;
