@@ -19,41 +19,46 @@ class NavStart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.start, //Abstand zwischen Buttons
-          children: <Widget>[
-            const SizedBox(width: 25),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: FloatingActionButton.extended(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(Icons.home),
-                backgroundColor: primarymapbuttoncolor,
-                label: const Text('Home'),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+            children: <Widget>[
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: FloatingActionButton.extended(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.home),
+                  backgroundColor: primarymapbuttoncolor,
+                  label: const Text('Home'),
+                ),
               ),
-            ),
-            const SizedBox(width: 105),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton.extended(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Navigation(
-                                tourlist: tourlist,
-                                index: 0,
-                                mapvideo: mapvideo,
-                              )));
-                },
-                icon: const Icon(Icons.navigate_next),
-                backgroundColor: primarymapbuttoncolor,
-                label: const Text('Weiter'),
+              // const SizedBox(width: 105),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: FloatingActionButton.extended(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Navigation(
+                              tourlist: tourlist,
+                              index: 0,
+                              mapvideo: mapvideo,
+                            )));
+                  },
+                  icon: const Icon(Icons.navigate_next),
+                  backgroundColor: primarymapbuttoncolor,
+                  label: const Text('Weiter'),
+                ),
               ),
-            )
-          ]),
+
+            ]),
+      ),
       backgroundColor: secondarybackgroundColor,
       body: SafeArea(
         bottom: false,
@@ -77,12 +82,12 @@ class NavStart extends StatelessWidget {
                   // Stationsname, "Knechtsteden"
 
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(25.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          "Willkommen!",
+                          "Willkommen",
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 40,
@@ -97,7 +102,7 @@ class NavStart extends StatelessWidget {
                             fontFamily: 'Avenir',
                             fontSize: 25,
                             color: primaryTextColor,
-                            fontWeight: FontWeight.w300,
+                            fontWeight: FontWeight.w700,
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -130,7 +135,7 @@ class NavStart extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                         child: Text(
                           DemoLocalizations.of(context)!.getText(
-                              "endcard"), //Es wird sogar ein womöglicher englischer Text geladen
+                              "willkommentext"),
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 20,
