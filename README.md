@@ -1,6 +1,6 @@
 # Klosterguide-App für Knechtsteden
 
-This project is in early progress. First official release around March.
+This project is in early progress. First official release around April.
 
 ## Info:
 
