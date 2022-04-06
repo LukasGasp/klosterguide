@@ -122,7 +122,7 @@ class Navigation extends StatelessWidget {
         body: Stack(
           alignment: Alignment.center,
           children: [
-            (mapvideo)?Positioned(
+            (mapvideo && stationen[index].mapvideo != "")?Positioned(
               bottom: 10,
               child: Container(
                 width: 290,
@@ -136,7 +136,7 @@ class Navigation extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.only(top: 5,bottom: 5),
                   child: _StationAssetVideo(
-                    videopath: "assets/guidevideos/yee.mp4",
+                    videopath: stationen[index].mapvideo,
                   ),
                 ),
 
@@ -160,7 +160,7 @@ class Navigation extends StatelessWidget {
               ),
             ):Container(), //Sonst wird einfach ein leerer Container übergeben
             Container(
-              padding: (mapvideo)?EdgeInsets.only(bottom: 200):EdgeInsets.only(bottom: 0),
+              padding: (mapvideo && stationen[index].mapvideo != "")?EdgeInsets.only(bottom: 200):EdgeInsets.only(bottom: 0),
               child: FlutterMap(
                 options: MapOptions(
                     center: LatLng(51.07761902538088, 6.752730047496091),

@@ -10,6 +10,7 @@ class StationInfo {
 
   final String zusatzvideo;
   final String zusatztext;
+  final String mapvideo;
 
   StationInfo(
     this.position, {
@@ -22,6 +23,7 @@ class StationInfo {
     this.next = 0,
     this.zusatzvideo = "",
     this.zusatztext = "",
+    this.mapvideo = "",
   });
 }
 
