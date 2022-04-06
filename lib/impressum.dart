@@ -111,7 +111,8 @@ class Impressum extends StatelessWidget {
                               )),
                           onPressed: () {
                             launch(
-                                "https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                                DemoLocalizations.of(context)!
+                                    .getText("kontaktlink"));
                           },
                         ),
                       )),
