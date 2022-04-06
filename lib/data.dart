@@ -44,6 +44,7 @@ Rechts zu sehen ist Franz Maria Paul Libermann, einer der beiden Gründer der Mi
 Garaus gemacht hatten. Mit der rechten Figur des Torbogens besinnen sich die Knechtstedener also auf den zweiten Orden, der in Knechtsteden ansässig wurde. Abgebildet ist Libermann mit einem Kreuz in seiner Hand. Dies ist ein Verweis auf seine besondere Spiritualität und die Kongregation, die er gegründet hat. Zur Erklärung: Eine Kongregation ist eine religiöse Vereinigung, die sich im Unterschied zu den älteren Ordensgemeinschaften, die hauptsächlich auf das innerklösterliche Leben ausgerichtet waren, vor allem Aufgaben außerhalb des Klosters widmet. Libermann verschrieb sich dabei der Missionierung in Afrika, auf die das Kreuz in seiner Hand hindeuten soll.
 An den nächsten Stationen erfahren Sie über die beiden Epochen und Ordensgemeinschaften Knechtstedens mehr. Beginnen Sie hierfür die Navigation zur nächsten Station.''',
       video: "assets/guidevideos/1_Torbogen.mp4",
+      mapvideo: "assets/guidevideos/yee.mp4",
       next: 1),
   StationInfo(2,
       name: 'Norbertpark',
@@ -80,6 +81,7 @@ Während seines Pontifikats nahm sich Norbert von Xanten unterschiedlicher Aufga
 Der Heilige Norbert von Xanten war Zeuge einer bewegten Zeit. So wie auch sein Zeitgenosse, Bernhard von Clairvaux, Gründer des Reformordens der Zisterzienser. Beide Ordensgemeinschaften – Prämonstratenser und Zisterzienser – fanden von Frankreich aus eine erstaunlich schnelle Verbreitung. Ohne den Lebenswandel Norberts, seinen Entschluss zur inneren und äußeren Reform, aber auch ohne sein Verantwortungsbewusstsein, doch das Bistum Magdeburg zu übernehmen, wäre dies wohl nicht möglich gewesen.
 ''',
       zusatzvideo: "assets/guidevideos/yee.mp4",
+      mapvideo: "assets/guidevideos/yee.mp4",
       next: 2),
   StationInfo(3,
       xcoord: 51.07669594480124,
@@ -126,6 +128,7 @@ Dass die Spiritaner in Deutschland und Knechtsteden Fuß fassen konnten, ist nic
 in die Provinzen nach Polen und in die USA aus. Die Rückkehr nach Deutschland, erstmalig in Knechtsteden, war wohl auch deshalb möglich, weil die Spiritaner in ihrem Wirken für Kaiser Wilhelm II. attraktiv ausgerichtet waren. Die kolonialen Bestrebungen des Kaisers verlangten nämlich auch kirchliche und moralische Begleitung in den Kolonien. Die Spiritaner konnten daher staatspolitischen Interessen dienen und wurden so nicht nur erlaubt, sondern sogar gefördert. Die Wiederkehr in Knechtsteden unter Pater Amandus Acker haben Sie ja bereits vorhin zur Kenntnis genommen.
 Auch heute wirken die Spiritaner und verkünden die Frohbotschaft. In mehr als 60 Ländern auf der Welt leben und arbeiten die Spiritaner gegenwärtig. Schon zur Zeit ihrer Gründung übernahmen sie seelsorgerische Aufgaben dort, wohin sonst niemand wollte. Ihr Auftrag beruft sich von Beginn an darauf, das Evangelium jenen zu verkünden, die es nicht oder kaum zu hören bekommen haben. Die Spiritaner stehen dabei für jene ein, die unterdrückt, entrechtet oder ausgegrenzt sind. Leider finden die Spiritaner wieder vermehrt Tätigkeitsfelder in Europa. Der Seelsorge von Flüchtlingen oder Drogenabhängigen nehmen sie sich ebenso an wie den klassischen Einsatzgebieten in Afrika und Südamerika.''',
       zusatzvideo: "assets/guidevideos/yee.mp4",
+      mapvideo: "assets/guidevideos/yee.mp4",
       next: 3),
   StationInfo(
     4,

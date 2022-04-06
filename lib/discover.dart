@@ -82,6 +82,7 @@ class _HomePageState extends State<Discoverpage> {
                               //stationInfo: stationen[index],
                               tourlist: [index],
                               index: 0,
+                              mapvideo: false,
                             ),
                             transitionsBuilder: (context, anim, b, child) =>
                                 FadeTransition(opacity: anim, child: child),

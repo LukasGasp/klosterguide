@@ -31,6 +31,7 @@ class Karte extends StatelessWidget {
                         //stationInfo: stationen[i],
                         tourlist: [i],
                         index: 0,
+                        mapvideo: false,
                       ),
                     ),
                   );

@@ -11,8 +11,9 @@ import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Nati
 class DetailPage extends StatelessWidget {
   final List tourlist;
   final int index;
+  final bool mapvideo;
 
-  const DetailPage({Key? key, required this.tourlist, required this.index})
+  const DetailPage({Key? key, required this.tourlist, required this.index, required this.mapvideo})
       : super(key: key);
 
   Widget _getWeiterButton(BuildContext context, StationInfo stationInfo) {
@@ -26,7 +27,7 @@ class DetailPage extends StatelessWidget {
                   pageBuilder: (context, a, b) => Navigation(
                     tourlist: tourlist,
                     index: index + 1,
-                    mapvideo: false,
+                    mapvideo: mapvideo,
                   ),
                   transitionsBuilder: (context, anim, b, child) =>
                       FadeTransition(opacity: anim, child: child),
@@ -66,7 +67,7 @@ class DetailPage extends StatelessWidget {
               pageBuilder: (context, a, b) => Navigation(
                 tourlist: tourlist,
                 index: index,
-                mapvideo: false,
+                mapvideo: mapvideo,
               ),
               transitionsBuilder: (context, anim, b, child) =>
                   FadeTransition(opacity: anim, child: child),

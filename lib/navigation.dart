@@ -43,6 +43,7 @@ class Navigation extends StatelessWidget {
                 //stationInfo: stationen[stationInfo.position -2], //Nummerrierung muss überarbeitet werden
                 tourlist: tourlist,
                 index: index - 1,
+                mapvideo: mapvideo,
               ),
               transitionsBuilder: (context, anim, b, child) =>
                   FadeTransition(opacity: anim, child: child),
@@ -105,6 +106,7 @@ class Navigation extends StatelessWidget {
                         //stationInfo: stationen[stationInfo.position - 1],
                         tourlist: tourlist,
                         index: index,
+                        mapvideo: mapvideo,
                       ),
                       transitionsBuilder: (context, anim, b, child) =>
                           FadeTransition(opacity: anim, child: child),
