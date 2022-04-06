@@ -8,8 +8,10 @@ import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Nati
 //Sprache ende
 
 import 'package:flutter/material.dart';
+import 'package:klosterguide/spenden.dart';
 import 'guideactivity.dart';
 import 'discover.dart';
+import 'impressum.dart';
 import 'map.dart';
 import 'constants.dart';
 
@@ -114,10 +116,18 @@ class _MyHomePageState extends State<MyHomePage> {
   void AppBarSelect(item) {
     switch (item) {
       case 'Spenden':
+        {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Spenden()));
+        }
         break;
       case 'Info':
         break;
       case 'Impressum':
+        {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Impressum()));
+        }
         break;
     }
   }
