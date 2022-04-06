@@ -147,7 +147,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemBuilder: (BuildContext context) {
                   return [
                     'Spenden',
-                    'Info',
                     'Impressum',
                   ].map((String choice) {
                     return PopupMenuItem<String>(
