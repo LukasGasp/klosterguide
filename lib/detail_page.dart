@@ -26,6 +26,7 @@ class DetailPage extends StatelessWidget {
                   pageBuilder: (context, a, b) => Navigation(
                     tourlist: tourlist,
                     index: index + 1,
+                    mapvideo: false,
                   ),
                   transitionsBuilder: (context, anim, b, child) =>
                       FadeTransition(opacity: anim, child: child),
@@ -65,6 +66,7 @@ class DetailPage extends StatelessWidget {
               pageBuilder: (context, a, b) => Navigation(
                 tourlist: tourlist,
                 index: index,
+                mapvideo: false,
               ),
               transitionsBuilder: (context, anim, b, child) =>
                   FadeTransition(opacity: anim, child: child),

@@ -17,8 +17,9 @@ import 'detail_page.dart';
 class Navigation extends StatelessWidget {
   final List tourlist;
   final int index;
+  final bool mapvideo;
 
-  Navigation({Key? key, required this.tourlist, required this.index})
+  Navigation({Key? key, required this.tourlist, required this.index, required this.mapvideo})
       : super(key: key);
 
   Widget _getZurueckButton(BuildContext context, StationInfo stationInfo) {
@@ -121,7 +122,7 @@ class Navigation extends StatelessWidget {
         body: Stack(
           alignment: Alignment.center,
           children: [
-            Positioned(
+            (mapvideo)?Positioned(
               bottom: 10,
               child: Container(
                 width: 290,
@@ -157,9 +158,9 @@ class Navigation extends StatelessWidget {
                   ],
                 )*/
               ),
-            ),
+            ):Container(), //Sonst wird einfach ein leerer Container übergeben
             Container(
-              padding: EdgeInsets.only(bottom: 200),
+              padding: (mapvideo)?EdgeInsets.only(bottom: 200):EdgeInsets.only(bottom: 0),
               child: FlutterMap(
                 options: MapOptions(
                     center: LatLng(51.07761902538088, 6.752730047496091),

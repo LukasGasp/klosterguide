@@ -12,8 +12,9 @@ import 'navigation.dart';
 
 class NavStart extends StatelessWidget {
   final List tourlist;
+  final bool mapvideo;
 
-  const NavStart({Key? key, required this.tourlist}) : super(key: key);
+  const NavStart({Key? key, required this.tourlist, required this.mapvideo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +45,7 @@ class NavStart extends StatelessWidget {
                           builder: (context) => Navigation(
                                 tourlist: tourlist,
                                 index: 0,
+                                mapvideo: mapvideo,
                               )));
                 },
                 icon: const Icon(Icons.navigate_next),

@@ -31,7 +31,10 @@ class Guideactivity extends StatelessWidget {
               children: <Widget>[
                 // Tour
                 buildunifinishedcard(context, "assets/guideactivity/glocke.png",
-                    "Kurzer Einblick", "ca. 3 Minuten", "kurz", false),
+                    "Kurzer Einblick",
+                    "ca. 3 Minuten",
+                    "kurz",
+                    false),
                 const SizedBox(height: 50),
 
                 // Discover
@@ -51,7 +54,7 @@ class Guideactivity extends StatelessWidget {
                     "Alles",
                     "ca. 300h",
                     "lang",
-                    true)
+                    true) //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
               ],
             ),
           ),
@@ -146,6 +149,7 @@ class Guideactivity extends StatelessWidget {
               MaterialPageRoute(
                   builder: (context) => const NavStart(
                         tourlist: tour_lang,
+                    mapvideo: true,
                       )));
         }
         break;
