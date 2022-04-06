@@ -32,7 +32,7 @@ class Guideactivity extends StatelessWidget {
                 // Tour
                 buildunifinishedcard(context, "assets/guideactivity/glocke.png",
                     "Kurzer Einblick",
-                    "ca. 3 Minuten",
+                    "ca. 10 Minuten",
                     "kurz",
                     false),
                 const SizedBox(height: 50),
@@ -42,7 +42,7 @@ class Guideactivity extends StatelessWidget {
                     context,
                     "assets/guideactivity/klosterhof.png",
                     "Schöne Tour",
-                    "ca. 42 Minuten",
+                    "ca. 45 Minuten",
                     "mittel",
                     false),
                 const SizedBox(height: 50),
@@ -52,7 +52,7 @@ class Guideactivity extends StatelessWidget {
                     context,
                     "assets/guideactivity/spiritaner.jpg",
                     "Alles",
-                    "ca. 300h",
+                    "ca. 2h",
                     "lang",
                     true) //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
               ],

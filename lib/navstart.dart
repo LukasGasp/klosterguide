@@ -60,6 +60,7 @@ class NavStart extends StatelessWidget {
             ]),
       ),
       backgroundColor: secondarybackgroundColor,
+
       body: SafeArea(
         bottom: false,
         child: Stack(
