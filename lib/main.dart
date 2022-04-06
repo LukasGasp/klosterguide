@@ -15,6 +15,10 @@ import 'impressum.dart';
 import 'map.dart';
 import 'constants.dart';
 
+// Teilen
+
+import 'package:share/share.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -129,6 +133,13 @@ class _MyHomePageState extends State<MyHomePage> {
               MaterialPageRoute(builder: (context) => const Impressum()));
         }
         break;
+      case 'Teilen':
+        {
+          Share.share(
+              'Hi! Schau mal was ich gefunden habe: https://play.google.com/store/search?q=Norbert%20Gymnasium',
+              subject: 'Schau was ich gefunden habe');
+        }
+        break;
     }
   }
 
@@ -147,6 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemBuilder: (BuildContext context) {
                   return [
                     'Spenden',
+                    'Teilen',
                     'Impressum',
                   ].map((String choice) {
                     return PopupMenuItem<String>(
