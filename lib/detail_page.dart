@@ -13,7 +13,11 @@ class DetailPage extends StatelessWidget {
   final int index;
   final bool mapvideo;
 
-  const DetailPage({Key? key, required this.tourlist, required this.index, required this.mapvideo})
+  const DetailPage(
+      {Key? key,
+      required this.tourlist,
+      required this.index,
+      required this.mapvideo})
       : super(key: key);
 
   Widget _getWeiterButton(BuildContext context, StationInfo stationInfo) {
@@ -235,6 +239,7 @@ class DetailPage extends StatelessWidget {
                                 textAlign: TextAlign.left,
                               ),
                             ),
+                            const SizedBox(height: 15),
 
                             // ========================================= Zusatzinfos
 

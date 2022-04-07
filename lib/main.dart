@@ -9,6 +9,7 @@ import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Nati
 
 import 'package:flutter/material.dart';
 import 'package:klosterguide/spenden.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'guideactivity.dart';
 import 'discover.dart';
 import 'impressum.dart';
@@ -140,6 +141,11 @@ class _MyHomePageState extends State<MyHomePage> {
               subject: 'Schau was ich gefunden habe');
         }
         break;
+      case 'GitHub':
+        {
+          launch("https://github.com/lukasgasp/klosterguide");
+        }
+        break;
     }
   }
 
@@ -158,6 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemBuilder: (BuildContext context) {
                   return [
                     'Spenden',
+                    'GitHub',
                     'Teilen',
                     'Impressum',
                   ].map((String choice) {
