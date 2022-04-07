@@ -115,7 +115,7 @@ class NavStart extends StatelessWidget {
                   // Video: Klassen unten
 
                   const _StationAssetVideo(
-                    videopath: "assets/guidevideos/1_Torbogen.mp4",
+                    videopath: "assets/guidevideos/Tourstart.mp4",
                   ),
                   // Detaillierte Beschreibung
 

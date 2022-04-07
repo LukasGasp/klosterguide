@@ -65,6 +65,7 @@ flutter:
     - assets/guideactivity/
     - assets/home/
     - assets/guidevideos/
+    - assets/navvideos/
     - assets/strings/en.json #String system
     - assets/strings/de.json
     - assets/icons/

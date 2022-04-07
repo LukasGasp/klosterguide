@@ -77,7 +77,7 @@ class Endcard extends StatelessWidget {
                   // Video: Klassen unten
 
                   const _StationAssetVideo(
-                    videopath: "assets/guidevideos/yee.mp4",
+                    videopath: "assets/guidevideos/Endcard.mp4",
                   ),
                   // Detaillierte Beschreibung
 

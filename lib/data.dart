@@ -44,7 +44,7 @@ Rechts zu sehen ist Franz Maria Paul Libermann, einer der beiden Gründer der Mi
 Garaus gemacht hatten. Mit der rechten Figur des Torbogens besinnen sich die Knechtstedener also auf den zweiten Orden, der in Knechtsteden ansässig wurde. Abgebildet ist Libermann mit einem Kreuz in seiner Hand. Dies ist ein Verweis auf seine besondere Spiritualität und die Kongregation, die er gegründet hat. Zur Erklärung: Eine Kongregation ist eine religiöse Vereinigung, die sich im Unterschied zu den älteren Ordensgemeinschaften, die hauptsächlich auf das innerklösterliche Leben ausgerichtet waren, vor allem Aufgaben außerhalb des Klosters widmet. Libermann verschrieb sich dabei der Missionierung in Afrika, auf die das Kreuz in seiner Hand hindeuten soll.
 An den nächsten Stationen erfahren Sie über die beiden Epochen und Ordensgemeinschaften Knechtstedens mehr. Beginnen Sie hierfür die Navigation zur nächsten Station.''',
       video: "assets/guidevideos/Kapitel_1.mp4",
-      mapvideo: "assets/guidevideos/notdoneyet.mp4",
+      mapvideo: "assets/navvideos/Nav_1.mp4",
       next: 1),
   StationInfo(2,
       name: 'Norbertpark',
@@ -80,8 +80,8 @@ So versuchte die Kirche, Norbert und seine unangenehme Beliebtheit in der einfac
 Während seines Pontifikats nahm sich Norbert von Xanten unterschiedlicher Aufgaben an. Er trieb die Missionierung der Slawen im Osten voran, als Erzkanzler begleitete er 1132 sogar König Lothar nach Italien auf dessen Romzug. 1134 kehrte er, vermutlich an Malaria erkrankt, zurück und verstarb am 6. Juni. 1582 sprach ihn Gregor XIII. heilig. 
 Der Heilige Norbert von Xanten war Zeuge einer bewegten Zeit. So wie auch sein Zeitgenosse, Bernhard von Clairvaux, Gründer des Reformordens der Zisterzienser. Beide Ordensgemeinschaften – Prämonstratenser und Zisterzienser – fanden von Frankreich aus eine erstaunlich schnelle Verbreitung. Ohne den Lebenswandel Norberts, seinen Entschluss zur inneren und äußeren Reform, aber auch ohne sein Verantwortungsbewusstsein, doch das Bistum Magdeburg zu übernehmen, wäre dies wohl nicht möglich gewesen.
 ''',
-      zusatzvideo: "assets/guidevideos/notdoneyet.mp4",
-      mapvideo: "assets/guidevideos/notdoneyet.mp4",
+      zusatzvideo: "assets/guidevideos/Zusatz_Norbert.mp4",
+      mapvideo: "assets/navvideos/Nav_2.mp4",
       next: 2),
   StationInfo(3,
       xcoord: 51.07669594480124,
@@ -127,8 +127,8 @@ Zwar trat Libermann in das Priesterseminar ein, scheiterte jedoch aufgrund eines
 Dass die Spiritaner in Deutschland und Knechtsteden Fuß fassen konnten, ist nicht selbstverständlich. Die Ordensleute und ihre Missionsgesellschaft vom Heiligen Geist ließen sich nämlich schon einmal in Deutschland nieder. 1863 hatten die Spiritaner Niederlassungen in Düsseldorf-Kaiserswerth, Marienstatt und Mariental im Westerwald. Im Kulturkampf des Deutschen Reiches unter der Federführung Bismarcks ist der Orden aber 1873 verboten worden. Die Mitglieder wanderten damals vor allem 
 in die Provinzen nach Polen und in die USA aus. Die Rückkehr nach Deutschland, erstmalig in Knechtsteden, war wohl auch deshalb möglich, weil die Spiritaner in ihrem Wirken für Kaiser Wilhelm II. attraktiv ausgerichtet waren. Die kolonialen Bestrebungen des Kaisers verlangten nämlich auch kirchliche und moralische Begleitung in den Kolonien. Die Spiritaner konnten daher staatspolitischen Interessen dienen und wurden so nicht nur erlaubt, sondern sogar gefördert. Die Wiederkehr in Knechtsteden unter Pater Amandus Acker haben Sie ja bereits vorhin zur Kenntnis genommen.
 Auch heute wirken die Spiritaner und verkünden die Frohbotschaft. In mehr als 60 Ländern auf der Welt leben und arbeiten die Spiritaner gegenwärtig. Schon zur Zeit ihrer Gründung übernahmen sie seelsorgerische Aufgaben dort, wohin sonst niemand wollte. Ihr Auftrag beruft sich von Beginn an darauf, das Evangelium jenen zu verkünden, die es nicht oder kaum zu hören bekommen haben. Die Spiritaner stehen dabei für jene ein, die unterdrückt, entrechtet oder ausgegrenzt sind. Leider finden die Spiritaner wieder vermehrt Tätigkeitsfelder in Europa. Der Seelsorge von Flüchtlingen oder Drogenabhängigen nehmen sie sich ebenso an wie den klassischen Einsatzgebieten in Afrika und Südamerika.''',
-      zusatzvideo: "assets/guidevideos/notdoneyet.mp4",
-      mapvideo: "assets/guidevideos/notdoneyet.mp4",
+      zusatzvideo: "assets/guidevideos/Zusatz_Spiritaner.mp4",
+      mapvideo: "assets/navvideos/Nav_3.mp4",
       next: 3),
   StationInfo(
     4,
@@ -146,6 +146,7 @@ Dem Kloster sehr wohl erhalten geblieben ist hingegen ein historischer Altbestan
 Die vor Ihnen befindliche Ausstellung, die im Südgang immer wieder wechselt, fällt dem Besucher sofort auf. Nehmen Sie sich gern die Zeit und tauchen Sie etwas tiefer in das spannende Leben und Wirken der Knechtstedener Spiritaner ein.
 Sind wir bisher eher auf der Stelle getreten, möchten wir mit Ihnen nun etwas mehr das weitläufige Terrain erkunden. Starten Sie hierfür die Navigation zur nächsten Station.''',
     video: "assets/guidevideos/Kapitel_4.mp4",
+    mapvideo: "assets/navvideos/Nav_4.mp4",
     next: 4,
   ),
   StationInfo(
@@ -161,6 +162,7 @@ Renaissance. 1925 wurde deshalb dieses Pilgerhaus errichtet, um den Pilgernden e
 Gehen Sie ein paar Schritte weiter und achten Sie auf das Wappen an der braunen Fassade. Es gehört Wilhelm von Hövel, einem Bergwerksbesitzer aus Dortmund. Bevor Knechtsteden von der Armenverwaltung übernommen wurde, kaufte von Hövel 1857 den gesamten Besitz und wollte seinen Herrensitz hier einrichten. Dabei galt von Hövel als „Kulturbanause“, weil er die Basilika pietätlos als Lagerraum nutzte. An der Stelle seines Wappens errichtete er als repräsentativen Eingang einen Torbogen mit Türmchen. Später riss man diesen wieder ab. Das Wappen wurde zu seinem Andenken an die Wand angebracht. Tatsächlich war man aber froh, dass von Hövel aufgrund seines finanziellen Konkurses Knechtsteden rasch wieder verkaufen musste – wer weiß, welche Untaten die Basilika andernfalls hätte ertragen müssen.
 An dieser Stelle möchten wir Sie ganz herzlich einladen, eine kurze Pause zu machen und den Klosterladen gleich neben dem Wappen von Hövels zu besuchen. Im Klosterladen Knechtsteden gibt es ein umfassendes Angebot an regionalen und fair gehandelten Produkten sowie kunsthandwerklichen und religiösen Gegenständen. Es werden auch selbsthergestellte Lebensmittel angeboten, wie Marmelade, Schwarzbrot oder der klostereigene Likör. Beachten Sie: Knechtsteden ist reich an Obstwiesen. Obstprodukte werden deshalb nur wenige Meter entfernt hergestellt. Neben den regionalen und selbst hergestellten Produkten sind auch Produkte aus der Dritten Welt erhältlich. Den Betrieb ermöglichen erst die rund 40 ehrenamtlichen Mitarbeiter. Vielleicht möchten Sie ja mit dem Kauf eines Souvenirs das Kloster unterstützen. Sowie Sie so weit sind, fahren Sie mit der nächsten Station fort.''',
     video: "assets/guidevideos/Kapitel_5.mp4",
+    mapvideo: "assets/navvideos/Nav_5.mp4",
     next: 5,
   ),
   StationInfo(
@@ -176,6 +178,7 @@ Schauen Sie sich das prächtige Portal genauer an. Es ist geprägt von einem gro
 diesem Portal widerspiegelt, sollte bald vergehen. Die letzte Weihe in Knechtsteden fand 1780 statt, bevor die Prämonstratenser unter Abt Hendel vor den Franzosen flohen.
 Die Spiritaner nutzten dann die Prälatur zu Schulzwecken. Zwar hat der Vorsteher der Spiritaner in Knechtsteden, der Superior, seine Räume in der Prälatur bezogen, um seinen klosterleitenden Aufgaben nachzugehen, Ausbildungsunterricht fand in den übrigen Räumen jedoch ebenfalls statt. Als in Knechtsteden dann nach dem II. Weltkrieg das Heilig-Geist-Gymnasium gegründet wurde, hatte der erste Schulleiter, Pater Baumjohann, in den heutigen Räumen 401 und 407 sein Direktorenzimmer. Heute werden die Räume der Alten Prälatur zu Unterrichtszwecken gänzlich vom Norbert-Gymnasium genutzt – hierzu später mehr.''',
     video: "assets/guidevideos/Kapitel_6.mp4",
+    mapvideo: "assets/navvideos/Nav_6.mp4",
     next: 6,
   ),
   StationInfo(7,
@@ -190,6 +193,7 @@ Dass die Spiritaner heute nicht mehr im Brüderhaus nächtigen, liegt an der sta
 Bis heute ist von außen die Spur der ehemaligen Kapelle am Brüderhaus sichtbar. Schauen Sie auf die länglichen Buntglasfenster in der rechten Ecke, wo das ehemalige Brüderhaus auf das von der Musikfachschaft des Norbert-Gymnasiums genutzte Gebäude trifft. Dort beteten die Brüder vor Beginn der Arbeit in ihren jeweiligen Werkstätten oder Ausbildungsbetrieben gemeinsam. Auch schrieben und komponierten die jugendlichen Bewohner Knechtstedens hier Liturgien und Lieder, die bis heute in der Klosterbasilika gesungen werden. Vor wenigen Jahren ist der Raum zu einem Konzertraum renoviert worden, den das Norbert-Gymnasium nutzt.
 Gehen Sie nun zum linken Gebäudeabschluss des ehemaligen Brüderhauses. Auffällig scheint die Seitenwand des Gebäudes, das einen ehemaligen Anbau vermuten lässt. Der Anbau beherbergte eine Bäckerei als einen Betrieb neben den vielen anderen, die Knechtsteden damals zu einem autarken Dorf machten. Aufgrund der Dämpfe, die die Bäckerei erzeugte, war die Bausubstanz, insbesondere das Dach morsch. Das Gebäude war nicht mehr zu retten und wurde deshalb abgerissen. Schauen wir einmal an den anderen Betrieben vorbei.''',
       video: "assets/guidevideos/Kapitel_7.mp4",
+      mapvideo: "assets/navvideos/Nav_7.mp4",
       next: 7),
   StationInfo(8,
       xcoord: 51.07726506222155,
@@ -210,7 +214,8 @@ Schauen Sie einmal durch die Fenster der Werkstätten. Etwa in der Mitte der Geb
 Die Werkstätten, die sich bis heute erhalten haben, sind weitaus mehr als ein Relikt vergangener Zeiten. Die Maschinen werden von einem fachkundigen Team aus der Klosterumgebung betriebsfähig gehalten. Seit Mitte Januar 2013 treffen sich jeden 
 Samstag zwischen 9 und 13 Uhr ehrenamtliche Helfer des Fördervereins in der Schlosserei und nehmen die Werkstatt in Betrieb. Das dazu erforderliche, traditionelle handwerkliche Können kommt unter anderem bei Reparaturarbeiten, insbesondere im Denkmalbereich, und beim Anfertigen von Gegenständen wie Kreuz-Briefbeschwerern, die im Klosterladen erworben werden können, zum Einsatz. Jedes der Produkte ist ein handwerkliches Unikat, da sie vom Schmied freiformgeschmiedet werden.
 Gehen Sie einmal weiter hinunter in die entgegengesetzte Richtung des Klosterladens und suchen Sie nochmals durch die Fenster blickend eine imposante, augenscheinliche Dampfmaschine. Jenes historische Dieselaggregat des Klosters wurde 2013, nach über 36 Jahren Stillstand, instandgesetzt. Es handelt sich um einen Dieselmotor des Baujahres 1929. Angelassen wird der Motor mit 15 bar Druckluft. Zwischen 1920 und 1932 wurden von dem Hersteller Deutz 907 solcher Diesel-Motoren zur Stromerzeugung hergestellt. Heute existieren davon nur noch rund zehn Exemplare. Das Aggregat ist somit von unschätzbarem Wert und eine eigene Besichtigung von Technikkundigen wert.''',
-      video: "assets/guidevideos/Kapitel_10",
+      video: "assets/guidevideos/Kapitel_10.mp4",
+      mapvideo: "assets/navvideos/Nav_8.mp4",
       next: 8),
   StationInfo(9,
       xcoord: 51.07640061070178,
@@ -238,7 +243,8 @@ Am 23.11.1944 zogen sich die deutschen Sicherungen zurück, um sich für eine Ge
 gemeldet worden. Am 25.11.1944 wurde er dann durch Granatensplitter schwerverwundet geborgen und ins Kriegslazarett Knechtsteden abtransportiert, wo er am 26.11.1944 um 3:00 Uhr an den Folgen seiner schweren Verletzung verstarb. Seine Beisetzung fand im November 1944 auf dem Friedhof des Klosters Knechtsteden statt. Heinz Harnisch, der Sohn Gustav Harnischs, besuchte das Grab seines Vaters zur Eröffnung der Kriegsgräberstätte am 27.10.1957.
 Seine letzte überlieferte Feldpost schrieb Harnisch an seine Nichte „Trautchen“ am 30.10.1944, also gut drei Wochen vor seinem Tod. In voller Erwartung an das Kriegsende schreibt er: „Wie Du schreibst willst Du mit dem Heiraten noch warten bis 
 ich zu Hause bin, [das] [f]reu[t] mich aber. Denn wir wollen doch das Tanzbein tüchtig schwingen bei Deiner Hochzeit. […] [W]ir sollten erst zum 20. Oktober hier wegkommen, nun hat es sich aber noch verschoben, wann es nun wird[,] wissen wir auch nicht […]. Wann nun der Krieg zu Ende sein wird[,] ist noch nicht raus, ich denke aber es wird nun bald enden […].“ Seinen „Goldsohn Günter“, den Trautchen von ihm grüßen soll, konnte Gustav Harnisch nicht mehr wiedersehen.''',
-      zusatzvideo: "assets/guidevideos/notdoneyet.mp4",
+      zusatzvideo: "assets/guidevideos/Zusatz_Friedhof.mp4",
+      mapvideo: "assets/navvideos/Nav_9.mp4",
       next: 9),
   StationInfo(
     10,
@@ -255,6 +261,7 @@ Was den Kräutergarten besonders auszeichnet, ist seine Form. Die Form, in der d
 Schiffe ist jeweils ein hoher, hellgrauer Stein, welcher den zentralen Mittelpunkt der Schiffe darstellt und als Kreuz oder Altar interpretiert werden kann.
 ''',
     video: "assets/guidevideos/Kapitel_11.mp4",
+    mapvideo: "assets/navvideos/Nav_10.mp4",
     next: 10,
   ),
   StationInfo(
@@ -267,6 +274,7 @@ Schiffe ist jeweils ein hoher, hellgrauer Stein, welcher den zentralen Mittelpun
         '''Haben wir uns bisher eher den handwerklichen Berufen gewidmet, steht nun die Landwirtschaft Knechtstedens im Vordergrund, die hier, im ehemaligen Bullenstall, noch wiederzuerkennen ist, sowie Sie sich einmal umschauen. Der Landwirtschaftsbetrieb des Klosters wurde vor dem Ersten Weltkrieg von den Spiritanern für die Versorgung von etwa 500 Menschen errichtet. Die Zucht Knechtstedener Zuchtbullen war zu ihrer Zeit bekannt und wurde mehrfach prämiert. Als die Nationalsozialisten 1941 Knechtsteden beschlagnahmten, sollte der Hof zu einem landwirtschaftlichen Mustergut umgebaut werden. Einige Brüder wurden zur Zwangsarbeit verpflichtet, wodurch ihnen jedoch der Dienst an der Front erspart blieb. Andere Patres und Brüder wurden aus Knechtsteden ausgewiesen. Zu seinen Hochzeiten konnte sich das Kloster dank seiner Landwirtschaft vollkommen autark halten und sich selbst versorgen. Bis in die 1960er Jahre wurde der landwirtschaftliche Betrieb im Kloster durch die Brüder aufrechterhalten.
 Heute ist der Kulturhof, der ehemalige Bullenstall und die Theaterscheune, als Veranstaltungsort an den Klosterhof, unsere letzte Station, verpachtet. Dort finden Hochzeiten, Konzerte und auch Firmenfeiern statt. Die Felder rings um Knechtsteden werden von umliegenden Bauern bestellt. So bleibt Knechtsteden bis heute ein landwirtschaftlich geprägter Ort in der Region.''',
     video: "assets/guidevideos/Kapitel_12.mp4",
+    mapvideo: "assets/navvideos/Nav_11.mp4",
     next: 11,
   ),
   StationInfo(
@@ -283,6 +291,7 @@ Mehrfach konnte die Knechtstedener Feuerwehr Abhilfe schaffen – etwa 1928 in d
 Schauen Sie aber erst einmal auf das kleine metallische Plättchen rechts der Fensterfront. Abgebildet ist der Schutzpatron der Feuerwehr, der Heilige Florian von Lorch. Dort, wo heute die Fensterfront Einblick gewährt, waren früher die Holztore verbaut, hinter 
 denen die Feuerwehrwagen und -geräte bereitstanden.''',
     video: "assets/guidevideos/Kapitel_13.mp4",
+    mapvideo: "assets/navvideos/Nav_12.mp4",
     next: 12,
   ),
   StationInfo(
@@ -301,6 +310,7 @@ Gehen Sie einige Schritte weiter, sodass Sie mitten auf dem Schulhof stehen, und
 Mit der Anerkennung als Sportschule 2014 und der Errichtung des Sportinternats gehört das Norbert-Gymnasium zur sportlichen Elite Deutschlands. Es vereint Schule, Lernen, Training und Freizeit. Die Internatsschüler vertreten Deutschland international auf Wettkämpfen und absolvieren parallel ihr Abitur. Dabei versteht sich das Norbert-Gymnasium aber nach wie vor in der Tradition seines Standortes als christliche Schule, die ihre Schülerinnen und Schüler befähigen möchte, die Gesellschaft im Geist der Frohen Botschaft 
 mitzugestalten. So bleibt die Knechtstedener Schule auf eine eigene Weise mit dem Kloster und seiner Geschichte verbunden. Dieses Schulprojekt des Klosterführers ist nicht zuletzt ein Indikator für jene Verbundenheit. Wir begleiten Sie nun zur letzten Station unserer Führung.''',
     video: "assets/guidevideos/Kapitel_14.mp4",
+    mapvideo: "assets/navvideos/Nav_13.mp4",
     next: 13,
   ),
   StationInfo(
@@ -315,6 +325,7 @@ Weil Bruder Ansbert bereits aufgrund der anderen Restaurationen in Knechtsteden 
 noch am Klosterhof bewundern kann.
 1976 wurde die Gaststätte renoviert, da sich das Kloster an überregionaler Beliebtheit erfreute. Der Klosterhof dient bis heute als Herberge und beliebter Gasthof. Hier kehrten und kehren Touristen, Pilgernde, aber auch Patres und Schülerinnen und Schüler des Norbert-Gymnasiums gerne ein. Wir können Ihnen den Besuch des Klosterhofs nur wärmstens ans Herz legen. Treten Sie ein und bestellen Sie doch schon einmal, bevor wir uns verabschieden. Allen Bierliebhabern können wir das Knechtstedener Kellerbier empfehlen. Über den untenstehenden Button gelangen Sie zur Getränke- und Speisekarte, die auch Saisonales bietet. Kehren Sie aber zum Abschluss unbedingt zurück zur Klosterführer-App, sowie Sie bestellt haben!''',
     video: "assets/guidevideos/Kapitel_15.mp4",
+    mapvideo: "assets/navvideos/Nav_15.mp4",
     next: 0,
   ),
 ];
