@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
           actions: <Widget>[
             PopupMenuButton<String>(
-                color: Colors.white,
+                color: popupbuttoncolor,
                 onSelected: AppBarSelect,
                 itemBuilder: (BuildContext context) {
                   return [
@@ -275,15 +275,15 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(title,
-                  style: const TextStyle(
+                  style:  TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: mainbuttontextcolor,
                   )),
               const SizedBox(height: 8),
               Text(
                 description,
-                style: const TextStyle(fontSize: 20, color: Colors.white),
+                style:  TextStyle(fontSize: 20, color: mainbuttontextcolor),
               )
             ],
           ),

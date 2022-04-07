@@ -11,6 +11,10 @@ Color secondaryTextColor = const Color(0xFFE4979E);
 Color secondarybackgroundColor = const Color(0xffffffff);
 int animationlength = 200;
 
+//Main Page
+Color popupbuttoncolor = const Color(0xffffffff);
+Color mainbuttontextcolor = const Color(0xffffffff);
+
 // Detail Page
 
 Color contentTextColor = const Color(0xff868686);
