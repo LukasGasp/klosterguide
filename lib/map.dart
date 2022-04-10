@@ -5,7 +5,7 @@ import 'package:klosterguide/constants.dart';
 import 'package:latlong2/latlong.dart';
 
 import 'data.dart';
-import 'detail_page.dart';
+import 'navigation_detail_page.dart';
 
 class Karte extends StatelessWidget {
   List<Marker> markierungen = [];

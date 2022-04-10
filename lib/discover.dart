@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'detail_page.dart';
+import 'navigation_detail_page.dart';
 import 'constants.dart';
 import 'package:card_swiper/card_swiper.dart';
 

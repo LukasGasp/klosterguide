@@ -12,7 +12,7 @@ import 'package:video_player/video_player.dart';
 //import 'package:geolocator/geolocator.dart'; Ist für regelmäßige Positionsabfrage nötig. Zurzeit unnötig. NICHT LÖSCHEN! ~ Lukas
 
 import 'data.dart';
-import 'detail_page.dart';
+import 'navigation_detail_page.dart';
 
 class Navigation extends StatelessWidget {
   final List tourlist;

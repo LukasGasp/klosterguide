@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:klosterguide/endcard.dart';
+import 'package:klosterguide/navigation_endcard.dart';
 import 'package:klosterguide/videoplayer_fullscreen.dart';
 import 'navigation.dart';
 import 'data.dart';

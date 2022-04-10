@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 import 'navigation.dart';
-import 'detail_page.dart';
+import 'navigation_detail_page.dart';
 
 import 'touren.dart';
 
-import 'navstart.dart';
+import 'navigation_start.dart';
 
 class Guideactivity extends StatelessWidget {
   const Guideactivity({Key? key}) : super(key: key);
