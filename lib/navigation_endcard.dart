@@ -251,9 +251,13 @@ class Endcard extends StatelessWidget {
                     children: <Widget>[
                       SizedBox(
                         child:
-                            Image.asset('assets/icons/logo-missionshaus.png'),
+                        Image.asset('assets/icons/logo-missionshaus.png'),
                         height: 100,
-                        width: 200,
+                        width: 100,
+                      ),
+                      SizedBox(
+                        height: 100,
+                        width: 100,
                       ),
                       SizedBox(
                         child: Image.asset('assets/icons/logo-ngk-campus.png'),

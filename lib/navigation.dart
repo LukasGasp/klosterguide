@@ -123,11 +123,46 @@ class Navigation extends StatelessWidget {
         ),
         body: Stack(
           alignment: Alignment.center,
-          children: [
+          children: <Widget>[
+            FlutterMap(
+              options: MapOptions(
+                  center: LatLng(51.07761902538088, 6.752730047496091),
+                  zoom: 15.7,
+                  minZoom: 14,
+                  maxZoom: 18,
+                  swPanBoundary: LatLng(
+                    51.0727696061025,
+                    6.74033047115352,
+                  ),
+                  nePanBoundary: LatLng(51.0834444361947, 6.76094581023449),
+                  plugins: [const LocationMarkerPlugin()]),
+              layers: [
+                TileLayerOptions(
+                  tileProvider: const AssetTileProvider(),
+                  maxZoom: 18.0,
+                  urlTemplate: 'assets/map/{z}/{x}/{y}.png',
+                ),
+                MarkerLayerOptions(
+                  markers: [
+                    Marker(
+                      width: 50.0,
+                      height: 50.0,
+                      point: LatLng(stationInfo.xcoord, stationInfo.ycoord),
+                      builder: (ctx) => ClipRRect(
+                        borderRadius: BorderRadius.circular(72.5),
+                        child: Image.asset(stationInfo.iconImage,
+                            width: 200, height: 200),
+                      ),
+                    ),
+                  ],
+                ),
+                LocationMarkerLayerOptions(),
+              ],
+            ),
             (mapvideo && stationen[index].mapvideo != "")?Positioned(
               bottom: 10,
               child: Container(
-                width: 290,
+                width: 270,
                 height: 190,
                 padding: EdgeInsets.only(left: 16, right: 16),
                 decoration: BoxDecoration(
@@ -161,44 +196,6 @@ class Navigation extends StatelessWidget {
                 )*/
               ),
             ):Container(), //Sonst wird einfach ein leerer Container übergeben
-            Container(
-              padding: (mapvideo && stationen[index].mapvideo != "")?EdgeInsets.only(bottom: 200):EdgeInsets.only(bottom: 0),
-              child: FlutterMap(
-                options: MapOptions(
-                    center: LatLng(51.07761902538088, 6.752730047496091),
-                    zoom: 15.7,
-                    minZoom: 14,
-                    maxZoom: 18,
-                    swPanBoundary: LatLng(
-                      51.0727696061025,
-                      6.74033047115352,
-                    ),
-                    nePanBoundary: LatLng(51.0834444361947, 6.76094581023449),
-                    plugins: [const LocationMarkerPlugin()]),
-                layers: [
-                  TileLayerOptions(
-                    tileProvider: const AssetTileProvider(),
-                    maxZoom: 18.0,
-                    urlTemplate: 'assets/map/{z}/{x}/{y}.png',
-                  ),
-                  MarkerLayerOptions(
-                    markers: [
-                      Marker(
-                        width: 50.0,
-                        height: 50.0,
-                        point: LatLng(stationInfo.xcoord, stationInfo.ycoord),
-                        builder: (ctx) => ClipRRect(
-                          borderRadius: BorderRadius.circular(72.5),
-                          child: Image.asset(stationInfo.iconImage,
-                              width: 200, height: 200),
-                        ),
-                      ),
-                    ],
-                  ),
-                  LocationMarkerLayerOptions(),
-                ],
-              ),
-            ),
           ],
         ));
   }
