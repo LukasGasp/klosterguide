@@ -193,7 +193,7 @@ class Endcard extends StatelessWidget {
                     children: <Widget>[
                       SizedBox(
                         height: 50,
-                        width: 130,
+                        width: 170,
                         child: FloatingActionButton(
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
