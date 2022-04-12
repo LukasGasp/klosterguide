@@ -1,5 +1,7 @@
 //import 'dart:async'; Ist für regelmäßige Positionsabfrage nötig. Zurzeit unnötig. NICHT LÖSCHEN! ~ Lukas
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
@@ -14,52 +16,27 @@ import 'package:video_player/video_player.dart';
 import 'data.dart';
 import 'navigation_detail_page.dart';
 
-class Navigation extends StatelessWidget {
+class Navigation extends StatefulWidget {
   final List tourlist;
   final int index;
   final bool mapvideo;
 
-  Navigation({Key? key, required this.tourlist, required this.index, required this.mapvideo})
+  const Navigation({Key? key, required this.tourlist, required this.index, required this.mapvideo})
       : super(key: key);
 
-  Widget _getZurueckButton(BuildContext context, StationInfo stationInfo) {
-    if (index == 0) {
-      //Bei Station 1 verschwindet der Button
-      return FloatingActionButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: const Icon(Icons.home),
-        backgroundColor: primarymapbuttoncolor,
-      ); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
-    } else {
-      return FloatingActionButton(
-        //Button links
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            PageRouteBuilder(
-              pageBuilder: (context, a, b) => DetailPage(
-                //stationInfo: stationen[stationInfo.position -2], //Nummerrierung muss überarbeitet werden
-                tourlist: tourlist,
-                index: index - 1,
-                mapvideo: mapvideo,
-              ),
-              transitionsBuilder: (context, anim, b, child) =>
-                  FadeTransition(opacity: anim, child: child),
-              transitionDuration: Duration(milliseconds: animationlength),
-            ),
-          );
-        },
-        child: const Icon(Icons.navigate_before),
-        backgroundColor: primarymapbuttoncolor,
-      );
-    }
-  }
 
   @override
+  _MyHomePageState createState() {
+    return _MyHomePageState();
+  }
+}
+
+class _MyHomePageState extends State<Navigation> {
+  bool _visible = true;
+  @override
   Widget build(BuildContext context) {
-    final StationInfo stationInfo = stationen[tourlist[index]];
+    final StationInfo stationInfo = stationen[widget.tourlist[widget.index]];
+
     // StreamSubscription<Position> positionStream =
     //     Geolocator.getPositionStream(desiredAccuracy: LocationAccuracy.high)
     //         .listen((Position position) {
@@ -70,11 +47,11 @@ class Navigation extends StatelessWidget {
 
     return Scaffold(
 
-        // APP-Bar
+      // APP-Bar
 
         appBar: AppBar(
           automaticallyImplyLeading:
-              false, // Kein Automatischer Home Knopf in App Bar
+          false, // Kein Automatischer Home Knopf in App Bar
           title: const Text('Navigation'),
           backgroundColor: appbarcolor,
           leading: IconButton(
@@ -93,7 +70,7 @@ class Navigation extends StatelessWidget {
           padding: const EdgeInsets.all(16.0), //Padding Größe
           child: Row(
             mainAxisAlignment:
-                MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+            MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
             children: <Widget>[
               _getZurueckButton(context, stationInfo),
               FloatingActionButton(
@@ -104,14 +81,14 @@ class Navigation extends StatelessWidget {
                     PageRouteBuilder(
                       pageBuilder: (context, a, b) => DetailPage(
                         //stationInfo: stationen[stationInfo.position - 1],
-                        tourlist: tourlist,
-                        index: index,
-                        mapvideo: mapvideo,
+                        tourlist: widget.tourlist,
+                        index: widget.index,
+                        mapvideo: widget.mapvideo,
                       ),
                       transitionsBuilder: (context, anim, b, child) =>
                           FadeTransition(opacity: anim, child: child),
                       transitionDuration:
-                          Duration(milliseconds: animationlength),
+                      Duration(milliseconds: animationlength),
                     ),
                   );
                 },
@@ -159,7 +136,7 @@ class Navigation extends StatelessWidget {
                 LocationMarkerLayerOptions(),
               ],
             ),
-            (mapvideo && stationen[index].mapvideo != "")?Positioned(
+            (widget.mapvideo && stationen[widget.index].mapvideo != "")?Positioned(
               bottom: 10,
               child: Container(
                 width: 270,
@@ -173,7 +150,7 @@ class Navigation extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.only(top: 5,bottom: 5),
                   child: _StationAssetVideo(
-                    videopath: stationen[index].mapvideo,
+                    videopath: stationen[widget.index].mapvideo,
                   ),
                 ),
 
@@ -199,7 +176,43 @@ class Navigation extends StatelessWidget {
           ],
         ));
   }
+
+  Widget _getZurueckButton(BuildContext context, StationInfo stationInfo) {
+    if (widget.index == 0) {
+      //Bei Station 1 verschwindet der Button
+      return FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: const Icon(Icons.home),
+        backgroundColor: primarymapbuttoncolor,
+      ); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
+    } else {
+      return FloatingActionButton(
+        //Button links
+        onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, a, b) => DetailPage(
+                //stationInfo: stationen[stationInfo.position -2], //Nummerrierung muss überarbeitet werden
+                tourlist: widget.tourlist,
+                index: widget.index - 1,
+                mapvideo: widget.mapvideo,
+              ),
+              transitionsBuilder: (context, anim, b, child) =>
+                  FadeTransition(opacity: anim, child: child),
+              transitionDuration: Duration(milliseconds: animationlength),
+            ),
+          );
+        },
+        child: const Icon(Icons.navigate_before),
+        backgroundColor: primarymapbuttoncolor,
+      );
+    }
+  }
 }
+
 class _StationAssetVideo extends StatefulWidget {
   final String videopath;
 
@@ -371,7 +384,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
 
   Widget buildIndicator() => Container(
     margin: const EdgeInsets.all(8).copyWith(right: 0),
-    height: 16,
+    height: 12,
     child: VideoProgressIndicator(
       controller,
       allowScrubbing: true,
@@ -386,13 +399,13 @@ class AdvancedOverlayWidget extends StatelessWidget {
       onSelected: controller.setPlaybackSpeed,
       itemBuilder: (context) => allSpeeds
           .map<PopupMenuEntry<double>>((speed) => PopupMenuItem(
-        value: speed,
-        child: Text('${speed}x'),
+            value: speed,
+            child: Text('${speed}x'),
       ))
           .toList(),
       child: Container(
         color: Colors.white38,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
         child: const Text("Tempo"),
       ),
     ),
