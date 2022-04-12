@@ -52,7 +52,7 @@ class Guideactivity extends StatelessWidget {
                     context,
                     "assets/guideactivity/spiritaner.jpg",
                     "Alles",
-                    "ca. 2h",
+                    "ca. 2 Stunden",
                     "lang",
                     true) //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
               ],
