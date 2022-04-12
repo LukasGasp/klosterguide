@@ -68,32 +68,63 @@ class _MyHomePageState extends State<Navigation> {
             .centerDocked, //ButtonPosition wird von der Mitte des Bildschirms berechnet
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(16.0), //Padding Größe
-          child: Row(
-            mainAxisAlignment:
-            MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
-            children: <Widget>[
-              _getZurueckButton(context, stationInfo),
-              FloatingActionButton(
-                //Buttons rechts
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, a, b) => DetailPage(
-                        //stationInfo: stationen[stationInfo.position - 1],
-                        tourlist: widget.tourlist,
-                        index: widget.index,
-                        mapvideo: widget.mapvideo,
-                      ),
-                      transitionsBuilder: (context, anim, b, child) =>
-                          FadeTransition(opacity: anim, child: child),
-                      transitionDuration:
-                      Duration(milliseconds: animationlength),
-                    ),
-                  );
-                },
-                child: const Icon(Icons.navigate_next),
-                backgroundColor: primarymapbuttoncolor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Row(
+                children: [
+                  Container(),
+                    SizedBox(
+                      height: 30,
+                      width: 60,
+                      child: FloatingActionButton(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10),
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                            )),
+                        onPressed: () {
+                          setState(() {
+                            _visible = !_visible;
+                          });
+                        },
+                        child: Icon((_visible)?Icons.arrow_drop_down:Icons.arrow_drop_up),
+                        backgroundColor: primarymapbuttoncolor,
+                  ),)
+                ],
+              ),
+              const SizedBox(height: 30),
+              Row(
+
+                mainAxisAlignment:
+                MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+                children: <Widget>[
+                  _getZurueckButton(context, stationInfo),
+                  FloatingActionButton(
+                    //Buttons rechts
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, a, b) => DetailPage(
+                            //stationInfo: stationen[stationInfo.position - 1],
+                            tourlist: widget.tourlist,
+                            index: widget.index,
+                            mapvideo: widget.mapvideo,
+                          ),
+                          transitionsBuilder: (context, anim, b, child) =>
+                              FadeTransition(opacity: anim, child: child),
+                          transitionDuration:
+                          Duration(milliseconds: animationlength),
+                        ),
+                      );
+                    },
+                    child: const Icon(Icons.navigate_next),
+                    backgroundColor: primarymapbuttoncolor,
+                  ),
+                ],
               ),
             ],
           ),
@@ -138,40 +169,43 @@ class _MyHomePageState extends State<Navigation> {
             ),
             (widget.mapvideo && stationen[widget.index].mapvideo != "")?Positioned(
               bottom: 10,
-              child: Container(
-                width: 270,
-                height: 190,
-                padding: EdgeInsets.only(left: 16, right: 16),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 10.0, spreadRadius: 0.1)]
-                ),
+              child: AnimatedOpacity(
+                opacity: _visible ? 1.0 : 0.0,
+                duration: const Duration(milliseconds: 500),
                 child: Container(
-                  padding: EdgeInsets.only(top: 5,bottom: 5),
-                  child: _StationAssetVideo(
-                    videopath: stationen[widget.index].mapvideo,
+                  width: 270,
+                  height: 190,
+                  padding: EdgeInsets.only(left: 16, right: 16),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 10.0, spreadRadius: 0.1)]
                   ),
-                ),
+                  child: Container(
+                    padding: EdgeInsets.only(top: 5,bottom: 5),
+                    child: _StationAssetVideo(
+                      videopath: stationen[widget.index].mapvideo,
+                    ),
+                  ),
 
-                /*child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    IconButton(
-                      onPressed: (){
-
-                      },
-
-                        icon: Icon(Icons.play_arrow, color: Colors.grey, size: 30 )),
-                    IconButton(
+                  /*child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
                         onPressed: (){
 
                         },
 
-                        icon: Icon(Icons.play_arrow, color: Colors.grey, size: 30 ))
-                  ],
-                )*/
-              ),
+                          icon: Icon(Icons.play_arrow, color: Colors.grey, size: 30 )),
+                      IconButton(
+                          onPressed: (){
+
+                          },
+
+                          icon: Icon(Icons.play_arrow, color: Colors.grey, size: 30 ))
+                    ],
+                  )*/
+              )),
             ):Container(), //Sonst wird einfach ein leerer Container übergeben
           ],
         ));
