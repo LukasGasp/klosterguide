@@ -3,6 +3,7 @@ class StationInfo {
   final double xcoord;
   final double ycoord;
   final String name;
+  final String subtitle;
   final String iconImage;
   final String fulltext;
   final String video;
@@ -10,6 +11,7 @@ class StationInfo {
 
   final String zusatzvideo;
   final String zusatztext;
+  final String zusatztitel;
   final String mapvideo;
 
   StationInfo(
@@ -17,12 +19,14 @@ class StationInfo {
     this.xcoord = 0,
     this.ycoord = 0,
     this.name = "",
+    this.subtitle = "",
     this.iconImage = "",
     this.fulltext = "",
     this.video = "",
     this.next = 0,
     this.zusatzvideo = "",
     this.zusatztext = "",
+    this.zusatztitel = "",
     this.mapvideo = "",
   });
 }
@@ -31,7 +35,8 @@ List<StationInfo> stationen = [
   StationInfo(1,
       xcoord: 51.076410,
       ycoord: 6.754703,
-      name: 'Torhaus',
+      name: 'Barockes Torhaus',
+      subtitle: 'Epochen, Gründung und Vorgeschichte',
       iconImage: 'assets/guideicons/torhaus.jpg',
       fulltext:
           '''Welch ein Anblick sich dem Besucher Knechtstedens bei seiner Ankunft offenbart! Das imposante Portal begrüßt ihn und weist ihm den Weg zum Gotteshaus, das schon aus der Ferne sichtbar ist und sich ihm in seiner vollen Pracht präsentiert. Dabei besuchten Pilgernde Knechtsteden bereits weit vor Errichtung dieses Torbogens, wie Sie ihn hier sehen.
@@ -47,10 +52,11 @@ An den nächsten Stationen erfahren Sie über die beiden Epochen und Ordensgemei
       mapvideo: "assets/navvideos/Nav_1.mp4",
       next: 1),
   StationInfo(2,
-      name: 'Norbertpark',
+      name: 'Basilika und Norbertpark',
+      subtitle: 'Klostergründung und Bau',
       xcoord: 51.076585,
       ycoord: 6.753799,
-      iconImage: 'assets/guideicons/norbertpark.png',
+      iconImage: 'assets/guideicons/norbertpark.jpg',
       fulltext:
           '''Wenden Sie Ihren Blick zunächst dem Norbertpark zu. Wurde die große weitläufige Grünfläche früher landwirtschaftlich genutzt, hat der Norbertpark heutzutage eine andere Funktion. Nicht selten findet gerade an warmen Sommertagen Unterricht des in Sichtweite befindlichen Norbert-Gymnasiums, zu dem wir später noch kommen, im Freien statt. Auch Veranstaltungen an der frischen Luft, etwa Gottesdienste oder zuletzt die Vergabe der Zeugnisse an die Abiturienten, erfreuen sich im Norbertpark besonderer Beliebtheit. Der Norbertpark fungiert als ein Ort, der zusammenführt. Seine Anziehungskraft bezieht er nicht zuletzt aufgrund des wunderschönen Ausblicks, den die Basilika offeriert.
 Bitte wenden Sie sich nun der Klosterbasilika zu und lassen Sie die Hecken hinter sich, sodass Sie einen freien Blick auf das Gotteshaus werfen können. Sie sehen das Monument einer bewegten Zeit des 12. Jahrhunderts. Die Klostergründung in Knechtsteden von 1130 geht nämlich zurück auf die Schenkung des ererbten Fronhofs des Domdekans zu Köln, Hugos von Sponheim, an die Prämonstratenser. Dieser wurde zu seiner Schenkung durch den Kölner Erzbischof Friedrich I. angeregt.
@@ -66,6 +72,7 @@ Dort ist bewusst als letzte, erweiterte 15. Station des Kreuzweges an der Ostsei
 Vor Ihnen befindet sich das südliche Nebenschiff mit dem Hauptportal. Jenes Portal ist nachträglich eingefügt worden, da der ursprüngliche Osteingang nach Anbau des Querschiffes nicht mehr zu nutzen gewesen ist. Schauen Sie genau hin: Das Hauptportal ist verziert mit viermal abgetreppten Gewänden. Die Basaltsäulen setzen sich in den Bögen als Rundstäbe fort. Den innersten Portalbogen ziert ein schöner Akanthusblattfries, der in der Ornamentik für Leben und Unsterblichkeit steht. Betrachten Sie nun die Wand des vor Ihnen befindlichen südlichen Nebenschiffes. Sie zeigt eindeutig Bogenspuren eines früher verbauten Kreuzganges, der nach den verschiedenen Formen dieser Bögen mehrmalige Umbauten erfahren haben muss. Vermutlich war das Kloster Knechtsteden ursprünglich als Doppelkloster mit männlichen und weiblichen Ordensleuten geplant, auf die die Umbauten zurückgehen könnten. Genauere Quellen dazu sind jedoch nicht überliefert.
 Wenden Sie Ihren Blick nach rechts. In der Nische zum östlichen Querschiff ist ein Relief eingelassen. Es zeigt die Heilige Magdalena zu Füßen Jesu Christi in dem Moment, als sie ihn als Auferstandenen erkennt. Das Relief verweist auf die ehemalige Gründungskapelle, die 1134 errichtet worden war und aufgrund ihres schlechten Zustandes Mitte des 18. Jahrhunderts, genauer 1731, abgerissen wurde. Das Relief erinnert daher an die ersten Anfänge klösterlichen Lebens in Knechtsteden.''',
       video: "assets/guidevideos/Kapitel_2.mp4",
+      zusatztitel:'Leben und Wirken des Heiligen Norbert von Xanten',
       zusatztext:
           '''Norbert von Xanten ist geboren in eine bewegte Zeit des Machtkampfes zwischen Papst und Kaiser.  Der Investiturstreit prägte die jungen Jahre des Heiligen Norbert, der 1080 vermutlich in Gennep, in den heutigen Niederlanden, geboren wurde – vermutlich, da nicht sicher überliefert ist, ob Norbert bereits zur Welt gekommen war, als sein Vater, Graf Heribert von Gennep, Burgvogt von Xanten wurde. Die Familie wechselte also den Wohnsitz von Gennep nach Xanten. Seine ersten von adeligem Stand privilegierten Lebensjahre verbrachte Norbert in Xanten.
  Sein Vater erwirkte für Norbert, Stiftsherr am Viktorstift in Xanten zu werden. Es handelte sich sozusagen um ein perfektes Absprungbrett, um eine kirchliche Karriere einzuschlagen. Aufgrund seines kirchlichen Rangs verbrachte Norbert unter anderem viel Zeit an den Höfen des Erzbischofs von Köln sowie des deutschen Königs Heinrich V. und kam in den Genuss des höfischen Lebens.  Norbert begleitete um das Jahr 1110 den König nach Italien, der in Rom vom Papst zum deutschen Kaiser gekrönt werden wollte.
@@ -86,8 +93,9 @@ Der Heilige Norbert von Xanten war Zeuge einer bewegten Zeit. So wie auch sein Z
   StationInfo(3,
       xcoord: 51.07669594480124,
       ycoord: 6.752454033913944,
-      name: 'Basilika',
-      iconImage: 'assets/guideicons/basilika.png',
+      name: 'Kunst und Klang der Basilika',
+      subtitle: 'Auf- und Abstiege Knechtstedens',
+      iconImage: 'assets/guideicons/basilika.jpg',
       fulltext:
           '''Sie haben die Kirche nun von ihrer Westseite betreten. Halten Sie sich gleich beim Eintritt links, sodass Sie an der Westapsis stehend Halt machen. Lassen Sie das Innere der Klosterbasilika gern eine Weile auf sich wirken, bevor Sie sich dem großen Wandgemälde 
 an der Westapsis widmen.
@@ -117,6 +125,7 @@ war wiederhergestellt, doch das Kloster lag noch in Ruinen und den Spiritanern f
 Wir neigen uns dem Ende dieser zugegebenermaßen langen Station in der Basilika zu. Gehen Sie weiter das Nebenschiff entlang, bis Sie vor einer Tür stehen. Sie gelangen über diese Tür in den Kreuzgang des Klosters. Widmen Sie Ihre Aufmerksamkeit kurz der kalksteinernen Antoniusstatue an der Westwand der Kirche. Sie wurde 1904 in der Basilika zu Ehren des für Knechtsteden bedeutenden Anton Scheben, der 1903 gestorben war, aufgestellt. Vermutlich in den 1960er Jahren wurde sie dann in einen kleinen Park neben dem Pilgerhaus versetzt. 2020 rettete man die Statue vor den ihr zusetzenden Witterungsbedingungen und holte sie in die Basilika zurück. Sie soll bis heute an die Verdienste des Förderers und Gestalters Scheben erinnern.
 Bevor Sie die Tür rechts zum Kreuzgang betreten und damit die nächste Station beginnen, wenden Sie Ihren Blick kurz auf die eingerahmte Urkunde rechts der Tür. Es handelt sich um eine besondere Anerkennung aus dem Jahre 1974. Wegen ihrer überregionalen Bedeutung für die Seelsorge und Kunstgeschichte ist die Klosterkirche Knechtsteden zur päpstlichen „Basilica minor“ erhoben worden – aus unserer Sicht kaum überraschend, zieht man die vielen Besonderheiten, die wir eben erwähnt haben, in Betracht.''',
       video: "assets/guidevideos/Kapitel_3.mp4",
+      zusatztitel:'Gründung und Geschichte der Spiritaner',
       zusatztext:
           '''Die Spiritaner, eigentlich Missionsgesellschaft vom Heiligen Geist und vom Unbefleckten Herzen Mariens, sind eine katholische, missionierende Gemeinschaft, deren Geschichte bereits 300 Jahre zurückreicht.
 Einer der zwei Gründer, auf die die Spiritaner zurückgehen, ist Claude François Poullart des Places. In Paris kaufte dieser ein Haus, um jungen Männern aus armen Verhältnissen das Studium zum Priester zu ermöglichen. Ziel war es, dass die jungen Männer nach ihrer Ausbildung in jenen Gebieten arbeiten sollten, für die die Kirche nur schwer Seelsorger findet. Frankreich war schließlich Kolonialmacht. Gerade in Übersee und in ländlicheren Regionen Frankreichs fehlte es an Geistlichen. 1703 gründete Poullart des Places die Genossenschaft vom Heiligen Geist, um seine Ziele zu verwirklichen.
@@ -135,7 +144,8 @@ Auch heute wirken die Spiritaner und verkünden die Frohbotschaft. In mehr als 6
     xcoord: 51.07686539713518,
     ycoord: 6.752528216135492,
     name: 'Kloster\nund Kreuzgang',
-    iconImage: 'assets/guideicons/kloster.png',
+    subtitle: 'Schätze Knechstedens',
+    iconImage: 'assets/guideicons/kloster.jpg',
     fulltext:
         '''Treten Sie nun durch die Tür in den Kreuzgang. Sollte die Tür verschlossen sein, dürfen wir Sie mit Bildern auf Ihrem Endgerät vertrösten. Setzen Sie sich in diesem Fall gern auf eine der Bänke in der Basilika. Lassen Sie den Gang auf sich wirken.
 Seit der ersten Klostergründung 529 durch den Heiligen Benedikt in Montecassino bestimmte die Gemeinschaftsregel den architektonischen Aufbau eines Klosters. Die Gemeinschaft der im Kloster lebenden Mönche oder Nonnen brauchte eine Kirche, die 
@@ -154,7 +164,8 @@ Sind wir bisher eher auf der Stelle getreten, möchten wir mit Ihnen nun etwas m
     xcoord: 51.07721720328484,
     ycoord: 6.752250162141913,
     name: 'Missionshaus\nund Pilgerhaus',
-    iconImage: 'assets/guideicons/klosterladen.png',
+    subtitle: 'Neues Leben im 19. Jahrhundert',
+    iconImage: 'assets/guideicons/klosterladen.jpg',
     fulltext:
         '''Mit Übernahme Knechtstedens durch die Spiritaner 1895 wurde im Jahr darauf auch eine Missionsschule eingerichtet, in der künftige Missionare ihre gymnasiale Ausbildung erhielten, die auf die schwierige Missionsarbeit vorbereiten sollte. Über 700 Missionare sind bis heute aus Knechtsteden in alle Welt geschickt worden, um die Frohbotschaft zu verkünden. Auf diese Weise nutzten die Spiritaner Knechtsteden bis 1947. Dies belebte den damals langsam aussterbenden Ort Knechtsteden erneut – die Spiritaner waren ein Segen. Die Klostergebäude, so auch das rosafarbene Missionshaus, lagen in Schutt und Asche. Die Spiritaner bauten sie in ihrem ursprünglichen spätbarocken Stil wieder auf. Heute zeigt die Fassade das Wappen der Spiritaner über der Pforte. Schauen Sie sich dieses einmal genauer an. Vor dem Dreieck, das symbolisch in der Ikonographie für die Dreifaltigkeit Gottes steht, ist eine Taube abgebildet. Die Taube symbolisiert den Heiligen Geist und verweist somit auf die „Gesellschaft vom Heiligen Geist“, den 1703 in Paris gegründeten Männerorden, der sich 1845 mit der „Missionsgesellschaft vom unbefleckten Herzen Mariens“, deren Gründer Libermann war, vereinigte. Die Kongregation findet sich im unbefleckten Herzen Mariens auf dem Wappen wieder.
 Drehen Sie sich nun zum Pilgerhaus auf der anderen Seite um. Es ist gewissermaßen der Beweis für die Wiederbelebung Knechtstedens. Seit die Spiritaner Knechtsteden wieder aufbauten, wurde es ein autarkes Dorf, das sich also selbst versorgen konnte. Dafür sorgte nicht nur die vorbildliche Landwirtschaft und die handwerkliche Ausbildung und Arbeit, sondern auch die Wiederaufnahme geistlichen Lebens in Knechtsteden. Der alte Pilgerort zur „Schmerzhaften Mutter Gottes“ erfuhr eine wahre 
@@ -170,7 +181,8 @@ An dieser Stelle möchten wir Sie ganz herzlich einladen, eine kurze Pause zu ma
     xcoord: 51.077360657685986,
     ycoord: 6.752786484128415,
     name: 'Alte Prälatur',
-    iconImage: "assets/guideicons/praelatur.png",
+    subtitle: 'Kirchenfürsten im barocken Zeitalter',
+    iconImage: "assets/guideicons/praelatur.jpg",
     fulltext:
         '''Wir reisen an dieser Stelle noch einmal zurück in die Zeit der Prämonstratenser: Eine Prälatur, wie Sie sie vor sich sehen, bezeichnet das Amts- und Wohngebäude des Prälaten, eines Geistlichen in Vorrangstellung. Die alte Prälatur in Knechtsteden ist das ehemalige Abtshaus. Petrus Gillrath, den wir zum Ausgang aus der Basilika bereits erwähnten, ließ diese damals neue Prälatur im barocken Stil um 1670 errichten. Dies weist auf das veränderte klösterliche Leben im 17. und 18. Jahrhundert hin. Das meist reich ausgeschmückte und architektonisch besondere Abtshaus diente repräsentativen Zwecken. Der Bau der Prälatur unterstreicht das Selbstverständnis der Knechtstedener Äbte als fürstenähnliche Geistliche. Ab dem 18. Jahrhundert sind sogar Pontifikalhandlungen, Handlungen, die eigentlich Bischöfen vorbehalten sind, durch Knechtstedener Äbte nachgewiesen. So weihen jene etwa andere Äbte ihnen unterstellter Abteien, Kapellen, Altäre und vieles mehr. 
 Der Bau der Prälatur beweist aber auch, dass sich Knechtsteden von den Wirren der vergangenen Jahrhunderte des Glaubenskampfes erholt hatte. Offensichtlich stand das Kloster nicht nur wirtschaftlich stabil da, sondern konnte auch ein geordnetes Klosterleben nachweisen. Wer damals in den Orden eintrat, erhielt das weiße Ordensgewand der Prämonstratenser. Nach absolviertem Einführungsjahr, dem Noviziat, folgte das Theologie- und Philosophiestudium. Die Vorlesungen hielten die Knechtstedener bis 1615 selbst ab, dann nahmen sie am „Seminarum Norbertinum“ im Steinfelder Hof in Köln teil. Ein Dokument von 1639, also nicht einmal 30 Jahre vor der Weihe Gillraths, beziffert den Mitgliederstand in Knechtsteden auf 50 – 20 in der Abtei, 30 auswärts in 10 Pfarreien und 7 anderen Stiften. Der Abt hatte über seine Mitglieder des Konvents, die Konventualen, zu wachen, von denen er gewählt wurde. Er vergab Ämter, etwa das des Priors, der den Abt vertrat. Zum Erhalt und zur Pflege der Kirche brauchte es einen Sakristan. Den Chorgesang leitete der Cantor, dessen auf Pergament geschriebenes Missale noch heute in der historischen Bibliothek im Kreuzgang aufbewahrt wird. Die Verwaltung der umfassenden Besitztümer, Ländereien, Weinberge in Remagen, Getreide- und Ölmühlen, oblag dem Procurator. Handwerkliche oder landwirtschaftliche Arbeiten wurden von Laienbrüdern verrichtet. Die Abtei Knechtsteden konnte wirtschaftlich also nur florieren, wenn jeder seine Aufgaben angemessen und pflichtgemäß erfüllte.
@@ -185,7 +197,8 @@ Die Spiritaner nutzten dann die Prälatur zu Schulzwecken. Zwar hat der Vorstehe
       xcoord: 51.07753653918695,
       ycoord: 6.751702995818423,
       name: 'Brüderhof\nund Brüderhaus',
-      iconImage: 'assets/guideicons/klosterhaus.png',
+      subtitle: 'Blüte des Spiritanerordens',
+      iconImage: 'assets/guideicons/klosterhaus.jpg',
       fulltext:
           '''Abgebildet ist Josef mit dem Jesuskind auf dem Arm. Als Patron der Arbeiter steht er dort wohl genau richtig, da die Ordensbrüder in ihren meist handwerklichen Ausbildungsberufen auf die Mission vorbereitet wurden. Die Statue ziert bereits lange den Platz, auf dem Sie sich gerade befinden. Vermutlich ist sie ein Kunstwerk aus Paris, das das Kloster unmittelbar nach Einzug der Spiritaner in Knechtsteden erwarb. Der Brüderhof diente als Versammlungs- und Freizeitort. Hier wurden Andachten oder Feste, etwa das Joseffest, abgehalten. Auch als Ort des gemeinsamen Gebets wurde der Brüderhof genutzt.
 Durch die linke Baumreihe hindurch erkennen Sie das ehemalige Brüderhaus, seit es zum Bildungshaus umfunktioniert wurde auch Libermannhaus genannt, das auf Veranlassung des Superiors Pater Emil Clauss 1916 erbaut worden ist und heute von der Pension „Augenblick“ genutzt wird. Ganz offensichtlich brauchte es eine Unterkunft für die Ordensschüler und Brüder. Die Knechtstedener Ordensschule florierte. 1908 beherbergte Knechtsteden 16 Patres, 38 Brüder, 21 Seminaristen, 34 Brüderpostulanten und Novizen sowie 85 Schüler, die alle einen Platz zum Schlafen brauchten. Das Brüderhaus verweist daher auf den stark angewachsenen Orden in Knechtsteden. Zu Hochzeiten lebten 450 Seelen im Klosterdorf Knechtsteden. Anfangs schliefen die etwa 70 Brüder noch auf Strohsäcken, während die Patres immer schon im Haupthaus, dem Missionshaus, nächtigten. Mit der Zeit kamen Betten dazu, später hatten die Brüder jeweils eigene Zimmer.
@@ -199,7 +212,8 @@ Gehen Sie nun zum linken Gebäudeabschluss des ehemaligen Brüderhauses. Auffäl
       xcoord: 51.07726506222155,
       ycoord: 6.7514651485320645,
       name: 'Werkstätten',
-      iconImage: 'assets/guideicons/werkstatt.png',
+      subtitle: 'Leben und Arbeit in Knechtsteden',
+      iconImage: 'assets/guideicons/werkstatt.jpg',
       fulltext:
           '''Einen Handwerkertrakt gab es im Kloster Knechtsteden schon zu Zeiten der Prämonstratenser. Er war für die Selbstversorgung des Klosters essentiell und umschloss daher alle Gewerke. Diese Tradition wurde dann im Jahre 1895 fortgesetzt, als sich 
 die Spiritaner in Knechtsteden ansiedelten. Neben Landwirtschaft und Imkerei führten sie, oft als Meister ihres Fachs, Handwerkerbetriebe aller Art. Die Tage der Brüder waren somit immer geprägt von Gebet und Arbeit. Sie begannen schon um fünf 
@@ -220,7 +234,8 @@ Gehen Sie einmal weiter hinunter in die entgegengesetzte Richtung des Klosterlad
   StationInfo(9,
       xcoord: 51.07640061070178,
       ycoord: 6.75265162077709,
-      name: 'Klosterfriedhof',
+      name: 'Kloster- und Soldatenfriedhof',
+      subtitle: 'Die Wirren der Weltkriege',
       iconImage: 'assets/guideicons/friedhof.jpg',
       fulltext:
           '''Der sich vor Ihnen erstreckende Klosterfriedhof besteht aus zwei Teilen. Den vorderen Teil bildet der sogenannte Brüderfriedhof der Spiritaner, auf dem die verstorbenen Spiritanerbrüder und Patres ruhen. Die Patres sind Ordensleute mit Priesterweihe, die Spiritanerbrüder hingegen leben ihre Berufung als Handwerker, Landwirte, Ärzte, Künstler usw. Schauen Sie sich die Grabsteine in den Reihen links und rechts einmal genauer an. Auf ihnen sind unterschiedliche Kürzel zu erkennen. "F.C.S." - Das steht für Fervor (Eifer), Caritas (Liebe) und Sacrificium (Opfersinn) und bezieht sich auf die letzten Worte am Sterbebett des Ordensgründers der Spiritaner, Franz Maria Paul Libermanns. Die wenigen Grabsteine der Ruhenden, die dem Orden der Spiritaner nicht angehörten, zeigen das Kürzel „J.M.J.“. Jenes verweist auf Jesus, Maria und Josef. Alle Steine zeigen die Namen, die die Brüder bei Ordenseintritt bekamen. Neben dem Geburts- und Todesdatum ist außerdem das Datum der Priesterweihe verzeichnet, bei den Brüdern das des Ordenseintritts.
@@ -234,6 +249,7 @@ Bei den 157 bestatteten Toten auf dem Soldatenfriedhof handelt es sich nicht um 
 Wenden Sie sich nun der anderen Seite des Friedhofs zu. Sie sehen ein von Grün umsäumtes, steinernes Relief des Erzengels Michael, dargestellt mit Flügeln. Die Aufschrift an den Flügeln links und rechts lautet: „Zum Leben rufe ich // Zum Herrn 
 geleite ich“. Aufgestellt wurde es 1957 als Ehrenmal für die gefallenen deutschen Soldaten. Der Erzengel Michael gilt als Kämpfer Gottes und Patron der Deutschen. Mit ausgebreiteten Armen schreitet er durch die Gräberreihen, um die Toten nach ihrem Kampf in den ewigen Frieden zu begleiten. Dieses Ehrenmal fügt sich natürlich in die christliche Umgebung des Klosters ein und ist in seiner Frieden und Ruhe ausstrahlenden Form bewusst gewählt worden.''',
       video: "assets/guidevideos/Kapitel_9.mp4",
+      zusatztitel:'Das Leben von Gustav Harnisch',
       zusatztext:
           '''Gustav Adolf Harnisch ist am 11.12.1906 in Schönborn im Kreis Luckau im heutigen Brandenburg geboren. Wie viele der hier Begrabenen, stammt Gustav Harnisch also nicht aus dem Rheinland, sondern kommt von weither. Harnisch war von Beruf Bergmann und Landwirt, der für die Eigenversorgung ca. 30 Morgen Land zuzüglich Vieh bewirtschaftete. Mit seiner ersten Frau Elsbeth Frieda Meta, geb. Schippan, hatte er die Söhne Karl Heinz und Günter Gustav sowie die Tochter Giesela Ingeburg.        
 Die Kriegszeit traf Harnisch schwer. Im Juni 1940 kam es zu seiner ersten Einberufung zur 1. Kompanie des Infanterie-Regiments 663. Er war vom 07.08.1940 bis zum 03.02.1941 im Einsatz in der 5. Kompanie des Landesschützen-Bataillons 224. Im selben Jahr starb seine Frau Meta nach schwerer Erkrankung, wodurch die Vormundschaft des jüngeren, nicht einmal einjährigen Sohnes Günter auf eigenen Wunsch an die Familie seiner Schwester Emma und Reinhold Bachert übertragen wurde. Im Februar 1941 erfolgte dann Harnischs vorzeitige Entlassung aus dem Wehrdienst aus privaten Gründen. Offensichtlich setzten Harnisch der Tod der Ehefrau, die offenen Sorgerechtsfragen der Kinder oder der 1941 verstorbene Vater schwer zu.
@@ -251,7 +267,8 @@ ich zu Hause bin, [das] [f]reu[t] mich aber. Denn wir wollen doch das Tanzbein t
     xcoord: 51.07861234748353,
     ycoord: 6.750253239539649,
     name: 'Kräutergarten',
-    iconImage: 'assets/guideicons/kraeutergarten.png',
+    subtitle: 'Naturschutz und Kräuterkunde',
+    iconImage: 'assets/guideicons/kraeutergarten.jpg',
     fulltext:
         '''Auch am Beispiel des vor Ihnen befindlichen Kräutergartens ist es erkennbar, dass die Spiritaner Knechtsteden im wahrsten Sinne des Wortes wiederbelebten. Seit die Spiritaner Knechtsteden wieder aufbauten, wurde es ein autarkes Dorf, das sich selbst versorgen konnte. Dafür sorgte auch die vorbildliche Landwirtschaft, die bis heute fortgeführt wird. Der heutige Kräutergarten wurde früher als Hühnerhof genutzt, um ihn herum waren Felder, Äcker, Obstwiesen. Bis zu 450 Personen konnte der landwirtschaftliche Betrieb damals mit seinen Erzeugnissen versorgen. Auch heute ist direkt nebenan eine große Streuobstwiese, um welche sich das Haus der Natur in Knechtsteden kümmert. Der Kräutergarten wird von einem ehrenamtlichen, engagierten Team von 12 Personen gepflegt und erhalten. Das Ziel des Kräutergartens ist der Erhalt aussterbender und seltener Kräuter, die Schaffung biologischer Vielfalt sowie die Kräuterkunde selbst. Nicht zuletzt soll der Kräutergarten seine Besucher einladen, in der stillen Natur zu verweilen.
 Sehen Sie sich mal um. Angelegt sind zehn Beete, die allesamt über die Holzspan-Wege begehbar sind. Auf den Bänken hier und dort können Sie sich auch hinsetzen und eine Weile die Ruhe genießen. Die Beete tragen unter anderem Küchenkräuter, Gemüse oder in Vergessenheit geratene Kräuter. Zwei Beete fallen jedoch besonders auf: Eines ist der Heiligen Maria, der Mutter Gottes, und eines den Symbolen des Christentums geweiht. In ersterem finden sich Kräuter, die sinnbildlich für die Eigenschaften der Gottesmutter Maria stehen. Kräuter der christlichen Symbolik wie beispielsweise Silbertaler sind entsprechend in letzterem Beet zu finden.
@@ -269,6 +286,7 @@ Schiffe ist jeweils ein hoher, hellgrauer Stein, welcher den zentralen Mittelpun
     xcoord: 51.07852443117225,
     ycoord: 6.751014940273164,
     name: 'Kulturhof\nund Bullenstall',
+    subtitle: 'Landwirtschaft damals wie heute',
     iconImage: 'assets/guideicons/kulturhof.png',
     fulltext:
         '''Haben wir uns bisher eher den handwerklichen Berufen gewidmet, steht nun die Landwirtschaft Knechtstedens im Vordergrund, die hier, im ehemaligen Bullenstall, noch wiederzuerkennen ist, sowie Sie sich einmal umschauen. Der Landwirtschaftsbetrieb des Klosters wurde vor dem Ersten Weltkrieg von den Spiritanern für die Versorgung von etwa 500 Menschen errichtet. Die Zucht Knechtstedener Zuchtbullen war zu ihrer Zeit bekannt und wurde mehrfach prämiert. Als die Nationalsozialisten 1941 Knechtsteden beschlagnahmten, sollte der Hof zu einem landwirtschaftlichen Mustergut umgebaut werden. Einige Brüder wurden zur Zwangsarbeit verpflichtet, wodurch ihnen jedoch der Dienst an der Front erspart blieb. Andere Patres und Brüder wurden aus Knechtsteden ausgewiesen. Zu seinen Hochzeiten konnte sich das Kloster dank seiner Landwirtschaft vollkommen autark halten und sich selbst versorgen. Bis in die 1960er Jahre wurde der landwirtschaftliche Betrieb im Kloster durch die Brüder aufrechterhalten.
@@ -282,7 +300,8 @@ Heute ist der Kulturhof, der ehemalige Bullenstall und die Theaterscheune, als V
     xcoord: 51.07806413957527,
     ycoord: 6.751501836755097,
     name: 'Alte Feuerwehr',
-    iconImage: 'assets/guideicons/feuerwehr.png',
+    subtitle: 'Der Brand von 1869',
+    iconImage: 'assets/guideicons/feuerwehr.jpg',
     fulltext:
         '''An dieser Stelle möchten wir noch einmal an den verheerenden Brand von 1869 erinnern, der die gesamte Klosteranlage zerstörte. Sie erinnern sich: Als die Armenverwaltung von Köln die Klosteranlage übernommen hatte, sollte Knechtsteden als psychiatrische Klinik 
 für etwa 400 Patienten genutzt werden. Einer großen Beliebtheit erfreute sich dieser Plan jedoch nicht. Insbesondere die Bauern der umliegenden Dörfer wollten die Heilanstalt verhindern. Zu therapeutischen Zwecken hätten die Patienten auf den umliegenden Feldern gearbeitet, sodass den Bauern die Pachtverträge gekündigt worden wären. Aus diesem Grund sagt man den Straberger Bauern nach, sie hätten den Brand von 1869 gelegt. Als Außenstehende den Brand zu löschen versuchten, sollen die Straberger jene daran gehindert haben. Einige Jahre nach dem Brand wurde jedoch die wahre Ursache bekannt. Ein alter Knecht hatte in der Scheune beim Anzünden einer Pfeife leichtsinnigerweise den Brand verschuldet. Sein Geheimnis trug der Mann bis an sein Lebensende mit sich. Erst auf dem Sterbebett hat er seine fahrlässige Tat reumütig gestanden. 
@@ -299,6 +318,7 @@ denen die Feuerwehrwagen und -geräte bereitstanden.''',
     xcoord: 51.07758543614188,
     ycoord: 6.753780118854125,
     name: 'Norbert-Gymnasium',
+    subtitle: 'Schule in geistlicher Tradition',
     iconImage: 'assets/guideicons/gymnasium.jpg',
     fulltext:
         '''Knechtsteden erfüllen heute neben den Ordensmännern Optiker, Künstler, Biologen, Naturpädagogen, Landwirte, Musiker und Eventmanager und viele mehr mit Leben. Knechtsteden ist ein kulturelles Zentrum, etwa für Musikfestivals geworden, so auch für das überregional bekannte Festival der Alten Musik Knechtsteden. Viele Einrichtungen werden Sie während dieser Führung bemerkt oder kennengelernt haben.
@@ -318,6 +338,7 @@ mitzugestalten. So bleibt die Knechtstedener Schule auf eine eigene Weise mit de
     xcoord: 51.07660176969927,
     ycoord: 6.757339425377802,
     name: 'Klosterhof',
+    subtitle: 'Ein Ort für Besucher',
     iconImage: 'assets/guideicons/klosterhof.png',
     fulltext:
         '''1898, also kurz nach der Übernahme des Klosters durch den Spiritaner-Orden, wurde der Klosterhof erbaut. Dieses Projekt leitete Bruder Aristobul. Damals sind die Förderer und Mitglieder des „Vereins für das Missionshaus Knechtsteden“ regelmäßig gekommen, um den Fortschritt des Wiederaufbaus Knechtstedens unter der Leitung des Baumeisters und Bruders Ansberi zu begutachten, den sie finanzierten. Weil jene Förderer gern Zeit dort vorbrachten, wo sie den Wiederaufbau unterstützten, und sich nach Feierabend gesellig austauschten, schien ein Gasthaus notwendig, wo auch die Vereinssitzungen stattfinden konnten. Die Knechtstedener Spiritaner wollten sich für die großzügige Unterstützung der Vereinsmitglieder erkenntlich zeigen und begannen deshalb den Bau eines Restaurants mit Herberge. Auch diente der Klosterhof als Unterkunft für die Verwandten der Patres und Brüder, insbesondere die weiblichen, die ihre Familienmitglieder nur einmal im Jahr in Knechtsteden besuchen durften. Übernachtungen und Besuche innerhalb des Klosters waren dabei untersagt, weshalb der Klosterhof als Gasthaus nötig war.

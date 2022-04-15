@@ -50,11 +50,11 @@ class MyApp extends StatelessWidget {
         Locale('de', ''),
         //Locale('en', '')
       ], // Erstmal nur Deutsch hinzufügen. Sonst Kommentar entfernen. (UNTEN AUCH!)
-      title: 'Klosterguide',
+      title: 'Klosterführer',
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: const MyHomePage(title: 'Klosterguide Knechtsteden'),
+      home: const MyHomePage(title: 'Klosterführer Knechtsteden'),
     );
   }
 }
@@ -155,8 +155,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // by the _incrementCounter method above.
     return Scaffold(
         appBar: AppBar(
+          toolbarHeight: 80,
           backgroundColor: appbarcolor,
-          title: Text(widget.title),
+          title: FittedBox(fit: BoxFit.fill,child: Text(widget.title)),
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Image.asset("assets/icons/app2.png"),
+          ),
           actions: <Widget>[
             PopupMenuButton<String>(
                 color: popupbuttoncolor,
@@ -164,7 +169,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemBuilder: (BuildContext context) {
                   return [
                     'Spenden',
-                    'GitHub',
                     'Teilen',
                     'Impressum',
                   ].map((String choice) {
@@ -264,6 +268,7 @@ class _MyHomePageState extends State<MyHomePage> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
+              alignment: (option=="map")?Alignment(0.00,-0.70):Alignment(0.00,0.00),
                 image: AssetImage(imagepath),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(

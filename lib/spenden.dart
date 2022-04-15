@@ -49,26 +49,20 @@ class Spenden extends StatelessWidget {
 
 
 
-                  const SizedBox(height: 35),
-                  Row(children: <Widget>[
-                    Text(
-                      "  " +
+                  const SizedBox(height: 20),
+                  Center(
+                    child: Text(
                           DemoLocalizations.of(context)!
-                              .getText("endcard2ndtitle") +
-                          " ",
+                              .getText("endcard2ndtitle"),
                       style: TextStyle(
                         fontFamily: 'Avenir',
-                        fontSize: 31,
+                        fontSize: 42,
                         color: primaryTextColor,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w900,
                       ),
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.center,
                     ),
-                    Icon(
-                      Icons.sentiment_satisfied_rounded,
-                      color: primaryTextColor,
-                    ),
-                  ]),
+                  ),
                   Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
 

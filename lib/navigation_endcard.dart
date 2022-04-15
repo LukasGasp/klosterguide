@@ -32,7 +32,7 @@ class Endcard extends StatelessWidget {
                 children: <Widget>[
                   // Icon Image der Station
 
-                  const SizedBox(height: 50),
+             
                   Align(
                     alignment: Alignment.center,
                     child: ClipRRect(
@@ -45,30 +45,23 @@ class Endcard extends StatelessWidget {
                   // Stationsname, "Knechtsteden"
 
                   Padding(
-                    padding: const EdgeInsets.all(32.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          "Ende",
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 50,
-                            color: primaryTextColor,
-                            fontWeight: FontWeight.w900,
+                        Center(
+                          child: Text(
+                            "Abschied",
+                            style: TextStyle(
+                              fontFamily: 'Avenir',
+                              fontSize: 50,
+                              color: primaryTextColor,
+                              fontWeight: FontWeight.w900,
+                            ),
+                            textAlign: TextAlign.left,
                           ),
-                          textAlign: TextAlign.left,
                         ),
-                        Text(
-                          'Vielen Dank!',
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 31,
-                            color: primaryTextColor,
-                            fontWeight: FontWeight.w300,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
+                        
                         Divider(color: endcardTextColor),
                       ],
                     ),
@@ -113,24 +106,12 @@ class Endcard extends StatelessWidget {
                   const SizedBox(height: 35),
 
                   // Knöpfe
-                  Row(children: <Widget>[
-                    Text(
-                      "  " +
-                          DemoLocalizations.of(context)!.getText("links") +
-                          " ",
-                      style: TextStyle(
-                        fontFamily: 'Avenir',
-                        fontSize: 31,
-                        color: primaryTextColor,
-                        fontWeight: FontWeight.w400,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                    Icon(
-                      Icons.insert_link,
-                      color: primaryTextColor,
-                    ),
-                  ]),
+                  
+
+
+
+                  // Knöpfe
+
 
                   Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
@@ -140,16 +121,16 @@ class Endcard extends StatelessWidget {
                       child: SizedBox(
                         //Feedback und Kontakt
                         height: 60,
-                        width: 100,
+                        width: 200,
                         child: FloatingActionButton(
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10),
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                          )),
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                              )),
                           child: Container(
                               alignment: Alignment.center,
                               child: Text(
@@ -165,25 +146,21 @@ class Endcard extends StatelessWidget {
                         ),
                       )),
                   const SizedBox(height: 35),
-                  Row(children: <Widget>[
-                    Text(
-                      "  " +
+                  
+                  const SizedBox(height: 20),
+                  Center(
+                    child: Text(
                           DemoLocalizations.of(context)!
-                              .getText("endcard2ndtitle") +
-                          " ",
+                              .getText("endcard2ndtitle"),
                       style: TextStyle(
                         fontFamily: 'Avenir',
-                        fontSize: 31,
+                        fontSize: 42,
                         color: primaryTextColor,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w900,
                       ),
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.center,
                     ),
-                    Icon(
-                      Icons.sentiment_satisfied_rounded,
-                      color: primaryTextColor,
-                    ),
-                  ]),
+                  ),
                   Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
 
@@ -198,11 +175,11 @@ class Endcard extends StatelessWidget {
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10),
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                          )),
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                              )),
                           child: Container(
                               alignment: Alignment.center,
                               child: Text(
@@ -224,11 +201,11 @@ class Endcard extends StatelessWidget {
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10),
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                          )),
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                              )),
                           child: Container(
                               alignment: Alignment.center,
                               child: Text(

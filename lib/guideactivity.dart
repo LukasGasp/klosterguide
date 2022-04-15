@@ -16,7 +16,7 @@ class Guideactivity extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: appbarcolor,
-          title: const Text("Touren"),
+          title: const Text("Führungen"),
         ),
         body: Container(
           color: primarybackgroundcolor,
@@ -29,32 +29,27 @@ class Guideactivity extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               // Test: Eventuell ist center besser
               children: <Widget>[
-                // Tour
-                buildunifinishedcard(context, "assets/guideactivity/glocke.png",
-                    "Kurzer Einblick",
-                    "ca. 10 Minuten",
-                    "kurz",
-                    false),
-                const SizedBox(height: 50),
-
-                // Discover
-                buildunifinishedcard(
-                    context,
-                    "assets/guideactivity/klosterhof.png",
-                    "Schöne Tour",
-                    "ca. 45 Minuten",
-                    "mittel",
-                    false),
-                const SizedBox(height: 50),
-
                 // Längenschnitt
                 buildunifinishedcard(
                     context,
                     "assets/guideactivity/spiritaner.jpg",
-                    "Alles",
+                    "Zeige mir alles!",
                     "ca. 2 Stunden",
                     "lang",
-                    true) //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
+                    true), //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
+                    const SizedBox(height: 50),
+
+                // Tour
+              
+                // Discover
+                buildunifinishedcard(
+                    context,
+                    "assets/guideactivity/klosterhof.jpg",
+                    "Gib mir einen Überblick!",
+                    "ca. 45 Minuten",
+                    "mittel",
+                    false),
+                
               ],
             ),
           ),
@@ -70,24 +65,18 @@ class Guideactivity extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(24),
         width: MediaQuery.of(context).size.width - 12,
-        height: 150,
+        height: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          image: selectable
-              ? DecorationImage(
-                  image: AssetImage(imagepath),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.25),
-                    BlendMode.darken,
-                  ))
-              : DecorationImage(
-                  image: AssetImage(imagepath),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.7),
-                    BlendMode.darken,
-                  )),
+          image: DecorationImage(
+            alignment: Alignment.topLeft,
+            image: AssetImage(imagepath),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.25),
+              BlendMode.darken,
+            ))
+              
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,14 +121,14 @@ class Guideactivity extends StatelessWidget {
         break;
       case "mittel":
         {
-          // Navigator.push(
-          //     context,
-          //     MaterialPageRoute(
-          //         builder: (context) => Navigation(
-          //               tourlist: tour_mittel,
-          //               index: 0,
-          //             )));
-          snackbar(context, "Coming soon", Colors.black);
+           Navigator.push(
+               context,
+               MaterialPageRoute(
+                   builder: (context) => const NavStart(
+                         tourlist: tour_mittel,
+                         mapvideo: true,
+                       )));
+          
         }
         break;
       case "lang":

@@ -28,7 +28,7 @@ class _HomePageState extends State<Discoverpage> {
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [discovergradientStartColor, discovergradientEndColor],
+                colors: [discovergradientStartColor, appbarcolor],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 stops: const [0.3, 0.7])),
@@ -36,24 +36,7 @@ class _HomePageState extends State<Discoverpage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                // Menü Titel:
-                padding: const EdgeInsets.all(32.0),
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      DemoLocalizations.of(context)!.getText("mainscreentext2"),
-                      style: TextStyle(
-                        fontFamily: 'Avenir',
-                        fontSize: 44,
-                        color: primaryTextColor,
-                        fontWeight: FontWeight.w900,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
-              ),
+              SizedBox(height: 100,),
 
               // Swiper:
               Container(
@@ -116,25 +99,38 @@ class _HomePageState extends State<Discoverpage> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: <Widget>[
-                                              const SizedBox(height: 100),
+                                              const SizedBox(height: 140),
 
                                               // StationsName
                                               SizedBox(
                                                 height:
                                                     70, // Größendefinition der einzelnen Karten
-                                                child: FittedBox(
-                                                    fit: BoxFit.fitWidth,
-                                                    child: Text(
-                                                      stationen[index].name,
-                                                      style: TextStyle(
-                                                        fontFamily: 'Avenir',
-                                                        fontSize: 30,
-                                                        color: primaryTextColor,
-                                                        fontWeight:
-                                                            FontWeight.w900,
-                                                      ),
-                                                      textAlign: TextAlign.left,
-                                                    )),
+                                                child: Text(
+                                                  stationen[index].name,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 22,
+                                                    color: primaryTextColor,
+                                                    fontWeight:
+                                                        FontWeight.w900,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height:
+                                                    70, // Größendefinition der einzelnen Karten
+                                                child: Text(
+                                                  stationen[index].subtitle,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 18,
+                                                    color: primaryTextColor,
+                                                    fontWeight:
+                                                        FontWeight.w300,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
                                               ),
                                               const SizedBox(height: 6),
 

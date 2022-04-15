@@ -53,7 +53,7 @@ class Impressum extends StatelessWidget {
                           "Impressum",
                           style: TextStyle(
                             fontFamily: 'Avenir',
-                            fontSize: 50,
+                            fontSize: 42,
                             color: primaryTextColor,
                             fontWeight: FontWeight.w900,
                           ),
@@ -71,10 +71,12 @@ class Impressum extends StatelessWidget {
                       DemoLocalizations.of(context)!.getText(
                           "impressum"), //Es wird sogar ein womöglicher englischer Text geladen
                       style: TextStyle(
+                        
                         fontFamily: 'Avenir',
                         fontSize: 20,
                         color: contentTextColor,
                         fontWeight: FontWeight.w500,
+                        wordSpacing: 1,
                       ),
                       textAlign: TextAlign.justify,
                     ),
@@ -92,7 +94,7 @@ class Impressum extends StatelessWidget {
                       child: SizedBox(
                         //Feedback und Kontakt
                         height: 60,
-                        width: 100,
+                        width: 200,
                         child: FloatingActionButton(
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(

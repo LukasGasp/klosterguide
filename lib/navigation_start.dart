@@ -97,7 +97,7 @@ class NavStart extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         Text(
-                          'zur Klostertour',
+                          'zur ausführlichen Tour',
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 25,

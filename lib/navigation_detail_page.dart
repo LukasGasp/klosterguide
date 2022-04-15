@@ -121,8 +121,8 @@ class DetailPage extends StatelessWidget {
             // Graue Stationsnummer im Hinergrund
 
             Positioned(
-              top: 60,
-              left: 32,
+              top: -20,
+              left: 4,
               child: Text(
                 stationInfo.position.toString(),
                 style: (stationInfo.position >
@@ -131,13 +131,13 @@ class DetailPage extends StatelessWidget {
                         letterSpacing:
                             -25, // Daher, sollen die Zahlen dann näher an einander
                         fontFamily: 'Avenir',
-                        fontSize: 247,
+                        fontSize: 248,
                         color: primaryTextColor.withOpacity(0.08),
                         fontWeight: FontWeight.w900,
                       )
                     : TextStyle(
                         fontFamily: 'Avenir',
-                        fontSize: 247,
+                        fontSize: 500,
                         color: primaryTextColor.withOpacity(0.08),
                         fontWeight: FontWeight.w900,
                       ),
@@ -158,24 +158,24 @@ class DetailPage extends StatelessWidget {
                           child: Image.asset(stationInfo.iconImage,
                               width: 150, height: 150))),
 
-                  // Stationsname
 
+                  // Stationsname
                   Padding(
                     padding: const EdgeInsets.all(32.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        const SizedBox(height: 100),
                         Text(
                           stationInfo.name,
                           style: TextStyle(
                             fontFamily: 'Avenir',
-                            fontSize: 43,
+                            fontSize: 36,
                             color: primaryTextColor,
                             fontWeight: FontWeight.w900,
                           ),
                           textAlign: TextAlign.left,
                         ),
+                        const SizedBox(height: 20),
                         const Divider(color: Colors.black38),
                       ],
                     ),
@@ -224,17 +224,18 @@ class DetailPage extends StatelessWidget {
                           children: [
                             const Divider(color: Colors.black38),
                             const SizedBox(height: 32),
-                            const Padding(
+                            Padding(
                               // Überschrift Zusatzinfos:
 
                               padding: EdgeInsets.only(left: 15.0),
+                              // ignore: unnecessary_null_comparison
                               child: Text(
-                                'Zusatzinfos',
+                                stationInfo.zusatztitel,
                                 style: TextStyle(
                                   fontFamily: 'Avenir',
                                   fontSize: 25,
                                   color: Color(0xff47455f),
-                                  fontWeight: FontWeight.w300,
+                                  fontWeight: FontWeight.w600,
                                 ),
                                 textAlign: TextAlign.left,
                               ),

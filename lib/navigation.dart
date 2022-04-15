@@ -77,7 +77,7 @@ class _MyHomePageState extends State<Navigation> {
                     SizedBox(
                       height: 30,
                       width: 60,
-                      child: FloatingActionButton(
+                      child: (stationen[widget.index].mapvideo != "")?FloatingActionButton(
                         shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(10),
@@ -90,12 +90,12 @@ class _MyHomePageState extends State<Navigation> {
                             _visible = !_visible;
                           });
                         },
-                        child: Icon((_visible)?Icons.arrow_drop_down:Icons.arrow_drop_up),
+                        child: Icon((_visible)?Icons.remove:Icons.add),
                         backgroundColor: primarymapbuttoncolor,
-                  ),)
+                  ):Container(),)
                 ],
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 100),
               Row(
 
                 mainAxisAlignment:
