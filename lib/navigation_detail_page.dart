@@ -102,7 +102,7 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading:
-        false, // Kein Automatischer Home Knopf in App Bar
+            false, // Kein Automatischer Home Knopf in App Bar
         title: const Text('Tour'),
         backgroundColor: appbarcolor,
         leading: IconButton(
@@ -169,7 +169,6 @@ class DetailPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(72.5),
                           child: Image.asset(stationInfo.iconImage,
                               width: 150, height: 150))),
-
 
                   // Stationsname
                   Padding(
@@ -318,7 +317,10 @@ class _StationAssetVideo extends StatefulWidget {
   _StationAssetVideoState createState() =>
       // Falsche interpretation der IDE
       // ignore: no_logic_in_create_state
-      _StationAssetVideoState(videopath: videopath);
+      _StationAssetVideoState(
+          videopath:
+              "https://raw.githubusercontent.com/LukasGasp/Klosterguide-Videos/main" +
+                  videopath);
 }
 
 class _StationAssetVideoState extends State<_StationAssetVideo> {
@@ -330,7 +332,7 @@ class _StationAssetVideoState extends State<_StationAssetVideo> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(videopath);
+    _controller = VideoPlayerController.network(videopath);
 
     _controller.addListener(() {
       setState(() {});
@@ -376,7 +378,7 @@ class VideoPlayerFullscreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => controller.value.isInitialized
       ? Container(alignment: Alignment.topCenter, child: buildVideo())
-      : const Center(child: CircularProgressIndicator());
+      : const Center(child: CircularProgressIndicator.adaptive());
 
   Widget buildVideo() => OrientationBuilder(
         builder: (context, orientation) {

@@ -15,7 +15,11 @@ class NavStart extends StatelessWidget {
   final String laenge;
   final bool mapvideo;
 
-  const NavStart({Key? key, required this.tourlist, required this.mapvideo, required this.laenge})
+  const NavStart(
+      {Key? key,
+      required this.tourlist,
+      required this.mapvideo,
+      required this.laenge})
       : super(key: key);
 
   @override
@@ -98,7 +102,9 @@ class NavStart extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         Text(
-                          (laenge=="lang")?'zur ausführlichen Tour':'zur kurzen Tour',
+                          (laenge == "lang")
+                              ? 'zur ausführlichen Tour'
+                              : 'zur kurzen Tour',
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 25,
@@ -129,7 +135,8 @@ class NavStart extends StatelessWidget {
                   // Video: Klassen unten
 
                   const _StationAssetVideo(
-                    videopath: "assets/guidevideos/Tourstart.mp4",
+                    videopath:
+                        "https://raw.githubusercontent.com/LukasGasp/Klosterguide-Videos/main/guidevideos/Tourstart.mp4",
                   ),
                   // Detaillierte Beschreibung
 
@@ -199,7 +206,7 @@ class _StationAssetVideoState extends State<_StationAssetVideo> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(videopath);
+    _controller = VideoPlayerController.network(videopath);
 
     _controller.addListener(() {
       setState(() {});
@@ -245,7 +252,7 @@ class VideoPlayerFullscreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => controller.value.isInitialized
       ? Container(alignment: Alignment.topCenter, child: buildVideo())
-      : const Center(child: CircularProgressIndicator());
+      : const Center(child: CircularProgressIndicator.adaptive());
 
   Widget buildVideo() => OrientationBuilder(
         builder: (context, orientation) {

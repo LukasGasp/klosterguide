@@ -32,7 +32,6 @@ class Endcard extends StatelessWidget {
                 children: <Widget>[
                   // Icon Image der Station
 
-             
                   Align(
                     alignment: Alignment.center,
                     child: ClipRRect(
@@ -61,7 +60,6 @@ class Endcard extends StatelessWidget {
                             textAlign: TextAlign.left,
                           ),
                         ),
-                        
                         Divider(color: endcardTextColor),
                       ],
                     ),
@@ -70,7 +68,7 @@ class Endcard extends StatelessWidget {
                   // Video: Klassen unten
 
                   const _StationAssetVideo(
-                    videopath: "assets/guidevideos/Endcard.mp4",
+                    videopath: "/guidevideos/Endcard.mp4",
                   ),
                   // Detaillierte Beschreibung
 
@@ -106,12 +104,8 @@ class Endcard extends StatelessWidget {
                   const SizedBox(height: 35),
 
                   // Knöpfe
-                  
-
-
 
                   // Knöpfe
-
 
                   Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
@@ -126,11 +120,11 @@ class Endcard extends StatelessWidget {
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                              )),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          )),
                           child: Container(
                               alignment: Alignment.center,
                               child: Text(
@@ -139,19 +133,17 @@ class Endcard extends StatelessWidget {
                                 textAlign: TextAlign.center,
                               )),
                           onPressed: () {
-                            launch(
-                                DemoLocalizations.of(context)!
-                                    .getText("kontaktlink"));
+                            launch(DemoLocalizations.of(context)!
+                                .getText("kontaktlink"));
                           },
                         ),
                       )),
                   const SizedBox(height: 35),
-                  
+
                   const SizedBox(height: 20),
                   Center(
                     child: Text(
-                          DemoLocalizations.of(context)!
-                              .getText("endcard2ndtitle"),
+                      DemoLocalizations.of(context)!.getText("endcard2ndtitle"),
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 42,
@@ -175,11 +167,11 @@ class Endcard extends StatelessWidget {
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                              )),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          )),
                           child: Container(
                               alignment: Alignment.center,
                               child: Text(
@@ -188,9 +180,8 @@ class Endcard extends StatelessWidget {
                                 textAlign: TextAlign.center,
                               )),
                           onPressed: () {
-                            launch(
-                                DemoLocalizations.of(context)!
-                                    .getText("spendenlinkmh"));
+                            launch(DemoLocalizations.of(context)!
+                                .getText("spendenlinkmh"));
                           },
                         ),
                       ),
@@ -201,11 +192,11 @@ class Endcard extends StatelessWidget {
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                              )),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          )),
                           child: Container(
                               alignment: Alignment.center,
                               child: Text(
@@ -214,9 +205,8 @@ class Endcard extends StatelessWidget {
                                 textAlign: TextAlign.center,
                               )),
                           onPressed: () {
-                            launch(
-                                DemoLocalizations.of(context)!
-                                    .getText("spendenlinkngk"));
+                            launch(DemoLocalizations.of(context)!
+                                .getText("spendenlinkngk"));
                           },
                         ),
                       ),
@@ -228,7 +218,7 @@ class Endcard extends StatelessWidget {
                     children: <Widget>[
                       SizedBox(
                         child:
-                        Image.asset('assets/icons/logo-missionshaus.png'),
+                            Image.asset('assets/icons/logo-missionshaus.png'),
                         height: 100,
                         width: 100,
                       ),
@@ -265,7 +255,10 @@ class _StationAssetVideo extends StatefulWidget {
   _StationAssetVideoState createState() =>
       // Falsche interpretation der IDE
       // ignore: no_logic_in_create_state
-      _StationAssetVideoState(videopath: videopath);
+      _StationAssetVideoState(
+          videopath:
+              "https://raw.githubusercontent.com/LukasGasp/Klosterguide-Videos/main" +
+                  videopath);
 }
 
 class _StationAssetVideoState extends State<_StationAssetVideo> {
@@ -277,7 +270,7 @@ class _StationAssetVideoState extends State<_StationAssetVideo> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(videopath);
+    _controller = VideoPlayerController.network(videopath);
 
     _controller.addListener(() {
       setState(() {});
@@ -323,7 +316,7 @@ class VideoPlayerFullscreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => controller.value.isInitialized
       ? Container(alignment: Alignment.topCenter, child: buildVideo())
-      : const Center(child: CircularProgressIndicator());
+      : const Center(child: CircularProgressIndicator.adaptive());
 
   Widget buildVideo() => OrientationBuilder(
         builder: (context, orientation) {
