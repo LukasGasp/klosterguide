@@ -40,7 +40,7 @@ class _HomePageState extends State<Discoverpage> {
 
               // Swiper:
               Container(
-                height: 500,
+                height: 600,
                 padding: const EdgeInsets.only(left: 32),
                 child: Swiper(
                   itemCount: stationen.length,
