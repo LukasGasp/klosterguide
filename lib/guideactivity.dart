@@ -125,8 +125,10 @@ class Guideactivity extends StatelessWidget {
                context,
                MaterialPageRoute(
                    builder: (context) => const NavStart(
-                         tourlist: tour_mittel,
-                         mapvideo: true,
+                     tourlist: tour_mittel,
+                     mapvideo: true,
+                     laenge: "mittel",
+
                        )));
           
         }
@@ -137,8 +139,9 @@ class Guideactivity extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => const NavStart(
-                        tourlist: tour_lang,
+                    tourlist: tour_lang,
                     mapvideo: true,
+                    laenge: "lang",
                       )));
         }
         break;

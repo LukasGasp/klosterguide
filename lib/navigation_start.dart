@@ -12,9 +12,10 @@ import 'navigation.dart';
 
 class NavStart extends StatelessWidget {
   final List tourlist;
+  final String laenge;
   final bool mapvideo;
 
-  const NavStart({Key? key, required this.tourlist, required this.mapvideo})
+  const NavStart({Key? key, required this.tourlist, required this.mapvideo, required this.laenge})
       : super(key: key);
 
   @override
@@ -97,7 +98,7 @@ class NavStart extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         Text(
-                          'zur ausführlichen Tour',
+                          (laenge=="lang")?'zur ausführlichen Tour':'zur kurzen Tour',
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 25,
