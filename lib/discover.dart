@@ -36,11 +36,11 @@ class _HomePageState extends State<Discoverpage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 100,),
+              SizedBox(height: 100),
 
               // Swiper:
               Container(
-                height: 600,
+                height: 500,
                 padding: const EdgeInsets.only(left: 32),
                 child: Swiper(
                   itemCount: stationen.length,
@@ -99,12 +99,12 @@ class _HomePageState extends State<Discoverpage> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: <Widget>[
-                                              const SizedBox(height: 140),
+                                              const SizedBox(height: 120),
 
                                               // StationsName
                                               SizedBox(
                                                 height:
-                                                    70, // Größendefinition der einzelnen Karten
+                                                    60, // Größendefinition der einzelnen Karten
                                                 child: Text(
                                                   stationen[index].name,
                                                   style: TextStyle(
@@ -119,7 +119,7 @@ class _HomePageState extends State<Discoverpage> {
                                               ),
                                               SizedBox(
                                                 height:
-                                                    70, // Größendefinition der einzelnen Karten
+                                                    60, // Größendefinition der einzelnen Karten
                                                 child: Text(
                                                   stationen[index].subtitle,
                                                   style: TextStyle(
