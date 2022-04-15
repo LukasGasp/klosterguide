@@ -252,7 +252,7 @@ class VideoPlayerFullscreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => controller.value.isInitialized
       ? Container(alignment: Alignment.topCenter, child: buildVideo())
-      : const Center(child: CircularProgressIndicator());
+      : const Center(child: CircularProgressIndicator.adaptive());
 
   Widget buildVideo() => OrientationBuilder(
         builder: (context, orientation) {

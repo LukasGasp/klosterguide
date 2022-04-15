@@ -16,6 +16,8 @@ import 'package:video_player/video_player.dart';
 import 'data.dart';
 import 'navigation_detail_page.dart';
 
+import 'dart:io' show Platform;
+
 class Navigation extends StatefulWidget {
   final List tourlist;
   final int index;
@@ -330,7 +332,7 @@ class VideoPlayerFullscreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => controller.value.isInitialized
       ? Container(alignment: Alignment.topCenter, child: buildVideo())
-      : const Center(child: CircularProgressIndicator());
+      : const Center(child: CircularProgressIndicator.adaptive());
 
   Widget buildVideo() => OrientationBuilder(
         builder: (context, orientation) {
