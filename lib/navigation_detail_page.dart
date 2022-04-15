@@ -100,6 +100,18 @@ class DetailPage extends StatelessWidget {
     final StationInfo stationInfo = stationen[tourlist[index]];
 
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading:
+        false, // Kein Automatischer Home Knopf in App Bar
+        title: const Text('Tour'),
+        backgroundColor: appbarcolor,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.home),
+        ),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation
           .centerDocked, //Position wird von der Mitte des Bildschirms berechnet
       floatingActionButton: Padding(

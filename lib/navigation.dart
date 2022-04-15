@@ -52,7 +52,7 @@ class _MyHomePageState extends State<Navigation> {
         appBar: AppBar(
           automaticallyImplyLeading:
           false, // Kein Automatischer Home Knopf in App Bar
-          title: const Text('Navigation'),
+          title: const Text('Tour'),
           backgroundColor: appbarcolor,
           leading: IconButton(
             onPressed: () {
