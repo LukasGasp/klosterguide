@@ -152,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           toolbarHeight: 80,
           backgroundColor: appbarcolor,
-          title: FittedBox(fit: BoxFit.fill,child: Text(widget.title)),
+          title: FittedBox(fit: BoxFit.fill,child: Text(widget.title, style: TextStyle(fontSize: 200),)), //text standartmäßig extrem groß. wird dann an Gerät angepasst
           leading: Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Image.asset("assets/icons/app2.png"),
