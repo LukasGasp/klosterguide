@@ -142,7 +142,7 @@ class _MyHomePageState extends State<Navigation> {
           children: <Widget>[
             FlutterMap(
               options: MapOptions(
-                  center: LatLng(51.07761902538088, 6.752730047496091),
+                  center: LatLng(51.07594003947888, 6.753587966358769),
                   zoom: 15.7,
                   minZoom: 14,
                   maxZoom: 18,

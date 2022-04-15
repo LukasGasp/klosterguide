@@ -14,7 +14,6 @@ class Karte extends StatelessWidget {
 
   get localPath => null;
 
-
   @override
   Widget build(BuildContext context) {
     for (var i = 0; i < stationen.length; i++) {
@@ -57,7 +56,7 @@ class Karte extends StatelessWidget {
           children: [
             FlutterMap(
               options: MapOptions(
-                  center: LatLng(51.07761902538088, 6.752730047496091),
+                  center: LatLng(51.07782168731831, 6.753696126096359),
                   zoom: 15.7,
                   minZoom: 14,
                   maxZoom: 18,
