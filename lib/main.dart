@@ -10,7 +10,7 @@ import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Nati
 import 'package:flutter/material.dart';
 import 'package:klosterguide/spenden.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'guideactivity.dart';
+import 'navigation_tourauswahl.dart';
 import 'discover.dart';
 import 'impressum.dart';
 import 'map.dart';
