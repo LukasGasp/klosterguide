@@ -109,7 +109,7 @@ class _HomePageState extends State<Discoverpage> {
                                                   stationen[index].name,
                                                   style: TextStyle(
                                                     fontFamily: 'Avenir',
-                                                    fontSize: 22,
+                                                    fontSize: 20,
                                                     color: primaryTextColor,
                                                     fontWeight: FontWeight.w900,
                                                   ),
