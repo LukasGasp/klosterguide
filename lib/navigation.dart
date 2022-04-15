@@ -1,7 +1,5 @@
 //import 'dart:async'; Ist für regelmäßige Positionsabfrage nötig. Zurzeit unnötig. NICHT LÖSCHEN! ~ Lukas
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
@@ -15,8 +13,6 @@ import 'package:video_player/video_player.dart';
 
 import 'data.dart';
 import 'navigation_detail_page.dart';
-
-import 'dart:io' show Platform;
 
 class Navigation extends StatefulWidget {
   final List tourlist;
@@ -186,8 +182,8 @@ class _MyHomePageState extends State<Navigation> {
                         child: Container(
                           width: 270,
                           height: 190,
-                          padding: EdgeInsets.only(left: 16, right: 16),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.only(left: 16, right: 16),
+                          decoration: const BoxDecoration(
                               color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
@@ -198,7 +194,7 @@ class _MyHomePageState extends State<Navigation> {
                                     spreadRadius: 0.1)
                               ]),
                           child: Container(
-                            padding: EdgeInsets.only(top: 5, bottom: 5),
+                            padding: const EdgeInsets.only(top: 5, bottom: 5),
                             child: _StationAssetVideo(
                               videopath: stationen[widget.index].mapvideo,
                             ),

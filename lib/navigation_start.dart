@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 import 'constants.dart';
 import 'package:video_player/video_player.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Native...
 

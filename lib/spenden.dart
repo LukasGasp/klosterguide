@@ -44,16 +44,10 @@ class Spenden extends StatelessWidget {
                   ),
                   // Stationsname, "Knechtsteden"
 
-
-
-
-
-
                   const SizedBox(height: 20),
                   Center(
                     child: Text(
-                          DemoLocalizations.of(context)!
-                              .getText("endcard2ndtitle"),
+                      DemoLocalizations.of(context)!.getText("endcard2ndtitle"),
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 42,
@@ -77,11 +71,11 @@ class Spenden extends StatelessWidget {
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                              )),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          )),
                           child: Container(
                               alignment: Alignment.center,
                               child: Text(
@@ -90,9 +84,8 @@ class Spenden extends StatelessWidget {
                                 textAlign: TextAlign.center,
                               )),
                           onPressed: () {
-                            launch(
-                                DemoLocalizations.of(context)!
-                                    .getText("spendenlinkmh"));
+                            launch(DemoLocalizations.of(context)!
+                                .getText("spendenlinkmh"));
                           },
                         ),
                       ),
@@ -103,11 +96,11 @@ class Spenden extends StatelessWidget {
                           backgroundColor: primarybuttoncolor,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                              )),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          )),
                           child: Container(
                               alignment: Alignment.center,
                               child: Text(
@@ -116,9 +109,8 @@ class Spenden extends StatelessWidget {
                                 textAlign: TextAlign.center,
                               )),
                           onPressed: () {
-                            launch(
-                                DemoLocalizations.of(context)!
-                                    .getText("spendenlinkngk"));
+                            launch(DemoLocalizations.of(context)!
+                                .getText("spendenlinkngk"));
                           },
                         ),
                       ),
@@ -127,15 +119,14 @@ class Spenden extends StatelessWidget {
                   const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-
                     children: <Widget>[
                       SizedBox(
                         child:
-                        Image.asset('assets/icons/logo-missionshaus.png'),
+                            Image.asset('assets/icons/logo-missionshaus.png'),
                         height: 100,
                         width: 100,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 100,
                         width: 100,
                       ),
@@ -167,8 +158,8 @@ class _StationAssetVideo extends StatefulWidget {
   @override
   _StationAssetVideoState createState() =>
       // Falsche interpretation der IDE
-  // ignore: no_logic_in_create_state
-  _StationAssetVideoState(videopath: videopath);
+      // ignore: no_logic_in_create_state
+      _StationAssetVideoState(videopath: videopath);
 }
 
 class _StationAssetVideoState extends State<_StationAssetVideo> {
@@ -200,7 +191,7 @@ class _StationAssetVideoState extends State<_StationAssetVideo> {
     ]);
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays:
-        SystemUiOverlay.values); // Benachrichtigungsleiste wieder zeigen
+            SystemUiOverlay.values); // Benachrichtigungsleiste wieder zeigen
   }
 
   @override
@@ -229,34 +220,34 @@ class VideoPlayerFullscreenWidget extends StatelessWidget {
       : const Center(child: CircularProgressIndicator());
 
   Widget buildVideo() => OrientationBuilder(
-    builder: (context, orientation) {
-      return Stack(
-        fit: isPortrait ? StackFit.loose : StackFit.expand,
-        children: <Widget>[
-          buildVideoPlayer(),
-          Positioned.fill(
-            child: AdvancedOverlayWidget(
-              controller: controller,
-              onClickedFullScreen: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => videoplayer_fullscreen(
-                            controller: controller)));
-              },
-            ),
-          ),
-        ],
+        builder: (context, orientation) {
+          return Stack(
+            fit: isPortrait ? StackFit.loose : StackFit.expand,
+            children: <Widget>[
+              buildVideoPlayer(),
+              Positioned.fill(
+                child: AdvancedOverlayWidget(
+                  controller: controller,
+                  onClickedFullScreen: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => videoplayer_fullscreen(
+                                controller: controller)));
+                  },
+                ),
+              ),
+            ],
+          );
+        },
       );
-    },
-  );
 
   Widget buildVideoPlayer() => buildFullScreen(
-    child: AspectRatio(
-      aspectRatio: controller.value.aspectRatio,
-      child: VideoPlayer(controller),
-    ),
-  );
+        child: AspectRatio(
+          aspectRatio: controller.value.aspectRatio,
+          child: VideoPlayer(controller),
+        ),
+      );
 
   Widget buildFullScreen({
     required Widget child,
@@ -293,79 +284,79 @@ class AdvancedOverlayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => GestureDetector(
-    behavior: HitTestBehavior.opaque,
-    onTap: () =>
-    controller.value.isPlaying ? controller.pause() : controller.play(),
-    child: Stack(
-      children: <Widget>[
-        buildPlay(),
-        buildSpeed(),
-        Align(
-          alignment: Alignment.topLeft,
-          child: Text(getPosition()),
+        behavior: HitTestBehavior.opaque,
+        onTap: () =>
+            controller.value.isPlaying ? controller.pause() : controller.play(),
+        child: Stack(
+          children: <Widget>[
+            buildPlay(),
+            buildSpeed(),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(getPosition()),
+            ),
+            Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Row(
+                  children: [
+                    Expanded(child: buildIndicator()),
+                    const SizedBox(width: 12),
+                    GestureDetector(
+                      child: const Icon(
+                        Icons.fullscreen,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                      onTap: onClickedFullScreen,
+                    ),
+                    const SizedBox(width: 8),
+                  ],
+                )),
+          ],
         ),
-        Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Row(
-              children: [
-                Expanded(child: buildIndicator()),
-                const SizedBox(width: 12),
-                GestureDetector(
-                  child: const Icon(
-                    Icons.fullscreen,
-                    color: Colors.white,
-                    size: 28,
-                  ),
-                  onTap: onClickedFullScreen,
-                ),
-                const SizedBox(width: 8),
-              ],
-            )),
-      ],
-    ),
-  );
+      );
 
   Widget buildIndicator() => Container(
-    margin: const EdgeInsets.all(8).copyWith(right: 0),
-    height: 16,
-    child: VideoProgressIndicator(
-      controller,
-      allowScrubbing: true,
-    ),
-  );
+        margin: const EdgeInsets.all(8).copyWith(right: 0),
+        height: 16,
+        child: VideoProgressIndicator(
+          controller,
+          allowScrubbing: true,
+        ),
+      );
 
   Widget buildSpeed() => Align(
-    alignment: Alignment.topRight,
-    child: PopupMenuButton<double>(
-      initialValue: controller.value.playbackSpeed,
-      tooltip: 'Playback speed',
-      onSelected: controller.setPlaybackSpeed,
-      itemBuilder: (context) => allSpeeds
-          .map<PopupMenuEntry<double>>((speed) => PopupMenuItem(
-        value: speed,
-        child: Text('${speed}x'),
-      ))
-          .toList(),
-      child: Container(
-        color: Colors.white38,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-        child: Text('${controller.value.playbackSpeed}x'),
-      ),
-    ),
-  );
+        alignment: Alignment.topRight,
+        child: PopupMenuButton<double>(
+          initialValue: controller.value.playbackSpeed,
+          tooltip: 'Playback speed',
+          onSelected: controller.setPlaybackSpeed,
+          itemBuilder: (context) => allSpeeds
+              .map<PopupMenuEntry<double>>((speed) => PopupMenuItem(
+                    value: speed,
+                    child: Text('${speed}x'),
+                  ))
+              .toList(),
+          child: Container(
+            color: Colors.white38,
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            child: Text('${controller.value.playbackSpeed}x'),
+          ),
+        ),
+      );
 
   Widget buildPlay() => controller.value.isPlaying
       ? Container()
       : Container(
-    color: Colors.black26,
-    child: const Center(
-      child: Icon(
-        Icons.play_arrow,
-        color: Colors.white,
-        size: 70,
-      ),
-    ),
-  );
+          color: Colors.black26,
+          child: const Center(
+            child: Icon(
+              Icons.play_arrow,
+              color: Colors.white,
+              size: 70,
+            ),
+          ),
+        );
 }

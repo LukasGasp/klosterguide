@@ -9,7 +9,6 @@ import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Nati
 
 import 'package:flutter/material.dart';
 import 'package:klosterguide/spenden.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'navigation_tourauswahl.dart';
 import 'discover.dart';
 import 'impressum.dart';
@@ -152,7 +151,12 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           toolbarHeight: 80,
           backgroundColor: appbarcolor,
-          title: FittedBox(fit: BoxFit.fill,child: Text(widget.title, style: TextStyle(fontSize: 200),)), //text standartmäßig extrem groß. wird dann an Gerät angepasst
+          title: FittedBox(
+              fit: BoxFit.fill,
+              child: Text(
+                widget.title,
+                style: const TextStyle(fontSize: 200),
+              )), //text standartmäßig extrem groß. wird dann an Gerät angepasst
           leading: Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Image.asset("assets/icons/app2.png"),
@@ -174,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }).toList();
                 }),
           ],
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
         ),
         body: Container(
           color: primarybackgroundcolor,
@@ -263,7 +267,9 @@ class _MyHomePageState extends State<MyHomePage> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
-              alignment: (option=="map")?Alignment(0.00,-0.70):Alignment(0.00,0.00),
+                alignment: (option == "map")
+                    ? const Alignment(0.00, -0.70)
+                    : const Alignment(0.00, 0.00),
                 image: AssetImage(imagepath),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
@@ -275,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(title,
-                  style:  TextStyle(
+                  style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: mainbuttontextcolor,
@@ -283,7 +289,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(height: 8),
               Text(
                 description,
-                style:  TextStyle(fontSize: 20, color: mainbuttontextcolor),
+                style: TextStyle(fontSize: 20, color: mainbuttontextcolor),
               )
             ],
           ),

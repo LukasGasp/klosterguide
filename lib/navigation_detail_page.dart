@@ -255,11 +255,11 @@ class DetailPage extends StatelessWidget {
                             Padding(
                               // Überschrift Zusatzinfos:
 
-                              padding: EdgeInsets.only(left: 15.0),
+                              padding: const EdgeInsets.only(left: 15.0),
                               // ignore: unnecessary_null_comparison
                               child: Text(
                                 stationInfo.zusatztitel,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: 'Avenir',
                                   fontSize: 25,
                                   color: Color(0xff47455f),

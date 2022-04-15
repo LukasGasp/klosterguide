@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
-import 'navigation.dart';
-import 'navigation_detail_page.dart';
-
 import 'touren.dart';
 
 import 'navigation_start.dart';
@@ -37,10 +34,10 @@ class Guideactivity extends StatelessWidget {
                     "ca. 2 Stunden",
                     "lang",
                     true), //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
-                    const SizedBox(height: 50),
+                const SizedBox(height: 50),
 
                 // Tour
-              
+
                 // Discover
                 buildunifinishedcard(
                     context,
@@ -49,7 +46,6 @@ class Guideactivity extends StatelessWidget {
                     "ca. 45 Minuten",
                     "mittel",
                     false),
-                
               ],
             ),
           ),
@@ -67,17 +63,15 @@ class Guideactivity extends StatelessWidget {
         width: MediaQuery.of(context).size.width - 12,
         height: 200,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          image: DecorationImage(
-            alignment: Alignment.topLeft,
-            image: AssetImage(imagepath),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.25),
-              BlendMode.darken,
-            ))
-              
-        ),
+            borderRadius: BorderRadius.circular(16),
+            image: DecorationImage(
+                alignment: Alignment.topLeft,
+                image: AssetImage(imagepath),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.25),
+                  BlendMode.darken,
+                ))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -121,16 +115,14 @@ class Guideactivity extends StatelessWidget {
         break;
       case "mittel":
         {
-           Navigator.push(
-               context,
-               MaterialPageRoute(
-                   builder: (context) => const NavStart(
-                     tourlist: tour_mittel,
-                     mapvideo: true,
-                     laenge: "mittel",
-
-                       )));
-          
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const NavStart(
+                        tourlist: tour_mittel,
+                        mapvideo: true,
+                        laenge: "mittel",
+                      )));
         }
         break;
       case "lang":
@@ -139,9 +131,9 @@ class Guideactivity extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => const NavStart(
-                    tourlist: tour_lang,
-                    mapvideo: true,
-                    laenge: "lang",
+                        tourlist: tour_lang,
+                        mapvideo: true,
+                        laenge: "lang",
                       )));
         }
         break;

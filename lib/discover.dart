@@ -36,7 +36,7 @@ class _HomePageState extends State<Discoverpage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 100),
+              const SizedBox(height: 100),
 
               // Swiper:
               Container(
@@ -111,8 +111,7 @@ class _HomePageState extends State<Discoverpage> {
                                                     fontFamily: 'Avenir',
                                                     fontSize: 22,
                                                     color: primaryTextColor,
-                                                    fontWeight:
-                                                        FontWeight.w900,
+                                                    fontWeight: FontWeight.w900,
                                                   ),
                                                   textAlign: TextAlign.left,
                                                 ),
@@ -126,8 +125,7 @@ class _HomePageState extends State<Discoverpage> {
                                                     fontFamily: 'Avenir',
                                                     fontSize: 18,
                                                     color: primaryTextColor,
-                                                    fontWeight:
-                                                        FontWeight.w300,
+                                                    fontWeight: FontWeight.w300,
                                                   ),
                                                   textAlign: TextAlign.left,
                                                 ),

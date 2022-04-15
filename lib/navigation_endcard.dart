@@ -222,7 +222,7 @@ class Endcard extends StatelessWidget {
                         height: 100,
                         width: 100,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 100,
                         width: 100,
                       ),
