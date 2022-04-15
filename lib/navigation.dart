@@ -82,7 +82,8 @@ class _MyHomePageState extends State<Navigation> {
                   SizedBox(
                     height: 30,
                     width: 60,
-                    child: (stationen[widget.index].mapvideo != "")
+                    child: (stationen[widget.index].mapvideo != "" &&
+                            widget.mapvideo)
                         ? FloatingActionButton(
                             shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
@@ -108,29 +109,31 @@ class _MyHomePageState extends State<Navigation> {
                 mainAxisAlignment:
                     MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
                 children: <Widget>[
-                  _getZurueckButton(context, stationInfo),
-                  FloatingActionButton(
-                    //Buttons rechts
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        PageRouteBuilder(
-                          pageBuilder: (context, a, b) => DetailPage(
-                            //stationInfo: stationen[stationInfo.position - 1],
-                            tourlist: widget.tourlist,
-                            index: widget.index,
-                            mapvideo: widget.mapvideo,
-                          ),
-                          transitionsBuilder: (context, anim, b, child) =>
-                              FadeTransition(opacity: anim, child: child),
-                          transitionDuration:
-                              Duration(milliseconds: animationlength),
-                        ),
-                      );
-                    },
-                    child: const Icon(Icons.navigate_next),
-                    backgroundColor: primarymapbuttoncolor,
-                  ),
+                  _getZurueckButton(context, stationInfo, widget.mapvideo),
+                  (widget.mapvideo)
+                      ? FloatingActionButton(
+                          //Buttons rechts
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              PageRouteBuilder(
+                                pageBuilder: (context, a, b) => DetailPage(
+                                  //stationInfo: stationen[stationInfo.position - 1],
+                                  tourlist: widget.tourlist,
+                                  index: widget.index,
+                                  mapvideo: widget.mapvideo,
+                                ),
+                                transitionsBuilder: (context, anim, b, child) =>
+                                    FadeTransition(opacity: anim, child: child),
+                                transitionDuration:
+                                    Duration(milliseconds: animationlength),
+                              ),
+                            );
+                          },
+                          child: const Icon(Icons.navigate_next),
+                          backgroundColor: primarymapbuttoncolor,
+                        )
+                      : Container()
                 ],
               ),
             ],
@@ -225,14 +228,17 @@ class _MyHomePageState extends State<Navigation> {
         ));
   }
 
-  Widget _getZurueckButton(BuildContext context, StationInfo stationInfo) {
+  Widget _getZurueckButton(
+      BuildContext context, StationInfo stationInfo, bool mapvideo) {
     if (widget.index == 0) {
       //Bei Station 1 verschwindet der Button
       return FloatingActionButton(
         onPressed: () {
           Navigator.pop(context);
         },
-        child: const Icon(Icons.home),
+        child: (mapvideo)
+            ? const Icon(Icons.home)
+            : const Icon(Icons.navigate_before),
         backgroundColor: primarymapbuttoncolor,
       ); //Wenn mit "Container();" ersetzt, gibt es gar keinen Button(wird Probleme beim positionieren geben)
     } else {

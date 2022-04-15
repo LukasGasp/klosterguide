@@ -23,37 +23,54 @@ class DetailPage extends StatelessWidget {
   Widget _getWeiterButton(BuildContext context, StationInfo stationInfo) {
     return Visibility(
         child: FloatingActionButton(
-          onPressed: () {
-            if (tourlist[index + 1] != 0) {
-              Navigator.pushReplacement(
-                context,
-                PageRouteBuilder(
-                  pageBuilder: (context, a, b) => Navigation(
-                    tourlist: tourlist,
-                    index: index + 1,
-                    mapvideo: mapvideo,
-                  ),
-                  transitionsBuilder: (context, anim, b, child) =>
-                      FadeTransition(opacity: anim, child: child),
-                  transitionDuration: Duration(milliseconds: animationlength),
-                ),
-              );
-            } else {
-              Navigator.pushReplacement(
-                context,
-                PageRouteBuilder(
-                  pageBuilder: (context, a, b) => const Endcard(),
-                  transitionsBuilder: (context, anim, b, child) =>
-                      FadeTransition(opacity: anim, child: child),
-                  transitionDuration: Duration(milliseconds: animationlength),
-                ),
-              );
-            }
-          },
-          child: const Icon(Icons.navigate_next),
-          backgroundColor: primarymapbuttoncolor,
-        ),
-        visible: tourlist.length >= 2 ? true : false);
+      onPressed: () {
+        // Dann ist es der Location Marker
+        if (tourlist.length <= 2) {
+          Navigator.push(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, a, b) => Navigation(
+                tourlist: tourlist,
+                index: index,
+                mapvideo: mapvideo,
+              ),
+              transitionsBuilder: (context, anim, b, child) =>
+                  FadeTransition(opacity: anim, child: child),
+              transitionDuration: Duration(milliseconds: animationlength),
+            ),
+          );
+        }
+        if (tourlist[index + 1] != 0) {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, a, b) => Navigation(
+                tourlist: tourlist,
+                index: index + 1,
+                mapvideo: mapvideo,
+              ),
+              transitionsBuilder: (context, anim, b, child) =>
+                  FadeTransition(opacity: anim, child: child),
+              transitionDuration: Duration(milliseconds: animationlength),
+            ),
+          );
+        } else {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, a, b) => const Endcard(),
+              transitionsBuilder: (context, anim, b, child) =>
+                  FadeTransition(opacity: anim, child: child),
+              transitionDuration: Duration(milliseconds: animationlength),
+            ),
+          );
+        }
+      },
+      child: tourlist.length >= 2
+          ? const Icon(Icons.navigate_next)
+          : const Icon(Icons.location_on),
+      backgroundColor: primarymapbuttoncolor,
+    ));
   }
 
   Widget _getZurueckButton(BuildContext context, StationInfo stationInfo) {
