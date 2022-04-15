@@ -141,11 +141,6 @@ class _MyHomePageState extends State<MyHomePage> {
               subject: 'Schau was ich gefunden habe');
         }
         break;
-      case 'GitHub':
-        {
-          launch("https://github.com/lukasgasp/klosterguide");
-        }
-        break;
     }
   }
 
