@@ -71,7 +71,7 @@ class Impressum extends StatelessWidget {
                       DemoLocalizations.of(context)!.getText(
                           "impressum"), //Es wird sogar ein womöglicher englischer Text geladen
                       style: TextStyle(
-                        
+
                         fontFamily: 'Avenir',
                         fontSize: 20,
                         color: contentTextColor,
@@ -89,35 +89,67 @@ class Impressum extends StatelessWidget {
                   Divider(color: endcardTextColor),
                   const SizedBox(height: 25),
 
-                  Align(
-                      alignment: Alignment.center,
-                      child: SizedBox(
-                        //Feedback und Kontakt
-                        height: 60,
-                        width: 200,
-                        child: FloatingActionButton(
-                          backgroundColor: primarybuttoncolor,
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                              )),
-                          child: Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                DemoLocalizations.of(context)!
-                                    .getText("endcard1stbutton"),
-                                textAlign: TextAlign.center,
-                              )),
-                          onPressed: () {
-                            launch(
-                                DemoLocalizations.of(context)!
-                                    .getText("kontaktlink"));
-                          },
-                        ),
-                      )),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment:
+                      MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        SizedBox(
+                          //Feedback und Kontakt
+                          height: 60,
+                          width: 180,
+                          child: FloatingActionButton(
+                            backgroundColor: primarybuttoncolor,
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                )),
+                            child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  DemoLocalizations.of(context)!
+                                      .getText("endcard1stbutton"),
+                                  textAlign: TextAlign.center,
+                                )),
+                            onPressed: () {
+                              launch(
+                                  DemoLocalizations.of(context)!
+                                      .getText("kontaktlink"));
+                            },
+                          ),
+
+                      ),
+                       SizedBox(
+                          //Feedback und Kontakt
+                          height: 60,
+                          width: 180,
+                          child: FloatingActionButton(
+                            backgroundColor: primarybuttoncolor,
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                )),
+                            child: Container(
+                                alignment: Alignment.center,
+                                child: Text("GitHub",
+                                  textAlign: TextAlign.center,
+                                )),
+                            onPressed: () {
+                              launch(
+                                  DemoLocalizations.of(context)!
+                                      .getText("githublink"));
+                            },
+                          ),),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: 35),
 
 
