@@ -79,7 +79,9 @@ class _MyHomePageState extends State<Navigation> {
                     height: 30,
                     width: 60,
                     child: (stationen[widget.index].mapvideo != "" &&
-                            widget.mapvideo)
+                            widget.mapvideo &&
+                            widget.tourlist[widget.index] + 1 ==
+                                widget.tourlist[widget.index + 1])
                         ? FloatingActionButton(
                             shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
@@ -173,7 +175,10 @@ class _MyHomePageState extends State<Navigation> {
                 LocationMarkerLayerOptions(),
               ],
             ),
-            (widget.mapvideo && stationen[widget.index].mapvideo != "")
+            (widget.mapvideo &&
+                    stationen[widget.index].mapvideo != "" &&
+                    widget.tourlist[widget.index] + 1 ==
+                        widget.tourlist[widget.index + 1])
                 ? Positioned(
                     bottom: 10,
                     child: AnimatedOpacity(
@@ -199,24 +204,6 @@ class _MyHomePageState extends State<Navigation> {
                               videopath: stationen[widget.index].mapvideo,
                             ),
                           ),
-
-                          /*child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: (){
-
-                        },
-
-                          icon: Icon(Icons.play_arrow, color: Colors.grey, size: 30 )),
-                      IconButton(
-                          onPressed: (){
-
-                          },
-
-                          icon: Icon(Icons.play_arrow, color: Colors.grey, size: 30 ))
-                    ],
-                  )*/
                         )),
                   )
                 : Container(), //Sonst wird einfach ein leerer Container übergeben
