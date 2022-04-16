@@ -40,7 +40,7 @@ class _HomePageState extends State<Discoverpage> {
 
               // Swiper:
               Container(
-                height: 500,
+                height: MediaQuery.of(context).size.height - 200,
                 padding: const EdgeInsets.only(left: 32),
                 child: Swiper(
                   itemCount: stationen.length,
@@ -77,9 +77,8 @@ class _HomePageState extends State<Discoverpage> {
                       child: Stack(
                         children: <Widget>[
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              const SizedBox(height: 100),
-
                               // Grundkarte
                               Card(
                                 elevation: 11,
@@ -176,12 +175,13 @@ class _HomePageState extends State<Discoverpage> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(110),
                                   child: Image.asset(stationen[index].iconImage,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.55,
+                                      width:
+                                          MediaQuery.of(context).size.height *
+                                              0.3,
                                       height:
-                                          MediaQuery.of(context).size.width *
-                                              0.55,
-                                      fit: BoxFit.fitWidth),
+                                          MediaQuery.of(context).size.height *
+                                              0.3,
+                                      fit: BoxFit.contain),
                                 )),
                           ),
 
