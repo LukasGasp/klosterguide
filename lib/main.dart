@@ -8,6 +8,7 @@ import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Nati
 //Sprache ende
 
 import 'package:flutter/material.dart';
+import 'package:klosterguide/filesdownload.dart';
 import 'package:klosterguide/spenden.dart';
 import 'navigation_tourauswahl.dart';
 import 'discover.dart';
@@ -140,6 +141,12 @@ class _MyHomePageState extends State<MyHomePage> {
               subject: 'Schau was ich gefunden habe');
         }
         break;
+      case 'Update':
+        {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Filesdownload()));
+        }
+        break;
     }
   }
 
@@ -166,11 +173,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: popupbuttoncolor,
                 onSelected: AppBarSelect,
                 itemBuilder: (BuildContext context) {
-                  return [
-                    'Spenden',
-                    'Teilen',
-                    'Impressum',
-                  ].map((String choice) {
+                  return ['Spenden', 'Teilen', 'Impressum', 'Update']
+                      .map((String choice) {
                     return PopupMenuItem<String>(
                       child: Text(choice),
                       value: choice,
