@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:klosterguide/navigation_endcard.dart';
 import 'package:klosterguide/videoplayer_fullscreen.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'main.dart';
 import 'navigation.dart';
 import 'data.dart';
 import 'constants.dart';
@@ -313,6 +315,42 @@ class DetailPage extends StatelessWidget {
                           ],
                         )
                       : const SizedBox(height: 70),
+                  (index==13)
+                    ? Column(children: [
+                        Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                          //Feedback und Kontakt
+                          height: 60,
+                          width: 200,
+                          child: FloatingActionButton(
+                            backgroundColor: primarybuttoncolor,
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                )),
+                            child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'Speisekarte Klosterhof',
+                                  textAlign: TextAlign.center,
+                                )),
+                            onPressed: () {
+                              launch(DemoLocalizations.of(context)!
+                                  .getText("speisekartelink"));
+                            },
+                          ),
+                    ),
+                        ],
+                      ),
+                        SizedBox(height: 40,)
+                        ])
+                      : Container()
+
                 ],
               ),
             ),
