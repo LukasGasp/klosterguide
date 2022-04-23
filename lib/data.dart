@@ -156,7 +156,7 @@ Dem Kloster sehr wohl erhalten geblieben ist hingegen ein historischer Altbestan
 Die vor Ihnen befindliche Ausstellung, die im Südgang immer wieder wechselt, fällt dem Besucher sofort auf. Nehmen Sie sich gern die Zeit und tauchen Sie etwas tiefer in das spannende Leben und Wirken der Knechtstedener Spiritaner ein.
 Sind wir bisher eher auf der Stelle getreten, möchten wir mit Ihnen nun etwas mehr das weitläufige Terrain erkunden. Starten Sie hierfür die Navigation zur nächsten Station.''',
     video: "/guidevideos/Kapitel_4.mp4",
-    mapvideo: "/navvideos/Nav_4.mp4",
+    mapvideo: "",
     next: 4,
   ),
   StationInfo(
