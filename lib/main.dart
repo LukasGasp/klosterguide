@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 'Teilen':
         {
           Share.share(
-              'Hi! Schau mal was ich gefunden habe: https://play.google.com/store/search?q=Norbert%20Gymnasium',
+              'Hi! Schau mal was ich gefunden habe: https://klosterguide.page.link/download',
               subject: 'Schau was ich gefunden habe');
         }
         break;
