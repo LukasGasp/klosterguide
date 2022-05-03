@@ -267,38 +267,41 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: () {
           menueclick(option);
         },
-        child: Container(
+        child: Padding(
           padding: const EdgeInsets.all(24),
-          width: MediaQuery.of(context).size.width - 12,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(
-                alignment: (option == "map")
-                    ? const Alignment(0.00, -0.70)
-                    : const Alignment(0.00, 0.00),
-                image: AssetImage(imagepath),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.25),
-                  BlendMode.darken,
-                )),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: mainbuttontextcolor,
+          child: Container(
+            padding: const EdgeInsets.all(24),
+            width: 600,
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              image: DecorationImage(
+                  alignment: (option == "map")
+                      ? const Alignment(0.00, -0.70)
+                      : const Alignment(0.00, 0.00),
+                  image: AssetImage(imagepath),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.25),
+                    BlendMode.darken,
                   )),
-              const SizedBox(height: 8),
-              Text(
-                description,
-                style: TextStyle(fontSize: 20, color: mainbuttontextcolor),
-              )
-            ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: mainbuttontextcolor,
+                    )),
+                const SizedBox(height: 8),
+                Text(
+                  description,
+                  style: TextStyle(fontSize: 20, color: mainbuttontextcolor),
+                )
+              ],
+            ),
           ),
         ));
   }
