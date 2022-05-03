@@ -154,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: FittedBox(
               fit: BoxFit.fill,
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 200),
+                padding: EdgeInsets.symmetric(vertical: 200, horizontal: (MediaQuery.of(context).size.width<=600)? 0 : MediaQuery.of(context).size.width),
                 child: Text(
                   widget.title,
                   style: const TextStyle(fontSize: 200),
