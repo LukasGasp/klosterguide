@@ -204,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       DemoLocalizations.of(context)!
                           .getText("mainscreentext1info"),
                       "tour"),
-                  const SizedBox(height: 50),
+                  SizedBox(height: 30 * MediaQuery.of(context).size.width * 0.002),
 
                   // Discover
                   buildunifinishedcard(
@@ -213,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       DemoLocalizations.of(context)!
                           .getText("mainscreentext2info"),
                       "discover"),
-                  const SizedBox(height: 50),
+                  SizedBox(height: 30 * MediaQuery.of(context).size.width * 0.002),
 
                   // Längenschnitt
                   buildunifinishedcard(
@@ -271,8 +271,8 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(24),
           child: Container(
             padding: const EdgeInsets.all(24),
-            width: 600,
-            height: 150,
+            width: 600 * MediaQuery.of(context).size.width * 0.002,
+            height: 170 * MediaQuery.of(context).size.width * 0.002,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               image: DecorationImage(
