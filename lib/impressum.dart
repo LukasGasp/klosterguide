@@ -60,15 +60,46 @@ class Impressum extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         Divider(color: endcardTextColor),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16.0),
+                          child: Text(
+                            DemoLocalizations.of(context)!.getText(
+                                "impressumaddresse"),
+                            style: TextStyle(
+                              fontFamily: 'Avenir',
+                              fontSize: 20,
+                              color: primaryTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.left,
+
+                          ),
+                        ),
                       ],
                     ),
                   ),
 
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumhead1"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w600,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//head
                   Padding(
                     padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                     child: Text(
                       DemoLocalizations.of(context)!.getText(
-                          "impressum"), //Es wird sogar ein womöglicher englischer Text geladen
+                          "impressumbody1"), //Es wird sogar ein womöglicher englischer Text geladen
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 20,
@@ -76,76 +107,198 @@ class Impressum extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         wordSpacing: 1,
                       ),
-                      textAlign: TextAlign.justify,
+                      textAlign: TextAlign.left,
                     ),
-                  ),
+                  ),//body
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumhead2"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w600,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//head
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumbody2"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w500,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//body
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumhead3"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w600,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//head
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumbody3"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w500,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//body
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumhead4"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w600,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//head
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumbody4"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w500,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//body
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumhead5"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w600,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//head
+                  Padding(
+                    padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                    child: Text(
+                      DemoLocalizations.of(context)!.getText(
+                          "impressumbody5"), //Es wird sogar ein womöglicher englischer Text geladen
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 20,
+                        color: contentTextColor,
+                        fontWeight: FontWeight.w500,
+                        wordSpacing: 1,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),//body
+
                   const SizedBox(height: 35),
 
                   // Knöpfe
 
                   Divider(color: endcardTextColor),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 30),
 
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        SizedBox(
-                          //Feedback und Kontakt
-                          height: 60,
-                          width: 180,
-                          child: FloatingActionButton(
-                            backgroundColor: primarybuttoncolor,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                            )),
-                            child: Container(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  DemoLocalizations.of(context)!
-                                      .getText("endcard1stbutton"),
-                                  textAlign: TextAlign.center,
-                                )),
-                            onPressed: () {
-                              launch(DemoLocalizations.of(context)!
-                                  .getText("kontaktlink"));
-                            },
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: SizedBox(
+                      height: 60,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          SizedBox(
+                            //Feedback und Kontakt
+                            width: (MediaQuery.of(context).size.width>=400)?180:MediaQuery.of(context).size.width*180*0.002,
+                            child: FloatingActionButton(
+                              backgroundColor: primarybuttoncolor,
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                              )),
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    DemoLocalizations.of(context)!
+                                        .getText("endcard1stbutton"),
+                                    textAlign: TextAlign.center,
+                                  )),
+                              onPressed: () {
+                                launch(DemoLocalizations.of(context)!
+                                    .getText("kontaktlink"));
+                              },
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          //Feedback und Kontakt
-                          height: 60,
-                          width: 180,
-                          child: FloatingActionButton(
-                            backgroundColor: primarybuttoncolor,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                            )),
-                            child: Container(
-                                alignment: Alignment.center,
-                                child: const Text(
-                                  "GitHub",
-                                  textAlign: TextAlign.center,
-                                )),
-                            onPressed: () {
-                              launch(DemoLocalizations.of(context)!
-                                  .getText("githublink"));
-                            },
+                          SizedBox(
+                            //Feedback und Kontakt
+                            width: (MediaQuery.of(context).size.width>=400)?180:MediaQuery.of(context).size.width*180*0.002,
+                            child: FloatingActionButton(
+                              backgroundColor: primarybuttoncolor,
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                              )),
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  child: const Text(
+                                    "GitHub",
+                                    textAlign: TextAlign.center,
+                                  )),
+                              onPressed: () {
+                                launch(DemoLocalizations.of(context)!
+                                    .getText("githublink"));
+                              },
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(height: 35),
+                  const SizedBox(height: 40),
                 ],
               ),
             ),
