@@ -20,33 +20,37 @@ class Guideactivity extends StatelessWidget {
           child: Center(
             // Center is a layout widget. It takes a single child and positions it
             // in the middle of the parent.
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              // Test: Eventuell ist center besser
-              children: <Widget>[
-                // Längenschnitt
-                buildunifinishedcard(
-                    context,
-                    "assets/guideactivity/spiritaner.jpg",
-                    "Zeige mir alles!",
-                    "ca. 2 Stunden",
-                    "lang",
-                    true), //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
-                const SizedBox(height: 50),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                // Test: Eventuell ist center besser
+                children: <Widget>[
+                  // Längenschnitt
+                  const SizedBox(height: 50),
+                  buildunifinishedcard(
+                      context,
+                      "assets/guideactivity/spiritaner.jpg",
+                      "Zeige mir alles!",
+                      "ca. 2 Stunden",
+                      "lang",
+                      true), //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
+                  const SizedBox(height: 50),
 
-                // Tour
+                  // Tour
 
-                // Discover
-                buildunifinishedcard(
-                    context,
-                    "assets/guideactivity/klosterhof.jpg",
-                    "Gib mir einen Überblick!",
-                    "ca. 45 Minuten",
-                    "mittel",
-                    false),
-              ],
+                  // Discover
+                  buildunifinishedcard(
+                      context,
+                      "assets/guideactivity/klosterhof.jpg",
+                      "Gib mir einen Überblick!",
+                      "ca. 45 Minuten",
+                      "mittel",
+                      false),
+                  const SizedBox(height: 50),
+                ],
+              ),
             ),
           ),
         ));
