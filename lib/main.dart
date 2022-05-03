@@ -153,9 +153,12 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: appbarcolor,
           title: FittedBox(
               fit: BoxFit.fill,
-              child: Text(
-                widget.title,
-                style: const TextStyle(fontSize: 200),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 200),
+                child: Text(
+                  widget.title,
+                  style: const TextStyle(fontSize: 200),
+                ),
               )), //text standartmäßig extrem groß. wird dann an Gerät angepasst
           leading: Padding(
             padding: const EdgeInsets.only(left: 10),
