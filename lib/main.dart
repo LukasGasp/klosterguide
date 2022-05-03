@@ -185,39 +185,43 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             // Center is a layout widget. It takes a single child and positions it
             // in the middle of the parent.
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              // Test: Eventuell ist center besser
-              children: <Widget>[
-                // Tour
-                buildunifinishedcard(
-                    "assets/home/002.jpg",
-                    DemoLocalizations.of(context)!
-                        .getText("mainscreentext1"), //"?? "Error"" entfernt
-                    DemoLocalizations.of(context)!
-                        .getText("mainscreentext1info"),
-                    "tour"),
-                const SizedBox(height: 50),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                // Test: Eventuell ist center besser
+                children: <Widget>[
+                  // Tour
+                  const SizedBox(height: 50),
+                  buildunifinishedcard(
+                      "assets/home/002.jpg",
+                      DemoLocalizations.of(context)!
+                          .getText("mainscreentext1"), //"?? "Error"" entfernt
+                      DemoLocalizations.of(context)!
+                          .getText("mainscreentext1info"),
+                      "tour"),
+                  const SizedBox(height: 50),
 
-                // Discover
-                buildunifinishedcard(
-                    "assets/home/083.jpg",
-                    DemoLocalizations.of(context)!.getText("mainscreentext2"),
-                    DemoLocalizations.of(context)!
-                        .getText("mainscreentext2info"),
-                    "discover"),
-                const SizedBox(height: 50),
+                  // Discover
+                  buildunifinishedcard(
+                      "assets/home/083.jpg",
+                      DemoLocalizations.of(context)!.getText("mainscreentext2"),
+                      DemoLocalizations.of(context)!
+                          .getText("mainscreentext2info"),
+                      "discover"),
+                  const SizedBox(height: 50),
 
-                // Längenschnitt
-                buildunifinishedcard(
-                    "assets/home/039.jpg",
-                    DemoLocalizations.of(context)!.getText("mainscreentext3"),
-                    DemoLocalizations.of(context)!
-                        .getText("mainscreentext3info"),
-                    "map")
-              ],
+                  // Längenschnitt
+                  buildunifinishedcard(
+                      "assets/home/039.jpg",
+                      DemoLocalizations.of(context)!.getText("mainscreentext3"),
+                      DemoLocalizations.of(context)!
+                          .getText("mainscreentext3info"),
+                      "map"),
+                  const SizedBox(height: 50),
+                ],
+              ),
             ),
           ),
         ));
