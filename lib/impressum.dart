@@ -239,7 +239,7 @@ class Impressum extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.002 * 30),
                     child: SizedBox(
                       height: 60,
                       child: Row(
@@ -247,7 +247,7 @@ class Impressum extends StatelessWidget {
                         children: <Widget>[
                           SizedBox(
                             //Feedback und Kontakt
-                            width: (MediaQuery.of(context).size.width>=400)?180:MediaQuery.of(context).size.width*180*0.002,
+                            width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.002,
                             child: FloatingActionButton(
                               backgroundColor: primarybuttoncolor,
                               shape: const RoundedRectangleBorder(

@@ -46,7 +46,10 @@ class _HomePageState extends State<Discoverpage> {
                   padding: const EdgeInsets.only(left: 32),
                   child: Swiper(
                     itemCount: stationen.length,
-                    itemWidth: 424,
+                    itemWidth: (MediaQuery.of(context).size.height>=500)
+                        ?424
+                        :MediaQuery.of(context).size.width - 2 * 64
+                    ,
                     layout: SwiperLayout.STACK,
                     pagination: const SwiperPagination(
                       builder: DotSwiperPaginationBuilder(
