@@ -173,7 +173,7 @@ class _HomePageState extends State<Discoverpage> {
                             child: Hero(
                                 tag: stationen[index].position,
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(110),
+                                  borderRadius: BorderRadius.circular(MediaQuery.of(context).size.height*0.15),
                                   child: Image.asset(stationen[index].iconImage,
                                       width:
                                           MediaQuery.of(context).size.height *
@@ -187,18 +187,19 @@ class _HomePageState extends State<Discoverpage> {
 
                           // Nummer
 
-                          Positioned(
-                            right: 24,
-                            bottom: 60,
-                            child: Text(
-                              stationen[index].position.toString(),
-                              style: TextStyle(
-                                fontFamily: 'Avenir',
-                                fontSize: 200,
-                                color: primaryTextColor.withOpacity(0.08),
-                                fontWeight: FontWeight.w900,
+                          Center(
+                            child: Container(
+                              alignment: Alignment(0.2,0.1),
+                              child: Text(
+                                stationen[index].position.toString(),
+                                style: TextStyle(
+                                  fontFamily: 'Avenir',
+                                  fontSize: 220,
+                                  color: primaryTextColor.withOpacity(0.08),
+                                  fontWeight: FontWeight.w900,
+                                ),
+                                textAlign: TextAlign.left,
                               ),
-                              textAlign: TextAlign.left,
                             ),
                           ),
                         ],

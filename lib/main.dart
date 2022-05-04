@@ -268,7 +268,7 @@ class _MyHomePageState extends State<MyHomePage> {
           menueclick(option);
         },
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16 * MediaQuery.of(context).size.width * 0.004),
           child: Container(
             padding: const EdgeInsets.all(24),
             width: 600 * MediaQuery.of(context).size.width * 0.002,
