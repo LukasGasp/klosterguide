@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
@@ -13,7 +15,11 @@ class Guideactivity extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: appbarcolor,
-          title: const Text("Führungen"),
+          title: const Text(
+            "Führungen",
+            style: TextStyle(
+            fontWeight: FontWeight.bold
+          ),),
         ),
         body: Container(
           color: primarybackgroundcolor,
@@ -21,14 +27,15 @@ class Guideactivity extends StatelessWidget {
             // Center is a layout widget. It takes a single child and positions it
             // in the middle of the parent.
             child: SingleChildScrollView(
-              child: Column(
+              child: Column( ///Column mit den "Buttons"
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 // Test: Eventuell ist center besser
                 children: <Widget>[
                   // Längenschnitt
-                  const SizedBox(height: 50),
+                  SizedBox(height: 30 * MediaQuery.of(context).size.width * 0.002),
+
                   buildunifinishedcard(
                       context,
                       "assets/guideactivity/spiritaner.jpg",
@@ -36,7 +43,7 @@ class Guideactivity extends StatelessWidget {
                       "ca. 2 Stunden",
                       "lang",
                       true), //HINWEIS: SELECTABLE WIRD AUCH ALS VARIABLE FÜR MAPVIDEOS BENUTZT
-                  const SizedBox(height: 50),
+                  SizedBox(height: 30 * MediaQuery.of(context).size.width * 0.002),
 
                   // Tour
 
@@ -48,6 +55,7 @@ class Guideactivity extends StatelessWidget {
                       "ca. 45 Minuten",
                       "mittel",
                       false),
+
                   const SizedBox(height: 50),
                 ],
               ),
@@ -56,41 +64,46 @@ class Guideactivity extends StatelessWidget {
         ));
   }
 
+
+  //Führungen-Buttons:
   Widget buildunifinishedcard(BuildContext context, String imagepath,
       String title, String description, String option, bool selectable) {
     return GestureDetector(
       onTap: () {
         menueclick(option, context);
       },
-      child: Container(
-        padding: const EdgeInsets.all(24),
-        width: MediaQuery.of(context).size.width - 12,
-        height: 200,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(
-                alignment: Alignment.topLeft,
-                image: AssetImage(imagepath),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.25),
-                  BlendMode.darken,
-                ))),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title,
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                )),
-            const SizedBox(height: 8),
-            Text(
-              description,
-              style: const TextStyle(fontSize: 20, color: Colors.white),
-            )
-          ],
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16 * pow(MediaQuery.of(context).size.width,2) * 0.000006),
+        child: Container(
+          padding: const EdgeInsets.all(24),
+          width: 600 * MediaQuery.of(context).size.width * 0.002,
+          height: 170 * MediaQuery.of(context).size.width * 0.002,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              image: DecorationImage(
+                  alignment: Alignment.topLeft,
+                  image: AssetImage(imagepath),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.25),
+                    BlendMode.darken,
+                  ))),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  )),
+              const SizedBox(height: 8),
+              Text(
+                description,
+                style: const TextStyle(fontSize: 20, color: Colors.white),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -103,6 +116,8 @@ class Guideactivity extends StatelessWidget {
     ));
   }
 
+
+  //Was passiert, wenn die Buttons geklickt werden
   void menueclick(String onclick, BuildContext context) {
     switch (onclick) {
       case "kurz":

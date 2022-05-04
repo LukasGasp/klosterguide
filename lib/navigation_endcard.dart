@@ -73,6 +73,7 @@ class Endcard extends StatelessWidget {
                   // Detaillierte Beschreibung
 
                   ExpansionTile(
+                    tilePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                     title: Text(
                       'Textfassung',
                       style: TextStyle(
@@ -101,14 +102,14 @@ class Endcard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 35),
+                  const SizedBox(height: 5),
 
                   // Knöpfe
 
                   // Knöpfe
 
                   Divider(color: endcardTextColor),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 55),
 
                   Align(
                       alignment: Alignment.center,
@@ -138,9 +139,8 @@ class Endcard extends StatelessWidget {
                           },
                         ),
                       )),
-                  const SizedBox(height: 35),
+                  const SizedBox(height: 55),
 
-                  const SizedBox(height: 20),
                   Center(
                     child: Text(
                       DemoLocalizations.of(context)!.getText("endcard2ndtitle"),

@@ -53,7 +53,12 @@ class _MyHomePageState extends State<Navigation> {
         appBar: AppBar(
           automaticallyImplyLeading:
               false, // Kein Automatischer Home Knopf in App Bar
-          title: const Text('Tour'),
+          title: const Text(
+            'Tour',
+            style: TextStyle(
+              fontWeight: FontWeight.bold
+            ),
+          ),
           backgroundColor: appbarcolor,
           leading: IconButton(
             onPressed: () {
@@ -175,6 +180,7 @@ class _MyHomePageState extends State<Navigation> {
                 LocationMarkerLayerOptions(),
               ],
             ),
+            ///Der Mapvideo Container:
             (widget.mapvideo &&
                     stationen[widget.index].mapvideo != "" &&
                     widget.tourlist[widget.index] + 1 ==
@@ -185,8 +191,15 @@ class _MyHomePageState extends State<Navigation> {
                         opacity: _visible ? 1.0 : 0.0,
                         duration: const Duration(milliseconds: 500),
                         child: Container(
-                          width: 270,
-                          height: 190,
+                          //Passt die Mapvideo Größe der Bildschirmhöhe an, außer wenn es die Breite übersteigen würde, dann wird es nach der Breite angepasst
+                          //Kann evtl. überarbeitet werden
+                          //Wenn sich Videoformate ändern, müssen sie hier seperat nochmal geändert werden
+                          width: (MediaQuery.of(context).size.width-50 >=270 * MediaQuery.of(context).size.height * 0.002 )
+                              ?270 * MediaQuery.of(context).size.height * 0.002
+                              :MediaQuery.of(context).size.width-50,
+                          height: (MediaQuery.of(context).size.width-50 >=270 * MediaQuery.of(context).size.height * 0.002 )
+                              ?147 * MediaQuery.of(context).size.height * 0.002
+                              :(MediaQuery.of(context).size.width-50) * (147/270),
                           padding: const EdgeInsets.only(left: 16, right: 16),
                           decoration: const BoxDecoration(
                               color: Colors.white,

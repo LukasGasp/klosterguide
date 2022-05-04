@@ -122,7 +122,12 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading:
             false, // Kein Automatischer Home Knopf in App Bar
-        title: const Text('Tour'),
+        title: const Text(
+          'Tour',
+          style: TextStyle(
+              fontWeight: FontWeight.bold
+          ),
+        ),
         backgroundColor: appbarcolor,
         leading: IconButton(
           onPressed: () {
@@ -219,6 +224,7 @@ class DetailPage extends StatelessWidget {
                   // Detaillierte Beschreibung
 
                   ExpansionTile(
+                    tilePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                     title: const Text(
                       'Textfassung',
                       style: TextStyle(
@@ -282,6 +288,7 @@ class DetailPage extends StatelessWidget {
 
                             // Ausklappbarer Text mit Zusatzinfos:
                             ExpansionTile(
+                              tilePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                               title: const Text(
                                 'Textfassung',
                                 style: TextStyle(

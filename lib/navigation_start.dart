@@ -140,6 +140,7 @@ class NavStart extends StatelessWidget {
                   // Detaillierte Beschreibung
 
                   ExpansionTile(
+                    tilePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                     title: Text(
                       'Textfassung',
                       style: TextStyle(

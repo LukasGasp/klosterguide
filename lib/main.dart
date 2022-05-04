@@ -1,6 +1,7 @@
 //Sprache
 import 'dart:convert'; //Die String/language files brauchen jede Menge imports
 import 'dart:core';
+import 'dart:math';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/foundation.dart';
@@ -268,7 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
           menueclick(option);
         },
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16 * MediaQuery.of(context).size.width * 0.004),
+          padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16 * pow(MediaQuery.of(context).size.width,2) * 0.000006),
           child: Container(
             padding: const EdgeInsets.all(24),
             width: 600 * MediaQuery.of(context).size.width * 0.002,
