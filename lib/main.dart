@@ -10,6 +10,7 @@ import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Nati
 
 import 'package:flutter/material.dart';
 import 'package:klosterguide/spenden.dart';
+import 'package:klosterguide/splash.dart';
 import 'navigation_tourauswahl.dart';
 import 'discover.dart';
 import 'impressum.dart';
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: const MyHomePage(title: 'Klosterführer Knechtsteden'),
+      home: SplashScreen(),
     );
   }
 }
