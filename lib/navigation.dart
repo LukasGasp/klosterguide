@@ -74,72 +74,79 @@ class _MyHomePageState extends State<Navigation> {
             .centerDocked, //ButtonPosition wird von der Mitte des Bildschirms berechnet
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(16.0), //Padding Größe
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+          child: Stack(
             children: [
-              Row(
-                children: [
-                  Container(),
-                  SizedBox(
-                    height: 30,
-                    width: 60,
-                    child: (stationen[widget.index].mapvideo != "" &&
-                            widget.mapvideo &&
-                            widget.tourlist[widget.index] + 1 ==
-                                widget.tourlist[widget.index + 1])
-                        ? FloatingActionButton(
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
+              AnimatedPositioned(
+                duration: Duration(milliseconds: 300),
+                bottom: (_visible) //Ob Mapvideo angezeigt wird oder nicht
+                    ?(MediaQuery.of(context).size.width-50 >=270 * MediaQuery.of(context).size.height * 0.002 )
+                      ?147 * MediaQuery.of(context).size.height * 0.002
+                      :(MediaQuery.of(context).size.width-50) * (147/270)
+                    :15,
+                left: (MediaQuery.of(context).size.width/2)-40,
+                //Der Mapvideo Ein/Aus Button
+                child: SizedBox(
+                  height: 40,
+                  width: 60,
+                  child: (stationen[widget.index].mapvideo != "" &&
+                      widget.mapvideo &&
+                      widget.tourlist[widget.index] + 1 ==
+                          widget.tourlist[widget.index + 1])
+                      ? FloatingActionButton(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(10),
                               bottomRight: Radius.circular(10),
                               topLeft: Radius.circular(10),
                               topRight: Radius.circular(10),
                             )),
-                            onPressed: () {
-                              setState(() {
-                                _visible = !_visible;
-                              });
-                            },
-                            child: Icon((_visible) ? Icons.remove : Icons.add),
-                            backgroundColor: primarymapbuttoncolor,
-                          )
-                        : Container(),
-                  )
-                ],
-              ),
-              const SizedBox(height: 100),
-              Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
-                children: <Widget>[
-                  _getZurueckButton(context, stationInfo, widget.mapvideo),
-                  (widget.mapvideo)
-                      ? FloatingActionButton(
-                          //Buttons rechts
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              PageRouteBuilder(
-                                pageBuilder: (context, a, b) => DetailPage(
-                                  //stationInfo: stationen[stationInfo.position - 1],
-                                  tourlist: widget.tourlist,
-                                  index: widget.index,
-                                  mapvideo: widget.mapvideo,
-                                ),
-                                transitionsBuilder: (context, anim, b, child) =>
-                                    FadeTransition(opacity: anim, child: child),
-                                transitionDuration:
-                                    Duration(milliseconds: animationlength),
-                              ),
-                            );
-                          },
-                          child: const Icon(Icons.navigate_next),
-                          backgroundColor: primarymapbuttoncolor,
+                        onPressed: () {
+                          setState(() {
+                            _visible = !_visible;
+                          });
+                        },
+                        child: Icon((_visible) ? Icons.remove : Icons.add),
+                        backgroundColor: primarymapbuttoncolor,
                         )
-                      : Container()
-                ],
+                      : Container(),
+                ),
               ),
-            ],
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Row(
+                    mainAxisAlignment:
+                        MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+                    children: <Widget>[
+                      _getZurueckButton(context, stationInfo, widget.mapvideo),
+                      (widget.mapvideo)
+                          ? FloatingActionButton(
+                              //Buttons rechts
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                  context,
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, a, b) => DetailPage(
+                                      //stationInfo: stationen[stationInfo.position - 1],
+                                      tourlist: widget.tourlist,
+                                      index: widget.index,
+                                      mapvideo: widget.mapvideo,
+                                    ),
+                                    transitionsBuilder: (context, anim, b, child) =>
+                                        FadeTransition(opacity: anim, child: child),
+                                    transitionDuration:
+                                        Duration(milliseconds: animationlength),
+                                  ),
+                                );
+                              },
+                              child: const Icon(Icons.navigate_next),
+                              backgroundColor: primarymapbuttoncolor,
+                            )
+                          : Container()
+                  ],
+                ),
+              ],
+            ),]
           ),
         ),
         body: Stack(
