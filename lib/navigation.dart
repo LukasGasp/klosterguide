@@ -77,7 +77,7 @@ class _MyHomePageState extends State<Navigation> {
           child: Stack(
             children: [
               AnimatedPositioned(
-                duration: Duration(milliseconds: 300),
+                duration: Duration(milliseconds: 230),
                 bottom: (_visible) //Ob Mapvideo angezeigt wird oder nicht
                     ?(MediaQuery.of(context).size.width-50 >=270 * MediaQuery.of(context).size.height * 0.002 )
                       ?147 * MediaQuery.of(context).size.height * 0.002
