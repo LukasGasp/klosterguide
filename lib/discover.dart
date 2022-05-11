@@ -43,10 +43,10 @@ class _HomePageState extends State<Discoverpage> {
                 // Swiper:
                 Container(
                   height: MediaQuery.of(context).size.height - 200,
-                  padding: const EdgeInsets.only(left: 32),
+                  padding: const EdgeInsets.only(left: 32), //Padding links von dem Swiper
                   child: Swiper(
                     itemCount: stationen.length,
-                    itemWidth: (MediaQuery.of(context).size.height>=500)
+                    itemWidth: (MediaQuery.of(context).size.height>=1200)
                         ?424
                         :MediaQuery.of(context).size.width - 2 * 64
                     ,
