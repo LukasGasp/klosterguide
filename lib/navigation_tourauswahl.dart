@@ -77,7 +77,7 @@ class Guideactivity extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(24),
           width: 600 * MediaQuery.of(context).size.width * 0.002,
-          height: 170 * MediaQuery.of(context).size.width * 0.002,
+          height: 200 * MediaQuery.of(context).size.width * 0.002,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               image: DecorationImage(

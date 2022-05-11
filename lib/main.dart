@@ -198,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Test: Eventuell ist center besser
                 children: <Widget>[
                   // Tour
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 30),
                   buildunifinishedcard(
                       "assets/home/002.jpg",
                       DemoLocalizations.of(context)!
@@ -206,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       DemoLocalizations.of(context)!
                           .getText("mainscreentext1info"),
                       "tour"),
-                  SizedBox(height: 30 * MediaQuery.of(context).size.width * 0.002),
+                  SizedBox(height: 20 * MediaQuery.of(context).size.width * 0.002),
 
                   // Discover
                   buildunifinishedcard(
@@ -215,7 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       DemoLocalizations.of(context)!
                           .getText("mainscreentext2info"),
                       "discover"),
-                  SizedBox(height: 30 * MediaQuery.of(context).size.width * 0.002),
+                  SizedBox(height: 20 * MediaQuery.of(context).size.width * 0.002),
 
                   // Längenschnitt
                   buildunifinishedcard(
@@ -224,7 +224,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       DemoLocalizations.of(context)!
                           .getText("mainscreentext3info"),
                       "map"),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
@@ -274,7 +274,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Container(
             padding: const EdgeInsets.all(24),
             width: 600 * MediaQuery.of(context).size.width * 0.002,
-            height: 170 * MediaQuery.of(context).size.width * 0.002,
+            height: 200 * MediaQuery.of(context).size.width * 0.002,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               image: DecorationImage(
