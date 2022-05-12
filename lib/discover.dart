@@ -28,7 +28,9 @@ class _HomePageState extends State<Discoverpage> {
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [discovergradientStartColor, appbarcolor], ///Hintergrund Entdecken/Sehenswürdigkeiten/Discover
+                colors: [discovergradientStartColor, appbarcolor],
+
+                ///Hintergrund Entdecken/Sehenswürdigkeiten/Discover
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 stops: const [0.3, 0.7])),
@@ -43,13 +45,13 @@ class _HomePageState extends State<Discoverpage> {
                 // Swiper:
                 Container(
                   height: MediaQuery.of(context).size.height - 200,
-                  padding: const EdgeInsets.only(left: 32), //Padding links von dem Swiper
+                  padding: const EdgeInsets.only(
+                      left: 32), //Padding links von dem Swiper
                   child: Swiper(
                     itemCount: stationen.length,
-                    itemWidth: (MediaQuery.of(context).size.height>=1200)
-                        ?424
-                        :MediaQuery.of(context).size.width - 2 * 64
-                    ,
+                    itemWidth: (MediaQuery.of(context).size.height >= 1200)
+                        ? 424
+                        : MediaQuery.of(context).size.width - 2 * 64,
                     layout: SwiperLayout.STACK,
                     pagination: const SwiperPagination(
                       builder: DotSwiperPaginationBuilder(
@@ -108,14 +110,15 @@ class _HomePageState extends State<Discoverpage> {
                                                 // StationsName
                                                 SizedBox(
                                                   height:
-                                                      60, // Größendefinition der einzelnen Karten
+                                                      70, // Größendefinition der einzelnen Karten
                                                   child: Text(
                                                     stationen[index].name,
                                                     style: TextStyle(
                                                       fontFamily: 'Avenir',
-                                                      fontSize: 20,
+                                                      fontSize: 19.5,
                                                       color: primaryTextColor,
-                                                      fontWeight: FontWeight.w900,
+                                                      fontWeight:
+                                                          FontWeight.w900,
                                                     ),
                                                     textAlign: TextAlign.left,
                                                   ),
@@ -129,7 +132,8 @@ class _HomePageState extends State<Discoverpage> {
                                                       fontFamily: 'Avenir',
                                                       fontSize: 18,
                                                       color: primaryTextColor,
-                                                      fontWeight: FontWeight.w300,
+                                                      fontWeight:
+                                                          FontWeight.w300,
                                                     ),
                                                     textAlign: TextAlign.left,
                                                   ),
@@ -147,7 +151,8 @@ class _HomePageState extends State<Discoverpage> {
                                                       style: TextStyle(
                                                         fontFamily: 'Avenir',
                                                         fontSize: 21,
-                                                        color: secondaryTextColor,
+                                                        color:
+                                                            secondaryTextColor,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
@@ -178,8 +183,11 @@ class _HomePageState extends State<Discoverpage> {
                               child: Hero(
                                   tag: stationen[index].position,
                                   child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(MediaQuery.of(context).size.height*0.15),
-                                    child: Image.asset(stationen[index].iconImage,
+                                    borderRadius: BorderRadius.circular(
+                                        MediaQuery.of(context).size.height *
+                                            0.15),
+                                    child: Image.asset(
+                                        stationen[index].iconImage,
                                         width:
                                             MediaQuery.of(context).size.height *
                                                 0.3,
@@ -194,12 +202,12 @@ class _HomePageState extends State<Discoverpage> {
 
                             Center(
                               child: Container(
-                                alignment: Alignment(0.2,0.1),
+                                alignment: Alignment(0.2, 0.1),
                                 child: Text(
                                   stationen[index].position.toString(),
                                   style: TextStyle(
                                     fontFamily: 'Avenir',
-                                    fontSize: 220,
+                                    fontSize: 180,
                                     color: primaryTextColor.withOpacity(0.08),
                                     fontWeight: FontWeight.w900,
                                   ),
