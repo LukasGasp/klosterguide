@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:download_assets/download_assets.dart';
 
 import 'main.dart';
 
@@ -17,6 +18,13 @@ class Splash extends State<SplashScreen>  {
     super.initState();
 
   }
+  Future _init() async {
+    await downloadAssetsController.init(assetDir: "assets/");
+    downloaded = await downloadAssetsController.assetsDirAlreadyExists();
+  }
+
+  DownloadAssetsController downloadAssetsController = DownloadAssetsController();
+  bool downloaded = false;
   @override
   Widget build(BuildContext context) {
     Timer(

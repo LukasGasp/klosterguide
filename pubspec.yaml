@@ -41,6 +41,8 @@ dependencies:
   card_swiper: ^1.0.4
   url_launcher: ^6.0.17
   share: ^2.0.4
+  download_assets:
+
 
 
 dev_dependencies:
