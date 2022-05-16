@@ -49,7 +49,7 @@ class _HomePageState extends State<Discoverpage> {
                       left: 32), //Padding links von dem Swiper
                   child: Swiper(
                     itemCount: stationen.length,
-                    itemWidth: (MediaQuery.of(context).size.height >= 1200)
+                    itemWidth: (MediaQuery.of(context).size.width >= 1200)
                         ? 424
                         : MediaQuery.of(context).size.width - 2 * 64,
                     layout: SwiperLayout.STACK,
