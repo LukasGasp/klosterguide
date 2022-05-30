@@ -8,7 +8,7 @@ Dies ist das Repository der Klosterguide App des Norbert-Gymnasium Knechtsteden.
 
 ## Contact
 
-#### Luan
+#### E-Mail
 [![Mail Luan][gmail_logo]][klosterguide-mail]
 
 [gmail_logo]: https://user-images.githubusercontent.com/6497827/62424751-c1b85480-b6f0-11e9-97de-096c0a980829.png
