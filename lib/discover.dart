@@ -115,7 +115,7 @@ class _HomePageState extends State<Discoverpage> {
                                                     stationen[index].name,
                                                     style: TextStyle(
                                                       fontFamily: 'Avenir',
-                                                      fontSize: 19.5,
+                                                      fontSize: 19, // Wenn 0.5 größer => Probleme bei Kloster- und Soldatenfriedhof
                                                       color: primaryTextColor,
                                                       fontWeight:
                                                           FontWeight.w900,
