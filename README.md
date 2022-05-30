@@ -1,7 +1,5 @@
 # Klosterguide-App für Knechtsteden
 
-This project is in early progress. First official release around April.
-
 ## Info:
 
 Dies ist das Repository der Klosterguide App des Norbert-Gymnasium Knechtsteden. Sie können sich gerne umsehen. Die App ist für Android und iOS verfügbar.
