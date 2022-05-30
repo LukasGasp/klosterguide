@@ -3,6 +3,7 @@
 ## Info:
 
 Dies ist das Repository der Klosterguide App des Norbert-Gymnasium Knechtsteden. Sie können sich gerne umsehen. Die App ist für Android und iOS verfügbar.
+Melde dich gerne bei uns, wenn du etwas beitragen möchtest. Wir freuen uns über jeden Teilnehmer!
 
 ## Contact
 
