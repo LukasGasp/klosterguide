@@ -394,7 +394,7 @@ class _StationAssetVideoState extends State<_StationAssetVideo> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(videopath);
+    _controller = VideoPlayerController.asset(videopath);
 
     _controller.addListener(() {
       setState(() {});
