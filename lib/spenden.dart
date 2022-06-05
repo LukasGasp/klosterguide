@@ -64,80 +64,84 @@ class Spenden extends StatelessWidget {
                     //Spenden
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      SizedBox(
-                        height: 50,
-                        width: 170,
-                        child: FloatingActionButton(
-                          backgroundColor: primarybuttoncolor,
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10),
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                          )),
-                          child: Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                DemoLocalizations.of(context)!
-                                    .getText("endcard2ndbutton"),
-                                textAlign: TextAlign.center,
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 50,
+                            width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.002,
+                            child: FloatingActionButton(
+                              backgroundColor: primarybuttoncolor,
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
                               )),
-                          onPressed: () {
-                            launch(DemoLocalizations.of(context)!
-                                .getText("spendenlinkmh"));
-                          },
-                        ),
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    DemoLocalizations.of(context)!
+                                        .getText("endcard2ndbutton"),
+                                    textAlign: TextAlign.center,
+                                  )),
+                              onPressed: () {
+                                launch(DemoLocalizations.of(context)!
+                                    .getText("spendenlinkmh"));
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            child:
+                            Image.asset('assets/icons/logo-missionshaus.png'),
+                            height: 100,
+                            width: 100,
+                          ),
+                        ]
                       ),
-                      SizedBox(
-                        height: 50,
-                        width: 170,
-                        child: FloatingActionButton(
-                          backgroundColor: primarybuttoncolor,
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10),
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                          )),
-                          child: Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                DemoLocalizations.of(context)!
-                                    .getText("endcard3rdbutton"),
-                                textAlign: TextAlign.center,
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 50,
+                            width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.002,
+                            child: FloatingActionButton(
+                              backgroundColor: primarybuttoncolor,
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
                               )),
-                          onPressed: () {
-                            launch(DemoLocalizations.of(context)!
-                                .getText("spendenlinkngk"));
-                          },
-                        ),
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    DemoLocalizations.of(context)!
+                                        .getText("endcard3rdbutton"),
+                                    textAlign: TextAlign.center,
+                                  )),
+                              onPressed: () {
+                                launch(DemoLocalizations.of(context)!
+                                    .getText("spendenlinkngk"));
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            child: Image.asset('assets/icons/logo-ngk-campus.png'),
+                            height: 100,
+                            width: 100,
+                          ),
+                        ]
                       ),
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(
-                        child:
-                            Image.asset('assets/icons/logo-missionshaus.png'),
-                        height: 100,
-                        width: 100,
-                      ),
-                      const SizedBox(
-                        height: 100,
-                        width: 100,
-                      ),
-                      SizedBox(
-                        child: Image.asset('assets/icons/logo-ngk-campus.png'),
-                        height: 100,
-                        width: 100,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 75),
                 ],
               ),
             ),
