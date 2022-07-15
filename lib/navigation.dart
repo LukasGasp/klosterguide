@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:klosterguide/constants.dart';
+import 'package:klosterguide/touren.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:klosterguide/videoplayer_fullscreen.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +12,7 @@ import 'package:video_player/video_player.dart';
 
 //import 'package:geolocator/geolocator.dart'; Ist für regelmäßige Positionsabfrage nötig. Zurzeit unnötig. NICHT LÖSCHEN! ~ Lukas
 
+import 'globals.dart' as globals;
 import 'data.dart';
 import 'navigation_detail_page.dart';
 
@@ -38,6 +40,12 @@ class _MyHomePageState extends State<Navigation> {
   Widget build(BuildContext context) {
     final StationInfo stationInfo = stationen[widget.tourlist[widget.index]];
 
+    if(widget.tourlist==tour_lang) {
+      globals.letzteposition = widget.index;
+    }
+    if(widget.tourlist==tour_mittel) {
+      globals.letztepositionmittel = widget.index;
+    }
     // StreamSubscription<Position> positionStream =
     //     Geolocator.getPositionStream(desiredAccuracy: LocationAccuracy.high)
     //         .listen((Position position) {

@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
+import 'navigation.dart';
 import 'touren.dart';
+import 'globals.dart' as globals;
 
 import 'navigation_start.dart';
 
@@ -134,26 +136,56 @@ class Guideactivity extends StatelessWidget {
         break;
       case "mittel":
         {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const NavStart(
-                        tourlist: tour_mittel,
-                        mapvideo: true,
-                        laenge: "mittel",
-                      )));
+          //Es wird geprüft, ob die letzte Position in der Führung nicht die Default Position ist
+          if(globals.letztepositionmittel!=0)
+          {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Navigation(
+                      tourlist: tour_lang,
+                      index: globals.letztepositionmittel,
+                      mapvideo: true,
+                    )));
+          }
+          //sonst wird die tour normal ausgeführt
+          else {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const NavStart(
+                          tourlist: tour_mittel,
+                          mapvideo: true,
+                          laenge: "mittel",
+                        )));
+          }
         }
         break;
       case "lang":
         {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const NavStart(
-                        tourlist: tour_lang,
-                        mapvideo: true,
-                        laenge: "lang",
-                      )));
+          //Es wird geprüft, ob die letzte Position in der Führung nicht die Default Position ist
+          if(globals.letzteposition!=0)
+          {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Navigation(
+                      tourlist: tour_lang,
+                      index: globals.letzteposition,
+                      mapvideo: true,
+                    )));
+          }
+          //sonst wird die tour normal ausgeführt
+          else {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const NavStart(
+                          tourlist: tour_lang,
+                          mapvideo: true,
+                          laenge: "lang",
+                        )));
+          }
         }
         break;
     }
