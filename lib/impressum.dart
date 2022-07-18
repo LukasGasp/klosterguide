@@ -125,19 +125,24 @@ class Impressum extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                   ),//head
-                  Padding(
-                    padding: const EdgeInsets.only(left: 32.0, right: 32.0),
-                    child: Text(
-                      DemoLocalizations.of(context)!.getText(
-                          "impressumbody2"), //Es wird sogar ein womöglicher englischer Text geladen
-                      style: TextStyle(
-                        fontFamily: 'Avenir',
-                        fontSize: 20,
-                        color: contentTextColor,
-                        fontWeight: FontWeight.w500,
-                        wordSpacing: 1,
+                  GestureDetector(
+                    onTap: (){
+                      launch('https://github.com/LukasGasp/flieger');
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                      child: Text(
+                        DemoLocalizations.of(context)!.getText(
+                            "impressumbody2"), //Es wird sogar ein womöglicher englischer Text geladen
+                        style: TextStyle(
+                          fontFamily: 'Avenir',
+                          fontSize: 20,
+                          color: contentTextColor,
+                          fontWeight: FontWeight.w500,
+                          wordSpacing: 1,
+                        ),
+                        textAlign: TextAlign.left,
                       ),
-                      textAlign: TextAlign.left,
                     ),
                   ),//body
                   Padding(

@@ -150,7 +150,7 @@ class Guideactivity extends StatelessWidget {
           }
           //sonst wird die tour normal ausgeführt
           else {
-            Navigator.push(
+            Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const NavStart(

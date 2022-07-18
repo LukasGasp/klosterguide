@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,13 +18,20 @@ class Splash extends State<SplashScreen>  {
     super.initState();
 
   }
+  Random r = Random();
+
   @override
   Widget build(BuildContext context) {
     Timer(
         Duration(seconds: 2),
-            () =>
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => MyHomePage(title: 'Klosterführer Knechtsteden'))));
+            () =>{
+        if(r.nextInt(10)==5){
+              throw new Exception()
+            },
+
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (BuildContext context) => MyHomePage(title: 'Klosterführer Knechtsteden')))});
+
 
 
     var assetsImage = new AssetImage(
