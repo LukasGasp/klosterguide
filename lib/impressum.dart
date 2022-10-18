@@ -63,8 +63,8 @@ class Impressum extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 16.0),
                           child: Text(
-                            DemoLocalizations.of(context)!.getText(
-                                "impressumaddresse"),
+                            DemoLocalizations.of(context)!
+                                .getText("impressumaddresse"),
                             style: TextStyle(
                               fontFamily: 'Avenir',
                               fontSize: 20,
@@ -72,16 +72,15 @@ class Impressum extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                             textAlign: TextAlign.left,
-
                           ),
                         ),
                       ],
                     ),
                   ),
 
-
                   Padding(
-                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    padding:
+                        const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
                     child: Text(
                       DemoLocalizations.of(context)!.getText(
                           "impressumhead1"), //Es wird sogar ein womöglicher englischer Text geladen
@@ -94,7 +93,7 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//head
+                  ), //head
                   Padding(
                     padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                     child: Text(
@@ -109,9 +108,10 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//body
+                  ), //body
                   Padding(
-                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    padding:
+                        const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
                     child: Text(
                       DemoLocalizations.of(context)!.getText(
                           "impressumhead2"), //Es wird sogar ein womöglicher englischer Text geladen
@@ -124,10 +124,10 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//head
+                  ), //head
                   GestureDetector(
-                    onTap: (){
-                      launch('https://github.com/LukasGasp/flieger');
+                    onTap: () {
+                      launch('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(left: 32.0, right: 32.0),
@@ -144,9 +144,10 @@ class Impressum extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                     ),
-                  ),//body
+                  ), //body
                   Padding(
-                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    padding:
+                        const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
                     child: Text(
                       DemoLocalizations.of(context)!.getText(
                           "impressumhead3"), //Es wird sogar ein womöglicher englischer Text geladen
@@ -159,7 +160,7 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//head
+                  ), //head
                   Padding(
                     padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                     child: Text(
@@ -174,9 +175,10 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//body
+                  ), //body
                   Padding(
-                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    padding:
+                        const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
                     child: Text(
                       DemoLocalizations.of(context)!.getText(
                           "impressumhead4"), //Es wird sogar ein womöglicher englischer Text geladen
@@ -189,7 +191,7 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//head
+                  ), //head
                   Padding(
                     padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                     child: Text(
@@ -204,9 +206,10 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//body
+                  ), //body
                   Padding(
-                    padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
+                    padding:
+                        const EdgeInsets.only(left: 32.0, right: 32.0, top: 10),
                     child: Text(
                       DemoLocalizations.of(context)!.getText(
                           "impressumhead5"), //Es wird sogar ein womöglicher englischer Text geladen
@@ -219,7 +222,7 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//head
+                  ), //head
                   Padding(
                     padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                     child: Text(
@@ -234,7 +237,7 @@ class Impressum extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     ),
-                  ),//body
+                  ), //body
 
                   const SizedBox(height: 35),
 
@@ -244,7 +247,9 @@ class Impressum extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.002 * 30),
+                    padding: EdgeInsets.symmetric(
+                        horizontal:
+                            MediaQuery.of(context).size.width * 0.002 * 30),
                     child: SizedBox(
                       height: 60,
                       child: Row(
@@ -252,7 +257,11 @@ class Impressum extends StatelessWidget {
                         children: <Widget>[
                           SizedBox(
                             //Feedback und Kontakt
-                            width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.002,
+                            width: (MediaQuery.of(context).size.width >= 500)
+                                ? 180
+                                : MediaQuery.of(context).size.width *
+                                    180 *
+                                    0.002,
                             child: FloatingActionButton(
                               backgroundColor: primarybuttoncolor,
                               shape: const RoundedRectangleBorder(
@@ -277,7 +286,11 @@ class Impressum extends StatelessWidget {
                           ),
                           SizedBox(
                             //Feedback und Kontakt
-                            width: (MediaQuery.of(context).size.width>=400)?180:MediaQuery.of(context).size.width*180*0.002,
+                            width: (MediaQuery.of(context).size.width >= 400)
+                                ? 180
+                                : MediaQuery.of(context).size.width *
+                                    180 *
+                                    0.002,
                             child: FloatingActionButton(
                               backgroundColor: primarybuttoncolor,
                               shape: const RoundedRectangleBorder(
