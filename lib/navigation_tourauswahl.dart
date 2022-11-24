@@ -119,7 +119,7 @@ class Guideactivity extends StatelessWidget {
   }
 
 
-  //Was passiert, wenn die Buttons geklickt werden
+  //Was passiert, wenn die Buttons auf der Tourauswahl geklickt werden
   void menueclick(String onclick, BuildContext context) {
     switch (onclick) {
       case "kurz":
