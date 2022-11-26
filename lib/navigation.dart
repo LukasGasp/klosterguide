@@ -17,6 +17,7 @@ import 'data.dart';
 import 'navigation_detail_page.dart';
 
 class Navigation extends StatefulWidget {
+  //State*ful* Widget, deswegen werden die folgenen Variablen immer mit widget.[var] angegeben
   final List tourlist;
   final int index;
   final bool mapvideo;
@@ -27,6 +28,7 @@ class Navigation extends StatefulWidget {
       required this.index,
       required this.mapvideo})
       : super(key: key);
+  //Übergabe Variablen beim Erstellen
 
   @override
   _MyHomePageState createState() {
@@ -35,11 +37,12 @@ class Navigation extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<Navigation> {
-  bool _visible = true;
+  bool _visible = true; //_visible bestimmt, ob das Navigationsvideo angezeigt wird
   @override
   Widget build(BuildContext context) {
     final StationInfo stationInfo = stationen[widget.tourlist[widget.index]];
 
+    //Welche Tour wird angezeigt
     if(widget.tourlist==tour_lang) {
       globals.letzteposition = widget.index;
     }
@@ -56,7 +59,7 @@ class _MyHomePageState extends State<Navigation> {
 
     return Scaffold(
 
-        // APP-Bar
+        ///App-Bar
 
         appBar: AppBar(
           automaticallyImplyLeading:
@@ -68,6 +71,7 @@ class _MyHomePageState extends State<Navigation> {
             ),
           ),
           backgroundColor: appbarcolor,
+          //Home-Button
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -76,7 +80,7 @@ class _MyHomePageState extends State<Navigation> {
           ),
         ),
 
-        // Weiter Knopf
+        ///Weiter-Knopf
 
         floatingActionButtonLocation: FloatingActionButtonLocation
             .centerDocked, //ButtonPosition wird von der Mitte des Bildschirms berechnet
@@ -84,15 +88,18 @@ class _MyHomePageState extends State<Navigation> {
           padding: const EdgeInsets.all(16.0), //Padding Größe
           child: Stack(
             children: [
+              //Der Mapvideo Ein/Aus Button
               AnimatedPositioned(
+                //Bewegung des Buttons wird animiert
                 duration: Duration(milliseconds: 230),
-                bottom: (_visible) //Ob Mapvideo angezeigt wird oder nicht
+                bottom: (_visible) //_visible: Ob Mapvideo minimiert ist oder nicht
+                //Höhe des Buttons wenn _visible true ist:
                     ?(MediaQuery.of(context).size.width-50 >=270 * MediaQuery.of(context).size.height * 0.002 )
                       ?147 * MediaQuery.of(context).size.height * 0.002
                       :(MediaQuery.of(context).size.width-50) * (147/270)
+                //Höhe des Buttons wenn _visible false ist:
                     :15,
                 left: (MediaQuery.of(context).size.width/2)-40,
-                //Der Mapvideo Ein/Aus Button
                 child: SizedBox(
                   height: 40,
                   width: 60,
@@ -100,6 +107,8 @@ class _MyHomePageState extends State<Navigation> {
                       widget.mapvideo &&
                       widget.tourlist[widget.index] + 1 ==
                           widget.tourlist[widget.index + 1])
+                  //Das dritte if-statement checkt, ob die darauffolgende Station auch die darauffolgende Nummer hat,
+                  //denn wir wollen kein Video wenn nach Station 5 Station 8 folgt
                       ? FloatingActionButton(
                         shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
@@ -111,7 +120,7 @@ class _MyHomePageState extends State<Navigation> {
                         onPressed: () {
                           setState(() {
                             _visible = !_visible;
-                          });
+                          }); //Änderung der Stateful-Variable _visible
                         },
                         child: Icon((_visible) ? Icons.remove : Icons.add),
                         backgroundColor: primarymapbuttoncolor,
@@ -127,7 +136,7 @@ class _MyHomePageState extends State<Navigation> {
                         MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
                     children: <Widget>[
                       _getZurueckButton(context, stationInfo, widget.mapvideo),
-                      (widget.mapvideo)
+                      (widget.mapvideo) //hä
                           ? FloatingActionButton(
                               //Buttons rechts
                               onPressed: () {
@@ -157,9 +166,12 @@ class _MyHomePageState extends State<Navigation> {
             ),]
           ),
         ),
+
+
         body: Stack(
           alignment: Alignment.center,
           children: <Widget>[
+            ///Mapcontainer
             FlutterMap(
               options: MapOptions(
                   center: LatLng(51.07594003947888, 6.753587966358769),
@@ -195,6 +207,7 @@ class _MyHomePageState extends State<Navigation> {
                 LocationMarkerLayerOptions(),
               ],
             ),
+
             ///Der Mapvideo Container:
             (widget.mapvideo &&
                     stationen[widget.index].mapvideo != "" &&
@@ -294,6 +307,9 @@ class _StationAssetVideo extends StatefulWidget {
                   videopath);
 }
 
+/// Video stuff
+//Alles ist notwendig
+
 class _StationAssetVideoState extends State<_StationAssetVideo> {
   late VideoPlayerController _controller;
   final String videopath;
@@ -337,7 +353,6 @@ class _StationAssetVideoState extends State<_StationAssetVideo> {
   }
 }
 
-// Video stuff
 class VideoPlayerFullscreenWidget extends StatelessWidget {
   final VideoPlayerController controller;
 
@@ -492,3 +507,4 @@ class AdvancedOverlayWidget extends StatelessWidget {
           ),
         );
 }
+//Video Stuff Ende
