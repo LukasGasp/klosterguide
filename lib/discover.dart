@@ -43,6 +43,7 @@ class _HomePageState extends State<Discoverpage> {
                 const SizedBox(height: 100),
 
                 // Swiper:
+
                 Container(
                   height: MediaQuery.of(context).size.height - 200,
                   padding: const EdgeInsets.only(
@@ -52,6 +53,7 @@ class _HomePageState extends State<Discoverpage> {
                     itemWidth: (MediaQuery.of(context).size.width >= 1200)
                         ? 424
                         : MediaQuery.of(context).size.width - 2 * 64,
+                    //Bei zu kleinem Bildschirm wird der Swiper so klein gemacht, dass man noch einen Margin hat
                     layout: SwiperLayout.STACK,
                     pagination: const SwiperPagination(
                       builder: DotSwiperPaginationBuilder(
@@ -63,6 +65,7 @@ class _HomePageState extends State<Discoverpage> {
                     ),
                     duration: 200,
                     itemBuilder: (context, index) {
+                      //Was passiert wenn der Swiper gedrückt wird
                       return InkWell(
                         onTap: () {
                           Navigator.push(
@@ -81,11 +84,13 @@ class _HomePageState extends State<Discoverpage> {
                             ),
                           );
                         },
+                        //Eigentliches Aussehen Swiper:
                         child: Stack(
                           children: <Widget>[
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
+                                
                                 // Grundkarte
                                 Card(
                                   elevation: 11,
@@ -107,7 +112,7 @@ class _HomePageState extends State<Discoverpage> {
                                               children: <Widget>[
                                                 const SizedBox(height: 120),
 
-                                                // StationsName
+                                                // Stations-Name:
                                                 SizedBox(
                                                   height:
                                                       70, // Größendefinition der einzelnen Karten
@@ -123,6 +128,8 @@ class _HomePageState extends State<Discoverpage> {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
+
+                                                //Stations-Untertitel:
                                                 SizedBox(
                                                   height:
                                                       60, // Größendefinition der einzelnen Karten
@@ -140,7 +147,7 @@ class _HomePageState extends State<Discoverpage> {
                                                 ),
                                                 const SizedBox(height: 6),
 
-                                                // Mehr erfahren Link
+                                                // Mehr erfahren Link:
                                                 Row(
                                                   children: <Widget>[
                                                     Text(
@@ -177,28 +184,25 @@ class _HomePageState extends State<Discoverpage> {
                               ],
                             ),
 
-                            // Bild / Icon
+                            // Bild / Icon:
                             Align(
                               alignment: Alignment.topCenter,
                               child: Hero(
                                   tag: stationen[index].position,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(
-                                        MediaQuery.of(context).size.height *
-                                            0.15),
+                                        MediaQuery.of(context).size.height * 0.15),
                                     child: Image.asset(
                                         stationen[index].iconImage,
                                         width:
-                                            MediaQuery.of(context).size.height *
-                                                0.3,
+                                            MediaQuery.of(context).size.height * 0.3,
                                         height:
-                                            MediaQuery.of(context).size.height *
-                                                0.3,
+                                            MediaQuery.of(context).size.height * 0.3,
                                         fit: BoxFit.contain),
                                   )),
                             ),
 
-                            // Nummer
+                            // Nummer der Station:
 
                             Center(
                               child: Container(
