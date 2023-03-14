@@ -30,7 +30,7 @@ class _DownloadFileState extends State {
         "https://github.com/LukasGasp/Klosterguide-Videos/archive/refs/heads/main.zip";
     final response = await http.get(Uri.parse(url));
     final bytes = response.bodyBytes;
-    final dir = await getApplicationSupportDirectory();
+    final dir = await getApplicationDocumentsDirectory();
     downloadingStr = "Entpacken und Speichern...";
     setState(() {});
     final file = File('${dir.path}/myfile.zip');
@@ -39,15 +39,16 @@ class _DownloadFileState extends State {
     for (final file in archive) {
       final filename = file.name;
       print("File: $filename");
+      print("Voller Pfad: ${dir.path}/$filename");
       if (file.isFile && filename.isNotEmpty) {
         _files.add(filename);
-        print("New _files: $_files");
 
         final data = file.content as List<int>;
         File('${dir.path}/$filename')
           ..createSync(recursive: true)
           ..writeAsBytesSync(data);
       }
+      print("New _files: $_files");
     }
     print("Extracting done...");
     downloadingStr = "Sie sind auf dem neuesten Stand!";

@@ -90,7 +90,6 @@ class _HomePageState extends State<Discoverpage> {
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                
                                 // Grundkarte
                                 Card(
                                   elevation: 11,
@@ -120,7 +119,8 @@ class _HomePageState extends State<Discoverpage> {
                                                     stationen[index].name,
                                                     style: TextStyle(
                                                       fontFamily: 'Avenir',
-                                                      fontSize: 19, // Wenn 0.5 größer => Probleme bei Kloster- und Soldatenfriedhof
+                                                      fontSize:
+                                                          19, // Wenn 0.5 größer => Probleme bei Kloster- und Soldatenfriedhof
                                                       color: primaryTextColor,
                                                       fontWeight:
                                                           FontWeight.w900,
@@ -191,13 +191,16 @@ class _HomePageState extends State<Discoverpage> {
                                   tag: stationen[index].position,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(
-                                        MediaQuery.of(context).size.height * 0.15),
+                                        MediaQuery.of(context).size.height *
+                                            0.15),
                                     child: Image.asset(
                                         stationen[index].iconImage,
                                         width:
-                                            MediaQuery.of(context).size.height * 0.3,
+                                            MediaQuery.of(context).size.height *
+                                                0.3,
                                         height:
-                                            MediaQuery.of(context).size.height * 0.3,
+                                            MediaQuery.of(context).size.height *
+                                                0.3,
                                         fit: BoxFit.contain),
                                   )),
                             ),
@@ -206,7 +209,7 @@ class _HomePageState extends State<Discoverpage> {
 
                             Center(
                               child: Container(
-                                alignment: Alignment(0.2, 0.1),
+                                alignment: const Alignment(0.2, 0.1),
                                 child: Text(
                                   stationen[index].position.toString(),
                                   style: TextStyle(

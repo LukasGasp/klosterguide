@@ -6,10 +6,9 @@ import 'package:url_launcher/url_launcher.dart';
 import 'main.dart';
 import 'navigation.dart';
 import 'data.dart';
-import 'dart:io';
+import 'dart:io'; // Um files einzulesen
 import 'constants.dart';
 import 'package:video_player/video_player.dart';
-// Um den zugewiesenen Speicherpfad zu erhalten
 
 import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Native...
 
@@ -118,8 +117,9 @@ class DetailPage extends StatelessWidget {
   }
 
   Future<File> getFile(filename) async {
-    final directory = await getApplicationSupportDirectory();
-    final filePath = directory.path + filename;
+    final directory = await getApplicationDocumentsDirectory();
+    final filePath = directory.path + "/Klosterguide-Videos-main" + filename;
+    print("Dateipfad: " + filePath);
     return File(filePath);
   }
 
@@ -224,6 +224,8 @@ class DetailPage extends StatelessWidget {
                   ),
 
                   // Video: Klassen unten
+
+                  // Wartet auf Pfad, in dem die Videos sind und zeigt dann das Video
                   FutureBuilder<File?>(
                     future: getFile(stationInfo.video),
                     builder: (context, snapshot) {
@@ -304,10 +306,24 @@ class DetailPage extends StatelessWidget {
 
                             // Video mit Zusatzinfos:
 
-                            _StationAssetVideo(
-                                videopath: File(
-                              stationInfo.zusatzvideo,
-                            )),
+                            FutureBuilder<File?>(
+                              future: getFile(stationInfo.zusatzvideo),
+                              builder: (context, snapshot) {
+                                if (snapshot.connectionState ==
+                                    ConnectionState.waiting) {
+                                  return const CircularProgressIndicator();
+                                }
+                                if (snapshot.hasError) {
+                                  return Text('Error: ${snapshot.error}');
+                                }
+                                final file = snapshot.data;
+                                if (file != null) {
+                                  return _StationAssetVideo(videopath: file);
+                                } else {
+                                  return const Text('File not found');
+                                }
+                              },
+                            ),
 
                             // Ausklappbarer Text mit Zusatzinfos:
                             ExpansionTile(

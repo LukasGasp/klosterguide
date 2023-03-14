@@ -1,3 +1,6 @@
+import 'dart:io'; // Um Dateien einzulesen (Videos...)
+import 'package:path_provider/path_provider.dart'; // Gibt Pfad an in dem die Videos sind
+
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'constants.dart';
@@ -10,6 +13,13 @@ import 'videoplayer_fullscreen.dart';
 
 class Endcard extends StatelessWidget {
   const Endcard({Key? key}) : super(key: key);
+
+  Future<File> getFile(filename) async {
+    final directory = await getApplicationDocumentsDirectory();
+    final filePath = directory.path + "/Klosterguide-Videos-main" + filename;
+    print("Dateipfad: " + filePath);
+    return File(filePath);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,13 +77,30 @@ class Endcard extends StatelessWidget {
 
                   // Video: Klassen unten
 
-                  const _StationAssetVideo(
-                    videopath: "/guidevideos/Endcard.mp4",
+                  // Wartet auf Pfad, in dem die Videos sind und zeigt dann das Video
+                  FutureBuilder<File?>(
+                    future: getFile("/guidevideos/Endcard.mp4"),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const CircularProgressIndicator();
+                      }
+                      if (snapshot.hasError) {
+                        return Text('Error: ${snapshot.error}');
+                      }
+                      final file = snapshot.data;
+                      if (file != null) {
+                        return _StationAssetVideo(videopath: file);
+                      } else {
+                        return const Text('File not found');
+                      }
+                    },
                   ),
+
                   // Detaillierte Beschreibung
 
                   ExpansionTile(
-                    tilePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    tilePadding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 20),
                     title: Text(
                       'Textfassung',
                       style: TextStyle(
@@ -160,81 +187,82 @@ class Endcard extends StatelessWidget {
                     //Spenden
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Column(
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.002,
-                              child: FloatingActionButton(
-                                backgroundColor: primarybuttoncolor,
-                                shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(10),
-                                      bottomRight: Radius.circular(10),
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10),
-                                    )),
-                                child: Container(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      DemoLocalizations.of(context)!
-                                          .getText("endcard2ndbutton"),
-                                      textAlign: TextAlign.center,
-                                    )),
-                                onPressed: () {
-                                  launch(DemoLocalizations.of(context)!
-                                      .getText("spendenlinkmh"));
-                                },
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            SizedBox(
-                              child:
+                      Column(children: [
+                        SizedBox(
+                          height: 50,
+                          width: (MediaQuery.of(context).size.width >= 500)
+                              ? 180
+                              : MediaQuery.of(context).size.width * 180 * 0.002,
+                          child: FloatingActionButton(
+                            backgroundColor: primarybuttoncolor,
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10),
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                            )),
+                            child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  DemoLocalizations.of(context)!
+                                      .getText("endcard2ndbutton"),
+                                  textAlign: TextAlign.center,
+                                )),
+                            onPressed: () {
+                              launch(DemoLocalizations.of(context)!
+                                  .getText("spendenlinkmh"));
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          child:
                               Image.asset('assets/icons/logo-missionshaus.png'),
-                              height: 100,
-                              width: 100,
-                            ),
-                          ]
-                      ),
-                      Column(
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.002,
-                              child: FloatingActionButton(
-                                backgroundColor: primarybuttoncolor,
-                                shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(10),
-                                      bottomRight: Radius.circular(10),
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10),
-                                    )),
-                                child: Container(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      DemoLocalizations.of(context)!
-                                          .getText("endcard3rdbutton"),
-                                      textAlign: TextAlign.center,
-                                    )),
-                                onPressed: () {
-                                  launch(DemoLocalizations.of(context)!
-                                      .getText("spendenlinkngk"));
-                                },
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            SizedBox(
-                              child: Image.asset('assets/icons/logo-ngk-campus.png'),
-                              height: 100,
-                              width: 100,
-                            ),
-                          ]
-                      ),
+                          height: 100,
+                          width: 100,
+                        ),
+                      ]),
+                      Column(children: [
+                        SizedBox(
+                          height: 50,
+                          width: (MediaQuery.of(context).size.width >= 500)
+                              ? 180
+                              : MediaQuery.of(context).size.width * 180 * 0.002,
+                          child: FloatingActionButton(
+                            backgroundColor: primarybuttoncolor,
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10),
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                            )),
+                            child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  DemoLocalizations.of(context)!
+                                      .getText("endcard3rdbutton"),
+                                  textAlign: TextAlign.center,
+                                )),
+                            onPressed: () {
+                              launch(DemoLocalizations.of(context)!
+                                  .getText("spendenlinkngk"));
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          child:
+                              Image.asset('assets/icons/logo-ngk-campus.png'),
+                          height: 100,
+                          width: 100,
+                        ),
+                      ]),
                     ],
                   ),
                 ],
@@ -249,7 +277,7 @@ class Endcard extends StatelessWidget {
 
 // Video stuff
 class _StationAssetVideo extends StatefulWidget {
-  final String videopath;
+  final File videopath;
 
   const _StationAssetVideo({Key? key, required this.videopath})
       : super(key: key);
@@ -258,23 +286,21 @@ class _StationAssetVideo extends StatefulWidget {
   _StationAssetVideoState createState() =>
       // Falsche interpretation der IDE
       // ignore: no_logic_in_create_state
-      _StationAssetVideoState(
-          videopath:
-              "https://raw.githubusercontent.com/LukasGasp/Klosterguide-Videos/main" +
-                  videopath);
+      _StationAssetVideoState(videopath: videopath);
 }
 
 class _StationAssetVideoState extends State<_StationAssetVideo> {
   late VideoPlayerController _controller;
-  final String videopath;
+  final File videopath;
 
   _StationAssetVideoState({required this.videopath});
+
+  var dir;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(videopath);
-
+    _controller = VideoPlayerController.file(videopath);
     _controller.addListener(() {
       setState(() {});
     });
@@ -369,7 +395,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
   final VideoPlayerController controller;
   final VoidCallback onClickedFullScreen;
 
-  static const allSpeeds = <double>[0.25, 0.5, 1, 1.5, 2, 3, 5, 10];
+  static const allSpeeds = <double>[0.25, 0.5, 1, 1.25, 1.5, 2];
 
   const AdvancedOverlayWidget(
       {Key? key, required this.controller, required this.onClickedFullScreen})
@@ -444,7 +470,7 @@ class AdvancedOverlayWidget extends StatelessWidget {
           child: Container(
             color: Colors.white38,
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-            child: Text('${controller.value.playbackSpeed}x'),
+            child: const Text("Tempo"),
           ),
         ),
       );
