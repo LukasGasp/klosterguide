@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +15,6 @@ class Splash extends State<SplashScreen> {
   void initState() {
     super.initState();
   }
-
-  Random r = Random();
 
   @override
   Widget build(BuildContext context) {
