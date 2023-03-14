@@ -6,6 +6,7 @@ import 'dart:math';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Native... + Sprache
+
 //Sprache ende
 
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ import 'discover.dart';
 import 'impressum.dart';
 import 'map.dart';
 import 'constants.dart';
+import 'downloader.dart';
 
 // Teilen
 
@@ -139,6 +141,12 @@ class _MyHomePageState extends State<MyHomePage> {
               subject: 'Schau was ich gefunden habe');
         }
         break;
+      case 'Update':
+        {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Filesdownload()));
+        }
+        break;
     }
   }
 
@@ -148,14 +156,19 @@ class _MyHomePageState extends State<MyHomePage> {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     return Scaffold(
-      ///AppBar
+
+        ///AppBar
         appBar: AppBar(
           toolbarHeight: 80,
           backgroundColor: appbarcolor,
           title: FittedBox(
               fit: BoxFit.fill,
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 200, horizontal: (MediaQuery.of(context).size.width<=600)? 0 : MediaQuery.of(context).size.width),
+                padding: EdgeInsets.symmetric(
+                    vertical: 200,
+                    horizontal: (MediaQuery.of(context).size.width <= 600)
+                        ? 0
+                        : MediaQuery.of(context).size.width),
                 child: Text(
                   widget.title,
                   style: const TextStyle(fontSize: 200),
@@ -170,11 +183,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: popupbuttoncolor,
                 onSelected: AppBarSelect,
                 itemBuilder: (BuildContext context) {
-                  return [
-                    'Spenden',
-                    'Teilen',
-                    'Impressum',
-                  ].map((String choice) {
+                  return ['Spenden', 'Teilen', 'Impressum', 'Update']
+                      .map((String choice) {
                     return PopupMenuItem<String>(
                       child: Text(choice),
                       value: choice,
@@ -184,6 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
           iconTheme: const IconThemeData(color: Colors.white),
         ),
+
         ///Container mit den Buttons:
         body: Container(
           color: primarybackgroundcolor,
@@ -204,7 +215,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       DemoLocalizations.of(context)!
                           .getText("mainscreentext1info"),
                       "tour"),
-                  SizedBox(height: 20 * MediaQuery.of(context).size.width * 0.002),
+                  SizedBox(
+                      height: 20 * MediaQuery.of(context).size.width * 0.002),
 
                   // Discover
                   buildunifinishedcard(
@@ -213,7 +225,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       DemoLocalizations.of(context)!
                           .getText("mainscreentext2info"),
                       "discover"),
-                  SizedBox(height: 20 * MediaQuery.of(context).size.width * 0.002),
+                  SizedBox(
+                      height: 20 * MediaQuery.of(context).size.width * 0.002),
 
                   // Längenschnitt
                   buildunifinishedcard(
@@ -270,7 +283,10 @@ class _MyHomePageState extends State<MyHomePage> {
           menueclick(option);
         },
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16 * pow(MediaQuery.of(context).size.width,2) * 0.000006),
+          padding: EdgeInsets.symmetric(
+              vertical: 24,
+              horizontal:
+                  16 * pow(MediaQuery.of(context).size.width, 2) * 0.000006),
           child: Container(
             padding: const EdgeInsets.all(24),
             width: 600 * MediaQuery.of(context).size.width * 0.002,

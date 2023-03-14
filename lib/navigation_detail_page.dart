@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:klosterguide/navigation_endcard.dart';
 import 'package:klosterguide/videoplayer_fullscreen.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'main.dart';
 import 'navigation.dart';
 import 'data.dart';
+import 'dart:io';
 import 'constants.dart';
 import 'package:video_player/video_player.dart';
+// Um den zugewiesenen Speicherpfad zu erhalten
 
 import 'package:flutter/services.dart'; // Um Rotation festzulegen. Flutter Native...
 
@@ -114,6 +117,12 @@ class DetailPage extends StatelessWidget {
     );
   }
 
+  Future<File> getFile(filename) async {
+    final directory = await getApplicationSupportDirectory();
+    final filePath = directory.path + filename;
+    return File(filePath);
+  }
+
   @override
   Widget build(BuildContext context) {
     final StationInfo stationInfo = stationen[tourlist[index]];
@@ -124,9 +133,7 @@ class DetailPage extends StatelessWidget {
             false, // Kein Automatischer Home Knopf in App Bar
         title: const Text(
           'Tour',
-          style: TextStyle(
-              fontWeight: FontWeight.bold
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: appbarcolor,
         leading: IconButton(
@@ -217,14 +224,29 @@ class DetailPage extends StatelessWidget {
                   ),
 
                   // Video: Klassen unten
-
-                  _StationAssetVideo(
-                    videopath: stationInfo.video,
+                  FutureBuilder<File?>(
+                    future: getFile(stationInfo.video),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const CircularProgressIndicator();
+                      }
+                      if (snapshot.hasError) {
+                        return Text('Error: ${snapshot.error}');
+                      }
+                      final file = snapshot.data;
+                      if (file != null) {
+                        return _StationAssetVideo(videopath: file);
+                      } else {
+                        return const Text('File not found');
+                      }
+                    },
                   ),
+
                   // Detaillierte Beschreibung
 
                   ExpansionTile(
-                    tilePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    tilePadding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 20),
                     title: const Text(
                       'Textfassung',
                       style: TextStyle(
@@ -283,12 +305,14 @@ class DetailPage extends StatelessWidget {
                             // Video mit Zusatzinfos:
 
                             _StationAssetVideo(
-                              videopath: stationInfo.zusatzvideo,
-                            ),
+                                videopath: File(
+                              stationInfo.zusatzvideo,
+                            )),
 
                             // Ausklappbarer Text mit Zusatzinfos:
                             ExpansionTile(
-                              tilePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                              tilePadding: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 20),
                               title: const Text(
                                 'Textfassung',
                                 style: TextStyle(
@@ -322,42 +346,43 @@ class DetailPage extends StatelessWidget {
                           ],
                         )
                       : const SizedBox(height: 70),
-                  (index==13)
-                    ? Column(children: [
-                        Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                          //Feedback und Kontakt
-                          height: 60,
-                          width: 200,
-                          child: FloatingActionButton(
-                            backgroundColor: primarybuttoncolor,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(10),
-                                  bottomRight: Radius.circular(10),
-                                  topLeft: Radius.circular(10),
-                                  topRight: Radius.circular(10),
-                                )),
-                            child: Container(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Speisekarte Klosterhof',
-                                  textAlign: TextAlign.center,
-                                )),
-                            onPressed: () {
-                              launch(DemoLocalizations.of(context)!
-                                  .getText("speisekartelink"));
-                            },
+                  (index == 13)
+                      ? Column(children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                //Feedback und Kontakt
+                                height: 60,
+                                width: 200,
+                                child: FloatingActionButton(
+                                  backgroundColor: primarybuttoncolor,
+                                  shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(10),
+                                    bottomRight: Radius.circular(10),
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10),
+                                  )),
+                                  child: Container(
+                                      alignment: Alignment.center,
+                                      child: const Text(
+                                        'Speisekarte Klosterhof',
+                                        textAlign: TextAlign.center,
+                                      )),
+                                  onPressed: () {
+                                    launch(DemoLocalizations.of(context)!
+                                        .getText("speisekartelink"));
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
-                    ),
-                        ],
-                      ),
-                        SizedBox(height: 40,)
+                          const SizedBox(
+                            height: 40,
+                          )
                         ])
                       : Container()
-
                 ],
               ),
             ),
@@ -370,7 +395,7 @@ class DetailPage extends StatelessWidget {
 
 // Video stuff
 class _StationAssetVideo extends StatefulWidget {
-  final String videopath;
+  final File videopath;
 
   const _StationAssetVideo({Key? key, required this.videopath})
       : super(key: key);
@@ -379,23 +404,21 @@ class _StationAssetVideo extends StatefulWidget {
   _StationAssetVideoState createState() =>
       // Falsche interpretation der IDE
       // ignore: no_logic_in_create_state
-      _StationAssetVideoState(
-          videopath:
-              "https://raw.githubusercontent.com/LukasGasp/Klosterguide-Videos/main" +
-                  videopath);
+      _StationAssetVideoState(videopath: videopath);
 }
 
 class _StationAssetVideoState extends State<_StationAssetVideo> {
   late VideoPlayerController _controller;
-  final String videopath;
+  final File videopath;
 
   _StationAssetVideoState({required this.videopath});
+
+  var dir;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(videopath);
-
+    _controller = VideoPlayerController.file(videopath);
     _controller.addListener(() {
       setState(() {});
     });
