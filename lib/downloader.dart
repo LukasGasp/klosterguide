@@ -38,8 +38,6 @@ class _DownloadFileState extends State {
     final archive = ZipDecoder().decodeBytes(bytes);
     for (final file in archive) {
       final filename = file.name;
-      print("File: $filename");
-      print("Voller Pfad: ${dir.path}/$filename");
       if (file.isFile && filename.isNotEmpty) {
         _files.add(filename);
 
@@ -50,7 +48,6 @@ class _DownloadFileState extends State {
       }
       print("New _files: $_files");
     }
-    print("Extracting done...");
     downloadingStr = "Sie sind auf dem neuesten Stand!";
     downloading = false;
     setState(() {});
@@ -70,7 +67,10 @@ class _DownloadFileState extends State {
           children: [
             const Text(
               "Tourvideos herunterladen",
-              style: TextStyle(color: Colors.black, fontSize: 20),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 80,
@@ -78,13 +78,38 @@ class _DownloadFileState extends State {
             downloading
                 ? Column(
                     children: [
-                      const CircularProgressIndicator(),
-                      const SizedBox(
-                        height: 30,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                        child: Text(
+                          "Der Download läuft...",
+                          style: TextStyle(
+                            fontFamily: 'Avenir',
+                            fontSize: 17,
+                            color: contentTextColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
                       ),
-                      const Text(
-                        "Dies kann einige Minuten dauern",
-                        style: TextStyle(color: Colors.black),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      CircularProgressIndicator(color: appbarcolor),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                        child: Text(
+                          "Dies kann einige Minuten dauern.\nBitte schließen Sie die App nicht!",
+                          style: TextStyle(
+                            fontFamily: 'Avenir',
+                            fontSize: 17,
+                            color: contentTextColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
                       ),
                       const SizedBox(
                         height: 20,
@@ -95,10 +120,62 @@ class _DownloadFileState extends State {
                       )
                     ],
                   )
-                : TextButton(
-                    onPressed: _downloadAndUnzip,
-                    child: const Text('Download'),
-                  ),
+                : Column(
+                    children: [
+                      // Infotext with smaller font size and normal style
+                      Padding(
+                        padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                        child: Text(
+                          "Für eine Reibungslose Erfahrung müssen die Videos herunter geladen werden. Dies nimmt ca. SPEICHER in Anspruch.\n\nJe nach Vertrag und Verbindung können kosten durch Internetnutzung anfallen.\nWir empfehlen daher eine WLAN Verbindung. Diese können Sie Beispielsweise im Klosterhof oder Daheim finden.",
+                          style: TextStyle(
+                            fontFamily: 'Avenir',
+                            fontSize: 17,
+                            color: contentTextColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      Container(
+                        // Margin around the button
+                        margin: const EdgeInsets.all(10),
+                        // Rounded rectangle shape
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          // Gradient background color
+                          gradient: const LinearGradient(
+                            colors: [Color(0xff518d80), Color(0xFF324851)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                        ),
+                        child: TextButton(
+                          onPressed: _downloadAndUnzip,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              // Icon for downloading
+                              Icon(Icons.download_rounded,
+                                  size: 40, color: Colors.white),
+                              // Padding between icon and text
+                              SizedBox(width: 10),
+                              // Text for download
+                              Text(
+                                'Download',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
           ],
         ),
       ),

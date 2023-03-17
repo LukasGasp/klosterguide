@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 // General
 
-Color appbarcolor = const Color(0xff518d80);
+Color appbarcolor = const Color(0xff518d80);                                  // VORSICHT: DOWNLOADER BUTTON HÖRT NICHT HIERRAUF!
 Color primarybackgroundcolor = const Color(0xffbfcfd2);
 Color primarybuttoncolor = const Color(0xFF34675c);
-Color primarymapbuttoncolor = const Color(0xFF324851); // Kontrast zu Grün
+Color primarymapbuttoncolor = const Color(0xFF324851); // Kontrast zu Grün    // VORSICHT: DOWNLOADER BUTTON HÖRT NICHT HIERRAUF!
 Color primaryTextColor = const Color(0xFF414C6B);
 Color secondaryTextColor = const Color(0xFFE4979E);
 Color secondarybackgroundColor = const Color(0xffffffff);
