@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'constants.dart';
+import 'main.dart';
 
 // Downloader
 
@@ -57,126 +58,141 @@ class _DownloadFileState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text("Update"),
-        backgroundColor: appbarcolor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: const Icon(Icons.home),
+        backgroundColor: primarymapbuttoncolor,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "Tourvideos herunterladen",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(
-              height: 80,
-            ),
-            downloading
-                ? Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 32.0, right: 32.0),
-                        child: Text(
-                          "Der Download läuft...",
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Tourvideos herunterladen",
+                style: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontSize: 42,
+                  color: primaryTextColor,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              Divider(color: endcardTextColor),
+              const SizedBox(
+                height: 20,
+              ),
+              downloading
+                  ? Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                          child: Text(
+                            "Der Download läuft...",
+                            style: TextStyle(
+                              fontFamily: 'Avenir',
+                              fontSize: 17,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        CircularProgressIndicator(color: appbarcolor),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                          child: Text(
+                            "Dies kann einige Minuten dauern.\nBitte schließen Sie die App nicht!",
+                            style: TextStyle(
+                              fontFamily: 'Avenir',
+                              fontSize: 17,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        Text(
+                          downloadingStr,
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 17,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
+                            color: primaryTextColor,
+                            fontWeight: FontWeight.w700,
+
                           ),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 60,
-                      ),
-                      CircularProgressIndicator(color: appbarcolor),
-                      const SizedBox(
-                        height: 60,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 32.0, right: 32.0),
-                        child: Text(
-                          "Dies kann einige Minuten dauern.\nBitte schließen Sie die App nicht!",
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 17,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        downloadingStr,
-                        style: const TextStyle(color: Colors.black),
-                      )
-                    ],
-                  )
-                : Column(
-                    children: [
-                      // Infotext with smaller font size and normal style
-                      Padding(
-                        padding: const EdgeInsets.only(left: 32.0, right: 32.0),
-                        child: Text(
-                          "Für eine Reibungslose Erfahrung müssen die Videos herunter geladen werden. Dies nimmt ca. SPEICHER in Anspruch.\n\nJe nach Vertrag und Verbindung können kosten durch Internetnutzung anfallen.\nWir empfehlen daher eine WLAN Verbindung. Diese können Sie Beispielsweise im Klosterhof oder Daheim finden.",
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 17,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 60,
-                      ),
-                      Container(
-                        // Margin around the button
-                        margin: const EdgeInsets.all(10),
-                        // Rounded rectangle shape
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          // Gradient background color
-                          gradient: const LinearGradient(
-                            colors: [Color(0xff518d80), Color(0xFF324851)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
+                        )
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        // Infotext with smaller font size and normal style
+                        Padding(
+                          padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                          child: Text(
+                            "Für eine reibungslose Erfahrung müssen die in der App verwendeten Videos auf Ihr Gerät heruntergeladen werden. Dies nimmt ca. SPEICHER Speicher in Anspruch.\n\nJe nach Vertrag und Verbindung können Kosten durch Internetnutzung anfallen.\nWir empfehlen daher eine WLAN-Verbindung. Diese können Sie beispielsweise im Klosterhof oder daheim finden.",
+                            style: TextStyle(
+                              fontFamily: 'Avenir',
+                              fontSize: 17,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.justify,
                           ),
                         ),
-                        child: TextButton(
-                          onPressed: _downloadAndUnzip,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              // Icon for downloading
-                              Icon(Icons.download_rounded,
-                                  size: 40, color: Colors.white),
-                              // Padding between icon and text
-                              SizedBox(width: 10),
-                              // Text for download
-                              Text(
-                                'Download',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.002,
+                          child: FloatingActionButton(
+                            onPressed: _downloadAndUnzip,
+                            backgroundColor: primarybuttoncolor,
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                )),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                // Icon for downloading
+                                Icon(Icons.download_rounded,
+                                    size: 40, color: Colors.white),
+                                // Padding between icon and text
+                                // Text for download
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  DemoLocalizations.of(context)!
+                                      .getText("download"),
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  )
-          ],
+                      ],
+                    )
+            ],
+          ),
         ),
       ),
     );
