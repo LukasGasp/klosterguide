@@ -155,7 +155,7 @@ class _DownloadFileState extends State {
                           height: 20,
                         ),
                         SizedBox(
-                          width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.002,
+                          width: (MediaQuery.of(context).size.width>=500)?180:MediaQuery.of(context).size.width*180*0.0022,
                           child: FloatingActionButton(
                             onPressed: _downloadAndUnzip,
                             backgroundColor: primarybuttoncolor,
@@ -177,13 +177,16 @@ class _DownloadFileState extends State {
                                 SizedBox(
                                   width: 10,
                                 ),
-                                Text(
-                                  DemoLocalizations.of(context)!
-                                      .getText("download"),
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                  child: Text(
+                                    DemoLocalizations.of(context)!
+                                        .getText("download"),
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ],
                             ),
