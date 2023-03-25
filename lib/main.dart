@@ -235,6 +235,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       DemoLocalizations.of(context)!
                           .getText("mainscreentext3info"),
                       "map"),
+                  SizedBox(
+                      height: 20 * MediaQuery.of(context).size.width * 0.002),
+
+                  // Update
+                  buildunifinishedcard("assets/home/download.png", "Update",
+                      "Laden Sie die neusten Videos!", "update"),
                   const SizedBox(height: 30),
                 ],
               ),
@@ -270,6 +276,12 @@ class _MyHomePageState extends State<MyHomePage> {
         {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => Karte()));
+        }
+        break;
+      case "update":
+        {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Filesdownload()));
         }
         break;
     }
