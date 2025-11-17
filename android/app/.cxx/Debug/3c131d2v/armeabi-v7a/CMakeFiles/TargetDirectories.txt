@@ -1,0 +1,2 @@
+C:/Users/lukas/Documents/GitHub/klosterguide/android/app/.cxx/Debug/3c131d2v/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/lukas/Documents/GitHub/klosterguide/android/app/.cxx/Debug/3c131d2v/armeabi-v7a/CMakeFiles/rebuild_cache.dir

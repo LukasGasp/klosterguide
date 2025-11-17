@@ -1,4 +1,4 @@
-package de.lukasgasp.klosterguide.knechtsteden_klosterguide_v1
+package de.lukasgasp.klosterguide
 
 import io.flutter.embedding.android.FlutterActivity
 

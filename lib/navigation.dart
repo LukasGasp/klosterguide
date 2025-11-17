@@ -37,16 +37,17 @@ class Navigation extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<Navigation> {
-  bool _visible = true; //_visible bestimmt, ob das Navigationsvideo angezeigt wird
+  bool _visible =
+      true; //_visible bestimmt, ob das Navigationsvideo angezeigt wird
   @override
   Widget build(BuildContext context) {
     final StationInfo stationInfo = stationen[widget.tourlist[widget.index]];
 
     //Welche Tour wird angezeigt
-    if(widget.tourlist==tour_lang) {
+    if (widget.tourlist == tour_lang) {
       globals.letzteposition = widget.index;
     }
-    if(widget.tourlist==tour_mittel) {
+    if (widget.tourlist == tour_mittel) {
       globals.letztepositionmittel = widget.index;
     }
     // StreamSubscription<Position> positionStream =
@@ -66,9 +67,7 @@ class _MyHomePageState extends State<Navigation> {
               false, // Kein Automatischer Home Knopf in App Bar
           title: const Text(
             'Tour',
-            style: TextStyle(
-              fontWeight: FontWeight.bold
-            ),
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
           backgroundColor: appbarcolor,
           //Home-Button
@@ -86,37 +85,39 @@ class _MyHomePageState extends State<Navigation> {
             .centerDocked, //ButtonPosition wird von der Mitte des Bildschirms berechnet
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(16.0), //Padding Größe
-          child: Stack(
-            children: [
-              //Der Mapvideo Ein/Aus Button
-              AnimatedPositioned(
-                //Bewegung des Buttons wird animiert
-                duration: Duration(milliseconds: 230),
-                bottom: (_visible) //_visible: Ob Mapvideo minimiert ist oder nicht
-                //Höhe des Buttons wenn _visible true ist:
-                    ?(MediaQuery.of(context).size.width-50 >=270 * MediaQuery.of(context).size.height * 0.002 )
-                      ?147 * MediaQuery.of(context).size.height * 0.002
-                      :(MediaQuery.of(context).size.width-50) * (147/270)
-                //Höhe des Buttons wenn _visible false ist:
-                    :15,
-                left: (MediaQuery.of(context).size.width/2)-40,
-                child: SizedBox(
-                  height: 40,
-                  width: 60,
-                  child: (stationen[widget.index].mapvideo != "" &&
-                      widget.mapvideo &&
-                      widget.tourlist[widget.index] + 1 ==
-                          widget.tourlist[widget.index + 1])
-                  //Das dritte if-statement checkt, ob die darauffolgende Station auch die darauffolgende Nummer hat,
-                  //denn wir wollen kein Video wenn nach Station 5 Station 8 folgt
-                      ? FloatingActionButton(
+          child: Stack(children: [
+            //Der Mapvideo Ein/Aus Button
+            AnimatedPositioned(
+              //Bewegung des Buttons wird animiert
+              duration: const Duration(milliseconds: 230),
+              bottom:
+                  (_visible) //_visible: Ob Mapvideo minimiert ist oder nicht
+                      //Höhe des Buttons wenn _visible true ist:
+                      ? (MediaQuery.of(context).size.width - 50 >=
+                              270 * MediaQuery.of(context).size.height * 0.002)
+                          ? 147 * MediaQuery.of(context).size.height * 0.002
+                          : (MediaQuery.of(context).size.width - 50) *
+                              (147 / 270)
+                      //Höhe des Buttons wenn _visible false ist:
+                      : 15,
+              left: (MediaQuery.of(context).size.width / 2) - 40,
+              child: SizedBox(
+                height: 40,
+                width: 60,
+                child: (stationen[widget.index].mapvideo != "" &&
+                        widget.mapvideo &&
+                        widget.tourlist[widget.index] + 1 ==
+                            widget.tourlist[widget.index + 1])
+                    //Das dritte if-statement checkt, ob die darauffolgende Station auch die darauffolgende Nummer hat,
+                    //denn wir wollen kein Video wenn nach Station 5 Station 8 folgt
+                    ? FloatingActionButton(
                         shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                            )),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                        )),
                         onPressed: () {
                           setState(() {
                             _visible = !_visible;
@@ -124,79 +125,83 @@ class _MyHomePageState extends State<Navigation> {
                         },
                         child: Icon((_visible) ? Icons.remove : Icons.add),
                         backgroundColor: primarymapbuttoncolor,
-                        )
-                      : Container(),
-                ),
+                      )
+                    : Container(),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Row(
-                    mainAxisAlignment:
-                        MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
-                    children: <Widget>[
-                      _getZurueckButton(context, stationInfo, widget.mapvideo),
-                      (widget.mapvideo) //hä
-                          ? FloatingActionButton(
-                              //Buttons rechts
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  PageRouteBuilder(
-                                    pageBuilder: (context, a, b) => DetailPage(
-                                      //stationInfo: stationen[stationInfo.position - 1],
-                                      tourlist: widget.tourlist,
-                                      index: widget.index,
-                                      mapvideo: widget.mapvideo,
-                                    ),
-                                    transitionsBuilder: (context, anim, b, child) =>
-                                        FadeTransition(opacity: anim, child: child),
-                                    transitionDuration:
-                                        Duration(milliseconds: animationlength),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.spaceBetween, //Abstand zwischen Buttons
+                  children: <Widget>[
+                    _getZurueckButton(context, stationInfo, widget.mapvideo),
+                    (widget.mapvideo) //hä
+                        ? FloatingActionButton(
+                            //Buttons rechts
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                PageRouteBuilder(
+                                  pageBuilder: (context, a, b) => DetailPage(
+                                    //stationInfo: stationen[stationInfo.position - 1],
+                                    tourlist: widget.tourlist,
+                                    index: widget.index,
+                                    mapvideo: widget.mapvideo,
                                   ),
-                                );
-                              },
-                              child: const Icon(Icons.navigate_next),
-                              backgroundColor: primarymapbuttoncolor,
-                            )
-                          : Container()
+                                  transitionsBuilder:
+                                      (context, anim, b, child) =>
+                                          FadeTransition(
+                                              opacity: anim, child: child),
+                                  transitionDuration:
+                                      Duration(milliseconds: animationlength),
+                                ),
+                              );
+                            },
+                            child: const Icon(Icons.navigate_next),
+                            backgroundColor: primarymapbuttoncolor,
+                          )
+                        : Container()
                   ],
                 ),
               ],
-            ),]
-          ),
+            ),
+          ]),
         ),
-
-
         body: Stack(
           alignment: Alignment.center,
           children: <Widget>[
             ///Mapcontainer
             FlutterMap(
               options: MapOptions(
-                  center: LatLng(51.07594003947888, 6.753587966358769),
-                  zoom: 15.7,
-                  minZoom: 14,
-                  maxZoom: 18,
-                  swPanBoundary: LatLng(
-                    51.0727696061025,
-                    6.74033047115352,
+                initialCenter:
+                    const LatLng(51.07594003947888, 6.753587966358769),
+                initialZoom: 15.7,
+                minZoom: 14,
+                maxZoom: 18,
+                cameraConstraint: CameraConstraint.contain(
+                  bounds: LatLngBounds(
+                    const LatLng(51.0727696061025, 6.74033047115352), // sw
+                    const LatLng(51.0834444361947, 6.76094581023449), // ne
                   ),
-                  nePanBoundary: LatLng(51.0834444361947, 6.76094581023449),
-                  plugins: [const LocationMarkerPlugin()]),
-              layers: [
-                TileLayerOptions(
-                  tileProvider: const AssetTileProvider(),
+                ),
+                // 'plugins' wird hier nicht mehr benötigt
+              ),
+              children: [
+                TileLayer(
+                  tileProvider: AssetTileProvider(),
                   maxZoom: 18.0,
                   urlTemplate: 'assets/map/{z}/{x}/{y}.png',
                 ),
-                MarkerLayerOptions(
+                const CurrentLocationLayer(),
+                MarkerLayer(
                   markers: [
                     Marker(
                       width: 50.0,
                       height: 50.0,
                       point: LatLng(stationInfo.xcoord, stationInfo.ycoord),
-                      builder: (ctx) => ClipRRect(
+                      child: ClipRRect(
                         borderRadius: BorderRadius.circular(72.5),
                         child: Image.asset(stationInfo.iconImage,
                             width: 200, height: 200),
@@ -204,7 +209,6 @@ class _MyHomePageState extends State<Navigation> {
                     ),
                   ],
                 ),
-                LocationMarkerLayerOptions(),
               ],
             ),
 
@@ -222,12 +226,19 @@ class _MyHomePageState extends State<Navigation> {
                           //Passt die Mapvideo Größe der Bildschirmhöhe an, außer wenn es die Breite übersteigen würde, dann wird es nach der Breite angepasst
                           //Kann evtl. überarbeitet werden
                           //Wenn sich Videoformate ändern, müssen sie hier seperat nochmal geändert werden
-                          width: (MediaQuery.of(context).size.width-50 >=270 * MediaQuery.of(context).size.height * 0.002 )
-                              ?270 * MediaQuery.of(context).size.height * 0.002
-                              :MediaQuery.of(context).size.width-50,
-                          height: (MediaQuery.of(context).size.width-50 >=270 * MediaQuery.of(context).size.height * 0.002 )
-                              ?147 * MediaQuery.of(context).size.height * 0.002
-                              :(MediaQuery.of(context).size.width-50) * (147/270),
+                          width: (MediaQuery.of(context).size.width - 50 >=
+                                  270 *
+                                      MediaQuery.of(context).size.height *
+                                      0.002)
+                              ? 270 * MediaQuery.of(context).size.height * 0.002
+                              : MediaQuery.of(context).size.width - 50,
+                          height: (MediaQuery.of(context).size.width - 50 >=
+                                  270 *
+                                      MediaQuery.of(context).size.height *
+                                      0.002)
+                              ? 147 * MediaQuery.of(context).size.height * 0.002
+                              : (MediaQuery.of(context).size.width - 50) *
+                                  (147 / 270),
                           padding: const EdgeInsets.only(left: 16, right: 16),
                           decoration: const BoxDecoration(
                               color: Colors.white,
