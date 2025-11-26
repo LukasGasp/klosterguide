@@ -1,11 +1,26 @@
-# Uncomment this line to define a global platform for your project
-platform :ios, '13.0' # Wähle hier die minimale iOS-Version, die du unterstützen möchtest
+# Die Zeile, die das Skript für die Hilfsfunktionen (wie install_all_flutter_pods) importiert.
+require_relative 'Flutter/podhelper'
 
+# Globale Plattform-Einstellungen
+platform :ios, '13.0'
+
+# Fügt alle Pods für Flutter und Plugins zum Ziel 'Runner' hinzu
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  # Pods für die Flutter-Engine und Plugins
-  flutter_install_all_pods_helper()
+  # Hier werden alle Plugin-Pods installiert
+  flutter_install_all_pods_helper(self)
+
+  # Optional: Wenn du spezielle Test-Pods hättest
+  # target 'RunnerTests' do
+  #   inherit! :search_paths
+  # end
 end
-# Lasse den target 'RunnerTests' Block weg!
+
+# Erforderlich für die Integration der Flutter-Engine und Plugins in Pods
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
+end
