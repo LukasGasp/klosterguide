@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '13.0' # Wähle hier die minimale iOS-Version, die du unterstützen möchtest
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  # Pods für die Flutter-Engine und Plugins
+  flutter_install_all_pods_helper()
+end
+# Lasse den target 'RunnerTests' Block weg!
